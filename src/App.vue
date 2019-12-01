@@ -16,5 +16,8 @@
   text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  #nav {
+    padding: 10px;
+  }
 }
 </style>
