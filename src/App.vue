@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 #app {
   margin-top: 60px;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -17,5 +17,8 @@
   text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  #nav {
+    padding: 10px;
+  }
 }
 </style>
