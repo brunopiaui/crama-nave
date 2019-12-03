@@ -13,10 +13,6 @@
 </template>
 
 <script>
-import img01 from '@/assets/images/img01.jpg'
-import img02 from '@/assets/images/img02.jpg'
-import img03 from '@/assets/images/img03.jpg'
-
 export default {
   name: 'App',
   data() {
@@ -39,15 +35,15 @@ export default {
       let app = document.getElementById('app')
       switch (index) {
         case 1:
-          app.style.backgroundImage = `url(${img01})`
+          app.style.backgroundImage = `url(${require('@/assets/images/img01.jpg')})`
           this.$router.push({ name: 'image01' })
           break
         case 2:
-          app.style.backgroundImage = `url(${img02})`
+          app.style.backgroundImage = `url(${require('@/assets/images/img02.jpg')})`
           this.$router.push({ name: 'image02' })
           break
         case 3:
-          app.style.backgroundImage = `url(${img03})`
+          app.style.backgroundImage = `url(${require('@/assets/images/img03.jpg')})`
           this.$router.push({ name: 'image03' })
           break
       }
@@ -122,5 +118,9 @@ html {
 .routerZoom {
   -webkit-animation-name: routerZoom;
   animation-name: routerZoom;
+}
+
+#nprogress .bar {
+  background: #2c3e50 !important;
 }
 </style>
