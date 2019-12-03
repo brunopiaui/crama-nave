@@ -1,9 +1,8 @@
 {
-  "name": "web-ui",
+  "name": "crama-navia",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "mock": "(cd mock-server && npm run server) & npm run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",

@@ -32,10 +32,10 @@ export default {
     border-radius: 51% 49% 24% 76% / 19% 27% 73% 81%;
     animation: logo 20s ease-in-out alternate both infinite;
     .text {
-      font-family: 'Ubuntu';
+      font-family: 'Ubuntu', sans-serif;
       font-size: 40px;
-      letter-spacing: 0.1em;
       color: #333;
+      letter-spacing: 0.1em;
     }
   }
 }

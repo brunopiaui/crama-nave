@@ -31,9 +31,9 @@ module.exports = {
     'selector-id-pattern': /^[a-z][a-zA-Z]*$/,
     // Limit the number of universal selectors in a selector,
     // to avoid very slow selectors
-    // 'selector-max-universal': 1,
+    'selector-max-universal': 1,
     // Disallow allow global element/type selectors in scoped modules
-    // 'selector-max-type': null,
+    'selector-max-type': null,
     // 'selector-max-type': [0, {ignore: ['child', 'descendant',
     // 'compounded']}],
     // ===
