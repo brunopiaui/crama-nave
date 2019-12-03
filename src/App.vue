@@ -6,7 +6,11 @@
       <span @click="routerTo(2)">Image02</span> |
       <span @click="routerTo(3)">Image03</span>
     </div>
-    <transition name="router-anim" leave-active-class="animated routerZoom">
+    <!-- <transition
+      name="router-anim"
+      leave-active-class="animated routerZoom"
+    > -->
+    <transition name="router-anim" leave-to-class="animated routerZoom">
       <router-view />
     </transition>
   </div>
@@ -33,26 +37,32 @@ export default {
   methods: {
     routerTo(index) {
       let app = document.getElementById('app')
+      let next = '/'
+      let image = ''
       switch (index) {
         case 1:
-          app.style.backgroundImage = `url(${require('@/assets/images/img01.jpg')})`
-          this.$router.push({ name: 'image01' })
+          image = `url(${require('@/assets/images/img01.jpg')})`
+          next = 'image01'
           break
         case 2:
-          app.style.backgroundImage = `url(${require('@/assets/images/img02.jpg')})`
-          this.$router.push({ name: 'image02' })
+          image = `url(${require('@/assets/images/img02.jpg')})`
+          next = 'image02'
           break
         case 3:
-          app.style.backgroundImage = `url(${require('@/assets/images/img03.jpg')})`
-          this.$router.push({ name: 'image03' })
+          image = `url(${require('@/assets/images/img03.jpg')})`
+          next = 'image03'
           break
       }
+      app.style.backgroundImage = image
+      this.$router.push({ name: next })
     },
   },
 }
 </script>
 
 <style lang="scss">
+$base-color: #2c3e50;
+
 body,
 html {
   top: 0;
@@ -69,7 +79,7 @@ html {
   display: block;
   height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  color: #2c3e50;
+  color: $base-color;
   text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -85,7 +95,7 @@ html {
     a,
     span {
       font-weight: bold;
-      color: #2c3e50;
+      color: $base-color;
       text-decoration: none;
     }
   }
@@ -121,6 +131,6 @@ html {
 }
 
 #nprogress .bar {
-  background: #2c3e50 !important;
+  background: $base-color !important;
 }
 </style>
