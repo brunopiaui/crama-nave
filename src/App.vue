@@ -35,6 +35,7 @@ html {
   color: #2c3e50;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
   #nav {
     position: absolute;
     padding: 10px;
