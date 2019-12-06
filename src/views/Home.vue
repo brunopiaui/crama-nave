@@ -21,6 +21,11 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  background-image: url('../assets/images/img00.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   .shape {
     display: flex;
     align-items: center;

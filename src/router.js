@@ -25,7 +25,6 @@ export default new Router({
           /* webpackPreload: true */
           '@/views/Image01.vue'
         ),
-      meta: { index: 1 },
     },
     {
       path: '/image02',
@@ -36,7 +35,6 @@ export default new Router({
           /* webpackPreload: true */
           '@/views/Image02.vue'
         ),
-      meta: { index: 2 },
     },
     {
       path: '/image03',
@@ -47,7 +45,6 @@ export default new Router({
           /* webpackPreload: true */
           '@/views/Image03.vue'
         ),
-      meta: { index: 3 },
     },
   ],
 })

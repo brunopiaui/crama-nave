@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <span @click="routerTo(0)">Home</span> |
       <span @click="routerTo(1)">Image01</span> |
       <span @click="routerTo(2)">Image02</span> |
       <span @click="routerTo(3)">Image03</span>
@@ -27,6 +27,7 @@ export default {
   name: 'App',
   data() {
     return {
+      image00: '',
       image01: '',
       image02: '',
       image03: '',
@@ -34,13 +35,15 @@ export default {
   },
   beforeMount() {
     loadImg(
+      require('@/assets/images/img00.jpg'),
       require('@/assets/images/img01.jpg'),
       require('@/assets/images/img02.jpg'),
       require('@/assets/images/img03.jpg')
     ).then((images) => {
-      this.image01 = images[0].img.src
-      this.image02 = images[1].img.src
-      this.image03 = images[2].img.src
+      this.image00 = images[0].img.src
+      this.image01 = images[1].img.src
+      this.image02 = images[2].img.src
+      this.image03 = images[3].img.src
     })
   },
   methods: {
@@ -49,6 +52,10 @@ export default {
       let next = '/'
       let image = ''
       switch (index) {
+        case 0:
+          image = `url(${this.image00})`
+          next = 'home'
+          break
         case 1:
           image = `url(${this.image01})`
           next = 'image01'
