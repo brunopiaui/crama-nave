@@ -6,10 +6,6 @@
       <span @click="routerTo(2)">Image02</span> |
       <span @click="routerTo(3)">Image03</span>
     </div>
-    <!-- <transition
-      name="router-anim"
-      leave-active-class="animated routerZoom"
-    > -->
     <transition name="router-anim" leave-to-class="animated routerZoom">
       <router-view />
     </transition>
@@ -19,21 +15,6 @@
 <script>
 export default {
   name: 'App',
-  data() {
-    return {
-      transitionName: '',
-      pageIndex: 0,
-    }
-  },
-  watch: {
-    $route(to, from) {
-      this.pageIndex = to.meta.index
-      // if (from.meta.index !== undefined) {
-      //   this.transitionName =
-      //     to.meta.index < from.meta.index ? 'slide-right' : 'slide-left'
-      // }
-    },
-  },
   methods: {
     routerTo(index) {
       let app = document.getElementById('app')
