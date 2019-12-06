@@ -7,69 +7,63 @@
       <span @click="routerTo(3)">Image03</span>
     </div>
     <transition name="router-anim" leave-to-class="animated routerZoom">
-      <component :is="componentLoader"></component>
+      <router-view />
     </transition>
   </div>
 </template>
 
 <script>
+const checkImage = (path) =>
+  new Promise((resolve) => {
+    const img = new Image()
+    img.onload = () => resolve({ img, status: 'ok' })
+    img.onerror = () => resolve({ img, status: 'error' })
+    img.src = path
+  })
+
+const loadImg = (...paths) => Promise.all(paths.map(checkImage))
+
 export default {
   name: 'App',
-  components: {
-    Home: () =>
-      import(
-        /* webpackChunkName: "Home" */
-        '@/views/Home.vue'
-      ),
-    Image01: () =>
-      import(
-        /* webpackChunkName: "Image01" */
-        '@/views/Image01.vue'
-      ),
-    Image02: () =>
-      import(
-        /* webpackChunkName: "Image02" */
-        '@/views/Image02.vue'
-      ),
-    Image03: () =>
-      import(
-        /* webpackChunkName: "Image03" */
-        '@/views/Image03.vue'
-      ),
-  },
   data() {
     return {
-      componentLoader: 'Home',
+      image01: '',
+      image02: '',
+      image03: '',
     }
   },
+  beforeMount() {
+    loadImg(
+      require('@/assets/images/img01.jpg'),
+      require('@/assets/images/img02.jpg'),
+      require('@/assets/images/img03.jpg')
+    ).then((images) => {
+      this.image01 = images[0].img.src
+      this.image02 = images[1].img.src
+      this.image03 = images[2].img.src
+    })
+  },
   methods: {
-    async routerTo(index) {
+    routerTo(index) {
       let app = document.getElementById('app')
       let next = '/'
-      let image = new Image()
-      let component = 'Home'
+      let image = ''
       switch (index) {
         case 1:
-          image.src = require('@/assets/images/img01.jpg')
-          component = 'Image01'
+          image = `url(${this.image01})`
           next = 'image01'
           break
         case 2:
-          image.src = require('@/assets/images/img02.jpg')
-          component = 'Image02'
+          image = `url(${this.image02})`
           next = 'image02'
           break
         case 3:
-          image.src = require('@/assets/images/img03.jpg')
-          component = 'Image03'
+          image = `url(${this.image03})`
           next = 'image03'
           break
       }
-      app.style.backgroundImage = `url(${image.src})`
-      image.onload = () => {
-        this.$router.push({ name: next })
-        this.componentLoader = component
-      }
+      app.style.backgroundImage = image
+      this.$router.push({ name: next })
     },
   },
 }
@@ -77,7 +71,6 @@ export default {
 
 <style lang="scss">
 $base-color: #2c3e50;
-
 body,
 html {
   top: 0;
@@ -101,12 +94,15 @@ html {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
   #nav {
     position: absolute;
     padding: 10px;
+
     span {
       cursor: pointer;
     }
+
     a,
     span {
       font-weight: bold;
@@ -122,7 +118,6 @@ html {
     -webkit-transform: scale3d(2, 2, 2);
     transform: scale3d(2, 2, 2);
   }
-
   10% {
     opacity: 1;
   }
@@ -134,7 +129,6 @@ html {
     -webkit-transform: scale3d(2, 2, 2);
     transform: scale3d(2, 2, 2);
   }
-
   10% {
     opacity: 1;
   }
