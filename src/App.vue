@@ -43,33 +43,33 @@ export default {
     }
   },
   methods: {
-    routerTo(index) {
+    async routerTo(index) {
       let app = document.getElementById('app')
       let next = '/'
-      let image = ''
+      let image = new Image()
       let component = 'Home'
       switch (index) {
         case 1:
-          image = `url(${require('@/assets/images/img01.jpg')})`
+          image.src = require('@/assets/images/img01.jpg')
           component = 'Image01'
           next = 'image01'
           break
         case 2:
-          image = `url(${require('@/assets/images/img02.jpg')})`
+          image.src = require('@/assets/images/img02.jpg')
           component = 'Image02'
           next = 'image02'
           break
         case 3:
-          image = `url(${require('@/assets/images/img03.jpg')})`
+          image.src = require('@/assets/images/img03.jpg')
           component = 'Image03'
           next = 'image03'
           break
       }
-      app.style.backgroundImage = image
-      this.$nextTick(() => {
+      app.style.backgroundImage = `url(${image.src})`
+      image.onload = () => {
         this.$router.push({ name: next })
         this.componentLoader = component
-      })
+      }
     },
   },
 }
