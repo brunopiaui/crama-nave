@@ -43,7 +43,7 @@ export default {
     }
   },
   methods: {
-    async routerTo(index) {
+    routerTo(index) {
       let app = document.getElementById('app')
       let next = '/'
       let image = ''
@@ -66,9 +66,10 @@ export default {
           break
       }
       app.style.backgroundImage = image
-      await this.$nextTick()
-      this.$router.push({ name: next })
-      this.componentLoader = component
+      this.$nextTick(() => {
+        this.$router.push({ name: next })
+        this.componentLoader = component
+      })
     },
   },
 }
