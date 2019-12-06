@@ -13,7 +13,7 @@ export default new Router({
         import(
           /* webpackChunkName: "Home" */
           /* webpackPreload: true */
-          './views/Home.vue'
+          '@/views/Home.vue'
         ),
     },
     {
@@ -23,7 +23,7 @@ export default new Router({
         import(
           /* webpackChunkName: "Image01" */
           /* webpackPreload: true */
-          './views/Image01.vue'
+          '@/views/Image01.vue'
         ),
       meta: { index: 1 },
     },
@@ -34,7 +34,7 @@ export default new Router({
         import(
           /* webpackChunkName: "Image02" */
           /* webpackPreload: true */
-          './views/Image02.vue'
+          '@/views/Image02.vue'
         ),
       meta: { index: 2 },
     },
@@ -45,7 +45,7 @@ export default new Router({
         import(
           /* webpackChunkName: "Image03" */
           /* webpackPreload: true */
-          './views/Image03.vue'
+          '@/views/Image03.vue'
         ),
       meta: { index: 3 },
     },
