@@ -19,25 +19,21 @@ export default {
     Home: () =>
       import(
         /* webpackChunkName: "Home" */
-        /* webpackPreload: true */
         '@/views/Home.vue'
       ),
     Image01: () =>
       import(
         /* webpackChunkName: "Image01" */
-        /* webpackPreload: true */
         '@/views/Image01.vue'
       ),
     Image02: () =>
       import(
         /* webpackChunkName: "Image02" */
-        /* webpackPreload: true */
         '@/views/Image02.vue'
       ),
     Image03: () =>
       import(
         /* webpackChunkName: "Image03" */
-        /* webpackPreload: true */
         '@/views/Image03.vue'
       ),
   },
@@ -47,29 +43,32 @@ export default {
     }
   },
   methods: {
-    routerTo(index) {
+    async routerTo(index) {
       let app = document.getElementById('app')
       let next = '/'
       let image = ''
+      let component = 'Home'
       switch (index) {
         case 1:
           image = `url(${require('@/assets/images/img01.jpg')})`
-          this.componentLoader = 'Image01'
+          component = 'Image01'
           next = 'image01'
           break
         case 2:
           image = `url(${require('@/assets/images/img02.jpg')})`
-          this.componentLoader = 'Image02'
+          component = 'Image02'
           next = 'image02'
           break
         case 3:
           image = `url(${require('@/assets/images/img03.jpg')})`
-          this.componentLoader = 'Image03'
+          component = 'Image03'
           next = 'image03'
           break
       }
       app.style.backgroundImage = image
+      await this.$nextTick()
       this.$router.push({ name: next })
+      this.componentLoader = component
     },
   },
 }
