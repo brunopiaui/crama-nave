@@ -20,6 +20,9 @@ export default {
     })
   },
   beforeRouteLeave(to, from, next) {
+    let app = document.getElementById('app')
+    app.style.backgroundImage = `url(${require(`@/assets/images/${to.meta.image}.jpg`)})`
+
     this.$gsap.to(['#nav'], {
       duration: 1,
       opacity: 0,

@@ -46,28 +46,21 @@ export default {
   },
   methods: {
     routerTo(index) {
-      let app = document.getElementById('app')
       let next = '/'
-      let image = ''
       switch (index) {
         case 0:
-          image = `url(${this.image00})`
           next = 'home'
           break
         case 1:
-          image = `url(${this.image01})`
           next = 'image01'
           break
         case 2:
-          image = `url(${this.image02})`
           next = 'image02'
           break
         case 3:
-          image = `url(${this.image03})`
           next = 'image03'
           break
       }
-      app.style.backgroundImage = image
       this.$router.push({ name: next })
     },
   },

@@ -12,9 +12,9 @@ export default new Router({
       component: () =>
         import(
           /* webpackChunkName: "Home" */
-          /* webpackPreload: true */
           '@/views/Home.vue'
         ),
+      meta: { index: 0, image: 'img00' },
     },
     {
       path: '/image01',
@@ -22,9 +22,9 @@ export default new Router({
       component: () =>
         import(
           /* webpackChunkName: "Image01" */
-          /* webpackPreload: true */
           '@/views/Image01.vue'
         ),
+      meta: { index: 1, image: 'img01' },
     },
     {
       path: '/image02',
@@ -32,9 +32,9 @@ export default new Router({
       component: () =>
         import(
           /* webpackChunkName: "Image02" */
-          /* webpackPreload: true */
           '@/views/Image02.vue'
         ),
+      meta: { index: 2, image: 'img02' },
     },
     {
       path: '/image03',
@@ -42,9 +42,9 @@ export default new Router({
       component: () =>
         import(
           /* webpackChunkName: "Image03" */
-          /* webpackPreload: true */
           '@/views/Image03.vue'
         ),
+      meta: { index: 3, image: 'img03' },
     },
   ],
 })
