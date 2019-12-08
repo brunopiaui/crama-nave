@@ -6,7 +6,7 @@
       <span @click="routerTo(2)">Image02</span> |
       <span @click="routerTo(3)">Image03</span>
     </div>
-    <transition name="router-anim" leave-to-class="animated routerZoom">
+    <transition name="router-anim" leave-to-class="animated routerZoom" appear>
       <router-view />
     </transition>
   </div>

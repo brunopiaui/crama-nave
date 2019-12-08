@@ -2,9 +2,9 @@
   <div class="home">
     <div class="shape">
       <div class="text">
-        <div>BIO</div>
-        <div>PAISA</div>
-        <div>GISMO</div>
+        <div class="textLogo">BIO</div>
+        <div class="textLogo">PAISA</div>
+        <div class="textLogo">GISMO</div>
       </div>
     </div>
   </div>
@@ -13,6 +13,22 @@
 <script>
 export default {
   name: 'Home',
+  mounted() {
+    let tl = this.$gsap.timeline()
+    tl.from('.shape', {
+      duration: 1,
+      opacity: 0,
+      scale: 0.5,
+      stagger: 0.25,
+    })
+    tl.from('.textLogo', {
+      duration: 1.5,
+      opacity: 0,
+      y: 20,
+      stagger: 0.25,
+      ease: 'back.out',
+    })
+  },
 }
 </script>
 
