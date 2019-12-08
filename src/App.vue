@@ -6,9 +6,7 @@
       <span @click="routerTo(2)">Image02</span> |
       <span @click="routerTo(3)">Image03</span>
     </div>
-    <transition name="router-anim" leave-to-class="animated routerZoom" appear>
-      <router-view />
-    </transition>
+    <router-view />
   </div>
 </template>
 
@@ -117,33 +115,6 @@ html {
       text-decoration: none;
     }
   }
-}
-
-@-webkit-keyframes routerZoom {
-  to {
-    opacity: 0;
-    -webkit-transform: scale3d(2, 2, 2);
-    transform: scale3d(2, 2, 2);
-  }
-  10% {
-    opacity: 1;
-  }
-}
-
-@keyframes routerZoom {
-  to {
-    opacity: 0;
-    -webkit-transform: scale3d(2, 2, 2);
-    transform: scale3d(2, 2, 2);
-  }
-  10% {
-    opacity: 1;
-  }
-}
-
-.routerZoom {
-  -webkit-animation-name: routerZoom;
-  animation-name: routerZoom;
 }
 
 #nprogress .bar {

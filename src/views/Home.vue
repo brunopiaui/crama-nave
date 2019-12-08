@@ -13,20 +13,44 @@
 <script>
 export default {
   name: 'Home',
+  data() {
+    return {
+      tl: null,
+    }
+  },
+  created() {
+    this.tl = this.$gsap.timeline()
+  },
   mounted() {
-    let tl = this.$gsap.timeline()
-    tl.from('.shape', {
+    this.$gsap.to(['#nav'], {
       duration: 1,
-      opacity: 0,
-      scale: 0.5,
-      stagger: 0.25,
+      opacity: 1,
     })
-    tl.from('.textLogo', {
+    this.tl.to('.shape', {
+      duration: 1,
+      opacity: 1,
+    })
+    this.tl.from('.textLogo', {
       duration: 1.5,
       opacity: 0,
       y: 20,
       stagger: 0.25,
       ease: 'back.out',
+    })
+  },
+  beforeRouteLeave(to, from, next) {
+    this.$gsap.to(['#nav', '.shape'], {
+      duration: 1,
+      opacity: 0,
+    })
+    this.tl.to('.home', {
+      duration: 1,
+      opacity: 0,
+      scale: 1.5,
+      delay: 1,
+      onComplete: () => {
+        next()
+      },
     })
   },
 }
@@ -51,6 +75,7 @@ export default {
     background: #fff;
     border: 5px solid #333;
     border-radius: 51% 49% 24% 76% / 19% 27% 73% 81%;
+    opacity: 0;
     animation: logo 20s ease-in-out alternate both infinite;
     .text {
       font-family: 'Ubuntu', sans-serif;
