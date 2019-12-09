@@ -41,7 +41,7 @@ export const store = new Vuex.Store({
     stopLoadingAction({ commit }) {
       commit('setLoading', false)
     },
-    addToBackgroundImagesAction({ commit, state }, payload) {
+    addToBackgroundsAction({ commit, state }, payload) {
       const backgroundImages = { ...state.backgroundImages, ...payload }
       commit('addToBackgroundImages', backgroundImages)
     },

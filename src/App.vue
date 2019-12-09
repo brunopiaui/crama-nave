@@ -4,7 +4,8 @@
       <router-link to="/">Home</router-link>|
       <router-link to="/image01">Image01</router-link>|
       <router-link to="/image02">Image02</router-link>|
-      <router-link to="/image03">Image03</router-link>
+      <router-link to="/image03">Image03</router-link>|
+      <router-link to="/image04">Image04</router-link>
     </div>
     <router-view />
   </div>
@@ -12,16 +13,9 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import Preload from 'preload-it'
 
-const checkImage = (path) =>
-  new Promise((resolve) => {
-    const img = new Image()
-    img.onload = () => resolve({ img, status: 'ok' })
-    img.onerror = () => resolve({ img, status: 'error' })
-    img.src = path
-  })
-
-const loadImg = (...paths) => Promise.all(paths.map(checkImage))
+const preload = Preload()
 
 export default {
   name: 'App',
@@ -29,23 +23,27 @@ export default {
     ...mapGetters(['loading', 'nextBackgroundImage']),
   },
   beforeMount() {
-    loadImg(
-      require('@/assets/images/img00.jpg'),
-      require('@/assets/images/img01.jpg'),
-      require('@/assets/images/img02.jpg'),
-      require('@/assets/images/img03.jpg')
-    ).then((images) => {
-      this.addToBackgroundImagesAction({ image00: images[0].img.src })
-      this.addToBackgroundImagesAction({ image01: images[1].img.src })
-      this.addToBackgroundImagesAction({ image02: images[2].img.src })
-      this.addToBackgroundImagesAction({ image03: images[3].img.src })
-    })
+    preload
+      .fetch([
+        require('@/assets/images/image00.jpg'),
+        require('@/assets/images/image01.jpg'),
+        require('@/assets/images/image02.jpg'),
+        require('@/assets/images/image03.jpg'),
+        require('@/assets/videos/video01.mp4'),
+        require('@/assets/images/image04.jpg'),
+      ])
+      .then((items) => {
+        console.log('Itens: ', items)
+      })
+    preload.onfetched = (item) => {
+      this.addToBackgroundsAction({ [item.fileName.split('.')[0]]: item.url })
+    }
   },
   methods: {
     ...mapActions([
       'startLoadingAction',
       'stopLoadingAction',
-      'addToBackgroundImagesAction',
+      'addToBackgroundsAction',
     ]),
   },
 }
@@ -79,6 +77,7 @@ html {
 
   #nav {
     position: absolute;
+    z-index: 10;
     padding: 10px;
 
     a {

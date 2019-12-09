@@ -46,5 +46,15 @@ export default new Router({
         ),
       meta: { index: 3, image: 'image03' },
     },
+    {
+      path: '/image04',
+      name: 'image04',
+      component: () =>
+        import(
+          /* webpackChunkName: "Image04" */
+          '@/views/Image04.vue'
+        ),
+      meta: { index: 4, image: 'image04' },
+    },
   ],
 })

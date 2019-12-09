@@ -56,7 +56,7 @@ export default {
 .img {
   display: block;
   height: 100%;
-  background-image: url('../assets/images/img02.jpg');
+  background-image: url('../assets/images/image02.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
