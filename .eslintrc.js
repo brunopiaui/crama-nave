@@ -2,6 +2,7 @@ module.exports = {
   root: true,
   parserOptions: {
     sourceType: 'script',
+    sourceType: 'module',
   },
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#bulb-rules

@@ -11,12 +11,17 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
   name: 'Home',
   data() {
     return {
       tl: null,
     }
+  },
+  computed: {
+    ...mapGetters(['loading', 'backgroundImages']),
   },
   created() {
     this.tl = this.$gsap.timeline()
@@ -38,9 +43,16 @@ export default {
       ease: 'back.out',
     })
   },
+  methods: {
+    ...mapActions([
+      'startLoadingAction',
+      'stopLoadingAction',
+      'setNextBackgroundImageAction',
+    ]),
+  },
   beforeRouteLeave(to, from, next) {
-    let app = document.getElementById('app')
-    app.style.backgroundImage = `url(${require(`@/assets/images/${to.meta.image}.jpg`)})`
+    let nextBackgroundImage = this.backgroundImages(to.meta.image)
+    this.setNextBackgroundImageAction(nextBackgroundImage)
 
     this.$gsap.to(['#nav', '.shape'], {
       duration: 1,

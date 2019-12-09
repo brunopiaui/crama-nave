@@ -1,16 +1,18 @@
 <template>
-  <div id="app">
+  <div id="app" :style="{ backgroundImage: `url(${nextBackgroundImage})` }">
     <div id="nav">
-      <span @click="routerTo(0)">Home</span> |
-      <span @click="routerTo(1)">Image01</span> |
-      <span @click="routerTo(2)">Image02</span> |
-      <span @click="routerTo(3)">Image03</span>
+      <router-link to="/">Home</router-link>|
+      <router-link to="/image01">Image01</router-link>|
+      <router-link to="/image02">Image02</router-link>|
+      <router-link to="/image03">Image03</router-link>
     </div>
     <router-view />
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
+
 const checkImage = (path) =>
   new Promise((resolve) => {
     const img = new Image()
@@ -23,13 +25,8 @@ const loadImg = (...paths) => Promise.all(paths.map(checkImage))
 
 export default {
   name: 'App',
-  data() {
-    return {
-      image00: '',
-      image01: '',
-      image02: '',
-      image03: '',
-    }
+  computed: {
+    ...mapGetters(['loading', 'nextBackgroundImage']),
   },
   beforeMount() {
     loadImg(
@@ -38,31 +35,18 @@ export default {
       require('@/assets/images/img02.jpg'),
       require('@/assets/images/img03.jpg')
     ).then((images) => {
-      this.image00 = images[0].img.src
-      this.image01 = images[1].img.src
-      this.image02 = images[2].img.src
-      this.image03 = images[3].img.src
+      this.addToBackgroundImagesAction({ image00: images[0].img.src })
+      this.addToBackgroundImagesAction({ image01: images[1].img.src })
+      this.addToBackgroundImagesAction({ image02: images[2].img.src })
+      this.addToBackgroundImagesAction({ image03: images[3].img.src })
     })
   },
   methods: {
-    routerTo(index) {
-      let next = '/'
-      switch (index) {
-        case 0:
-          next = 'home'
-          break
-        case 1:
-          next = 'image01'
-          break
-        case 2:
-          next = 'image02'
-          break
-        case 3:
-          next = 'image03'
-          break
-      }
-      this.$router.push({ name: next })
-    },
+    ...mapActions([
+      'startLoadingAction',
+      'stopLoadingAction',
+      'addToBackgroundImagesAction',
+    ]),
   },
 }
 </script>
@@ -97,12 +81,7 @@ html {
     position: absolute;
     padding: 10px;
 
-    span {
-      cursor: pointer;
-    }
-
-    a,
-    span {
+    a {
       font-weight: bold;
       color: $base-color;
       text-decoration: none;

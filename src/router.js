@@ -14,7 +14,7 @@ export default new Router({
           /* webpackChunkName: "Home" */
           '@/views/Home.vue'
         ),
-      meta: { index: 0, image: 'img00' },
+      meta: { index: 0, image: 'image00' },
     },
     {
       path: '/image01',
@@ -24,7 +24,7 @@ export default new Router({
           /* webpackChunkName: "Image01" */
           '@/views/Image01.vue'
         ),
-      meta: { index: 1, image: 'img01' },
+      meta: { index: 1, image: 'image01' },
     },
     {
       path: '/image02',
@@ -34,7 +34,7 @@ export default new Router({
           /* webpackChunkName: "Image02" */
           '@/views/Image02.vue'
         ),
-      meta: { index: 2, image: 'img02' },
+      meta: { index: 2, image: 'image02' },
     },
     {
       path: '/image03',
@@ -44,7 +44,7 @@ export default new Router({
           /* webpackChunkName: "Image03" */
           '@/views/Image03.vue'
         ),
-      meta: { index: 3, image: 'img03' },
+      meta: { index: 3, image: 'image03' },
     },
   ],
 })
