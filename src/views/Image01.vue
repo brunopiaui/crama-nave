@@ -1,5 +1,7 @@
 <template>
-  <div class="img"></div>
+  <div class="img">
+    <div v-if="progressing" class="loading">{{ progress }}%</div>
+  </div>
 </template>
 
 <script>
@@ -13,12 +15,25 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['loading', 'backgroundImages']),
+    ...mapGetters(['loading', 'backgrounds', 'progressing', 'progress']),
   },
   created() {
     this.tl = this.$gsap.timeline()
   },
   mounted() {
+    if (this.progressing) {
+      this.tl.to(
+        '.loading',
+        {
+          duration: 1,
+          opacity: 0,
+          onComplete: () => {
+            this.stopProgressingAction()
+          },
+        },
+        '+=0.5'
+      )
+    }
     this.$gsap.to(['#nav'], {
       duration: 1,
       opacity: 1,
@@ -28,12 +43,13 @@ export default {
     ...mapActions([
       'startLoadingAction',
       'stopLoadingAction',
-      'setNextBackgroundImageAction',
+      'setNextBackgroundAction',
+      'stopProgressingAction',
     ]),
   },
   beforeRouteLeave(to, from, next) {
-    let nextBackgroundImage = this.backgroundImages(to.meta.image)
-    this.setNextBackgroundImageAction(nextBackgroundImage)
+    let nextBackground = this.backgrounds(to.meta.image)
+    this.setNextBackgroundAction(nextBackground)
 
     this.$gsap.to(['#nav'], {
       duration: 1,

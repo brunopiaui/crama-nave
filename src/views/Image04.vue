@@ -1,7 +1,8 @@
 <template>
   <div class="img">
+    <div v-if="progressing" class="loading">{{ progress }}%</div>
     <video id="video" autoplay muted loop>
-      <source :src="require('@/assets/videos/video01.mp4')" type="video/mp4" />
+      <source :src="video" type="video/mp4" />
       Your browser does not support HTML5 video.
     </video>
   </div>
@@ -15,15 +16,32 @@ export default {
   data() {
     return {
       tl: null,
+      video: null,
     }
   },
   computed: {
-    ...mapGetters(['loading', 'backgroundImages']),
+    ...mapGetters(['loading', 'backgrounds', 'progressing', 'progress']),
   },
   created() {
+    const video = this.backgrounds('video01')
+    this.video = video.url
+
     this.tl = this.$gsap.timeline()
   },
   mounted() {
+    if (this.progressing) {
+      this.tl.to(
+        '.loading',
+        {
+          duration: 1,
+          opacity: 0,
+          onComplete: () => {
+            this.stopProgressingAction()
+          },
+        },
+        '+=0.5'
+      )
+    }
     this.$gsap.to(['#nav'], {
       duration: 1,
       opacity: 1,
@@ -33,12 +51,13 @@ export default {
     ...mapActions([
       'startLoadingAction',
       'stopLoadingAction',
-      'setNextBackgroundImageAction',
+      'setNextBackgroundAction',
+      'stopProgressingAction',
     ]),
   },
   beforeRouteLeave(to, from, next) {
-    let nextBackgroundImage = this.backgroundImages(to.meta.image)
-    this.setNextBackgroundImageAction(nextBackgroundImage)
+    let nextBackground = this.backgrounds(to.meta.image)
+    this.setNextBackgroundAction(nextBackground)
 
     this.$gsap.to(['#nav'], {
       duration: 1,
@@ -65,10 +84,9 @@ export default {
   background-position: center;
   background-size: cover;
   #video {
-    object-fit: cover;
     position: fixed;
-    right: 0;
-    bottom: 0;
+    top: 0;
+    left: 0;
     z-index: 0;
     min-width: 100%;
     min-height: 100%;

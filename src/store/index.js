@@ -6,19 +6,27 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
   state: {
     loading: false,
-    backgroundImages: {},
-    nextBackgroundImage: '',
+    backgrounds: [],
+    nextBackground: '',
+    progressing: false,
+    progress: 0,
   },
 
   getters: {
     loading: (state) => {
       return state.loading
     },
-    backgroundImages: (state) => (image) => {
-      return state.backgroundImages[image]
+    backgrounds: (state) => (filter) => {
+      return state.backgrounds.find((background) => background.name === filter)
     },
-    nextBackgroundImage: (state) => {
-      return state.nextBackgroundImage
+    nextBackground: (state) => {
+      return state.nextBackground
+    },
+    progressing: (state) => {
+      return state.progressing
+    },
+    progress: (state) => {
+      return state.progress
     },
   },
 
@@ -26,11 +34,17 @@ export const store = new Vuex.Store({
     setLoading(state, payload) {
       state.loading = payload
     },
-    addToBackgroundImages(state, payload) {
-      state.backgroundImages = payload
+    addToBackgrounds(state, payload) {
+      state.backgrounds = payload
     },
-    setNextBackgroundImage(state, payload) {
-      state.nextBackgroundImage = payload
+    setNextBackground(state, payload) {
+      state.nextBackground = payload
+    },
+    setProgressing(state, payload) {
+      state.progressing = payload
+    },
+    setProgress(state, payload) {
+      state.progress = payload
     },
   },
 
@@ -42,11 +56,21 @@ export const store = new Vuex.Store({
       commit('setLoading', false)
     },
     addToBackgroundsAction({ commit, state }, payload) {
-      const backgroundImages = { ...state.backgroundImages, ...payload }
-      commit('addToBackgroundImages', backgroundImages)
+      const backgrounds = [...state.backgrounds, payload]
+      commit('addToBackgrounds', backgrounds)
     },
-    setNextBackgroundImageAction({ commit }, payload) {
-      commit('setNextBackgroundImage', payload)
+    setNextBackgroundAction({ commit }, payload) {
+      commit('setNextBackground', payload)
+    },
+    startProgressingAction({ commit }) {
+      commit('setProgressing', true)
+    },
+    stopProgressingAction({ commit }) {
+      commit('setProgressing', false)
+    },
+    setProgressAction({ commit }, payload) {
+      console.log('setProgress', payload)
+      commit('setProgress', payload)
     },
   },
 })

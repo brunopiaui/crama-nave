@@ -54,7 +54,7 @@ export default new Router({
           /* webpackChunkName: "Image04" */
           '@/views/Image04.vue'
         ),
-      meta: { index: 4, image: 'image04' },
+      meta: { index: 4, image: 'image04', video: 'video01' },
     },
   ],
 })
