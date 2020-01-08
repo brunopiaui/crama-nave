@@ -4,15 +4,24 @@
     :class="[nextBackground.type === 'image' ? 'image' : 'video']"
     :style="{ backgroundImage: `url(${nextBackground.url})` }"
   >
-    <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/image01">Image01</router-link>|
-      <router-link to="/image02">Image02</router-link>|
-      <router-link to="/image03">Image03</router-link>|
-      <router-link to="/image04">Image04</router-link>
-    </div>
-    <router-view class="router" />
-  </div>
+    <div class="backTop"></div>
+    <header class="top">
+      <div class="logo">
+        <p>logo</p>
+      </div>
+      <nav>
+        <router-link to="/">Home</router-link>|
+        <router-link to="/image01">Image01</router-link>|
+        <router-link to="/image02">Image02</router-link>|
+        <router-link to="/image03">Image03</router-link>|
+        <router-link to="/image04">Image04</router-link>
+      </nav>
+      <div class="hamburguer">
+        <p>menu hamburguer</p>
+      </div>
+    </header>
+    <router-view class="router" /> </div
+  ><!-- app -->
 </template>
 
 <script>
@@ -87,7 +96,7 @@ export default {
 </script>
 
 <style lang="scss">
-$base-color: #2c3e50;
+$base-color: #ffffff;
 body,
 html {
   top: 0;
@@ -99,6 +108,14 @@ html {
   color: $base-color;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  list-style: none;
+  border: 0;
+}
+
 #app {
   top: 0;
   left: 0;
@@ -106,14 +123,33 @@ html {
   height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   color: $base-color;
-  text-align: center;
+  // text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  #nav {
-    position: absolute;
+  div.backTop {
+    position: fixed;
+    width: 100%;
+    height: 430px;
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.6)),
+      to(rgba(0, 0, 0, 0))
+    );
+    z-index: 998;
+  }
+
+  header.top {
+    position: fixed;
     z-index: 10;
-    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    padding: 60px 5% 0 5%;
+    z-index: 999;
 
     a {
       font-weight: bold;

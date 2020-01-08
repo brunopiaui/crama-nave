@@ -56,10 +56,11 @@ export default {
       opacity: 0,
     })
     this.tl.to('.img', {
-      duration: 1,
+      duration: 0.8,
       opacity: 0,
       scale: 1.5,
-      delay: 1,
+      delay: 0.1,
+      ease: 'power4.in',
       onComplete: () => {
         next()
       },

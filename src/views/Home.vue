@@ -1,14 +1,14 @@
 <template>
   <div class="home">
     <div v-if="progressing" class="loading">{{ progress }}%</div>
-    <div class="shape">
+    <!-- <div class="shape">
       <div class="text">
         <div class="textLogo">BIO</div>
         <div class="textLogo">PAISA</div>
         <div class="textLogo">GISMO</div>
       </div>
-    </div>
-  </div>
+    </div> --> </div
+  ><!-- home -->
 </template>
 
 <script>
@@ -41,20 +41,9 @@ export default {
         '+=0.5'
       )
     }
-    this.$gsap.to(['#nav'], {
+    this.$gsap.to(['.top'], {
       duration: 1,
       opacity: 1,
-    })
-    this.tl.to('.shape', {
-      duration: 1,
-      opacity: 1,
-    })
-    this.tl.from('.textLogo', {
-      duration: 1.5,
-      opacity: 0,
-      y: 20,
-      stagger: 0.25,
-      ease: 'back.out',
     })
   },
   methods: {
@@ -69,7 +58,7 @@ export default {
     let nextBackground = this.backgrounds(to.meta.image)
     this.setNextBackgroundAction(nextBackground)
 
-    this.$gsap.to(['#nav', '.shape'], {
+    this.$gsap.to(['.top'], {
       duration: 1,
       opacity: 0,
     })
@@ -77,7 +66,7 @@ export default {
       duration: 1,
       opacity: 0,
       scale: 1.5,
-      delay: 1,
+      delay: 0,
       onComplete: () => {
         next()
       },
@@ -103,14 +92,14 @@ export default {
     width: 256px;
     height: 256px;
     background: #fff;
-    border: 5px solid #333;
+    border: 2px solid #333;
     border-radius: 51% 49% 24% 76% / 19% 27% 73% 81%;
     opacity: 0;
-    animation: logo 20s ease-in-out alternate both infinite;
+    animation: logo 20s linear alternate both infinite;
     .text {
       font-family: 'Ubuntu', sans-serif;
       font-size: 40px;
-      color: #333;
+      color: #fff;
       letter-spacing: 0.1em;
     }
   }

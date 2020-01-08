@@ -2510,6 +2510,11 @@ copy-webpack-plugin@^4.6.0:
     p-limit "^1.0.0"
     serialize-javascript "^1.4.0"
 
+core-js@^2.6.11:
+  version "2.6.11"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
+  integrity sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
+
 core-js@^2.6.5:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.10.tgz#8a5b8391f8cc7013da703411ce5b585706300d7f"
@@ -3632,7 +3637,7 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-execa@^3.3.0:
+execa@^3.3.0, execa@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/execa/-/execa-3.4.0.tgz#c08ed4550ef65d858fac269ffc8572446f37eb89"
   integrity sha512-r9vdGQk4bmCuK1yKQu1KTwcT2zwfWdbdaXfCtAh+5nU/4fSX+JAb7vZGvI5naJrQlvONrEB20jeruESI69530g==
@@ -4292,6 +4297,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.3.tgz#4a12ff1b60376ef09862c2093edd908328be8423"
   integrity sha512-a30VEBm4PEdx1dRB7MFK7BejejvCvBronbLjht+sHuGYj8PHs7M/5Z+rt5lw551vZ7yfTCj4Vuyy3mSJytDWRQ==
+
+gsap@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.0.2.tgz#419682be9d4f1353080b920205e2d5f0587d95f6"
+  integrity sha512-BEDoe/MSOtsXFC83c2TcEmCS3XJ4tetIejh9zE3OGnRtf3uDgIRR+2u1Tu+nU36IZiaytqp97uyF2pWJkLoLZQ==
 
 gzip-size@^5.0.0:
   version "5.1.1"
@@ -5430,17 +5440,17 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-lint-staged@^10.0.0-beta.6:
-  version "10.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-10.0.0-beta.6.tgz#1f188085b21cd52b723550e1acd6dd719d040997"
-  integrity sha512-gpwm3Y8PbdONUbqDw7QYIoimvaoIdtkwQdh9CBcgTn9fTGDLHC1dP2dQEnz+mp5UvQXb3FDTezD25ss9oDrj3A==
+lint-staged@^10.0.0-beta.7:
+  version "10.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-10.0.0-beta.7.tgz#c6ee4e2b72d2106f2dd8955689ff0dfe26217891"
+  integrity sha512-YfuR1+uOt56hPAZ1gIPglzzP6zUV5A94LsFKbq4C9nFdTsNGetNFdET1opUYhWsBY/aYUfcmf1YEYH/+1R9bIA==
   dependencies:
     chalk "^3.0.0"
     commander "^4.0.1"
     cosmiconfig "^6.0.0"
     debug "^4.1.1"
     dedent "^0.7.0"
-    execa "^3.3.0"
+    execa "^3.4.0"
     listr "^0.14.3"
     log-symbols "^3.0.0"
     micromatch "^4.0.2"
@@ -7413,6 +7423,11 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.17, postcss@^7.0.2
     chalk "^2.4.2"
     source-map "^0.6.1"
     supports-color "^6.1.0"
+
+preload-it-extended-5@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/preload-it-extended-5/-/preload-it-extended-5-1.0.0.tgz#ac7c5a53f202e903b569ffbd493bf0472882b041"
+  integrity sha512-+iIaRsEDPgAhHAlQ+iwGwmGyPcPwD+0KokLFagqKKGsUBriualqa4CcJL8xIdXTfomzdQHQPgXYqp8efp49rKQ==
 
 prelude-ls@~1.1.2:
   version "1.1.2"
@@ -9687,6 +9702,11 @@ vue@^2.6.10:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ==
+
+vuex@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.1.2.tgz#a2863f4005aa73f2587e55c3fadf3f01f69c7d4d"
+  integrity sha512-ha3jNLJqNhhrAemDXcmMJMKf1Zu4sybMPr9KxJIuOpVcsDQlTBYLLladav2U+g1AvdYDG5Gs0xBTb0M5pXXYFQ==
 
 watchpack@^1.6.0:
   version "1.6.0"

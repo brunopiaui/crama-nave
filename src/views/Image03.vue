@@ -59,7 +59,7 @@ export default {
       duration: 1,
       opacity: 0,
       scale: 1.5,
-      delay: 1,
+      delay: 0,
       onComplete: () => {
         next()
       },
