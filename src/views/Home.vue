@@ -41,7 +41,7 @@ export default {
         '+=0.5'
       )
     }
-    this.$gsap.to(['.top'], {
+    this.$gsap.to(['.top1'], {
       duration: 1,
       opacity: 1,
     })
@@ -58,15 +58,16 @@ export default {
     let nextBackground = this.backgrounds(to.meta.image)
     this.setNextBackgroundAction(nextBackground)
 
-    this.$gsap.to(['.top'], {
+    this.$gsap.to(['.top1'], {
       duration: 1,
       opacity: 0,
     })
     this.tl.to('.home', {
-      duration: 1,
+      duration: 0.6,
       opacity: 0,
-      scale: 1.5,
+      scale: 1.1,
       delay: 0,
+      ease: 'Power2.easeInOut',
       onComplete: () => {
         next()
       },
