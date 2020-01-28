@@ -5,6 +5,8 @@ import Vuex from 'vuex'
 import { store } from './store'
 import gsap from 'gsap'
 
+require('@/assets/css/main.scss')
+
 Vue.config.productionTip = false
 
 Vue.use(Vuex)
