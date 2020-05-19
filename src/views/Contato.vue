@@ -8,7 +8,7 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
-  name: 'Image02',
+  name: 'Contato',
   data() {
     return {
       tl: null,
@@ -73,7 +73,7 @@ export default {
 .img {
   display: block;
   height: 100%;
-  background-image: url('../assets/images/image02.jpg');
+  background-image: url('../assets/images/image01.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

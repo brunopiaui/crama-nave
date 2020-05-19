@@ -1,14 +1,14 @@
 <template>
   <div class="img">
-    <div v-if="progressing" class="loading">{{ progress }}%</div>
-  </div>
+    <div v-if="progressing" class="loading">{{ progress }}%</div></div
+  >
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
-  name: 'Image01',
+  name: 'Biopaisagismo',
   data() {
     return {
       tl: null,
@@ -73,7 +73,7 @@ export default {
 .img {
   display: block;
   height: 100%;
-  background-image: url('../assets/images/image01.jpg');
+  background-image: url('../assets/images/image03.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

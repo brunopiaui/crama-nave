@@ -8,7 +8,7 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
-  name: 'Image03',
+  name: 'Midia',
   data() {
     return {
       tl: null,

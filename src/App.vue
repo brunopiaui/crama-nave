@@ -4,75 +4,103 @@
     :class="[nextBackground.type === 'image' ? 'image' : 'video']"
     :style="{ backgroundImage: `url(${nextBackground.url})` }"
   >
-    <div class="backTop"></div>
-    <header class="top">
+    <div
+      class="areaHamburguer"
+      @mouseover="isMover = true"
+      @mouseleave="isMover = false"
+    >
+    </div>
+
+    <div
+      :class="[menuHamburguer, { mover: isMover }]"
+      @mouseover="teste(), (isMover = true)"
+      @mouseleave="isMover = false"
+    >
+    </div>
+
+    <header :class="{ paddingTop: $route.path != '/' }" class="top">
       <div class="logo">
-        <p>logo</p>
-      </div>
+        <div style="position:relative;">
+          <router-link to="/">
+            <img
+              class="imgLogo"
+              :class="{ resizeLogo: $route.path != '/' }"
+              src="./assets/images/logo_home.svg"
+            />
+            <!-- <img
+              style="position:absolute; display:block; top:0;"
+              src="./assets/images/logo_int.svg"
+            /> -->
+          </router-link>
+        </div>
+        <div :class="{ displayBlock: $route.path != '/' }" class="pccLogo">
+          <span>Pense</span>
+          <span>Conecte</span>
+          <span>Cultive</span>
+        </div> </div
+      ><!-- logo -->
       <nav>
-        <router-link to="/">Home</router-link>|
-        <router-link to="/image01">Image01</router-link>|
-        <router-link to="/image02">Image02</router-link>|
-        <router-link to="/image03">Image03</router-link>|
-        <router-link to="/image04">Image04</router-link>
+        <a class="menu"
+          >O que fazemos
+          <router-link to="/consultoria">1</router-link>
+          <router-link to="/modelodenegocios">2</router-link>
+          <router-link to="/biopaisagismo">3</router-link>
+        </a>
+        <router-link class="menu" to="/bioviva">Bioviva</router-link>
+        <router-link class="menu" to="/midia">Mídia</router-link>
+        <router-link class="menu" to="/contato">Contato</router-link>
       </nav>
-      <div class="hamburguer">
-        <p>menu hamburguer</p>
+
+      <div>
+        <img src="./assets/images/som.svg" />
       </div>
     </header>
+
+    <!-- <header :class="{ displayNone: $route.path == '/' }" class="topInt">
+      <div class="logo">
+        <router-link to="/">
+          <img src="./assets/images/logo_int.svg"
+        /></router-link>
+      </div>
+      <nav>
+        <a class="menu"
+          >O que fazemos
+          <router-link to="/consultoria">1</router-link>
+          <router-link to="/modelodenegocios">2</router-link>
+          <router-link to="/biopaisagismo">3</router-link>
+        </a>
+        <router-link class="menu" to="/bioviva">Bioviva</router-link>
+        <router-link class="menu" to="/midia">Mídia</router-link>
+        <router-link class="menu" to="/contato">Contato</router-link>
+      </nav>
+
+      <div>
+        <img src="./assets/images/som.svg" />
+      </div>
+    </header> -->
+
+    <div class="backTop"></div>
     <router-view class="router" />
+
     <footer class="bottom">
       <div class="share">
-        <div>Contato.</div>
+        <div><span>Contato.</span></div>
         <div class="fb">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="12.444"
-            height="23"
-            viewBox="0 0 12.444 23"
-          >
-            <path
-              d="M3.474,12.979H3.221q-1.311,0-2.622,0c-.428,0-.594-.166-.595-.592q0-1.762,0-3.525c0-.43.176-.6.611-.6H3.474V5.732a6.311,6.311,0,0,1,.784-3.238A4.77,4.77,0,0,1,6.826.359a6.348,6.348,0,0,1,2.2-.366q1.415,0,2.83,0c.407,0,.588.178.589.585q0,1.64,0,3.28c0,.413-.173.581-.585.586-.773.008-1.547,0-2.319.034a1.083,1.083,0,0,0-1.024.556,1.607,1.607,0,0,0-.17.648c-.019.847-.008,1.7-.008,2.576h3.347c.446,0,.617.169.617.613q0,1.753,0,3.506c0,.442-.159.6-.6.6H8.332v9.354c0,.507-.155.661-.665.661H4.1c-.465,0-.627-.16-.627-.62q0-4.562,0-9.123Z"
-              fill="#FFF"
-            />
-          </svg>
+          <img src="./assets/images/fb_2.svg" />
         </div>
         <div class="inst">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="23"
-            height="22.993"
-            viewBox="0 0 23 22.993"
-          >
-            <path
-              d="M0,16.959V6.041c.008-.069.016-.138.023-.208A6.194,6.194,0,0,1,1.279,2.564,6.142,6.142,0,0,1,6.27.017C9.7-.017,13.134.008,16.565.007a6.086,6.086,0,0,1,3.124.8,6.168,6.168,0,0,1,3.286,5.516c.046,3.46.016,6.92.006,10.381a6.34,6.34,0,0,1-.125,1.168,6.117,6.117,0,0,1-1.5,3,6.3,6.3,0,0,1-3.917,2.068c-.161.022-.322.038-.483.056H6.034a.761.761,0,0,0-.093-.016,6.088,6.088,0,0,1-1.334-.236,6.4,6.4,0,0,1-4.551-5.3C.033,17.282.019,17.12,0,16.959ZM11.494,5.118a6.383,6.383,0,1,0,6.384,6.387A6.376,6.376,0,0,0,11.494,5.118Zm6.384-1.277A1.278,1.278,0,1,0,19.155,2.56,1.284,1.284,0,0,0,17.878,3.841Z"
-              transform="translate(0 0.001)"
-              fill="#FFF"
-            />
-            <path
-              d="M255.4,252.02a3.648,3.648,0,1,1-3.649,3.647A3.648,3.648,0,0,1,255.4,252.02Z"
-              transform="translate(-243.905 -244.167)"
-              fill="#FFF"
-            />
-          </svg>
+          <img src="./assets/images/insta_2.svg" />
         </div>
         <div class="mail">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="28.738"
-            height="22.99"
-            viewBox="0 0 28.738 22.99"
-          >
-            <path
-              d="M27.864,4H4.874A2.87,2.87,0,0,0,2.014,6.874L2,24.116A2.882,2.882,0,0,0,4.874,26.99h22.99a2.882,2.882,0,0,0,2.874-2.874V6.874A2.882,2.882,0,0,0,27.864,4Zm0,5.747L16.369,16.932,4.874,9.747V6.874l11.5,7.184L27.864,6.874Z"
-              transform="translate(-2 -4)"
-              fill="#FFF"
-            />
-          </svg>
+          <img src="./assets/images/mail_2.svg" />
         </div>
       </div>
-      <div class="ind">indicador</div>
-      <div class="sound">som</div>
+      <!-- <div class="ind">indicador</div> -->
+      <!-- <div class="sound">
+        <div>
+          ♫
+        </div>
+      </div> -->
     </footer> </div
   ><!-- app -->
 </template>
@@ -88,6 +116,8 @@ export default {
   data() {
     return {
       tl: null,
+      isMover: false,
+      menuHamburguer: 'menuHamburguer',
     }
   },
   computed: {
@@ -144,12 +174,47 @@ export default {
       'stopProgressingAction',
       'setProgressAction',
     ]),
+    teste: function() {
+      console.log('teste')
+      this.$gsap.from('.areaHamburguer', { duration: 1, scale: 8 })
+    },
   },
 }
 </script>
 
 <style lang="scss">
 $base-color: #ffffff;
+
+div.logo img.imgLogo {
+  transition: all 0.5s ease 0.4s;
+  width: 147.11px;
+}
+.resizeLogo {
+  width: 123.56px !important;
+  transition: all 0.5s ease 0s !important;
+  // transform: scale(0.7);
+}
+
+div.pccLogo {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 7px 0 0 16px;
+  pointer-events: none;
+  transition: opacity 0.8s ease 0s, max-width 0.8s ease 0s;
+  span {
+    font-size: 10px;
+    display: block;
+  }
+}
+.displayBlock {
+  max-width: 54px !important;
+  opacity: 1 !important;
+  transition: opacity 0.8s ease 0.3s, max-width 0.8s ease 0.3s !important;
+}
+
 #app {
   top: 0;
   left: 0;
@@ -175,21 +240,94 @@ $base-color: #ffffff;
     z-index: 998;
   }
 
+  div.areaHamburguer {
+    width: 250px;
+    height: 250px;
+    outline: 1px solid transparent;
+    position: absolute;
+    background: transparent;
+    border: 1px solid #ffffff;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  div.menuHamburguer {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 80% 75% 80% 79% / 70% 76% 76% 81%;
+    width: 55.88px;
+    height: 55px;
+    outline: 1px solid transparent;
+    cursor: pointer;
+    animation: morph 3s linear infinite;
+    transform-style: preserve-3d;
+    will-change: border-radius;
+    animation-play-state: paused;
+    transition: all 0.5s;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  div.menuHamburguer:hover {
+    background-color: aqua !important;
+    width: 60.88px;
+    height: 60px;
+  }
+
+  .mover {
+    animation-play-state: running !important;
+  }
+
+  // div.menuTeste:hover {
+  //   animation-play-state: running;
+  // }
+  @keyframes morph {
+    0%,
+    100% {
+      border-radius: 80% 75% 80% 79% / 70% 76% 76% 81%;
+      transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+    }
+    34% {
+      border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+      transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
+    }
+    50% {
+      transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+    }
+    67% {
+      border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+      transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
+    }
+  }
+
   header.top {
     position: fixed;
     z-index: 10;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     width: 94%;
     padding: 60px 3% 0 3%;
     z-index: 999;
+    transition: all 0.5s ease 0.4s;
 
-    a {
-      font-weight: bold;
+    a.menu {
+      font-weight: 300;
       color: $base-color;
       text-decoration: none;
+      font-size: 16px;
+      padding: 0 52.5px;
     }
+    div.logo {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  header.paddingTop {
+    padding-top: 40px !important;
+    transition: all 0.5s ease !important;
   }
 
   footer.bottom {
@@ -201,27 +339,39 @@ $base-color: #ffffff;
     width: 94%;
     padding: 0 3% 35px 3%;
     z-index: 999;
+    align-items: center;
 
     div.share {
       display: flex;
       flex-direction: row;
       align-items: center;
+      div span {
+        font-size: 16px;
+      }
       div.fb,
       div.inst,
       div.mail {
-        padding: 0 12px 0 12px;
+        padding: 0 13px 0 13px;
       }
     }
     div.ind {
       background-color: aqua;
+      flex-grow: 1;
     }
     div.sound {
-      background-color: blue;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      div.ative {
+        padding-bottom: 60px;
+        div.rotate {
+          -webkit-transform: rotate(-90deg);
+          -moz-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+          filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); //For IE support
+        }
+      }
     }
-  }
-
-  .router {
-    z-index: 5;
   }
 }
 </style>

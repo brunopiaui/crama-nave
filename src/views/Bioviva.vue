@@ -12,7 +12,7 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
-  name: 'Image04',
+  name: 'Bioviva',
   data() {
     return {
       tl: null,

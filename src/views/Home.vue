@@ -1,6 +1,18 @@
 <template>
   <div class="home">
     <div v-if="progressing" class="loading">{{ progress }}%</div>
+
+    <div class="contHome">
+      <div class="pcc">
+        <span>Pense</span>
+        <span>Conecte</span>
+        <span>Cultive</span>
+      </div>
+      <div class="diagrama">
+        <div style="font-size:40px;">DIAGRAMA</div>
+      </div>
+    </div>
+
     <!-- <div class="shape">
       <div class="text">
         <div class="textLogo">BIO</div>
@@ -102,6 +114,38 @@ export default {
       font-size: 40px;
       color: #fff;
       letter-spacing: 0.1em;
+    }
+  }
+  .contHome {
+    width: 90%;
+    height: 60%;
+    border: 2px solid #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .pcc {
+      border: 2px solid #333;
+      width: 40%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      span {
+        display: block;
+        font-size: 115px;
+        font-weight: 700;
+        mix-blend-mode: overlay;
+        line-height: 110px;
+      }
+    }
+    .diagrama {
+      border: 2px solid #ff0000;
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

@@ -1,0 +1,227 @@
+<template>
+  <div class="geralInt">
+    <div class="img"></div>
+    <div v-if="progressing" class="loading">{{ progress }}%</div>
+
+    <div class="backR">
+      <div class="backRshape"></div>
+      <div></div>
+    </div>
+    <div class="conteudo">
+      <div class="sideL">
+        <div class="blocoTitle">
+          <h3>Pense no amanhã</h3>
+          <h2>CONSULTORIA</h2>
+          <p
+            >Investir no meio que você produz é garantir continuidade de novas
+            conquistas.</p
+          >
+        </div>
+      </div>
+      <!-- sideL -->
+      <div class="sideR">
+        <div class="aspas">
+          <h4>Sua marca como parte do mundo</h4>
+          <p
+            >“Na consultoria você tem um aprofundamento da biodiversidade. Você
+            mostra que é possível ter um empreendimento usando esse conceito em
+            benefício do seu negócio, em seu benefício e do entorno.”</p
+          >
+          <span>Gustavo Martinelli</span>
+        </div>
+
+        <br />
+        <br />
+        <br />
+
+        <p
+          >Podemos construir o seu projeto ambiental e ajudá-lo no gerenciamento
+          da preservação do meio em que sua empresa atua. Acreditamos que o
+          planejamento e a administração dos recursos naturais são ganhos em um
+          empreendimento.</p
+        >
+        <p
+          >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+          licenciamentos, auditorias - as fases do processo de consultoria se
+          adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
+          criatividade, técnica e experiência para fornecer para você serviços
+          confiáveis e eficientes.
+        </p>
+        <p
+          >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+          licenciamentos, auditorias - as fases do processo de consultoria se
+          adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
+          criatividade, técnica e experiência para fornecer para você serviços
+          confiáveis e eficientes.
+        </p>
+        <p
+          >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+          licenciamentos, auditorias - as fases do processo de consultoria se
+          adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
+          criatividade, técnica e experiência para fornecer para você serviços
+          confiáveis e eficientes.
+        </p>
+        <p
+          >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+          licenciamentos, auditorias - as fases do processo de consultoria se
+          adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
+          criatividade, técnica e experiência para fornecer para você serviços
+          confiáveis e eficientes.
+        </p>
+        <p
+          >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+          licenciamentos, auditorias - as fases do processo de consultoria se
+          adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
+          criatividade, técnica e experiência para fornecer para você serviços
+          confiáveis e eficientes.
+        </p>
+        <p
+          >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+          licenciamentos, auditorias - as fases do processo de consultoria se
+          adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
+          criatividade, técnica e experiência para fornecer para você serviços
+          confiáveis e eficientes.
+        </p>
+        <p
+          >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+          licenciamentos, auditorias - as fases do processo de consultoria se
+          adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
+          criatividade, técnica e experiência para fornecer para você serviços
+          confiáveis e eficientes.
+        </p>
+        <p
+          >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+          licenciamentos, auditorias - as fases do processo de consultoria se
+          adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
+          criatividade, técnica e experiência para fornecer para você serviços
+          confiáveis e eficientes.
+        </p>
+        <p
+          >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+          licenciamentos, auditorias - as fases do processo de consultoria se
+          adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
+          criatividade, técnica e experiência para fornecer para você serviços
+          confiáveis e eficientes.
+        </p>
+      </div>
+      <!-- sideR --> </div
+    ><!-- conteudo -->
+  </div>
+</template>
+
+<script>
+import { mapGetters, mapActions } from 'vuex'
+
+export default {
+  name: 'Consultoria',
+  data() {
+    return {
+      tl: null,
+    }
+  },
+  computed: {
+    ...mapGetters(['loading', 'backgrounds', 'progressing', 'progress']),
+  },
+  created() {
+    this.tl = this.$gsap.timeline()
+  },
+  mounted() {
+    if (this.progressing) {
+      this.tl.to(
+        '.loading',
+        {
+          duration: 1,
+          opacity: 0,
+          onComplete: () => {
+            this.stopProgressingAction()
+          },
+        },
+        '+=0.5'
+      )
+    }
+    this.$gsap.to(['.top1'], {
+      duration: 1,
+      opacity: 1,
+    })
+  },
+  methods: {
+    ...mapActions([
+      'startLoadingAction',
+      'stopLoadingAction',
+      'setNextBackgroundAction',
+      'stopProgressingAction',
+    ]),
+  },
+  beforeRouteLeave(to, from, next) {
+    let nextBackground = this.backgrounds(to.meta.image)
+    this.setNextBackgroundAction(nextBackground)
+
+    this.$gsap.to(['.top1'], {
+      duration: 1,
+      opacity: 0,
+    })
+    this.tl.to('.img', {
+      duration: 0.6,
+      opacity: 0,
+      scale: 1.1,
+      delay: 0,
+      ease: 'Power2.easeInOut',
+      onComplete: () => {
+        next()
+      },
+    })
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+div.geralInt {
+  position: relative;
+  height: 100%;
+}
+
+.img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-image: url('../assets/images/image01.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  z-index: 1;
+}
+
+div.conteudo {
+  max-width: 1180px;
+  margin: 0 auto;
+  border: solid 1px #ff0000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+  z-index: 999;
+  position: relative;
+  div.sideL {
+    width: 30%;
+    padding: 180px 0 0 0;
+  }
+  div.sideR {
+    width: 55%;
+    overflow: auto !important;
+    padding: 150px 0 0 0;
+  }
+}
+div.geralInt {
+  position: relative;
+  z-index: 997 !important;
+}
+div.backConteudo {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  background-color: bisque;
+}
+</style>
