@@ -52,7 +52,76 @@
       </nav>
 
       <div>
-        <img src="./assets/images/som.svg" />
+        <!-- <img src="./assets/images/som.svg" /> -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="37.734"
+          height="37.004"
+          viewBox="0 0 37.734 37.004"
+          style="cursor:pointer;"
+          @click="cliqueSom"
+        >
+          <g
+            id="Component_13_31"
+            data-name="Component 13 – 31"
+            transform="translate(0.592 0.5)"
+          >
+            <path
+              id="Path_310"
+              data-name="Path 310"
+              d="M18.763,0S11.984,0,7.012,4.067-1.574,14.914.685,23.048s9.942,11.3,12.654,12.2,8.135,2.26,16.721-3.615S38.2,14.462,32.321,6.779C28.506,1.79,24.638,0,18.763,0Z"
+              transform="translate(0.003)"
+              fill="none"
+              stroke="#fff"
+              stroke-width="1"
+            />
+            <g
+              id="Group_157"
+              data-name="Group 157"
+              transform="translate(12.315 9.412)"
+              class="cu"
+            >
+              <g
+                id="Group_154"
+                data-name="Group 154"
+                transform="translate(0 0)"
+              >
+                <g id="_x37_tz7TN.tif_3_">
+                  <path
+                    id="Path_135"
+                    data-name="Path 135"
+                    d="M11.687,4.9h-.015c.006-1.352.015-2.693-.015-4.031A.883.883,0,0,0,10.234.183C9.4.8,8.623,1.5,7.854,2.136L5.075,4.443a1.343,1.343,0,0,1-.764.267c-1.082.03-2.165,0-3.247.018-.692.01-1.053.349-1.058,1Q0,7.131,0,8.538t.009,2.813c0,.646.366.984,1.058,1,1.082.017,2.165-.011,3.247.018a1.337,1.337,0,0,1,.764.267l2.779,2.307c.768.636,1.546,1.331,2.38,1.953a.883.883,0,0,0,1.423-.686c.03-1.338.019-2.679.015-4.031h.015V4.9Z"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="1"
+                  />
+                </g>
+              </g>
+            </g>
+            <g
+              id="Group_159"
+              data-name="Group 159"
+              transform="translate(21.718 11.336)"
+              opacity="0"
+              class="cu2"
+            >
+              <path
+                id="Path_311"
+                data-name="Path 311"
+                class="cls-2"
+                d="M0,.837A4.669,4.669,0,0,1,.7,1.312,4.785,4.785,0,0,1,2.4,6.4C2.014,7.783,0,9.238,0,9.238"
+                transform="translate(0.003 1.439)"
+              />
+              <path
+                id="Path_312"
+                data-name="Path 312"
+                class="cls-2"
+                d="M0,.837a7.2,7.2,0,0,1,1.09.733A7.378,7.378,0,0,1,3.7,9.41C3.107,11.547,0,13.791,0,13.791"
+                transform="translate(2.302 -0.837)"
+              />
+            </g>
+          </g>
+        </svg>
       </div>
     </header>
 
@@ -78,7 +147,6 @@
         <img src="./assets/images/som.svg" />
       </div>
     </header> -->
-
     <div class="backTop"></div>
     <router-view class="router" />
 
@@ -118,6 +186,7 @@ export default {
       tl: null,
       isMover: false,
       menuHamburguer: 'menuHamburguer',
+      cliqueSomAtivo: false,
     }
   },
   computed: {
@@ -178,6 +247,19 @@ export default {
       console.log('teste')
       this.$gsap.from('.areaHamburguer', { duration: 1, scale: 8 })
     },
+    cliqueSom: function() {
+      if (this.cliqueSomAtivo === false) {
+        console.log('cu')
+        this.$gsap.to('.cu', { x: 8.401, ease: 'expo.out', duration: 0.5 })
+        this.$gsap.to('.cu2', { opacity: 1, ease: 'expo.out', duration: 0.5 })
+        this.cliqueSomAtivo = true
+      } else {
+        console.log('cu2')
+        this.$gsap.to('.cu', { x: 12.315, ease: 'expo.out', duration: 0.5 })
+        this.$gsap.to('.cu2', { opacity: 0, ease: 'expo.out', duration: 0.5 })
+        this.cliqueSomAtivo = false
+      }
+    },
   },
 }
 </script>
@@ -228,6 +310,7 @@ div.pccLogo {
 
   div.backTop {
     position: fixed;
+    top: 0;
     width: 100%;
     height: 430px;
     background-image: -webkit-gradient(

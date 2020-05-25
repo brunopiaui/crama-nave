@@ -44,6 +44,80 @@ html {
   background-color: $base-color;
 }
 
+div.geralInt {
+  position: relative;
+  z-index: 997 !important;
+  height: 100%;
+}
+
+div.backConteudo {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  background-color: bisque;
+}
+
+div.conteudo {
+  max-width: 1180px;
+  margin: 0 auto;
+  border: solid 1px #ff0000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+  z-index: 999;
+  position: relative;
+  div.sideL {
+    width: 30%;
+    padding: 180px 0 0 0;
+    div.blocoTitle h3 {
+      font-size: 16px;
+      font-weight: 400;
+      padding: 0 0 10px 0;
+    }
+    div.blocoTitle h2 {
+      font-size: 44px;
+      font-weight: 700;
+      padding: 0 0 0 0;
+    }
+    div.blocoTitle p {
+      font-size: 14px;
+      font-weight: 300;
+    }
+  }
+  div.sideR {
+    width: 55%;
+    overflow: auto !important;
+    padding: 250px 0 0 0;
+    div.aspas {
+      padding: 0 0 80px 80px;
+      h4 {
+        font-size: 24px;
+        font-weight: 400;
+        padding: 0 0 20px 0;
+      }
+      p {
+        font-size: 18px;
+        font-style: italic;
+        font-weight: 300;
+      }
+      span {
+        font-size: 20px;
+        font-weight: 700;
+        font-style: italic;
+        display: block;
+        padding: 10px 0 0 0;
+      }
+    }
+    p {
+      font-size: 16px;
+      font-weight: 300;
+    }
+  }
+}
+
 div.backR {
   position: fixed;
   height: 100%;

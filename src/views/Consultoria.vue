@@ -7,6 +7,8 @@
       <div class="backRshape"></div>
       <div></div>
     </div>
+    <!-- backR -->
+
     <div class="conteudo">
       <div class="sideL">
         <div class="blocoTitle">
@@ -17,8 +19,10 @@
             conquistas.</p
           >
         </div>
+        <!--blocoTitle-->
       </div>
       <!-- sideL -->
+
       <div class="sideR">
         <div class="aspas">
           <h4>Sua marca como parte do mundo</h4>
@@ -29,10 +33,7 @@
           >
           <span>Gustavo Martinelli</span>
         </div>
-
-        <br />
-        <br />
-        <br />
+        <!-- aspas -->
 
         <p
           >Podemos construir o seu projeto ambiental e ajudá-lo no gerenciamento
@@ -40,6 +41,7 @@
           planejamento e a administração dos recursos naturais são ganhos em um
           empreendimento.</p
         >
+        <br />
         <p
           >Pesquisas, diagnósticos, operações, planos de ação, instalações,
           licenciamentos, auditorias - as fases do processo de consultoria se
@@ -47,6 +49,7 @@
           criatividade, técnica e experiência para fornecer para você serviços
           confiáveis e eficientes.
         </p>
+        <br />
         <p
           >Pesquisas, diagnósticos, operações, planos de ação, instalações,
           licenciamentos, auditorias - as fases do processo de consultoria se
@@ -54,6 +57,7 @@
           criatividade, técnica e experiência para fornecer para você serviços
           confiáveis e eficientes.
         </p>
+        <br />
         <p
           >Pesquisas, diagnósticos, operações, planos de ação, instalações,
           licenciamentos, auditorias - as fases do processo de consultoria se
@@ -61,6 +65,7 @@
           criatividade, técnica e experiência para fornecer para você serviços
           confiáveis e eficientes.
         </p>
+        <br />
         <p
           >Pesquisas, diagnósticos, operações, planos de ação, instalações,
           licenciamentos, auditorias - as fases do processo de consultoria se
@@ -68,6 +73,7 @@
           criatividade, técnica e experiência para fornecer para você serviços
           confiáveis e eficientes.
         </p>
+        <br />
         <p
           >Pesquisas, diagnósticos, operações, planos de ação, instalações,
           licenciamentos, auditorias - as fases do processo de consultoria se
@@ -75,6 +81,7 @@
           criatividade, técnica e experiência para fornecer para você serviços
           confiáveis e eficientes.
         </p>
+        <br />
         <p
           >Pesquisas, diagnósticos, operações, planos de ação, instalações,
           licenciamentos, auditorias - as fases do processo de consultoria se
@@ -82,6 +89,7 @@
           criatividade, técnica e experiência para fornecer para você serviços
           confiáveis e eficientes.
         </p>
+        <br />
         <p
           >Pesquisas, diagnósticos, operações, planos de ação, instalações,
           licenciamentos, auditorias - as fases do processo de consultoria se
@@ -89,6 +97,7 @@
           criatividade, técnica e experiência para fornecer para você serviços
           confiáveis e eficientes.
         </p>
+        <br />
         <p
           >Pesquisas, diagnósticos, operações, planos de ação, instalações,
           licenciamentos, auditorias - as fases do processo de consultoria se
@@ -96,6 +105,7 @@
           criatividade, técnica e experiência para fornecer para você serviços
           confiáveis e eficientes.
         </p>
+        <br />
         <p
           >Pesquisas, diagnósticos, operações, planos de ação, instalações,
           licenciamentos, auditorias - as fases do processo de consultoria se
@@ -103,10 +113,17 @@
           criatividade, técnica e experiência para fornecer para você serviços
           confiáveis e eficientes.
         </p>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
-      <!-- sideR --> </div
-    ><!-- conteudo -->
+      <!-- sideR -->
+    </div>
+    <!-- conteudo -->
   </div>
+  <!-- geralInt -->
 </template>
 
 <script>
@@ -175,11 +192,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div.geralInt {
-  position: relative;
-  height: 100%;
-}
-
 .img {
   display: block;
   height: 100%;
@@ -190,38 +202,5 @@ div.geralInt {
   background-size: cover;
   position: fixed;
   z-index: 1;
-}
-
-div.conteudo {
-  max-width: 1180px;
-  margin: 0 auto;
-  border: solid 1px #ff0000;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 100%;
-  z-index: 999;
-  position: relative;
-  div.sideL {
-    width: 30%;
-    padding: 180px 0 0 0;
-  }
-  div.sideR {
-    width: 55%;
-    overflow: auto !important;
-    padding: 150px 0 0 0;
-  }
-}
-div.geralInt {
-  position: relative;
-  z-index: 997 !important;
-}
-div.backConteudo {
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 60%;
-  height: 100%;
-  background-color: bisque;
 }
 </style>
