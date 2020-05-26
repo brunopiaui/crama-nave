@@ -1,14 +1,36 @@
 <template>
   <div class="home">
+    <div class="backImg" :class="{ hovering: hover }"></div>
+
     <div v-if="progressing" class="loading">{{ progress }}%</div>
 
-    <div class="backTop"></div>
+    <!-- <div class="backTop"></div> -->
 
     <div class="contHome">
       <div class="pcc">
-        <span>Pense</span>
-        <span>Conecte</span>
-        <span>Cultive</span>
+        <router-link to="/consultoria">
+          <span
+            class="hoverPcc"
+            :class="{ hovering: hover1 }"
+            @mouseover="mouseoverPcc1"
+            @mouseleave="mouseleavePcc1"
+            >Pense</span
+          >
+        </router-link>
+        <span
+          class="hoverPcc"
+          :class="{ hovering: hover2 }"
+          @mouseover="mouseoverPcc2"
+          @mouseleave="mouseleavePcc2"
+          >Conecte</span
+        >
+        <span
+          class="hoverPcc"
+          :class="{ hovering: hover3 }"
+          @mouseover="mouseoverPcc3"
+          @mouseleave="mouseleavePcc3"
+          >Cultive</span
+        >
       </div>
       <div class="diagrama">
         <div class="elem1dia">
@@ -37,13 +59,13 @@
             <path
               id="Path_304"
               data-name="Path 304"
-              class="cls-2"
+              class="cls-2 testeee"
               d="M116.785,0S74.6,0,43.659,25.313-9.78,92.815,4.283,143.441s61.876,70.314,78.752,75.939,50.626,14.063,104.065-22.5S237.726,90,201.162,42.188C177.424,11.138,153.349,0,116.785,0Z"
               transform="matrix(0.848, -0.53, 0.53, 0.848, 0.732, 121.52)"
             />
           </svg>
         </div>
-        <div class="elem3dia">
+        <div class="elem3dia" :class="{ hovering: hover }">
           <span>BIO</span>
           <span>DIVER</span>
           <span>SIDADE</span>
@@ -1565,7 +1587,7 @@
             </g>
           </svg>
         </div>
-        <div class="link1dia">
+        <div class="link1dia" :class="{ hovering: hover1 }">
           <div class="link1diaBtexto">
             <span class="link1diaPense">Pense</span>
             <span class="link1diaConsultoria">CONSULTORIA</span>
@@ -1587,7 +1609,7 @@
             </svg>
           </div>
         </div>
-        <div class="link2dia">
+        <div class="link2dia" :class="{ hovering: hover3 }">
           <div class="link2diaSvg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1609,7 +1631,7 @@
             <span class="link2diaConsultoria">BIOPAISAGISMO</span>
           </div>
         </div>
-        <div class="link3dia">
+        <div class="link3dia" :class="{ hovering: hover2 }">
           <div class="link3diaSvg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1652,6 +1674,10 @@ export default {
   data() {
     return {
       tl: null,
+      hover: false,
+      hover1: false,
+      hover2: false,
+      hover3: false,
     }
   },
   computed: {
@@ -1659,6 +1685,7 @@ export default {
   },
   created() {
     this.tl = this.$gsap.timeline()
+    console.log(this.hover)
   },
   mounted() {
     if (this.progressing) {
@@ -1686,6 +1713,48 @@ export default {
       'setNextBackgroundAction',
       'stopProgressingAction',
     ]),
+    mouseoverPcc1() {
+      this.hover = true
+      this.hover2 = true
+      this.hover3 = true
+      this.$gsap.to('.testeee', {
+        scale: 1.2,
+        opacity: 0.3,
+        ease: 'linear',
+        duration: 0.2,
+      })
+    },
+    mouseleavePcc1() {
+      this.hover = false
+      this.hover2 = false
+      this.hover3 = false
+      this.$gsap.to('.testeee', {
+        scale: 1,
+        opacity: 1,
+        ease: 'linear',
+        duration: 0.2,
+      })
+    },
+    mouseoverPcc2() {
+      this.hover = true
+      this.hover1 = true
+      this.hover3 = true
+    },
+    mouseleavePcc2() {
+      this.hover = false
+      this.hover1 = false
+      this.hover3 = false
+    },
+    mouseoverPcc3() {
+      this.hover = true
+      this.hover1 = true
+      this.hover2 = true
+    },
+    mouseleavePcc3() {
+      this.hover = false
+      this.hover1 = false
+      this.hover2 = false
+    },
   },
   beforeRouteLeave(to, from, next) {
     let nextBackground = this.backgrounds(to.meta.image)
@@ -1715,10 +1784,10 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100%;
-  background-image: url('../assets/images/image00.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  // background-image: url('../assets/images/image00.jpg');
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // background-size: cover;
   .shape {
     display: flex;
     align-items: center;
@@ -1737,6 +1806,25 @@ export default {
       letter-spacing: 0.1em;
     }
   }
+
+  .backImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    background-image: url('../assets/images/image00.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: blur(0);
+    -webkit-filter: blur(0);
+    transition: all 0.3s;
+  }
+  .hovering {
+    filter: blur(5px) !important;
+    -webkit-filter: blur(5px) !important;
+  }
+
   .contHome {
     width: 85%;
     height: 60%;
@@ -1757,6 +1845,12 @@ export default {
         font-weight: 700;
         mix-blend-mode: overlay;
         line-height: 110px;
+      }
+      span.hoverPcc {
+        cursor: pointer;
+        filter: blur(0);
+        -webkit-filter: blur(0);
+        transition: all 0.3s;
       }
     }
     .diagrama {
@@ -1779,6 +1873,9 @@ export default {
       .elem3dia {
         position: absolute;
         margin: 0 0 0 -90px;
+        filter: blur(0);
+        -webkit-filter: blur(0);
+        transition: all 0.3s;
         span {
           display: block;
           font-size: 37px;
@@ -1798,6 +1895,9 @@ export default {
         position: absolute;
         margin: -110px 0 0 -230px;
         display: flex;
+        filter: blur(0);
+        -webkit-filter: blur(0);
+        transition: all 0.3s;
         .link1diaBtexto {
           text-align: right;
         }
@@ -1824,6 +1924,9 @@ export default {
         display: flex;
         align-items: flex-end;
         margin: -50px 0 0 262px;
+        filter: blur(0);
+        -webkit-filter: blur(0);
+        transition: all 0.3s;
         .link2diaBtexto {
           text-align: left;
         }
@@ -1849,6 +1952,9 @@ export default {
         position: absolute;
         display: flex;
         margin: 210px 0 0 70px;
+        filter: blur(0);
+        -webkit-filter: blur(0);
+        transition: all 0.3s;
         .link3diaBtexto {
           text-align: left;
         }

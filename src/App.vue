@@ -147,7 +147,6 @@
         <img src="./assets/images/som.svg" />
       </div>
     </header> -->
-    <div class="backTop"></div>
     <router-view class="router" />
 
     <footer class="bottom">
@@ -249,12 +248,10 @@ export default {
     },
     cliqueSom: function() {
       if (this.cliqueSomAtivo === false) {
-        console.log('cu')
         this.$gsap.to('.cu', { x: 8.401, ease: 'expo.out', duration: 0.5 })
         this.$gsap.to('.cu2', { opacity: 1, ease: 'expo.out', duration: 0.5 })
         this.cliqueSomAtivo = true
       } else {
-        console.log('cu2')
         this.$gsap.to('.cu', { x: 12.315, ease: 'expo.out', duration: 0.5 })
         this.$gsap.to('.cu2', { opacity: 0, ease: 'expo.out', duration: 0.5 })
         this.cliqueSomAtivo = false
