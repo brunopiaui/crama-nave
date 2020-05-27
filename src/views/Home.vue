@@ -1813,56 +1813,56 @@ export default {
     height: 100%;
     background-color: #333;
     background-image: url('../assets/images/image00.jpg');
+    -webkit-filter: blur(0);
+    filter: blur(0);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    filter: blur(0);
-    -webkit-filter: blur(0);
     transition: all 0.3s;
   }
   .hovering {
-    filter: blur(5px) !important;
     -webkit-filter: blur(5px) !important;
+    filter: blur(5px) !important;
   }
 
   .contHome {
-    width: 85%;
-    height: 60%;
     // border: 2px solid #fff;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 85%;
+    height: 60%;
     .pcc {
-      // border: 2px solid #333;
-      width: 40%;
-      height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      // border: 2px solid #333;
+      width: 40%;
+      height: 100%;
       span {
         display: block;
         font-size: 115px;
         font-weight: 700;
-        mix-blend-mode: overlay;
         line-height: 110px;
+        mix-blend-mode: overlay;
       }
       span.hoverPcc {
         cursor: pointer;
-        filter: blur(0);
         -webkit-filter: blur(0);
+        filter: blur(0);
         transition: all 0.3s;
       }
     }
     .diagrama {
+      position: relative;
       // border: 2px solid #ff0000;
       z-index: 99999999;
-      width: 50%;
-      height: 100%;
       display: flex;
       flex-direction: row;
-      justify-content: center;
       align-items: center;
-      position: relative;
+      justify-content: center;
+      width: 50%;
+      height: 100%;
       .elem1dia {
         position: absolute;
       }
@@ -1873,8 +1873,8 @@ export default {
       .elem3dia {
         position: absolute;
         margin: 0 0 0 -90px;
-        filter: blur(0);
         -webkit-filter: blur(0);
+        filter: blur(0);
         transition: all 0.3s;
         span {
           display: block;
@@ -1893,10 +1893,10 @@ export default {
       }
       .link1dia {
         position: absolute;
-        margin: -110px 0 0 -230px;
         display: flex;
-        filter: blur(0);
+        margin: -110px 0 0 -230px;
         -webkit-filter: blur(0);
+        filter: blur(0);
         transition: all 0.3s;
         .link1diaBtexto {
           text-align: right;
@@ -1910,9 +1910,9 @@ export default {
           display: block;
         }
         span.link1diaPense {
+          margin: 0 0 3px 0;
           font-size: 14px;
           font-weight: 500;
-          margin: 0 0 3px 0;
         }
         span.link1diaConsultoria {
           font-size: 14px;
@@ -1924,24 +1924,24 @@ export default {
         display: flex;
         align-items: flex-end;
         margin: -50px 0 0 262px;
-        filter: blur(0);
         -webkit-filter: blur(0);
+        filter: blur(0);
         transition: all 0.3s;
         .link2diaBtexto {
           text-align: left;
         }
         .link2diaSvg {
           position: absolute;
-          left: -25px;
           bottom: -10px;
+          left: -25px;
         }
         span {
           display: block;
         }
         span.link2diaPense {
+          margin: 0 0 3px 0;
           font-size: 14px;
           font-weight: 500;
-          margin: 0 0 3px 0;
         }
         span.link2diaConsultoria {
           font-size: 14px;
@@ -1952,24 +1952,24 @@ export default {
         position: absolute;
         display: flex;
         margin: 210px 0 0 70px;
-        filter: blur(0);
         -webkit-filter: blur(0);
+        filter: blur(0);
         transition: all 0.3s;
         .link3diaBtexto {
           text-align: left;
         }
         .link3diaSvg {
           position: absolute;
-          left: -25px;
           top: -10px;
+          left: -25px;
         }
         span {
           display: block;
         }
         span.link3diaPense {
+          margin: 0 0 3px 0;
           font-size: 14px;
           font-weight: 500;
-          margin: 0 0 3px 0;
         }
         span.link3diaConsultoria {
           font-size: 14px;

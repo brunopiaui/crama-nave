@@ -157,9 +157,20 @@ export default {
         '+=0.5'
       )
     }
-    this.$gsap.to(['.top1'], {
+    this.tl.from(['.sideL'], {
       duration: 1,
-      opacity: 1,
+      opacity: 0,
+    })
+    this.tl.from(['.sideR'], {
+      duration: 1,
+      opacity: 0,
+    })
+    this.tl.from('p', {
+      duration: 1.5,
+      opacity: 0,
+      y: 20,
+      stagger: 0.25,
+      ease: 'back.out',
     })
   },
   methods: {
@@ -174,7 +185,7 @@ export default {
     let nextBackground = this.backgrounds(to.meta.image)
     this.setNextBackgroundAction(nextBackground)
 
-    this.$gsap.to(['.top1'], {
+    this.$gsap.to(['.conteudo'], {
       duration: 1,
       opacity: 0,
     })
@@ -194,14 +205,14 @@ export default {
 
 <style lang="scss" scoped>
 .img {
+  position: fixed;
+  z-index: 1;
   display: block;
-  height: 100%;
   width: 100%;
+  height: 100%;
   background-image: url('../assets/images/image01.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  position: fixed;
-  z-index: 1;
 }
 </style>

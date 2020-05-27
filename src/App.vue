@@ -18,13 +18,13 @@
     >
     </div>
 
-    <header :class="{ paddingTop: $route.path != '/' }" class="top">
+    <header :class="{ paddingTop: inRouterHome }" class="top">
       <div class="logo">
         <div style="position:relative;">
           <router-link to="/">
             <img
               class="imgLogo"
-              :class="{ resizeLogo: $route.path != '/' }"
+              :class="{ resizeLogo: inRouterHome }"
               src="./assets/images/logo_home.svg"
             />
             <!-- <img
@@ -33,7 +33,7 @@
             /> -->
           </router-link>
         </div>
-        <div :class="{ displayBlock: $route.path != '/' }" class="pccLogo">
+        <div :class="{ displayBlock: inRouterHome }" class="pccLogo">
           <span>Pense</span>
           <span>Conecte</span>
           <span>Cultive</span>
@@ -190,6 +190,9 @@ export default {
   },
   computed: {
     ...mapGetters(['loading', 'nextBackground', 'progressing', 'progress']),
+    inRouterHome() {
+      return this.$route.path !== '/'
+    },
   },
   created() {
     this.tl = this.$gsap.timeline()
@@ -262,11 +265,11 @@ export default {
 </script>
 
 <style lang="scss">
-$base-color: #ffffff;
+$base-color: #fff;
 
 div.logo img.imgLogo {
-  transition: all 0.5s ease 0.4s;
   width: 147.11px;
+  transition: all 0.5s ease 0.4s;
 }
 .resizeLogo {
   width: 123.56px !important;
@@ -275,17 +278,17 @@ div.logo img.imgLogo {
 }
 
 div.pccLogo {
-  max-width: 0;
-  opacity: 0;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+  max-width: 0;
   padding: 7px 0 0 16px;
+  overflow: hidden;
   pointer-events: none;
+  opacity: 0;
   transition: opacity 0.8s ease 0s, max-width 0.8s ease 0s;
   span {
-    font-size: 10px;
     display: block;
+    font-size: 10px;
   }
 }
 .displayBlock {
@@ -308,6 +311,7 @@ div.pccLogo {
   div.backTop {
     position: fixed;
     top: 0;
+    z-index: 998;
     width: 100%;
     height: 430px;
     background-image: -webkit-gradient(
@@ -317,41 +321,40 @@ div.pccLogo {
       from(rgba(0, 0, 0, 0.6)),
       to(rgba(0, 0, 0, 0))
     );
-    z-index: 998;
   }
 
   div.areaHamburguer {
-    width: 250px;
-    height: 250px;
-    outline: 1px solid transparent;
     position: absolute;
-    background: transparent;
-    border: 1px solid #ffffff;
     right: 10px;
     bottom: 10px;
+    width: 250px;
+    height: 250px;
+    background: transparent;
+    border: 1px solid #fff;
+    outline: 1px solid transparent;
   }
 
   div.menuHamburguer {
-    background: rgba(255, 255, 255, 1);
-    border-radius: 80% 75% 80% 79% / 70% 76% 76% 81%;
-    width: 55.88px;
-    height: 55px;
-    outline: 1px solid transparent;
-    cursor: pointer;
-    animation: morph 3s linear infinite;
-    transform-style: preserve-3d;
-    will-change: border-radius;
-    animation-play-state: paused;
-    transition: all 0.5s;
     position: absolute;
     right: 10px;
     bottom: 10px;
+    width: 55.88px;
+    height: 55px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 80% 75% 80% 79% / 70% 76% 76% 81%;
+    outline: 1px solid transparent;
+    transition: all 0.5s;
+    animation: morph 3s linear infinite;
+    animation-play-state: paused;
+    transform-style: preserve-3d;
+    will-change: border-radius;
   }
 
   div.menuHamburguer:hover {
-    background-color: aqua !important;
     width: 60.88px;
     height: 60px;
+    background-color: aqua !important;
   }
 
   .mover {
@@ -383,21 +386,21 @@ div.pccLogo {
   header.top {
     position: fixed;
     z-index: 10;
+    z-index: 999;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     width: 94%;
     padding: 60px 3% 0 3%;
-    z-index: 999;
     transition: all 0.5s ease 0.4s;
 
     a.menu {
+      padding: 0 52.5px;
+      font-size: 16px;
       font-weight: 300;
       color: $base-color;
       text-decoration: none;
-      font-size: 16px;
-      padding: 0 52.5px;
     }
     div.logo {
       display: flex;
@@ -413,13 +416,13 @@ div.pccLogo {
   footer.bottom {
     position: fixed;
     bottom: 0;
+    z-index: 999;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     width: 94%;
     padding: 0 3% 35px 3%;
-    z-index: 999;
-    align-items: center;
 
     div.share {
       display: flex;
@@ -435,8 +438,8 @@ div.pccLogo {
       }
     }
     div.ind {
-      background-color: aqua;
       flex-grow: 1;
+      background-color: aqua;
     }
     div.sound {
       display: flex;
@@ -445,10 +448,10 @@ div.pccLogo {
       div.ative {
         padding-bottom: 60px;
         div.rotate {
+          filter: progid:dximagetransform.microsoft.basicimage(rotation=3); // For IE support
           -webkit-transform: rotate(-90deg);
           -moz-transform: rotate(-90deg);
           transform: rotate(-90deg);
-          filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); //For IE support
         }
       }
     }

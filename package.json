@@ -14,6 +14,7 @@
     "gsap": "^3.0.2",
     "preload-it-extended-5": "^1.0.0",
     "vue": "^2.6.10",
+    "vue-progressbar": "^0.7.5",
     "vue-router": "^3.0.3",
     "vuex": "^3.1.2",
     "yarn": "^1.21.1"
