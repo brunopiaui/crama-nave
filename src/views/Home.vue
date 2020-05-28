@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="backImg" :class="{ hovering: hover }"></div>
+    <div class="backImg"></div>
 
     <div v-if="progressing" class="loading">{{ progress }}%</div>
 
@@ -8,25 +8,20 @@
 
     <div class="contHome">
       <div class="pcc">
-        <router-link to="/consultoria">
-          <span
-            class="hoverPcc"
-            :class="{ hovering: hover1 }"
-            @mouseover="mouseoverPcc1"
-            @mouseleave="mouseleavePcc1"
-            >Pense</span
-          >
-        </router-link>
         <span
-          class="hoverPcc"
-          :class="{ hovering: hover2 }"
+          class="hoverPcc hoverPcc1"
+          @mouseover="mouseoverPcc1"
+          @mouseleave="mouseleavePcc1"
+          >Pense</span
+        >
+        <span
+          class="hoverPcc hoverPcc2"
           @mouseover="mouseoverPcc2"
           @mouseleave="mouseleavePcc2"
           >Conecte</span
         >
         <span
-          class="hoverPcc"
-          :class="{ hovering: hover3 }"
+          class="hoverPcc hoverPcc3"
           @mouseover="mouseoverPcc3"
           @mouseleave="mouseleavePcc3"
           >Cultive</span
@@ -65,7 +60,7 @@
             />
           </svg>
         </div>
-        <div class="elem3dia" :class="{ hovering: hover }">
+        <div class="elem3dia">
           <span>BIO</span>
           <span>DIVER</span>
           <span>SIDADE</span>
@@ -1587,29 +1582,39 @@
             </g>
           </svg>
         </div>
-        <div class="link1dia" :class="{ hovering: hover1 }">
-          <div class="link1diaBtexto">
-            <span class="link1diaPense">Pense</span>
-            <span class="link1diaConsultoria">CONSULTORIA</span>
-          </div>
-          <div class="link1diaSvg">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18.738"
-              height="18.385"
-              viewBox="0 0 18.738 18.385"
-            >
-              <path
-                id="Path_339"
-                data-name="Path 339"
-                class="cls-6"
-                d="M9.058,0A10,10,0,0,0,3.384,1.964,8.624,8.624,0,0,0,.33,11.129c1.091,3.928,4.8,5.455,6.11,5.892s3.928,1.091,8.074-1.746,3.928-8.292,1.091-12A7.354,7.354,0,0,0,9.058,0Z"
-                transform="translate(0.549 0.5)"
-              />
-            </svg>
-          </div>
+        <div
+          class="link1dia"
+          @mouseover="mouseoverLink1dia"
+          @mouseleave="mouseleaveLink1dia"
+        >
+          <router-link to="/consultoria">
+            <div class="link1diaBtexto">
+              <span class="link1diaPense">Pense</span>
+              <span class="link1diaConsultoria">CONSULTORIA</span>
+            </div>
+            <div class="link1diaSvg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18.738"
+                height="18.385"
+                viewBox="0 0 18.738 18.385"
+              >
+                <path
+                  id="Path_339"
+                  data-name="Path 339"
+                  class="cls-6"
+                  d="M9.058,0A10,10,0,0,0,3.384,1.964,8.624,8.624,0,0,0,.33,11.129c1.091,3.928,4.8,5.455,6.11,5.892s3.928,1.091,8.074-1.746,3.928-8.292,1.091-12A7.354,7.354,0,0,0,9.058,0Z"
+                  transform="translate(0.549 0.5)"
+                />
+              </svg>
+            </div>
+          </router-link>
         </div>
-        <div class="link2dia" :class="{ hovering: hover3 }">
+        <div
+          class="link2dia"
+          @mouseover="mouseoverLink2dia"
+          @mouseleave="mouseleaveLink2dia"
+        >
           <div class="link2diaSvg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1631,7 +1636,17 @@
             <span class="link2diaConsultoria">BIOPAISAGISMO</span>
           </div>
         </div>
-        <div class="link3dia" :class="{ hovering: hover2 }">
+        <div class="cont2dia">
+          <p
+            >Soluções integradas à biodiversidade. O conhecimento e a
+            experiência a favor dos seus investimentos e do ecossistema.
+          </p>
+        </div>
+        <div
+          class="link3dia"
+          @mouseover="mouseoverLink3dia"
+          @mouseleave="mouseleaveLink3dia"
+        >
           <div class="link3diaSvg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1674,10 +1689,6 @@ export default {
   data() {
     return {
       tl: null,
-      hover: false,
-      hover1: false,
-      hover2: false,
-      hover3: false,
     }
   },
   computed: {
@@ -1685,7 +1696,7 @@ export default {
   },
   created() {
     this.tl = this.$gsap.timeline()
-    console.log(this.hover)
+    this.tlover = this.$gsap.timeline({ paused: true })
   },
   mounted() {
     if (this.progressing) {
@@ -1701,11 +1712,65 @@ export default {
         '+=0.5'
       )
     }
-    this.$gsap.to(['.top1'], {
+    // this.$gsap.to(['.top1'], {
+    //   duration: 1,
+    //   opacity: 1,
+    // })
+
+    this.tlfloat = this.$gsap.timeline({ repeat: -1 })
+    this.tlfloat.to(['.diagrama'], {
+      y: '-=10',
       duration: 1,
-      opacity: 1,
+      ease: 'Sine.easeInOut',
     })
+    this.tlfloat.to(['.diagrama'], {
+      y: '+=10',
+      duration: 1,
+      ease: 'Sine.easeInOut',
+    })
+
+    this.tlover
+      .to(['.backImg', '.hoverPcc2', '.hoverPcc1'], {
+        filter: 'blur(5px)',
+        autoRound: false,
+        duration: 0.3,
+        ease: 'power1.inOut',
+      })
+      .to(
+        ['.link1diaBtexto', '.link3diaBtexto'],
+        {
+          filter: 'blur(5px)',
+          autoRound: false,
+          duration: 0.3,
+          ease: 'power1.inOut',
+        },
+        0
+      )
+      .to(
+        ['.elem2dia'],
+        {
+          duration: 0.5,
+          scale: 1.3,
+          opacity: 0.2,
+          x: 20,
+          ease: 'power1.inOut',
+        },
+        0
+      )
+      .to(['.elem3dia'], {
+        filter: 'blur(5px)',
+        autoRound: false,
+        duration: 0.3,
+        opacity: 0.3,
+        ease: 'power1.inOut',
+      })
+      .to(['.cont2dia'], {
+        duration: 0.3,
+        opacity: 1,
+        ease: 'power1.inOut',
+      })
   },
+
   methods: {
     ...mapActions([
       'startLoadingAction',
@@ -1713,57 +1778,33 @@ export default {
       'setNextBackgroundAction',
       'stopProgressingAction',
     ]),
-    mouseoverPcc1() {
-      this.hover = true
-      this.hover2 = true
-      this.hover3 = true
-      this.$gsap.to('.testeee', {
-        scale: 1.2,
-        opacity: 0.3,
-        ease: 'linear',
-        duration: 0.2,
-      })
+    mouseoverPcc1() {},
+    mouseleavePcc1() {},
+    mouseoverPcc2() {},
+    mouseleavePcc2() {},
+    mouseoverPcc3() {},
+    mouseleavePcc3() {},
+
+    mouseoverLink1dia() {},
+    mouseleaveLink1dia() {},
+
+    mouseoverLink2dia() {
+      this.tlover.play()
     },
-    mouseleavePcc1() {
-      this.hover = false
-      this.hover2 = false
-      this.hover3 = false
-      this.$gsap.to('.testeee', {
-        scale: 1,
-        opacity: 1,
-        ease: 'linear',
-        duration: 0.2,
-      })
+    mouseleaveLink2dia() {
+      this.tlover.reverse()
     },
-    mouseoverPcc2() {
-      this.hover = true
-      this.hover1 = true
-      this.hover3 = true
-    },
-    mouseleavePcc2() {
-      this.hover = false
-      this.hover1 = false
-      this.hover3 = false
-    },
-    mouseoverPcc3() {
-      this.hover = true
-      this.hover1 = true
-      this.hover2 = true
-    },
-    mouseleavePcc3() {
-      this.hover = false
-      this.hover1 = false
-      this.hover2 = false
-    },
+    mouseoverLink3dia() {},
+    mouseleaveLink3dia() {},
   },
+
   beforeRouteLeave(to, from, next) {
     let nextBackground = this.backgrounds(to.meta.image)
     this.setNextBackgroundAction(nextBackground)
-
-    this.$gsap.to(['.top1'], {
-      duration: 1,
-      opacity: 0,
-    })
+    // this.$gsap.to(['.top1'], {
+    //   duration: 1,
+    //   opacity: 0,
+    // })
     this.tl.to('.home', {
       duration: 0.6,
       opacity: 0,
@@ -1813,16 +1854,9 @@ export default {
     height: 100%;
     background-color: #333;
     background-image: url('../assets/images/image00.jpg');
-    -webkit-filter: blur(0);
-    filter: blur(0);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    transition: all 0.3s;
-  }
-  .hovering {
-    -webkit-filter: blur(5px) !important;
-    filter: blur(5px) !important;
   }
 
   .contHome {
@@ -1846,12 +1880,6 @@ export default {
         line-height: 110px;
         mix-blend-mode: overlay;
       }
-      span.hoverPcc {
-        cursor: pointer;
-        -webkit-filter: blur(0);
-        filter: blur(0);
-        transition: all 0.3s;
-      }
     }
     .diagrama {
       position: relative;
@@ -1873,9 +1901,6 @@ export default {
       .elem3dia {
         position: absolute;
         margin: 0 0 0 -90px;
-        -webkit-filter: blur(0);
-        filter: blur(0);
-        transition: all 0.3s;
         span {
           display: block;
           font-size: 37px;
@@ -1895,9 +1920,7 @@ export default {
         position: absolute;
         display: flex;
         margin: -110px 0 0 -230px;
-        -webkit-filter: blur(0);
-        filter: blur(0);
-        transition: all 0.3s;
+        cursor: pointer;
         .link1diaBtexto {
           text-align: right;
         }
@@ -1924,9 +1947,7 @@ export default {
         display: flex;
         align-items: flex-end;
         margin: -50px 0 0 262px;
-        -webkit-filter: blur(0);
-        filter: blur(0);
-        transition: all 0.3s;
+        cursor: pointer;
         .link2diaBtexto {
           text-align: left;
         }
@@ -1948,13 +1969,20 @@ export default {
           font-weight: 300;
         }
       }
+      .cont2dia {
+        width: 290px;
+        opacity: 0;
+        p {
+          font-size: 17px;
+          font-weight: 300;
+          line-height: 25.5px;
+        }
+      }
       .link3dia {
         position: absolute;
         display: flex;
         margin: 210px 0 0 70px;
-        -webkit-filter: blur(0);
-        filter: blur(0);
-        transition: all 0.3s;
+        cursor: pointer;
         .link3diaBtexto {
           text-align: left;
         }

@@ -157,6 +157,12 @@ export default {
         '+=0.5'
       )
     }
+    this.tl.from(['.backR'], {
+      duration: 1,
+      // opacity: 0,
+      x: 1000,
+      ease: 'power1.inOut',
+    })
     this.tl.from(['.sideL'], {
       duration: 1,
       opacity: 0,
@@ -185,11 +191,7 @@ export default {
     let nextBackground = this.backgrounds(to.meta.image)
     this.setNextBackgroundAction(nextBackground)
 
-    this.$gsap.to(['.conteudo'], {
-      duration: 1,
-      opacity: 0,
-    })
-    this.tl.to('.img', {
+    this.$gsap.to(['.geralInt'], {
       duration: 0.6,
       opacity: 0,
       scale: 1.1,

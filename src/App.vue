@@ -18,22 +18,18 @@
     >
     </div>
 
-    <header :class="{ paddingTop: inRouterHome }" class="top">
+    <header class="top">
       <div class="logo">
         <div style="position:relative;">
           <router-link to="/">
-            <img
-              class="imgLogo"
-              :class="{ resizeLogo: inRouterHome }"
-              src="./assets/images/logo_home.svg"
-            />
+            <img class="imgLogo" src="./assets/images/logo_home.svg" />
             <!-- <img
               style="position:absolute; display:block; top:0;"
               src="./assets/images/logo_int.svg"
             /> -->
           </router-link>
         </div>
-        <div :class="{ displayBlock: inRouterHome }" class="pccLogo">
+        <div class="pccLogo">
           <span>Pense</span>
           <span>Conecte</span>
           <span>Cultive</span>
@@ -51,7 +47,7 @@
         <router-link class="menu" to="/contato">Contato</router-link>
       </nav>
 
-      <div>
+      <div class="som">
         <!-- <img src="./assets/images/som.svg" /> -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -190,11 +186,15 @@ export default {
   },
   computed: {
     ...mapGetters(['loading', 'nextBackground', 'progressing', 'progress']),
-    inRouterHome() {
-      return this.$route.path !== '/'
-    },
+    // inRouterHome() {
+    //   return this.$route.path !== '/'
+    // },
+  },
+  watch: {
+    '$route.path': 'checkPath',
   },
   created() {
+    this.checkPath()
     this.tl = this.$gsap.timeline()
     this.startProgressingAction()
   },
@@ -260,6 +260,70 @@ export default {
         this.cliqueSomAtivo = false
       }
     },
+
+    checkPath: function() {
+      let route = this.$route.path
+      // this.testeData = route
+      // var resultado = this.testeData.replace('/', 'back-')
+      // this.testeData = resultado
+
+      if (route !== '/') {
+        console.log('interna')
+        this.tlMenuIn = this.$gsap.timeline()
+        this.tlMenuIn
+          .to(['header.top'], {
+            y: -20,
+            duration: 0.5,
+            ease: 'power1.inOut',
+          })
+          .to(
+            ['img.imgLogo'],
+            {
+              width: 123.56,
+              duration: 0.5,
+              ease: 'power1.inOut',
+            },
+            0
+          )
+          .to(['.pccLogo'], {
+            width: 54,
+            opacity: 1,
+            duration: 0.3,
+            ease: 'power1.inOut',
+          })
+        // this.isInternal = true,
+        // this.menuHorizontal = false,
+        // this.menuVertical = true
+      } else {
+        console.log('home')
+        this.tlMenuHome = this.$gsap.timeline()
+        this.tlMenuHome
+          .to(['.pccLogo'], {
+            width: 0,
+            opacity: 0,
+            duration: 0.3,
+            ease: 'power1.inOut',
+          })
+          .to(['header.top'], {
+            y: 0,
+            duration: 0.5,
+            ease: 'power1.inOut',
+          })
+          .to(
+            ['img.imgLogo'],
+            {
+              width: 147.11,
+              duration: 0.5,
+              ease: 'power1.inOut',
+            },
+            '<'
+          )
+
+        // this.isInternal = false,
+        // this.menuHorizontal = true,
+        // this.menuVertical = false
+      }
+    },
   },
 }
 </script>
@@ -269,33 +333,33 @@ $base-color: #fff;
 
 div.logo img.imgLogo {
   width: 147.11px;
-  transition: all 0.5s ease 0.4s;
+  // transition: all 0.5s ease 0.4s;
 }
-.resizeLogo {
-  width: 123.56px !important;
-  transition: all 0.5s ease 0s !important;
-  // transform: scale(0.7);
-}
+// .resizeLogo {
+//   width: 123.56px !important;
+//   transition: all 0.5s ease 0s !important;
+//   // transform: scale(0.7);
+// }
 
 div.pccLogo {
   display: flex;
   flex-direction: column;
-  max-width: 0;
+  width: 0;
   padding: 7px 0 0 16px;
   overflow: hidden;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.8s ease 0s, max-width 0.8s ease 0s;
+  // transition: opacity 0.8s ease 0s, max-width 0.8s ease 0s;
   span {
     display: block;
     font-size: 10px;
   }
 }
-.displayBlock {
-  max-width: 54px !important;
-  opacity: 1 !important;
-  transition: opacity 0.8s ease 0.3s, max-width 0.8s ease 0.3s !important;
-}
+// .displayBlock {
+//   max-width: 54px !important;
+//   opacity: 1 !important;
+//   transition: opacity 0.8s ease 0.3s, max-width 0.8s ease 0.3s !important;
+// }
 
 #app {
   top: 0;
@@ -393,7 +457,7 @@ div.pccLogo {
     justify-content: space-between;
     width: 94%;
     padding: 60px 3% 0 3%;
-    transition: all 0.5s ease 0.4s;
+    // transition: all 0.5s ease 0.4s;
 
     a.menu {
       padding: 0 52.5px;
@@ -405,13 +469,14 @@ div.pccLogo {
     div.logo {
       display: flex;
       flex-direction: row;
+      width: 194px;
     }
   }
 
-  header.paddingTop {
-    padding-top: 40px !important;
-    transition: all 0.5s ease !important;
-  }
+  // header.paddingTop {
+  //   padding-top: 40px !important;
+  //   transition: all 0.5s ease !important;
+  // }
 
   footer.bottom {
     position: fixed;

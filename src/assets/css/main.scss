@@ -92,10 +92,15 @@ div.conteudo {
       font-weight: 300;
     }
   }
+
+  div.sideR::-webkit-scrollbar {
+    display: none;
+  }
   div.sideR {
     width: 55%;
     overflow: auto !important;
     padding: 250px 0 0 0;
+    -ms-overflow-style: none;
     div.aspas {
       padding: 0 0 80px 80px;
       h4 {
