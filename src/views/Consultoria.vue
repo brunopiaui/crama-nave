@@ -1,6 +1,8 @@
 <template>
   <div class="geralInt">
-    <div class="img"></div>
+    <div class="backImg"></div>
+
+    <div class="loadingpv"> </div>
 
     <div v-if="progressing" class="loading">{{ progress }}%</div>
 
@@ -145,7 +147,8 @@ export default {
   },
   created() {
     this.tl = this.$gsap.timeline()
-    this.tlIn = this.$gsap.timeline()
+    this.tlPageIn = this.$gsap.timeline()
+    this.tlPageOut = this.$gsap.timeline()
   },
   mounted() {
     if (this.progressing) {
@@ -161,17 +164,25 @@ export default {
         '+=0.5'
       )
     }
-    this.tlIn
+    this.tlPageIn
       .from(['.backR'], {
         duration: 1,
         // opacity: 0,
         x: 1000,
         ease: 'power1.inOut',
       })
-      .from(['.sideL'], {
+      .from(['.conteudo'], {
         duration: 1,
         opacity: 0,
       })
+      .from(
+        ['.sideL'],
+        {
+          duration: 1,
+          opacity: 0,
+        },
+        '<'
+      )
       .from(['.sideR'], {
         duration: 1,
         opacity: 0,
@@ -235,25 +246,59 @@ export default {
     let nextBackground = this.backgrounds(to.meta.image)
     this.setNextBackgroundAction(nextBackground)
 
-    this.$gsap.to(['.geralInt'], {
-      duration: 0.6,
-      opacity: 0,
-      scale: 1.1,
-      delay: 0.3,
-      ease: 'Power2.easeInOut',
-      onComplete: () => {
-        next()
-      },
-    })
+    this.tlPageOut
+      .to('.conteudo', {
+        opacity: 0,
+        duration: 0.5,
+      })
+      .to(
+        '.loadingpv',
+        {
+          width: '100%',
+          duration: 1,
+          ease: 'power3.in',
+        },
+        '<'
+      )
+      .to('.geralInt', {
+        duration: 0.5,
+        opacity: 0,
+        scale: 1.1,
+        delay: 0.2,
+        ease: 'Power2.out',
+        onComplete: () => {
+          next()
+        },
+      })
+    // this.$gsap.to(['.geralInt'], {
+    //   duration: 0.6,
+    //   opacity: 0,
+    //   scale: 1.1,
+    //   delay: 1,
+    //   ease: 'Power2.easeInOut',
+    //   onComplete: () => {
+    //     next()
+    //   },
+    // })
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.img {
-  position: fixed;
+// .img {
+//   position: fixed;
+//   z-index: 1;
+//   display: block;
+//   width: 100%;
+//   height: 100%;
+//   background-image: url('../assets/images/image01.jpg');
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   background-size: cover;
+// }
+.backImg {
+  position: absolute;
   z-index: 1;
-  display: block;
   width: 100%;
   height: 100%;
   background-image: url('../assets/images/image01.jpg');

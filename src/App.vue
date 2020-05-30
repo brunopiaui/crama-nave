@@ -4,20 +4,6 @@
     :class="[nextBackground.type === 'image' ? 'image' : 'video']"
     :style="{ backgroundImage: `url(${nextBackground.url})` }"
   >
-    <div
-      class="areaHamburguer"
-      @mouseover="isMover = true"
-      @mouseleave="isMover = false"
-    >
-    </div>
-
-    <div
-      :class="[menuHamburguer, { mover: isMover }]"
-      @mouseover="teste(), (isMover = true)"
-      @mouseleave="isMover = false"
-    >
-    </div>
-
     <header class="top">
       <div class="logo">
         <div style="position:relative;">
@@ -185,8 +171,6 @@ export default {
   data() {
     return {
       tl: null,
-      isMover: false,
-      menuHamburguer: 'menuHamburguer',
       cliqueSomAtivo: false,
     }
   },
@@ -211,14 +195,13 @@ export default {
         rotation: 180,
         duration: 0.5,
         scale: 1.2,
-        ease: 'power1.inOut',
+        ease: 'power1.out',
       })
       .to(
         '.menuDropDown',
         {
           visibility: 'visible',
-          duration: 0.3,
-          ease: 'power1.inOut',
+          ease: 'power1.out',
         },
         '<'
       )
@@ -227,8 +210,9 @@ export default {
         {
           opacity: 1,
           y: 10,
-          ease: 'power1.inOut',
+          ease: 'power1.out',
           stagger: 0.1,
+          duration: 0.3,
         },
         '<'
       )
@@ -244,6 +228,18 @@ export default {
         meta: { type: 'image', name: 'image01' },
       },
       {
+        url: require('@/assets/images/testepeso.jpg'),
+        meta: { type: 'image', name: 'image10' },
+      },
+      {
+        url: require('@/assets/images/testepeso2.jpg'),
+        meta: { type: 'image', name: 'image11' },
+      },
+      {
+        url: require('@/assets/images/testepeso3.jpg'),
+        meta: { type: 'image', name: 'image12' },
+      },
+      {
         url: require('@/assets/images/image02.jpg'),
         meta: { type: 'image', name: 'image02' },
       },
@@ -254,6 +250,14 @@ export default {
       {
         url: require('@/assets/videos/video01.mp4'),
         meta: { type: 'video', name: 'video01' },
+      },
+      {
+        url: require('@/assets/videos/pesovideo.mp4'),
+        meta: { type: 'video', name: 'video02' },
+      },
+      {
+        url: require('@/assets/videos/pesovideo2.mp4'),
+        meta: { type: 'video', name: 'video02' },
       },
       {
         url: require('@/assets/images/image04.jpg'),
@@ -280,10 +284,6 @@ export default {
       'stopProgressingAction',
       'setProgressAction',
     ]),
-    teste: function() {
-      console.log('teste')
-      this.$gsap.from('.areaHamburguer', { duration: 1, scale: 8 })
-    },
 
     mouseoverMenuDrop() {
       this.tlDropMenu.play()
@@ -311,20 +311,19 @@ export default {
       // this.testeData = resultado
 
       if (route !== '/') {
-        console.log('interna')
         this.tlMenuIn = this.$gsap.timeline()
         this.tlMenuIn
           .to(['header.top'], {
             y: -20,
             duration: 0.5,
-            ease: 'power1.inOut',
+            ease: 'power1.0ut',
           })
           .to(
             ['img.imgLogo'],
             {
               width: 123.56,
               duration: 0.5,
-              ease: 'power1.inOut',
+              ease: 'power1.out',
             },
             0
           )
@@ -332,32 +331,31 @@ export default {
             width: 54,
             opacity: 1,
             duration: 0.3,
-            ease: 'power1.inOut',
+            ease: 'power1.out',
           })
         // this.isInternal = true,
         // this.menuHorizontal = false,
         // this.menuVertical = true
       } else {
-        console.log('home')
         this.tlMenuHome = this.$gsap.timeline()
         this.tlMenuHome
           .to(['.pccLogo'], {
             width: 0,
             opacity: 0,
             duration: 0.3,
-            ease: 'power1.inOut',
+            ease: 'power1.out',
           })
           .to(['header.top'], {
             y: 0,
             duration: 0.5,
-            ease: 'power1.inOut',
+            ease: 'power1.out',
           })
           .to(
             ['img.imgLogo'],
             {
               width: 147.11,
               duration: 0.5,
-              ease: 'power1.inOut',
+              ease: 'power1.out',
             },
             '<'
           )
@@ -381,12 +379,6 @@ div.logo img.imgLogo {
   width: 147.11px;
   // transition: all 0.5s ease 0.4s;
 }
-// .resizeLogo {
-//   width: 123.56px !important;
-//   transition: all 0.5s ease 0s !important;
-//   // transform: scale(0.7);
-// }
-
 div.pccLogo {
   display: flex;
   flex-direction: column;
@@ -433,65 +425,62 @@ div.pccLogo {
     );
   }
 
-  div.areaHamburguer {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    width: 250px;
-    height: 250px;
-    background: transparent;
-    border: 1px solid #fff;
-    outline: 1px solid transparent;
-  }
-
-  div.menuHamburguer {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    width: 55.88px;
-    height: 55px;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 1);
-    border-radius: 80% 75% 80% 79% / 70% 76% 76% 81%;
-    outline: 1px solid transparent;
-    transition: all 0.5s;
-    animation: morph 3s linear infinite;
-    animation-play-state: paused;
-    transform-style: preserve-3d;
-    will-change: border-radius;
-  }
-
-  div.menuHamburguer:hover {
-    width: 60.88px;
-    height: 60px;
-    background-color: aqua !important;
-  }
-
-  .mover {
-    animation-play-state: running !important;
-  }
-
-  // div.menuTeste:hover {
-  //   animation-play-state: running;
+  // div.areaHamburguer {
+  //   position: absolute;
+  //   right: 10px;
+  //   bottom: 10px;
+  //   width: 250px;
+  //   height: 250px;
+  //   background: transparent;
+  //   border: 1px solid #fff;
+  //   outline: 1px solid transparent;
   // }
-  @keyframes morph {
-    0%,
-    100% {
-      border-radius: 80% 75% 80% 79% / 70% 76% 76% 81%;
-      transform: translate3d(0, 0, 0) rotateZ(0.01deg);
-    }
-    34% {
-      border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
-      transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
-    }
-    50% {
-      transform: translate3d(0, 0, 0) rotateZ(0.01deg);
-    }
-    67% {
-      border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
-      transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
-    }
-  }
+
+  // div.menuHamburguer {
+  //   position: absolute;
+  //   right: 10px;
+  //   bottom: 10px;
+  //   width: 55.88px;
+  //   height: 55px;
+  //   cursor: pointer;
+  //   background: rgba(255, 255, 255, 1);
+  //   border-radius: 80% 75% 80% 79% / 70% 76% 76% 81%;
+  //   outline: 1px solid transparent;
+  //   transition: all 0.5s;
+  //   animation: morph 3s linear infinite;
+  //   animation-play-state: paused;
+  //   transform-style: preserve-3d;
+  //   will-change: border-radius;
+  // }
+
+  // div.menuHamburguer:hover {
+  //   width: 60.88px;
+  //   height: 60px;
+  //   background-color: aqua !important;
+  // }
+
+  // .mover {
+  //   animation-play-state: running !important;
+  // }
+
+  // @keyframes morph {
+  //   0%,
+  //   100% {
+  //     border-radius: 80% 75% 80% 79% / 70% 76% 76% 81%;
+  //     transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  //   }
+  //   34% {
+  //     border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+  //     transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
+  //   }
+  //   50% {
+  //     transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  //   }
+  //   67% {
+  //     border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+  //     transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
+  //   }
+  // }
 
   header.top {
     position: fixed;
@@ -532,7 +521,7 @@ div.pccLogo {
     }
     .menuDropDown a {
       transform: translate(0px, -10px);
-      margin: 0 0 5px 0;
+      margin: 0 0 6px 0;
       display: block;
       opacity: 0;
       font-size: 14px;

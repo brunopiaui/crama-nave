@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <div class="backImg"></div>
+    <div class="loadingpv"> </div>
 
     <div v-if="progressing" class="loading">{{ progress }}%</div>
 
@@ -1727,6 +1728,8 @@ export default {
   },
   created() {
     this.tl = this.$gsap.timeline()
+    this.tlPageIn = this.$gsap.timeline()
+    this.tlPageOut = this.$gsap.timeline()
     this.tl1overParte1 = this.$gsap.timeline({ paused: true })
     this.tl1overParte2 = this.$gsap.timeline({ paused: true })
     this.tl1overParte3 = this.$gsap.timeline({ paused: true })
@@ -1770,6 +1773,19 @@ export default {
       duration: 1,
       ease: 'Sine.easeInOut',
     })
+
+    this.tlPageIn
+      .fromTo(
+        '.pcc',
+        { opacity: 0 },
+        { opacity: 1, duration: 0.5, ease: 'power2.out' }
+      )
+      .fromTo(
+        '.diagrama',
+        { opacity: 0 },
+        { opacity: 1, duration: 1.5, ease: 'power2.out' },
+        0
+      )
 
     this.tl1overParte1
       .to(['.backImg', '.link2diaBtexto', '.link3diaBtexto'], {
@@ -2123,21 +2139,62 @@ export default {
     //   duration: 1,
     //   opacity: 0,
     // })
-    this.tl.to('.home', {
-      duration: 0.6,
-      opacity: 0,
-      scale: 1.1,
-      delay: 0.3,
-      ease: 'Power2.easeInOut',
-      onComplete: () => {
-        next()
-      },
-    })
+    this.tlPageOut
+      .to('.pcc', {
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power3.in',
+      })
+      .to(
+        '.diagrama',
+        {
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power3.in',
+        },
+        '<'
+      )
+      .to(
+        '.loadingpv',
+        {
+          width: '100%',
+          duration: 1,
+          ease: 'power3.in',
+        },
+        0
+      )
+      .to('.home', {
+        duration: 0.5,
+        opacity: 0,
+        scale: 1.1,
+        delay: 0.2,
+        ease: 'Power2.out',
+        onComplete: () => {
+          next()
+        },
+      })
+    // this.tl.to('.home', {
+    //   duration: 0.6,
+    //   opacity: 0,
+    //   scale: 1.1,
+    //   delay: 0.3,
+    //   ease: 'Power2.easeInOut',
+    //   onComplete: () => {
+    //     next()
+    //   },
+    // })
   },
 }
 </script>
 
 <style lang="scss">
+.loading {
+  z-index: 999999999999;
+  background-color: #ff0000;
+  width: 100%;
+  height: 100%;
+}
+
 .home {
   display: flex;
   align-items: center;
@@ -2147,30 +2204,28 @@ export default {
   // background-repeat: no-repeat;
   // background-position: center;
   // background-size: cover;
-  .shape {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 256px;
-    height: 256px;
-    background: #fff;
-    border: 2px solid #333;
-    border-radius: 51% 49% 24% 76% / 19% 27% 73% 81%;
-    opacity: 0;
-    animation: logo 20s linear alternate both infinite;
-    .text {
-      font-family: 'Ubuntu', sans-serif;
-      font-size: 40px;
-      color: #fff;
-      letter-spacing: 0.1em;
-    }
-  }
+  // .shape {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   width: 256px;
+  //   height: 256px;
+  //   background: #fff;
+  //   border: 2px solid #333;
+  //   border-radius: 51% 49% 24% 76% / 19% 27% 73% 81%;
+  //   opacity: 0;
+  //   animation: logo 20s linear alternate both infinite;
+  //   .text {
+  //     font-family: 'Ubuntu', sans-serif;
+  //     font-size: 40px;
+  //     color: #fff;
+  //     letter-spacing: 0.1em;
+  //   }
 
   .backImg {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #333;
     background-image: url('../assets/images/image00.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -2188,15 +2243,16 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      opacity: 0;
       // border: 2px solid #333;
       width: 40%;
       height: 100%;
+      mix-blend-mode: overlay;
       span {
         display: block;
         font-size: 115px;
         font-weight: 700;
         line-height: 110px;
-        mix-blend-mode: overlay;
       }
     }
     .diagrama {
@@ -2209,6 +2265,7 @@ export default {
       justify-content: center;
       width: 50%;
       height: 100%;
+      opacity: 0;
       .elem1dia {
         position: absolute;
       }
@@ -2381,23 +2438,23 @@ export default {
   }
 }
 
-@keyframes logo {
-  20% {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  }
-  40% {
-    border-radius: 87% 13% 65% 35% / 51% 55% 45% 49%;
-  }
-  60% {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  }
-  80% {
-    border-radius: 74% 26% 24% 76% / 42% 52% 48% 58%;
-  }
-  100% {
-    border-radius: 44% 56% 11% 89% / 57% 81% 19% 43%;
-  }
-}
+// @keyframes logo {
+//   20% {
+//     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+//   }
+//   40% {
+//     border-radius: 87% 13% 65% 35% / 51% 55% 45% 49%;
+//   }
+//   60% {
+//     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+//   }
+//   80% {
+//     border-radius: 74% 26% 24% 76% / 42% 52% 48% 58%;
+//   }
+//   100% {
+//     border-radius: 44% 56% 11% 89% / 57% 81% 19% 43%;
+//   }
+// }
 
 .cls-1 {
   fill: none;
