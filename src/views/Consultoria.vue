@@ -142,6 +142,7 @@ export default {
   },
   created() {
     this.tl = this.$gsap.timeline()
+    this.tlIn = this.$gsap.timeline()
   },
   mounted() {
     if (this.progressing) {
@@ -157,28 +158,30 @@ export default {
         '+=0.5'
       )
     }
-    this.tl.from(['.backR'], {
-      duration: 1,
-      // opacity: 0,
-      x: 1000,
-      ease: 'power1.inOut',
-    })
-    this.tl.from(['.sideL'], {
-      duration: 1,
-      opacity: 0,
-    })
-    this.tl.from(['.sideR'], {
-      duration: 1,
-      opacity: 0,
-    })
-    this.tl.from('p', {
-      duration: 1.5,
-      opacity: 0,
-      y: 20,
-      stagger: 0.25,
-      ease: 'back.out',
-    })
+    this.tlIn
+      .from(['.backR'], {
+        duration: 1,
+        // opacity: 0,
+        x: 1000,
+        ease: 'power1.inOut',
+      })
+      .from(['.sideL'], {
+        duration: 1,
+        opacity: 0,
+      })
+      .from(['.sideR'], {
+        duration: 1,
+        opacity: 0,
+      })
+      .from('p', {
+        duration: 1.5,
+        opacity: 0,
+        y: 20,
+        stagger: 0.25,
+        ease: 'back.out',
+      })
   },
+
   methods: {
     ...mapActions([
       'startLoadingAction',
@@ -195,7 +198,7 @@ export default {
       duration: 0.6,
       opacity: 0,
       scale: 1.1,
-      delay: 0,
+      delay: 0.3,
       ease: 'Power2.easeInOut',
       onComplete: () => {
         next()

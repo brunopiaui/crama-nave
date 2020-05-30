@@ -35,12 +35,18 @@
           <span>Cultive</span>
         </div> </div
       ><!-- logo -->
-      <nav>
-        <a class="menu"
+      <nav class="blockMenu">
+        <a
+          class="menu"
+          @mouseover="mouseoverMenuDrop"
+          @mouseleave="mouseleaveMenuDrop"
           >O que fazemos
-          <router-link to="/consultoria">1</router-link>
-          <router-link to="/modelodenegocios">2</router-link>
-          <router-link to="/biopaisagismo">3</router-link>
+          <img class="setaDrop" src="./assets/images/seta_dropdown.svg" />
+          <div class="menuDropDown">
+            <router-link to="/consultoria">Consultoria</router-link>
+            <router-link to="/modelodenegocios">Modelo de negócios</router-link>
+            <router-link to="/biopaisagismo">Biopaisagismo</router-link>
+          </div>
         </a>
         <router-link class="menu" to="/bioviva">Bioviva</router-link>
         <router-link class="menu" to="/midia">Mídia</router-link>
@@ -196,7 +202,36 @@ export default {
   created() {
     this.checkPath()
     this.tl = this.$gsap.timeline()
+    this.tlDropMenu = this.$gsap.timeline({ paused: true })
     this.startProgressingAction()
+  },
+  mounted() {
+    this.tlDropMenu
+      .to('.setaDrop', {
+        rotation: 180,
+        duration: 0.5,
+        scale: 1.2,
+        ease: 'power1.inOut',
+      })
+      .to(
+        '.menuDropDown',
+        {
+          visibility: 'visible',
+          duration: 0.3,
+          ease: 'power1.inOut',
+        },
+        '<'
+      )
+      .to(
+        '.menuDropDown a',
+        {
+          opacity: 1,
+          y: 10,
+          ease: 'power1.inOut',
+          stagger: 0.1,
+        },
+        '<'
+      )
   },
   beforeMount() {
     preload.fetch([
@@ -249,6 +284,14 @@ export default {
       console.log('teste')
       this.$gsap.from('.areaHamburguer', { duration: 1, scale: 8 })
     },
+
+    mouseoverMenuDrop() {
+      this.tlDropMenu.play()
+    },
+    mouseleaveMenuDrop() {
+      this.tlDropMenu.reverse()
+    },
+
     cliqueSom: function() {
       if (this.cliqueSomAtivo === false) {
         this.$gsap.to('.cu', { x: 8.401, ease: 'expo.out', duration: 0.5 })
@@ -330,6 +373,9 @@ export default {
 
 <style lang="scss">
 $base-color: #fff;
+$base-colorV1: #f3f3f3;
+$base-colorV2: #e9e9e9;
+$base-colorV3: #cbcbcb;
 
 div.logo img.imgLogo {
   width: 147.11px;
@@ -459,12 +505,41 @@ div.pccLogo {
     padding: 60px 3% 0 3%;
     // transition: all 0.5s ease 0.4s;
 
+    nav.blockMenu {
+      display: flex;
+      flex-direction: row;
+    }
+
     a.menu {
       padding: 0 52.5px;
       font-size: 16px;
       font-weight: 300;
       color: $base-color;
       text-decoration: none;
+      cursor: pointer;
+      transition: color 0.5s;
+    }
+    a.menu:hover {
+      color: $base-colorV2;
+    }
+    img.setaDrop {
+      margin: 0 0 0 10px;
+    }
+    .menuDropDown {
+      position: absolute;
+      visibility: hidden;
+      padding: 0 0 0 8px;
+    }
+    .menuDropDown a {
+      transform: translate(0px, -10px);
+      margin: 0 0 5px 0;
+      display: block;
+      opacity: 0;
+      font-size: 14px;
+      transition: color 0.5s;
+    }
+    .menuDropDown a:hover {
+      color: $base-colorV3;
     }
     div.logo {
       display: flex;

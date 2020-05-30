@@ -1610,6 +1610,19 @@
             </div>
           </router-link>
         </div>
+        <div class="cont1dia">
+          <p
+            >Soluções integradas à biodiversidade. O conhecimento e a
+            experiência a favor dos seus investimentos e do ecossistema.
+          </p>
+        </div>
+        <div class="folhadia1">
+          <img src="../assets/images/elementodia2.png" />
+        </div>
+        <div class="elemInt1dia">
+          <img src="../assets/images/elementodia2.svg" />
+        </div>
+
         <div
           class="link2dia"
           @mouseover="mouseoverLink2dia"
@@ -1632,15 +1645,21 @@
             </svg>
           </div>
           <div class="link2diaBtexto">
-            <span class="link2diaPense">Cultive</span>
-            <span class="link2diaConsultoria">BIOPAISAGISMO</span>
+            <span class="link2diaPense">Conecte</span>
+            <span class="link2diaConsultoria">MODELO DE NEGÓCIOS</span>
           </div>
         </div>
         <div class="cont2dia">
           <p
-            >Soluções integradas à biodiversidade. O conhecimento e a
-            experiência a favor dos seus investimentos e do ecossistema.
+            >Sustentabilidade como valor econômico de sua empresa. Ganhos e
+            resultados incorporados à existência do meio ambiente.
           </p>
+        </div>
+        <div class="folhadia2">
+          <img src="../assets/images/folha2.png" />
+        </div>
+        <div class="elemInt2dia">
+          <img src="../assets/images/elementodia2.svg" />
         </div>
         <div
           class="link3dia"
@@ -1664,9 +1683,21 @@
             </svg>
           </div>
           <div class="link3diaBtexto">
-            <span class="link3diaPense">Conecte</span>
-            <span class="link3diaConsultoria">MODELO DE NEGÓCIOS</span>
+            <span class="link3diaPense">Cultive</span>
+            <span class="link3diaConsultoria">BIOPAISAGISMO</span>
           </div>
+        </div>
+        <div class="cont3dia">
+          <p
+            >A estética do paisagismo relacionada às questões biológicas. Seu
+            jardim vivo com a beleza, o volume e o ritmo da natureza.
+          </p>
+        </div>
+        <div class="folhadia3">
+          <img src="../assets/images/folha3.png" />
+        </div>
+        <div class="elemInt3dia">
+          <img src="../assets/images/elementodia2.svg" />
         </div>
       </div>
     </div>
@@ -1696,7 +1727,18 @@ export default {
   },
   created() {
     this.tl = this.$gsap.timeline()
-    this.tlover = this.$gsap.timeline({ paused: true })
+    this.tl1overParte1 = this.$gsap.timeline({ paused: true })
+    this.tl1overParte2 = this.$gsap.timeline({ paused: true })
+    this.tl1overParte3 = this.$gsap.timeline({ paused: true })
+    this.tl1overParte4 = this.$gsap.timeline({ paused: true })
+    this.tl2overParte1 = this.$gsap.timeline({ paused: true })
+    this.tl2overParte2 = this.$gsap.timeline({ paused: true })
+    this.tl2overParte3 = this.$gsap.timeline({ paused: true })
+    this.tl2overParte4 = this.$gsap.timeline({ paused: true })
+    this.tl3overParte1 = this.$gsap.timeline({ paused: true })
+    this.tl3overParte2 = this.$gsap.timeline({ paused: true })
+    this.tl3overParte3 = this.$gsap.timeline({ paused: true })
+    this.tl3overParte4 = this.$gsap.timeline({ paused: true })
   },
   mounted() {
     if (this.progressing) {
@@ -1729,46 +1771,296 @@ export default {
       ease: 'Sine.easeInOut',
     })
 
-    this.tlover
-      .to(['.backImg', '.hoverPcc2', '.hoverPcc1'], {
+    this.tl1overParte1
+      .to(['.backImg', '.link2diaBtexto', '.link3diaBtexto'], {
         filter: 'blur(5px)',
         autoRound: false,
         duration: 0.3,
         ease: 'power1.inOut',
       })
       .to(
-        ['.link1diaBtexto', '.link3diaBtexto'],
+        ['.hoverPcc2', '.hoverPcc3'],
         {
           filter: 'blur(5px)',
           autoRound: false,
           duration: 0.3,
+          opacity: 0.5,
           ease: 'power1.inOut',
         },
-        0
+        '<'
       )
-      .to(
-        ['.elem2dia'],
-        {
-          duration: 0.5,
-          scale: 1.3,
-          opacity: 0.2,
-          x: 20,
-          ease: 'power1.inOut',
-        },
-        0
-      )
-      .to(['.elem3dia'], {
-        filter: 'blur(5px)',
-        autoRound: false,
+    this.tl1overParte2
+      .to('.link1diaSvg', {
+        scale: 1.5,
         duration: 0.3,
-        opacity: 0.3,
         ease: 'power1.inOut',
       })
-      .to(['.cont2dia'], {
+      .to(
+        '.link1diaBtexto',
+        {
+          x: -5,
+          duration: 0.3,
+          ease: 'power1.inOut',
+        },
+        '<'
+      )
+    this.tl1overParte3
+      .to('.elem4dia', {
+        x: 20,
+        y: 40,
+        duration: 1,
+        opacity: 0.5,
+        ease: 'power1.inOut',
+      })
+      .to(
+        '.elem5dia',
+        {
+          x: 90,
+          y: 60,
+          duration: 0.8,
+          ease: 'power1.inOut',
+        },
+        '<'
+      )
+    this.tl1overParte4
+      .to('.elem2dia', {
+        duration: 0.5,
+        scale: 1.3,
+        opacity: 0.1,
+        x: 20,
+        ease: 'power1.inOut',
+      })
+      .to(
+        '.elem3dia',
+        {
+          filter: 'blur(5px)',
+          autoRound: false,
+          opacity: 0.2,
+          duration: 0.3,
+          ease: 'power1.inOut',
+        },
+        '<0.3'
+      )
+      .to('.cont1dia', {
         duration: 0.3,
         opacity: 1,
         ease: 'power1.inOut',
       })
+      .to(
+        '.elemInt1dia',
+        {
+          duration: 0.3,
+          opacity: 1,
+          y: -10,
+          x: -10,
+          ease: 'power1.inOut',
+        },
+        '<'
+      )
+      .to(
+        '.folhadia1',
+        {
+          duration: 0.5,
+          opacity: 1,
+          y: -10,
+          ease: 'power1.inOut',
+        },
+        '<0.1'
+      )
+
+    this.tl2overParte1
+      .to(['.backImg', '.link1diaBtexto', '.link3diaBtexto'], {
+        filter: 'blur(5px)',
+        autoRound: false,
+        duration: 0.3,
+        ease: 'power1.inOut',
+      })
+      .to(
+        ['.hoverPcc1', '.hoverPcc3'],
+        {
+          filter: 'blur(5px)',
+          autoRound: false,
+          duration: 0.3,
+          opacity: 0.5,
+          ease: 'power1.inOut',
+        },
+        '<'
+      )
+    this.tl2overParte2
+      .to('.link2diaSvg', {
+        scale: 1.5,
+        duration: 0.3,
+        ease: 'power1.inOut',
+      })
+      .to(
+        '.link2diaBtexto',
+        {
+          x: 5,
+          y: 5,
+          duration: 0.3,
+          ease: 'power1.inOut',
+        },
+        '<'
+      )
+    this.tl2overParte3
+      .to('.elem4dia', {
+        x: 20,
+        y: 40,
+        opacity: 0.5,
+        duration: 1,
+        ease: 'power1.inOut',
+      })
+      .to(
+        '.elem5dia',
+        {
+          x: 90,
+          y: 60,
+          duration: 0.8,
+          ease: 'power1.inOut',
+        },
+        '<'
+      )
+    this.tl2overParte4
+      .to('.elem2dia', {
+        duration: 0.5,
+        scale: 1.3,
+        opacity: 0.1,
+        x: 20,
+        ease: 'power1.inOut',
+      })
+      .to(
+        '.elem3dia',
+        {
+          filter: 'blur(5px)',
+          autoRound: false,
+          opacity: 0.2,
+          duration: 0.3,
+          ease: 'power1.inOut',
+        },
+        '<0.3'
+      )
+      .to('.cont2dia', {
+        duration: 0.3,
+        opacity: 1,
+        ease: 'power1.inOut',
+      })
+      .to(
+        '.elemInt2dia',
+        {
+          duration: 0.3,
+          opacity: 1,
+          y: -10,
+          x: -10,
+          ease: 'power1.inOut',
+        },
+        '<'
+      )
+      .to(
+        '.folhadia2',
+        {
+          duration: 0.5,
+          opacity: 1,
+          y: -10,
+          ease: 'power1.inOut',
+        },
+        '<0.1'
+      )
+    this.tl3overParte1
+      .to(['.backImg', '.link1diaBtexto', '.link2diaBtexto'], {
+        filter: 'blur(5px)',
+        autoRound: false,
+        duration: 0.3,
+        ease: 'power1.inOut',
+      })
+      .to(
+        ['.hoverPcc2', '.hoverPcc1'],
+        {
+          filter: 'blur(5px)',
+          autoRound: false,
+          duration: 0.3,
+          opacity: 0.5,
+          ease: 'power1.inOut',
+        },
+        '<'
+      )
+    this.tl3overParte2
+      .to('.link3diaSvg', {
+        scale: 1.5,
+        duration: 0.3,
+        ease: 'power1.inOut',
+      })
+      .to(
+        '.link3diaBtexto',
+        {
+          x: 5,
+          duration: 0.3,
+          ease: 'power1.inOut',
+        },
+        '<'
+      )
+    this.tl3overParte3
+      .to('.elem4dia', {
+        x: 20,
+        y: 40,
+        duration: 1,
+        opacity: 0.5,
+        ease: 'power1.inOut',
+      })
+      .to(
+        '.elem5dia',
+        {
+          x: 90,
+          y: 60,
+          duration: 0.8,
+          ease: 'power1.inOut',
+        },
+        '<'
+      )
+    this.tl3overParte4
+      .to('.elem2dia', {
+        duration: 0.5,
+        scale: 1.3,
+        opacity: 0.1,
+        x: 20,
+        ease: 'power1.inOut',
+      })
+      .to(
+        '.elem3dia',
+        {
+          filter: 'blur(5px)',
+          autoRound: false,
+          opacity: 0.2,
+          duration: 0.3,
+          ease: 'power1.inOut',
+        },
+        '<0.3'
+      )
+      .to('.cont3dia', {
+        duration: 0.3,
+        opacity: 1,
+        ease: 'power1.inOut',
+      })
+      .to(
+        '.elemInt3dia',
+        {
+          duration: 0.3,
+          opacity: 1,
+          y: -10,
+          x: -10,
+          ease: 'power1.inOut',
+        },
+        '<'
+      )
+      .to(
+        '.folhadia3',
+        {
+          duration: 0.5,
+          opacity: 1,
+          y: -10,
+          ease: 'power1.inOut',
+        },
+        '<0.1'
+      )
   },
 
   methods: {
@@ -1778,6 +2070,7 @@ export default {
       'setNextBackgroundAction',
       'stopProgressingAction',
     ]),
+
     mouseoverPcc1() {},
     mouseleavePcc1() {},
     mouseoverPcc2() {},
@@ -1785,17 +2078,42 @@ export default {
     mouseoverPcc3() {},
     mouseleavePcc3() {},
 
-    mouseoverLink1dia() {},
-    mouseleaveLink1dia() {},
-
+    mouseoverLink1dia() {
+      this.tl1overParte1.play()
+      this.tl1overParte2.play()
+      this.tl1overParte3.play()
+      this.tl1overParte4.play()
+    },
+    mouseleaveLink1dia() {
+      this.tl1overParte1.reverse()
+      this.tl1overParte2.reverse()
+      this.tl1overParte3.reverse()
+      this.tl1overParte4.reverse()
+    },
     mouseoverLink2dia() {
-      this.tlover.play()
+      this.tl2overParte1.play()
+      this.tl2overParte2.play()
+      this.tl2overParte3.play()
+      this.tl2overParte4.play()
     },
     mouseleaveLink2dia() {
-      this.tlover.reverse()
+      this.tl2overParte1.reverse()
+      this.tl2overParte2.reverse()
+      this.tl2overParte3.reverse()
+      this.tl2overParte4.reverse()
     },
-    mouseoverLink3dia() {},
-    mouseleaveLink3dia() {},
+    mouseoverLink3dia() {
+      this.tl3overParte1.play()
+      this.tl3overParte2.play()
+      this.tl3overParte3.play()
+      this.tl3overParte4.play()
+    },
+    mouseleaveLink3dia() {
+      this.tl3overParte1.reverse()
+      this.tl3overParte2.reverse()
+      this.tl3overParte3.reverse()
+      this.tl3overParte4.reverse()
+    },
   },
 
   beforeRouteLeave(to, from, next) {
@@ -1809,7 +2127,7 @@ export default {
       duration: 0.6,
       opacity: 0,
       scale: 1.1,
-      delay: 0,
+      delay: 0.3,
       ease: 'Power2.easeInOut',
       onComplete: () => {
         next()
@@ -1911,6 +2229,7 @@ export default {
       .elem4dia {
         position: absolute;
         margin: 90px 0 0 100px;
+        z-index: 10;
       }
       .elem5dia {
         position: absolute;
@@ -1942,18 +2261,38 @@ export default {
           font-weight: 300;
         }
       }
+      .cont1dia {
+        width: 290px;
+        position: absolute;
+        opacity: 0;
+        p {
+          font-size: 17px;
+          font-weight: 300;
+          line-height: 25.5px;
+        }
+      }
+      .elemInt1dia {
+        position: absolute;
+        margin: 90px 0 0 20px;
+        opacity: 0;
+      }
+      .folhadia1 {
+        position: absolute;
+        margin-top: 95px;
+        margin-left: 123px;
+        opacity: 0;
+      }
       .link2dia {
         position: absolute;
         display: flex;
-        align-items: flex-end;
-        margin: -50px 0 0 262px;
+        margin: 210px 0 0 70px;
         cursor: pointer;
         .link2diaBtexto {
           text-align: left;
         }
         .link2diaSvg {
           position: absolute;
-          bottom: -10px;
+          top: -10px;
           left: -25px;
         }
         span {
@@ -1970,6 +2309,7 @@ export default {
         }
       }
       .cont2dia {
+        position: absolute;
         width: 290px;
         opacity: 0;
         p {
@@ -1978,17 +2318,29 @@ export default {
           line-height: 25.5px;
         }
       }
+      .elemInt2dia {
+        position: absolute;
+        margin: 90px 0 0 20px;
+        opacity: 0;
+      }
+      .folhadia2 {
+        position: absolute;
+        margin-top: 112px;
+        margin-left: 116px;
+        opacity: 0;
+      }
       .link3dia {
         position: absolute;
         display: flex;
-        margin: 210px 0 0 70px;
+        align-items: flex-end;
+        margin: -50px 0 0 262px;
         cursor: pointer;
         .link3diaBtexto {
           text-align: left;
         }
         .link3diaSvg {
           position: absolute;
-          top: -10px;
+          bottom: -10px;
           left: -25px;
         }
         span {
@@ -2003,6 +2355,27 @@ export default {
           font-size: 14px;
           font-weight: 300;
         }
+      }
+      .cont3dia {
+        position: absolute;
+        width: 290px;
+        opacity: 0;
+        p {
+          font-size: 17px;
+          font-weight: 300;
+          line-height: 25.5px;
+        }
+      }
+      .elemInt3dia {
+        position: absolute;
+        margin: 90px 0 0 20px;
+        opacity: 0;
+      }
+      .folhadia3 {
+        position: absolute;
+        margin-top: 124px;
+        margin-left: 100px;
+        opacity: 0;
       }
     }
   }
