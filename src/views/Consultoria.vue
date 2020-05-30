@@ -5,7 +5,11 @@
     <div v-if="progressing" class="loading">{{ progress }}%</div>
 
     <div class="backR">
-      <div class="backRshape"></div>
+      <div class="backRshape">
+        <svg width="100%" height="100%" viewBox="0 0 1280 1080">
+          <path d="M1280,1080H76c0,0-76-186-76-501S76,0,76,0h1204V1080z" fill="#4b595c" opacity="0.95"/>
+        </svg>
+      </div>
       <div></div>
     </div>
     <!-- backR -->
@@ -163,9 +167,9 @@ export default {
     }
     this.tlIn
       .from(['.backR'], {
-        duration: 1,
+        duration: 1.8,
         // opacity: 0,
-        x: 1000,
+        x: 2000,
         ease: 'power1.inOut',
       })
       .from(['.sideL'], {
