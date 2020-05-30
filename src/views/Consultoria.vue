@@ -180,6 +180,14 @@ export default {
         stagger: 0.25,
         ease: 'back.out',
       })
+
+    // Scroll
+    const conteudo = document.querySelector('.sideR')
+    conteudo.addEventListener('DOMMouseScroll', () => false, false)
+    conteudo.addEventListener('mousewheel', () => false, false)
+
+    document.addEventListener('DOMMouseScroll', this.moveScroll, false)
+    document.addEventListener('mousewheel', this.moveScroll, false)
   },
 
   methods: {
@@ -189,6 +197,24 @@ export default {
       'setNextBackgroundAction',
       'stopProgressingAction',
     ]),
+    moveScroll(event) {
+      let delta = 0
+      if (!event) event = window.event
+      // normalize the delta
+      if (event.wheelDelta) {
+        // IE and Opera
+        delta = event.wheelDelta / 60
+      } else if (event.detail) {
+        // W3C
+        delta = -event.detail / 2
+      }
+      const conteudo = document.querySelector('.sideR')
+      let currPos = conteudo.scrollTop
+      // calculating the next position of the object
+      currPos = parseInt(currPos) - delta * 10
+      // moving the position of the object
+      conteudo.scrollTop = currPos
+    },
   },
   beforeRouteLeave(to, from, next) {
     let nextBackground = this.backgrounds(to.meta.image)
