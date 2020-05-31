@@ -9,7 +9,11 @@
     <div class="backR">
       <div class="backRshape">
         <svg width="100%" height="100%" viewBox="0 0 1280 1080">
-          <path d="M1280,1080H76c0,0-76-186-76-501S76,0,76,0h1204V1080z" fill="#4b595c" opacity="0.95"/>
+          <path
+            d="M1280,1080H76c0,0-76-186-76-501S76,0,76,0h1204V1080z"
+            fill="#4b595c"
+            opacity="0.95"
+          />
         </svg>
       </div>
       <div></div>
@@ -175,9 +179,9 @@ export default {
         x: 2000,
         ease: 'power1.inOut',
       })
-      .from(['.conteudo'], {
+      .to(['.conteudo'], {
         duration: 1,
-        opacity: 0,
+        opacity: 1,
       })
       .from(
         ['.sideL'],
@@ -309,5 +313,8 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+.conteudo {
+  opacity: 0;
 }
 </style>
