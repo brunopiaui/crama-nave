@@ -1,19 +1,13 @@
 <template>
-  <div class="img">
+  <div class="img teste">
     <div v-if="progressing" class="loading">{{ progress }}%</div>
-    <div class="carousel-view">
-      <transition-group class="carousel" tag="div">
-        <div v-for="slide in slides" :key="slide.id" class="slide">
-          <h4> {{ slide.title }} </h4>
-        </div>
-      </transition-group>
-      <div class="carousel-controls">
-        <button class="carousel-controls__button" @click="previous"
-          >prev</button
-        >
-        <button class="carousel-controls__button" @click="next">next</button>
+    <transition-group name="fade" tag="div">
+      <div v-for="i in [currentIndex]" :key="i">
+        <img class="img-slide" :src="currentImg" />
       </div>
-    </div>
+    </transition-group>
+    <a class="prev" href="#" @click="prev">&#10094;</a>
+    <a class="next" href="#" @click="next">&#10095;</a>
   </div>
 </template>
 
@@ -25,32 +19,28 @@ export default {
   data() {
     return {
       tl: null,
-      slides: [
-        {
-          title: 'I am Slide A',
-          id: 1,
-        },
-        {
-          title: 'I am Slide B',
-          id: 2,
-        },
-        {
-          title: 'I am Slide C',
-          id: 3,
-        },
-        {
-          title: 'I am Slide D',
-          id: 4,
-        },
-        {
-          title: 'I am Slide E',
-          id: 5,
-        },
-      ],
+      currentIndex: 0,
     }
   },
   computed: {
     ...mapGetters(['loading', 'backgrounds', 'progressing', 'progress']),
+    slides() {
+      return [
+        {
+          midia: this.backgrounds('image00'),
+        },
+        {
+          midia: this.backgrounds('image01'),
+        },
+        {
+          midia: this.backgrounds('image04'),
+        },
+      ]
+    },
+    currentImg() {
+      const data = this.slides[Math.abs(this.currentIndex) % this.slides.length]
+      return data && data.midia ? data.midia.url : null
+    },
   },
   created() {
     this.tl = this.$gsap.timeline()
@@ -82,12 +72,10 @@ export default {
       'stopProgressingAction',
     ]),
     next() {
-      const first = this.slides.shift()
-      this.slides = this.slides.concat(first)
+      this.currentIndex += 1
     },
-    previous() {
-      const last = this.slides.pop()
-      this.slides = [last].concat(this.slides)
+    prev() {
+      this.currentIndex -= 1
     },
   },
   beforeRouteLeave(to, from, next) {
@@ -122,38 +110,58 @@ export default {
   background-size: cover;
 }
 
-.carousel-view {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+.teste {
+  .fade-enter-active,
+  .fade-leave-active {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.9s ease;
+  }
 
-.carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24em;
-  min-height: 25em;
-  overflow: hidden;
-}
+  .fade-enter,
+  .fade-leave-to {
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+  }
 
-.slide {
-  display: flex;
-  flex: 0 0 20em;
-  align-items: center;
-  justify-content: center;
-  height: 20em;
-  margin: 1em;
-  border: 0.1em dashed #000;
-  border-radius: 50%;
-  transition: transform 0.3s ease-in-out;
-}
+  .img-slide {
+    width: 100%;
+    height: 100%;
+  }
 
-.slide:first-of-type {
-  opacity: 0;
-}
+  .prev,
+  .next {
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 0 4px 4px 0;
+    transition: 0.7s ease;
+  }
 
-.slide:last-of-type {
-  opacity: 0;
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+  }
+
+  .prev {
+    left: 0;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
 }
 </style>
