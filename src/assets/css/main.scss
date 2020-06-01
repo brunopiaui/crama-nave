@@ -138,10 +138,11 @@ div.conteudo {
         color: #73b98f;
       }
     }
-    p {
+    div.paragrafo p {
       font-size: 16px;
       font-weight: 300;
       color: #f3f3f3;
+      line-height: 22.4px;
     }
   }
 }
@@ -156,6 +157,13 @@ div.backR {
   div.backRshape {
     width: 1280px;
   }
+}
+
+div.elementoInterna1 {
+  position: absolute;
+  top: -350px;
+  z-index: 999;
+  right: -500px;
 }
 
 .loadingpv {

@@ -20,6 +20,25 @@
     </div>
     <!-- backR -->
 
+    <div class="elementoInterna1">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="794.996"
+        height="793.949"
+        viewBox="0 0 794.996 793.949"
+      >
+        <path
+          id="Path_358"
+          data-name="Path 358"
+          d="M261.608,584.819c116.376-4.956,204.566-32.2,284.644-145.068,28.944-40.812,49.777-92.325,38.161-140.712-12.531-52.3-58.33-86.738-95.576-124.173C444.805,130.613,409.233,76.8,358.856,40.4,282.44-14.8,164.612-16.885,100.726,55.68c-27.871,31.627-42.675,72.881-54.7,113.6A1217.218,1217.218,0,0,0,8.37,341.46C2.657,381.294-7.759,425.294,9.506,460.93c19.475,40.149,84.56,88.221,163.217,115.177C172.724,576.107,204.856,587.249,261.608,584.819Z"
+          transform="matrix(-0.883, 0.469, -0.469, -0.883, 794.317, 517.355)"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1"
+        />
+      </svg>
+    </div>
+
     <div class="conteudo">
       <div class="sideL">
         <div class="blocoTitle">
@@ -35,6 +54,9 @@
       <!-- sideL -->
 
       <div class="sideR">
+        <div style="position:absolute;">
+          <img src="../assets/images/elementointerna2.svg" />
+        </div>
         <div id="scroll">
           <div class="aspas">
             <h4>Sua marca como parte do mundo</h4>
@@ -47,90 +69,101 @@
             <span>Gustavo Martinelli</span>
           </div>
           <!-- aspas -->
-
-          <p
-            >Podemos construir o seu projeto ambiental e ajudá-lo no
-            gerenciamento da preservação do meio em que sua empresa atua.
-            Acreditamos que o planejamento e a administração dos recursos
-            naturais são ganhos em um empreendimento.</p
-          >
-          <br />
-          <p
-            >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-            licenciamentos, auditorias - as fases do processo de consultoria se
-            adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
-            criatividade, técnica e experiência para fornecer para você serviços
-            confiáveis e eficientes.
-          </p>
-          <br />
-          <p
-            >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-            licenciamentos, auditorias - as fases do processo de consultoria se
-            adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
-            criatividade, técnica e experiência para fornecer para você serviços
-            confiáveis e eficientes.
-          </p>
-          <br />
-          <p
-            >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-            licenciamentos, auditorias - as fases do processo de consultoria se
-            adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
-            criatividade, técnica e experiência para fornecer para você serviços
-            confiáveis e eficientes.
-          </p>
-          <br />
-          <p
-            >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-            licenciamentos, auditorias - as fases do processo de consultoria se
-            adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
-            criatividade, técnica e experiência para fornecer para você serviços
-            confiáveis e eficientes.
-          </p>
-          <br />
-          <p
-            >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-            licenciamentos, auditorias - as fases do processo de consultoria se
-            adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
-            criatividade, técnica e experiência para fornecer para você serviços
-            confiáveis e eficientes.
-          </p>
-          <br />
-          <p
-            >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-            licenciamentos, auditorias - as fases do processo de consultoria se
-            adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
-            criatividade, técnica e experiência para fornecer para você serviços
-            confiáveis e eficientes.
-          </p>
-          <br />
-          <p
-            >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-            licenciamentos, auditorias - as fases do processo de consultoria se
-            adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
-            criatividade, técnica e experiência para fornecer para você serviços
-            confiáveis e eficientes.
-          </p>
-          <br />
-          <p
-            >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-            licenciamentos, auditorias - as fases do processo de consultoria se
-            adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
-            criatividade, técnica e experiência para fornecer para você serviços
-            confiáveis e eficientes.
-          </p>
-          <br />
-          <p
-            >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-            licenciamentos, auditorias - as fases do processo de consultoria se
-            adaptam a sua necessidade, mas seja ela qual for, oferecemos nossa
-            criatividade, técnica e experiência para fornecer para você serviços
-            confiáveis e eficientes.
-          </p>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+          <div class="paragrafo">
+            <p
+              >Podemos construir o seu projeto ambiental e ajudá-lo no
+              gerenciamento da preservação do meio em que sua empresa atua.
+              Acreditamos que o planejamento e a administração dos recursos
+              naturais são ganhos em um empreendimento.</p
+            >
+            <br />
+            <p
+              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+              licenciamentos, auditorias - as fases do processo de consultoria
+              se adaptam a sua necessidade, mas seja ela qual for, oferecemos
+              nossa criatividade, técnica e experiência para fornecer para você
+              serviços confiáveis e eficientes.
+            </p>
+            <br />
+            <p
+              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+              licenciamentos, auditorias - as fases do processo de consultoria
+              se adaptam a sua necessidade, mas seja ela qual for, oferecemos
+              nossa criatividade, técnica e experiência para fornecer para você
+              serviços confiáveis e eficientes.
+            </p>
+            <br />
+            <p
+              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+              licenciamentos, auditorias - as fases do processo de consultoria
+              se adaptam a sua necessidade, mas seja ela qual for, oferecemos
+              nossa criatividade, técnica e experiência para fornecer para você
+              serviços confiáveis e eficientes.
+            </p>
+            <br />
+            <p
+              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+              licenciamentos, auditorias - as fases do processo de consultoria
+              se adaptam a sua necessidade, mas seja ela qual for, oferecemos
+              nossa criatividade, técnica e experiência para fornecer para você
+              serviços confiáveis e eficientes.
+            </p>
+            <br />
+            <p
+              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+              licenciamentos, auditorias - as fases do processo de consultoria
+              se adaptam a sua necessidade, mas seja ela qual for, oferecemos
+              nossa criatividade, técnica e experiência para fornecer para você
+              serviços confiáveis e eficientes.
+            </p>
+            <br />
+            <p
+              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+              licenciamentos, auditorias - as fases do processo de consultoria
+              se adaptam a sua necessidade, mas seja ela qual for, oferecemos
+              nossa criatividade, técnica e experiência para fornecer para você
+              serviços confiáveis e eficientes.
+            </p>
+            <br />
+            <p
+              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+              licenciamentos, auditorias - as fases do processo de consultoria
+              se adaptam a sua necessidade, mas seja ela qual for, oferecemos
+              nossa criatividade, técnica e experiência para fornecer para você
+              serviços confiáveis e eficientes.
+            </p>
+            <br />
+            <p
+              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+              licenciamentos, auditorias - as fases do processo de consultoria
+              se adaptam a sua necessidade, mas seja ela qual for, oferecemos
+              nossa criatividade, técnica e experiência para fornecer para você
+              serviços confiáveis e eficientes.
+            </p>
+            <br />
+            <p
+              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
+              licenciamentos, auditorias - as fases do processo de consultoria
+              se adaptam a sua necessidade, mas seja ela qual for, oferecemos
+              nossa criatividade, técnica e experiência para fornecer para você
+              serviços confiáveis e eficientes.
+            </p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+          </div>
         </div>
       </div>
       <!-- sideR -->

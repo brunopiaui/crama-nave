@@ -16,9 +16,9 @@
           </router-link>
         </div>
         <div class="pccLogo">
-          <span>Pense</span>
-          <span>Conecte</span>
-          <span>Cultive</span>
+          <span class="pccLogoPense">Pense</span>
+          <span class="pccLogoConecte">Conecte</span>
+          <span class="pccLogoCultive">Cultive</span>
         </div> </div
       ><!-- logo -->
       <nav class="blockMenu">
@@ -338,7 +338,6 @@ export default {
       // this.testeData = route
       // var resultado = this.testeData.replace('/', 'back-')
       // this.testeData = resultado
-
       if (route !== '/') {
         this.tlMenuIn = this.$gsap.timeline()
         this.tlMenuIn
