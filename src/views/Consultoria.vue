@@ -173,29 +173,52 @@ export default {
       )
     }
     this.tlPageIn
-      .from(['.backR'], {
-        duration: 1.8,
-        // opacity: 0,
-        x: 2000,
-        ease: 'power1.inOut',
-      })
-      .to(['.conteudo'], {
-        duration: 1,
+      .to('.backR', {
+        duration: 0.1,
         opacity: 1,
       })
       .from(
-        ['.sideL'],
+        '.backR',
         {
-          duration: 1,
-          opacity: 0,
+          duration: 0.8,
+          x: 2000,
+          ease: 'power1.out',
         },
         '<'
       )
-      .from(['.sideR'], {
-        duration: 1,
+      .to(
+        '.conteudo',
+        {
+          duration: 0.1,
+          opacity: 1,
+        },
+        0
+      )
+      .from(
+        '.blocoTitle h3',
+        {
+          duration: 0.5,
+          opacity: 0,
+          x: 40,
+          ease: 'power1.out',
+        },
+        '<0.5'
+      )
+      .from(
+        ['.blocoTitle h2', '.blocoTitle p'],
+        {
+          duration: 0.5,
+          opacity: 0,
+          x: 40,
+          ease: 'power1.out',
+        },
+        '<0.3'
+      )
+      .from('.sideR', {
+        duration: 0.5,
         opacity: 0,
       })
-      .from('p', {
+      .from('.sideR p', {
         duration: 1.5,
         opacity: 0,
         y: 20,
@@ -257,14 +280,15 @@ export default {
     this.tlPageOut
       .to('.conteudo', {
         opacity: 0,
-        duration: 0.5,
+        duration: 0.3,
+        ease: 'power2.out',
       })
       .to(
         '.loadingpv',
         {
           width: '100%',
-          duration: 1,
-          ease: 'power3.in',
+          duration: 0.8,
+          ease: 'power2.in',
         },
         '<'
       )

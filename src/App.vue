@@ -66,7 +66,7 @@
             <g
               id="Group_157"
               data-name="Group 157"
-              transform="translate(12.315 9.412)"
+              transform="translate(8.401 9.412)"
               class="cu"
             >
               <g
@@ -90,7 +90,7 @@
               id="Group_159"
               data-name="Group 159"
               transform="translate(21.718 11.336)"
-              opacity="0"
+              opacity="1"
               class="cu2"
             >
               <path
@@ -156,9 +156,21 @@
           ♫
         </div>
       </div> -->
-    </footer> </div
+    </footer>
+    <audio
+      id="pageSound"
+      controls
+      autoplay
+      loop
+      style="position:absolute; z-index:99999999999; bottom:0; display:none;"
+    >
+      <source src="./assets/sounds/experience.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio> </div
   ><!-- app -->
 </template>
+
+
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
@@ -171,7 +183,7 @@ export default {
   data() {
     return {
       tl: null,
-      cliqueSomAtivo: false,
+      cliqueSomAtivo: true,
     }
   },
   computed: {
@@ -190,6 +202,20 @@ export default {
     this.startProgressingAction()
   },
   mounted() {
+    this.tlsomOn = this.$gsap.timeline({ repeat: -1 })
+    this.tlsomOn.to('.cu2 path', {
+      opacity: 0.3,
+      ease: 'power1.in',
+      duration: 0.4,
+      stagger: 0.4,
+    })
+    this.tlsomOn.to('.cu2 path', {
+      opacity: 1,
+      ease: 'power1.in',
+      duration: 0.4,
+      stagger: 0.4,
+    })
+
     this.tlDropMenu
       .to('.setaDrop', {
         rotation: 180,
@@ -293,14 +319,17 @@ export default {
     },
 
     cliqueSom: function() {
-      if (this.cliqueSomAtivo === false) {
-        this.$gsap.to('.cu', { x: 8.401, ease: 'expo.out', duration: 0.5 })
-        this.$gsap.to('.cu2', { opacity: 1, ease: 'expo.out', duration: 0.5 })
-        this.cliqueSomAtivo = true
-      } else {
+      let som = document.getElementById('pageSound')
+      if (this.cliqueSomAtivo === true) {
         this.$gsap.to('.cu', { x: 12.315, ease: 'expo.out', duration: 0.5 })
         this.$gsap.to('.cu2', { opacity: 0, ease: 'expo.out', duration: 0.5 })
+        som.pause()
         this.cliqueSomAtivo = false
+      } else {
+        this.$gsap.to('.cu', { x: 8.401, ease: 'expo.out', duration: 0.5 })
+        this.$gsap.to('.cu2', { opacity: 1, ease: 'expo.out', duration: 0.5 })
+        som.play()
+        this.cliqueSomAtivo = true
       }
     },
 

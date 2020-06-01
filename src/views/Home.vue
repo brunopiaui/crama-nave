@@ -1587,6 +1587,7 @@
           class="link1dia"
           @mouseover="mouseoverLink1dia"
           @mouseleave="mouseleaveLink1dia"
+          @click="clickLink1dia"
         >
           <router-link to="/consultoria">
             <div class="link1diaBtexto">
@@ -1621,7 +1622,7 @@
           <img src="../assets/images/elementodia2.png" />
         </div>
         <div class="elemInt1dia">
-          <img src="../assets/images/elementodia2.svg" />
+          <img src="../assets/images/elementodia1.svg" />
         </div>
 
         <div
@@ -1698,7 +1699,7 @@
           <img src="../assets/images/folha3.png" />
         </div>
         <div class="elemInt3dia">
-          <img src="../assets/images/elementodia2.svg" />
+          <img src="../assets/images/elementodia3.svg" />
         </div>
       </div>
     </div>
@@ -1748,7 +1749,7 @@ export default {
       this.tl.to(
         '.loading',
         {
-          duration: 1,
+          duration: 2,
           opacity: 0,
           onComplete: () => {
             this.stopProgressingAction()
@@ -1788,12 +1789,22 @@ export default {
       )
 
     this.tl1overParte1
-      .to(['.backImg', '.link2diaBtexto', '.link3diaBtexto'], {
-        filter: 'blur(5px)',
-        autoRound: false,
-        duration: 0.3,
-        ease: 'power1.inOut',
-      })
+      .to(
+        [
+          '.backImg',
+          '.link2diaBtexto',
+          '.link3diaBtexto',
+          '.blockMenu',
+          '.som',
+          '.bottom',
+        ],
+        {
+          filter: 'blur(5px)',
+          autoRound: false,
+          duration: 0.3,
+          ease: 'power1.inOut',
+        }
+      )
       .to(
         ['.hoverPcc2', '.hoverPcc3'],
         {
@@ -1885,12 +1896,22 @@ export default {
       )
 
     this.tl2overParte1
-      .to(['.backImg', '.link1diaBtexto', '.link3diaBtexto'], {
-        filter: 'blur(5px)',
-        autoRound: false,
-        duration: 0.3,
-        ease: 'power1.inOut',
-      })
+      .to(
+        [
+          '.backImg',
+          '.link1diaBtexto',
+          '.link3diaBtexto',
+          '.blockMenu',
+          '.som',
+          '.bottom',
+        ],
+        {
+          filter: 'blur(5px)',
+          autoRound: false,
+          duration: 0.3,
+          ease: 'power1.inOut',
+        }
+      )
       .to(
         ['.hoverPcc1', '.hoverPcc3'],
         {
@@ -1982,12 +2003,22 @@ export default {
         '<0.1'
       )
     this.tl3overParte1
-      .to(['.backImg', '.link1diaBtexto', '.link2diaBtexto'], {
-        filter: 'blur(5px)',
-        autoRound: false,
-        duration: 0.3,
-        ease: 'power1.inOut',
-      })
+      .to(
+        [
+          '.backImg',
+          '.link1diaBtexto',
+          '.link2diaBtexto',
+          '.blockMenu',
+          '.som',
+          '.bottom',
+        ],
+        {
+          filter: 'blur(5px)',
+          autoRound: false,
+          duration: 0.3,
+          ease: 'power1.inOut',
+        }
+      )
       .to(
         ['.hoverPcc2', '.hoverPcc1'],
         {
@@ -2106,6 +2137,12 @@ export default {
       this.tl1overParte3.reverse()
       this.tl1overParte4.reverse()
     },
+    clickLink1dia() {
+      var testebt = document.getElementsByClassName('link1dia')
+      testebt.disable = true
+      console.log(testebt)
+    },
+
     mouseoverLink2dia() {
       this.tl2overParte1.play()
       this.tl2overParte2.play()
@@ -2139,6 +2176,12 @@ export default {
     //   duration: 1,
     //   opacity: 0,
     // })
+
+    this.tl1overParte1.reverse()
+    this.tl1overParte2.reverse()
+    this.tl1overParte3.reverse()
+    this.tl1overParte4.reverse()
+
     this.tlPageOut
       .to('.pcc', {
         opacity: 0,
@@ -2188,13 +2231,6 @@ export default {
 </script>
 
 <style lang="scss">
-.loading {
-  z-index: 999999999999;
-  background-color: #ff0000;
-  width: 100%;
-  height: 100%;
-}
-
 .home {
   display: flex;
   align-items: center;
@@ -2455,27 +2491,4 @@ export default {
 //     border-radius: 44% 56% 11% 89% / 57% 81% 19% 43%;
 //   }
 // }
-
-.cls-1 {
-  fill: none;
-  stroke: #f3f3f3;
-  stroke-width: 0.6px;
-}
-.cls-2 {
-  fill: none;
-  stroke: #f3f3f3;
-}
-.cls-3 {
-  fill: #e9e9e9;
-}
-.cls-4 {
-  opacity: 0.691;
-}
-.cls-5 {
-  fill: #fff;
-}
-.cls-6 {
-  fill: none;
-  stroke: #fff;
-}
 </style>
