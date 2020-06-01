@@ -19,24 +19,52 @@
       <div></div>
     </div>
     <!-- backR -->
-
-    <div class="elementoInterna1">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="794.996"
-        height="793.949"
-        viewBox="0 0 794.996 793.949"
+    <div
+      class="elementosTeste"
+      style="position:absolute; width:100%; opacity:0;"
+    >
+      <div class="elementoInterna1">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="794.996"
+          height="793.949"
+          viewBox="0 0 794.996 793.949"
+        >
+          <path
+            id="Path_358"
+            data-name="Path 358"
+            d="M261.608,584.819c116.376-4.956,204.566-32.2,284.644-145.068,28.944-40.812,49.777-92.325,38.161-140.712-12.531-52.3-58.33-86.738-95.576-124.173C444.805,130.613,409.233,76.8,358.856,40.4,282.44-14.8,164.612-16.885,100.726,55.68c-27.871,31.627-42.675,72.881-54.7,113.6A1217.218,1217.218,0,0,0,8.37,341.46C2.657,381.294-7.759,425.294,9.506,460.93c19.475,40.149,84.56,88.221,163.217,115.177C172.724,576.107,204.856,587.249,261.608,584.819Z"
+            transform="matrix(-0.883, 0.469, -0.469, -0.883, 794.317, 517.355)"
+            fill="none"
+            stroke="#fff"
+            stroke-width="1"
+          />
+        </svg>
+      </div>
+      <div
+        class="elementoInterna2"
+        style="position:absolute; top:170px; right:-336px; z-index:99998"
       >
-        <path
-          id="Path_358"
-          data-name="Path 358"
-          d="M261.608,584.819c116.376-4.956,204.566-32.2,284.644-145.068,28.944-40.812,49.777-92.325,38.161-140.712-12.531-52.3-58.33-86.738-95.576-124.173C444.805,130.613,409.233,76.8,358.856,40.4,282.44-14.8,164.612-16.885,100.726,55.68c-27.871,31.627-42.675,72.881-54.7,113.6A1217.218,1217.218,0,0,0,8.37,341.46C2.657,381.294-7.759,425.294,9.506,460.93c19.475,40.149,84.56,88.221,163.217,115.177C172.724,576.107,204.856,587.249,261.608,584.819Z"
-          transform="matrix(-0.883, 0.469, -0.469, -0.883, 794.317, 517.355)"
-          fill="none"
-          stroke="#fff"
-          stroke-width="1"
-        />
-      </svg>
+        <img src="../assets/images/elementointerna4.png" />
+      </div>
+      <div
+        class="elementoInterna3"
+        style="position:absolute; top:230px; right:-155px; z-index:99999"
+      >
+        <img src="../assets/images/elementointerna5.svg" />
+      </div>
+      <div
+        class="elementoInterna4"
+        style="position:absolute; top:230px; right:-230px; z-index:99997"
+      >
+        <img src="../assets/images/elementointerna6.svg" />
+      </div>
+      <div
+        class="elementoInterna5"
+        style="position:absolute; top:460px; right:20px; z-index:99999"
+      >
+        <img src="../assets/images/elementointerna7.svg" />
+      </div>
     </div>
 
     <div class="conteudo">
@@ -50,13 +78,28 @@
           >
         </div>
         <!--blocoTitle-->
+        <div class="blocoMedia">
+          <div><img src="../assets/images/icofoto.svg"/></div>
+          <div><img src="../assets/images/icovideo.svg"/></div>
+          <div><img src="../assets/images/icoaudio.svg"/></div>
+        </div>
       </div>
       <!-- sideL -->
-
-      <div class="sideR">
-        <div style="position:absolute;">
+      <div class="testescroll" style="position:absolute; width: 55%; right:0;">
+        <div
+          class="testescroll1"
+          style="position:absolute; top:340px; left:-70px; opacity:0;"
+        >
           <img src="../assets/images/elementointerna2.svg" />
         </div>
+        <div
+          class="testescroll1"
+          style="position:absolute; top:320px; left:-22px; opacity:0;"
+        >
+          <img src="../assets/images/elementointerna3.svg" />
+        </div>
+      </div>
+      <div class="sideR">
         <div id="scroll">
           <div class="aspas">
             <h4>Sua marca como parte do mundo</h4>
@@ -71,12 +114,13 @@
           <!-- aspas -->
           <div class="paragrafo">
             <p
-              >Podemos construir o seu projeto ambiental e ajudá-lo no
-              gerenciamento da preservação do meio em que sua empresa atua.
+              >Podemos construir o seu projeto ambiental unindo sustentabilidade
+              e responsabilidade social integrado aos objetivos de sua empresa,
+              e colaborando no gerenciamento da preservação do meio em que atua.
               Acreditamos que o planejamento e a administração dos recursos
-              naturais são ganhos em um empreendimento.</p
-            >
-            <br />
+              naturais são ganhos em um empreendimento.
+            </p>
+
             <p
               >Pesquisas, diagnósticos, operações, planos de ação, instalações,
               licenciamentos, auditorias - as fases do processo de consultoria
@@ -84,63 +128,15 @@
               nossa criatividade, técnica e experiência para fornecer para você
               serviços confiáveis e eficientes.
             </p>
-            <br />
+
             <p
-              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-              licenciamentos, auditorias - as fases do processo de consultoria
-              se adaptam a sua necessidade, mas seja ela qual for, oferecemos
-              nossa criatividade, técnica e experiência para fornecer para você
-              serviços confiáveis e eficientes.
+              >Podemos construir o seu projeto ambiental unindo sustentabilidade
+              e responsabilidade social integrado aos objetivos de sua empresa,
+              e colaborando no gerenciamento da preservação do meio em que atua.
+              Acreditamos que o planejamento e a administração dos recursos
+              naturais são ganhos em um empreendimento.
             </p>
-            <br />
-            <p
-              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-              licenciamentos, auditorias - as fases do processo de consultoria
-              se adaptam a sua necessidade, mas seja ela qual for, oferecemos
-              nossa criatividade, técnica e experiência para fornecer para você
-              serviços confiáveis e eficientes.
-            </p>
-            <br />
-            <p
-              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-              licenciamentos, auditorias - as fases do processo de consultoria
-              se adaptam a sua necessidade, mas seja ela qual for, oferecemos
-              nossa criatividade, técnica e experiência para fornecer para você
-              serviços confiáveis e eficientes.
-            </p>
-            <br />
-            <p
-              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-              licenciamentos, auditorias - as fases do processo de consultoria
-              se adaptam a sua necessidade, mas seja ela qual for, oferecemos
-              nossa criatividade, técnica e experiência para fornecer para você
-              serviços confiáveis e eficientes.
-            </p>
-            <br />
-            <p
-              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-              licenciamentos, auditorias - as fases do processo de consultoria
-              se adaptam a sua necessidade, mas seja ela qual for, oferecemos
-              nossa criatividade, técnica e experiência para fornecer para você
-              serviços confiáveis e eficientes.
-            </p>
-            <br />
-            <p
-              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-              licenciamentos, auditorias - as fases do processo de consultoria
-              se adaptam a sua necessidade, mas seja ela qual for, oferecemos
-              nossa criatividade, técnica e experiência para fornecer para você
-              serviços confiáveis e eficientes.
-            </p>
-            <br />
-            <p
-              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-              licenciamentos, auditorias - as fases do processo de consultoria
-              se adaptam a sua necessidade, mas seja ela qual for, oferecemos
-              nossa criatividade, técnica e experiência para fornecer para você
-              serviços confiáveis e eficientes.
-            </p>
-            <br />
+
             <p
               >Pesquisas, diagnósticos, operações, planos de ação, instalações,
               licenciamentos, auditorias - as fases do processo de consultoria
@@ -163,6 +159,9 @@
             <br />
             <br />
             <br />
+          </div>
+          <div class="videoCont">
+            <div><img src="../assets/images/icovideo.svg"/></div>
           </div>
         </div>
       </div>
@@ -238,20 +237,55 @@ export default {
         '<0.5'
       )
       .from(
-        ['.blocoTitle h2', '.blocoTitle p'],
+        ['.blocoTitle h2', '.blocoTitle p', '.blocoMedia'],
         {
           duration: 0.5,
           opacity: 0,
           x: 40,
           ease: 'power1.out',
+          stagger: 0.25,
         },
         '<0.3'
       )
-      .from('.sideR', {
-        duration: 0.5,
-        opacity: 0,
-      })
-      .from('.sideR p', {
+      .from(
+        ['.sideR'],
+        {
+          duration: 0.5,
+          opacity: 0,
+        },
+        '<0.3'
+      )
+      .to(
+        ['.elementosTeste', '.testescroll1'],
+        {
+          duration: 0,
+          opacity: 1,
+        },
+        0
+      )
+      .from(
+        '.elementoInterna1',
+        {
+          duration: 0.5,
+          x: 100,
+          y: -100,
+        },
+        '<'
+      )
+      .from(
+        [
+          '.testescroll1',
+          '.elementoInterna2',
+          '.elementoInterna3',
+          '.elementoInterna4',
+        ],
+        {
+          duration: 0.5,
+          opacity: 0,
+        },
+        '<'
+      )
+      .from('.paragrafo p', {
         duration: 1.5,
         opacity: 0,
         y: 20,
@@ -292,6 +326,13 @@ export default {
       currPos = parseInt(currPos) - delta * 10
       // moving the position of the object
       conteudo.scrollTop = currPos
+
+      this.$gsap.to(['.testescroll'], {
+        // y: -500,
+        opacity: 0.1,
+        ease: 'linear',
+        duration: 1,
+      })
 
       let h = conteudo
       let b = document.querySelector('#scroll')

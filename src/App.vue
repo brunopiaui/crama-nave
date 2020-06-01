@@ -4,6 +4,11 @@
     :class="[nextBackground.type === 'image' ? 'image' : 'video']"
     :style="{ backgroundImage: `url(${nextBackground.url})` }"
   >
+    <div v-if="progressing" class="loading">
+      <img src="./assets/images/logoloading.svg" />
+      {{ progress }}%
+    </div>
+
     <header class="top">
       <div class="logo">
         <div style="position:relative;">
@@ -202,6 +207,19 @@ export default {
     this.startProgressingAction()
   },
   mounted() {
+    if (this.progressing) {
+      this.tl.to(
+        '.loading',
+        {
+          duration: 1,
+          opacity: 0,
+          onComplete: () => {
+            this.stopProgressingAction()
+          },
+        },
+        '+=0.5'
+      )
+    }
     this.tlsomOn = this.$gsap.timeline({ repeat: -1 })
     this.tlsomOn.to('.cu2 path', {
       opacity: 0.3,

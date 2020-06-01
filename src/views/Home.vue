@@ -3,7 +3,7 @@
     <div class="backImg"></div>
     <div class="loadingpv"> </div>
 
-    <div v-if="progressing" class="loading">{{ progress }}%</div>
+    <!-- <div v-if="progressing" class="loading">{{ progress }}%</div> -->
 
     <!-- <div class="backTop"></div> -->
 
@@ -1745,19 +1745,19 @@ export default {
     this.tl3overParte4 = this.$gsap.timeline({ paused: true })
   },
   mounted() {
-    if (this.progressing) {
-      this.tl.to(
-        '.loading',
-        {
-          duration: 2,
-          opacity: 0,
-          onComplete: () => {
-            this.stopProgressingAction()
-          },
-        },
-        '+=0.5'
-      )
-    }
+    // if (this.progressing) {
+    //   this.tl.to(
+    //     '.loading',
+    //     {
+    //       duration: 2,
+    //       opacity: 0,
+    //       onComplete: () => {
+    //         this.stopProgressingAction()
+    //       },
+    //     },
+    //     '+=0.5'
+    //   )
+    // }
     // this.$gsap.to(['.top1'], {
     //   duration: 1,
     //   opacity: 1,
@@ -2362,6 +2362,7 @@ export default {
           font-size: 17px;
           font-weight: 300;
           line-height: 25.5px;
+          color: #e9e9e9;
         }
       }
       .elemInt1dia {
@@ -2409,6 +2410,7 @@ export default {
           font-size: 17px;
           font-weight: 300;
           line-height: 25.5px;
+          color: #e9e9e9;
         }
       }
       .elemInt2dia {
@@ -2457,6 +2459,7 @@ export default {
           font-size: 17px;
           font-weight: 300;
           line-height: 25.5px;
+          color: #e9e9e9;
         }
       }
       .elemInt3dia {
