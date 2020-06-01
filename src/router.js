@@ -14,7 +14,7 @@ export default new Router({
           /* webpackChunkName: "Home" */
           '@/views/Home.vue'
         ),
-      meta: { index: 0, image: 'image00' },
+      meta: { index: 0, video: 'video01' },
     },
     {
       path: '/consultoria',
@@ -64,7 +64,7 @@ export default new Router({
           /* webpackChunkName: "Image04" */
           '@/views/Midia.vue'
         ),
-      meta: { index: 5, image: 'image03' },
+      meta: { index: 5, image: 'image03', noMenu: true },
     },
     {
       path: '/contato',
