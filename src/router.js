@@ -14,7 +14,7 @@ export default new Router({
           /* webpackChunkName: "Home" */
           '@/views/Home.vue'
         ),
-      meta: { index: 0, image: 'image00' },
+      meta: { index: 0, image: 'image04', video: 'video01' },
     },
     {
       path: '/consultoria',
