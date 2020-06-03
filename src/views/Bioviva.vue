@@ -16,16 +16,13 @@ export default {
   data() {
     return {
       tl: null,
-      video: null,
+      video: require('../assets/videos/video01.mp4'),
     }
   },
   computed: {
     ...mapGetters(['loading', 'backgrounds', 'progressing', 'progress']),
   },
   created() {
-    const video = this.backgrounds('video01')
-    this.video = video.url
-
     this.tl = this.$gsap.timeline()
   },
   mounted() {
