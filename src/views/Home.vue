@@ -1,6 +1,12 @@
 <template>
   <div class="home">
     <div class="backImg"></div>
+    <div class="img">
+      <video id="video" autoplay muted loop>
+        <source :src="video" type="video/mp4" />
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
     <div class="loadingpv"> </div>
 
     <!-- <div v-if="progressing" class="loading">{{ progress }}%</div> -->
@@ -1722,6 +1728,7 @@ export default {
   data() {
     return {
       tl: null,
+      video: require('../assets/videos/video01.mp4'),
     }
   },
   computed: {
@@ -2231,6 +2238,21 @@ export default {
 </script>
 
 <style lang="scss">
+.img {
+  display: block;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  #video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+}
 .home {
   display: flex;
   align-items: center;
@@ -2260,9 +2282,10 @@ export default {
 
   .backImg {
     position: absolute;
+    z-index: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../assets/images/image00.jpg');
+    // background-image: url('../assets/images/image00.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -2279,11 +2302,11 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      opacity: 0;
       // border: 2px solid #333;
       width: 40%;
       height: 100%;
       mix-blend-mode: overlay;
+      opacity: 0;
       span {
         display: block;
         font-size: 115px;
@@ -2321,8 +2344,8 @@ export default {
       }
       .elem4dia {
         position: absolute;
-        margin: 90px 0 0 100px;
         z-index: 10;
+        margin: 90px 0 0 100px;
       }
       .elem5dia {
         position: absolute;
@@ -2355,8 +2378,8 @@ export default {
         }
       }
       .cont1dia {
-        width: 290px;
         position: absolute;
+        width: 290px;
         opacity: 0;
         p {
           font-size: 17px;
