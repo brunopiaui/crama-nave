@@ -272,18 +272,6 @@ export default {
         meta: { type: 'image', name: 'image01' },
       },
       {
-        url: require('@/assets/images/testepeso.jpg'),
-        meta: { type: 'image', name: 'image10' },
-      },
-      {
-        url: require('@/assets/images/testepeso2.jpg'),
-        meta: { type: 'image', name: 'image11' },
-      },
-      {
-        url: require('@/assets/images/testepeso3.jpg'),
-        meta: { type: 'image', name: 'image12' },
-      },
-      {
         url: require('@/assets/images/image02.jpg'),
         meta: { type: 'image', name: 'image02' },
       },
@@ -294,14 +282,6 @@ export default {
       {
         url: require('@/assets/videos/video01.mp4'),
         meta: { type: 'video', name: 'video01' },
-      },
-      {
-        url: require('@/assets/videos/pesovideo.mp4'),
-        meta: { type: 'video', name: 'video02' },
-      },
-      {
-        url: require('@/assets/videos/pesovideo2.mp4'),
-        meta: { type: 'video', name: 'video02' },
       },
       {
         url: require('@/assets/images/image04.jpg'),
