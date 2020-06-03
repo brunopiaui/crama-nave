@@ -79,7 +79,7 @@ div.conteudo {
   height: 100%;
   z-index: 999;
   position: relative;
-  opacity: 0;
+  visibility: hidden;
   div.sideL {
     width: 30%;
     padding: 180px 0 0 0;
@@ -151,7 +151,7 @@ div.conteudo {
     div.paragrafo p {
       font-size: 16px;
       font-weight: 300;
-      color: #f3f3f3;
+      color: #e9e9e9;
       line-height: 22.4px;
       margin: 0 0 25px 0;
     }
@@ -164,7 +164,7 @@ div.backR {
   width: 66%;
   right: 0;
   z-index: 998;
-  opacity: 0;
+  visibility: hidden;
   div.backRshape {
     width: 1280px;
   }
@@ -175,6 +175,35 @@ div.elementoInterna1 {
   top: -350px;
   z-index: 999;
   right: -500px;
+  visibility: hidden;
+}
+div.elementoInterna2 {
+  position: absolute;
+  top: 170px;
+  right: -336px;
+  z-index: 99998;
+  visibility: hidden;
+}
+div.elementoInterna3 {
+  position: absolute;
+  top: 230px;
+  right: -155px;
+  z-index: 99999;
+  visibility: hidden;
+}
+div.elementoInterna4 {
+  position: absolute;
+  top: 230px;
+  right: -230px;
+  z-index: 99997;
+  visibility: hidden;
+}
+div.elementoInterna5 {
+  position: absolute;
+  top: 460px;
+  right: 20px;
+  z-index: 99999;
+  visibility: hidden;
 }
 
 .loadingpv {

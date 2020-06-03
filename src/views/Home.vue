@@ -2298,6 +2298,7 @@ export default {
     justify-content: space-between;
     width: 85%;
     height: 60%;
+    // margin: 10px 0 0 0;
     .pcc {
       display: flex;
       flex-direction: column;
