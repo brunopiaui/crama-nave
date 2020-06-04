@@ -287,6 +287,42 @@ export default {
         url: require('@/assets/images/image04.jpg'),
         meta: { type: 'video', name: 'image04' },
       },
+      {
+        url: require('@/assets/images/galeria/jardim01/01_01.jpg'),
+        meta: { type: 'image', name: 'j101' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim01/01_02.jpg'),
+        meta: { type: 'image', name: 'j102' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim01/01_03.jpg'),
+        meta: { type: 'image', name: 'j103' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim01/01_04_NAO.jpg'),
+        meta: { type: 'image', name: 'j104' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim01/01_05.jpg'),
+        meta: { type: 'image', name: 'j105' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim01/01_07.jpg'),
+        meta: { type: 'image', name: 'j106' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim01/01_10_NAO.jpg'),
+        meta: { type: 'image', name: 'j107' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim01/01_12_NAO.jpg'),
+        meta: { type: 'image', name: 'j108' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim01/01_13.jpg'),
+        meta: { type: 'image', name: 'j109' },
+      },
     ])
     preload.onfetched = (item) => {
       this.addToBackgroundsAction({

@@ -63,9 +63,9 @@
         </div>
         <!--blocoTitle-->
         <div class="blocoMedia">
-          <div><img src="../assets/images/icofoto.svg"/></div>
+          <!-- <div><img src="../assets/images/icofoto.svg"/></div> -->
           <div><img src="../assets/images/icovideo.svg"/></div>
-          <div><img src="../assets/images/icoaudio.svg"/></div>
+          <!-- <div><img src="../assets/images/icoaudio.svg"/></div> -->
         </div>
       </div>
       <!-- sideL -->
@@ -96,7 +96,7 @@
             <span>Gustavo Martinelli</span>
           </div>
           <!-- aspas -->
-          <div class="paragrafo">
+          <div class="blocoTexto">
             <p
               >Podemos construir o seu projeto ambiental unindo sustentabilidade
               e responsabilidade social integrado aos objetivos de sua empresa,
@@ -113,6 +113,17 @@
               serviços confiáveis e eficientes.
             </p>
 
+            <span class="destContP"
+              >Porque a vida é a matéria-prima de nosso trabalho.</span
+            >
+
+            <ul class="contSolucoes">
+              <span>Soluções na cadeia produtiva</span>
+              <li>- Inventários florísticos e florestais</li>
+              <li>- Restauração de ecossistemas</li>
+              <li>- Conservação de espécies</li>
+              <li>- Pesquisas de matérias-primas naturais para produtos</li>
+            </ul>
             <br />
             <br />
             <br />
@@ -237,9 +248,18 @@ export default {
         '<0.5'
       )
       .from(
+        '.elementoInterna2',
+        {
+          duration: 0.6,
+          opacity: 0,
+          x: 50,
+          y: 150,
+        },
+        '<0.5'
+      )
+      .from(
         [
           '.testescroll1',
-          '.elementoInterna2',
           '.elementoInterna3',
           '.elementoInterna4',
           '.elementoInterna5',
@@ -252,7 +272,7 @@ export default {
         '<'
       )
       .from(
-        '.paragrafo p',
+        '.blocoTexto p',
         {
           duration: 1,
           opacity: 0,
@@ -297,13 +317,6 @@ export default {
       // moving the position of the object
       conteudo.scrollTop = currPos
 
-      this.$gsap.to(['.testescroll'], {
-        // y: -500,
-        opacity: 0.1,
-        ease: 'linear',
-        duration: 1,
-      })
-
       let h = conteudo
       let b = document.querySelector('#scroll')
       let st = 'scrollTop'
@@ -311,6 +324,40 @@ export default {
 
       var percent =
         ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100
+
+      if (percent === 0) {
+        this.$gsap.to(
+          [
+            '.testescroll',
+            '.elementoInterna1',
+            '.elementoInterna2',
+            '.elementoInterna3',
+            '.elementoInterna4',
+            '.elementoInterna5',
+          ],
+          {
+            duration: 1,
+            opacity: 1,
+            ease: 'linear',
+          }
+        )
+      } else {
+        this.$gsap.to(
+          [
+            '.testescroll',
+            '.elementoInterna1',
+            '.elementoInterna2',
+            '.elementoInterna3',
+            '.elementoInterna4',
+            '.elementoInterna5',
+          ],
+          {
+            duration: 1,
+            opacity: 0.1,
+            ease: 'linear',
+          }
+        )
+      }
 
       if (percent !== Infinity && !isNaN(percent)) {
         console.log(Math.trunc(percent) + '%')
@@ -346,16 +393,6 @@ export default {
           next()
         },
       })
-    // this.$gsap.to(['.geralInt'], {
-    //   duration: 0.6,
-    //   opacity: 0,
-    //   scale: 1.1,
-    //   delay: 1,
-    //   ease: 'Power2.easeInOut',
-    //   onComplete: () => {
-    //     next()
-    //   },
-    // })
   },
 }
 </script>

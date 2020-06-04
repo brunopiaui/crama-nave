@@ -63,23 +63,51 @@ export default {
     slides() {
       return [
         {
-          midia: this.backgrounds('image00'),
+          midia: this.backgrounds('j101'),
           id: 1,
           titulo: 'Jardim 01',
           descricao:
             'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo. 1',
         },
         {
-          midia: this.backgrounds('image01'),
+          midia: this.backgrounds('j102'),
           id: 2,
-          titulo: 'Jardim 02',
+          titulo: 'Jardim 01',
           descricao:
             'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor. 2',
         },
         {
-          midia: this.backgrounds('image04'),
+          midia: this.backgrounds('j103'),
           id: 3,
-          titulo: 'Jardim 03',
+          titulo: 'Jardim 01',
+          descricao:
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy. Sed diam voluptua. At vero eos et accusam et justo duo. 3',
+        },
+        {
+          midia: this.backgrounds('j104'),
+          id: 4,
+          titulo: 'Jardim 01',
+          descricao:
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy. Sed diam voluptua. At vero eos et accusam et justo duo. 3',
+        },
+        {
+          midia: this.backgrounds('j105'),
+          id: 5,
+          titulo: 'Jardim 01',
+          descricao:
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy. Sed diam voluptua. At vero eos et accusam et justo duo. 3',
+        },
+        {
+          midia: this.backgrounds('j106'),
+          id: 6,
+          titulo: 'Jardim 01',
+          descricao:
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy. Sed diam voluptua. At vero eos et accusam et justo duo. 3',
+        },
+        {
+          midia: this.backgrounds('j107'),
+          id: 7,
+          titulo: 'Jardim 01',
           descricao:
             'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy. Sed diam voluptua. At vero eos et accusam et justo duo. 3',
         },
