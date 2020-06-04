@@ -323,6 +323,118 @@ export default {
         url: require('@/assets/images/galeria/jardim01/01_13.jpg'),
         meta: { type: 'image', name: 'j109' },
       },
+      {
+        url: require('@/assets/images/galeria/jardim02/02_01.jpg'),
+        meta: { type: 'image', name: 'j201' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim02/02_02.jpg'),
+        meta: { type: 'image', name: 'j202' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim02/02_04.jpg'),
+        meta: { type: 'image', name: 'j203' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim02/02_05.jpg'),
+        meta: { type: 'image', name: 'j204' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim02/02_06.jpg'),
+        meta: { type: 'image', name: 'j205' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim02/02_07.jpg'),
+        meta: { type: 'image', name: 'j206' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim02/02_09.jpg'),
+        meta: { type: 'image', name: 'j207' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim02/02_14.jpg'),
+        meta: { type: 'image', name: 'j208' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim03/03_01.jpg'),
+        meta: { type: 'image', name: 'j301' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim03/03_02.jpg'),
+        meta: { type: 'image', name: 'j302' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim03/03_03.jpg'),
+        meta: { type: 'image', name: 'j303' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim03/03_09.jpg'),
+        meta: { type: 'image', name: 'j304' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim03/03_10.jpg'),
+        meta: { type: 'image', name: 'j305' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim03/03_17.jpg'),
+        meta: { type: 'image', name: 'j306' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim03/DJJ_0203.jpg'),
+        meta: { type: 'image', name: 'j307' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim03/DJJ_0206.jpg'),
+        meta: { type: 'image', name: 'j308' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim03/DJJ_0226.jpg'),
+        meta: { type: 'image', name: 'j309' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim03/DJJ_0232.jpg'),
+        meta: { type: 'image', name: 'j310' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim03/DJJ_0233.jpg'),
+        meta: { type: 'image', name: 'j311' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim03/DJJ_0239.jpg'),
+        meta: { type: 'image', name: 'j312' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim04/04_01.jpg'),
+        meta: { type: 'image', name: 'j401' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim04/04_06.jpg'),
+        meta: { type: 'image', name: 'j402' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim04/04_10.jpg'),
+        meta: { type: 'image', name: 'j403' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim04/04_13.jpg'),
+        meta: { type: 'image', name: 'j404' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim04/DJJ_0293.jpg'),
+        meta: { type: 'image', name: 'j405' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim04/DJJ_0309.jpg'),
+        meta: { type: 'image', name: 'j406' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim04/DJJ_0331.jpg'),
+        meta: { type: 'image', name: 'j407' },
+      },
+      {
+        url: require('@/assets/images/galeria/jardim04/DJJ_0366.jpg'),
+        meta: { type: 'image', name: 'j408' },
+      },
     ])
     preload.onfetched = (item) => {
       this.addToBackgroundsAction({
