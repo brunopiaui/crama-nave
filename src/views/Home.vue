@@ -1729,6 +1729,7 @@ export default {
     return {
       tl: null,
       video: require('../assets/videos/video01.mp4'),
+      linkDiaOn: true,
       link1dia: false,
       link2dia: false,
       link3dia: false,
@@ -2167,22 +2168,27 @@ export default {
 
     mouseoverLink1dia() {
       this.link1diaOver = true
-      if (!this.link2dia && !this.link3dia) {
-        this.tl1overParte1.play()
-        this.tl1overParte2.play()
-        this.tl1overParte3.play()
-        this.tl1overParte4.play()
+      if (this.linkDiaOn) {
+        if (!this.link2dia && !this.link3dia) {
+          this.tl1overParte1.play()
+          this.tl1overParte2.play()
+          this.tl1overParte3.play()
+          this.tl1overParte4.play()
+        }
       }
     },
     mouseleaveLink1dia() {
       this.link1diaOver = false
-      this.link1dia = true
-      this.tl1overParte1.reverse()
-      this.tl1overParte2.reverse()
-      this.tl1overParte3.reverse()
-      this.tl1overParte4.reverse()
+      if (this.linkDiaOn) {
+        this.link1dia = true
+        this.tl1overParte1.reverse()
+        this.tl1overParte2.reverse()
+        this.tl1overParte3.reverse()
+        this.tl1overParte4.reverse()
+      }
     },
     clickLink1dia() {
+      this.linkDiaOn = false
       var testebt = document.getElementsByClassName('link1dia')
       testebt.disable = true
       console.log(testebt)
@@ -2190,37 +2196,45 @@ export default {
 
     mouseoverLink2dia() {
       this.link2diaOver = true
-      if (!this.link1dia && !this.link3dia) {
-        this.tl2overParte1.play()
-        this.tl2overParte2.play()
-        this.tl2overParte3.play()
-        this.tl2overParte4.play()
+      if (this.linkDiaOn) {
+        if (!this.link1dia && !this.link3dia) {
+          this.tl2overParte1.play()
+          this.tl2overParte2.play()
+          this.tl2overParte3.play()
+          this.tl2overParte4.play()
+        }
       }
     },
     mouseleaveLink2dia() {
       this.link2diaOver = false
-      this.link2dia = true
-      this.tl2overParte1.reverse()
-      this.tl2overParte2.reverse()
-      this.tl2overParte3.reverse()
-      this.tl2overParte4.reverse()
+      if (this.linkDiaOn) {
+        this.link2dia = true
+        this.tl2overParte1.reverse()
+        this.tl2overParte2.reverse()
+        this.tl2overParte3.reverse()
+        this.tl2overParte4.reverse()
+      }
     },
     mouseoverLink3dia() {
       this.link3diaOver = true
-      if (!this.link1dia && !this.link2dia) {
-        this.tl3overParte1.play()
-        this.tl3overParte2.play()
-        this.tl3overParte3.play()
-        this.tl3overParte4.play()
+      if (this.linkDiaOn) {
+        if (!this.link1dia && !this.link2dia) {
+          this.tl3overParte1.play()
+          this.tl3overParte2.play()
+          this.tl3overParte3.play()
+          this.tl3overParte4.play()
+        }
       }
     },
     mouseleaveLink3dia() {
       this.link3diaOver = false
-      this.link3dia = true
-      this.tl3overParte1.reverse()
-      this.tl3overParte2.reverse()
-      this.tl3overParte3.reverse()
-      this.tl3overParte4.reverse()
+      if (this.linkDiaOn) {
+        this.link3dia = true
+        this.tl3overParte1.reverse()
+        this.tl3overParte2.reverse()
+        this.tl3overParte3.reverse()
+        this.tl3overParte4.reverse()
+      }
     },
   },
 
