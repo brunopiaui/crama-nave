@@ -1729,6 +1729,12 @@ export default {
     return {
       tl: null,
       video: require('../assets/videos/video01.mp4'),
+      link1dia: false,
+      link2dia: false,
+      link3dia: false,
+      link1diaOver: false,
+      link2diaOver: false,
+      link3diaOver: false,
     }
   },
   computed: {
@@ -1863,6 +1869,15 @@ export default {
         opacity: 0.1,
         x: 20,
         ease: 'power1.inOut',
+        onReverseComplete: () => {
+          this.link1dia = false
+          if (this.link2diaOver) {
+            this.mouseoverLink2dia()
+          }
+          if (this.link3diaOver) {
+            this.mouseoverLink3dia()
+          }
+        },
       })
       .to(
         '.elem3dia',
@@ -1971,6 +1986,15 @@ export default {
         opacity: 0.1,
         x: 20,
         ease: 'power1.inOut',
+        onReverseComplete: () => {
+          this.link2dia = false
+          if (this.link1diaOver) {
+            this.mouseoverLink1dia()
+          }
+          if (this.link3diaOver) {
+            this.mouseoverLink3dia()
+          }
+        },
       })
       .to(
         '.elem3dia',
@@ -2077,6 +2101,15 @@ export default {
         opacity: 0.1,
         x: 20,
         ease: 'power1.inOut',
+        onReverseComplete: () => {
+          this.link3dia = false
+          if (this.link1diaOver) {
+            this.mouseoverLink1dia()
+          }
+          if (this.link2diaOver) {
+            this.mouseoverLink2dia()
+          }
+        },
       })
       .to(
         '.elem3dia',
@@ -2133,12 +2166,17 @@ export default {
     mouseleavePcc3() {},
 
     mouseoverLink1dia() {
-      this.tl1overParte1.play()
-      this.tl1overParte2.play()
-      this.tl1overParte3.play()
-      this.tl1overParte4.play()
+      this.link1diaOver = true
+      if (!this.link2dia && !this.link3dia) {
+        this.tl1overParte1.play()
+        this.tl1overParte2.play()
+        this.tl1overParte3.play()
+        this.tl1overParte4.play()
+      }
     },
     mouseleaveLink1dia() {
+      this.link1diaOver = false
+      this.link1dia = true
       this.tl1overParte1.reverse()
       this.tl1overParte2.reverse()
       this.tl1overParte3.reverse()
@@ -2151,24 +2189,34 @@ export default {
     },
 
     mouseoverLink2dia() {
-      this.tl2overParte1.play()
-      this.tl2overParte2.play()
-      this.tl2overParte3.play()
-      this.tl2overParte4.play()
+      this.link2diaOver = true
+      if (!this.link1dia && !this.link3dia) {
+        this.tl2overParte1.play()
+        this.tl2overParte2.play()
+        this.tl2overParte3.play()
+        this.tl2overParte4.play()
+      }
     },
     mouseleaveLink2dia() {
+      this.link2diaOver = false
+      this.link2dia = true
       this.tl2overParte1.reverse()
       this.tl2overParte2.reverse()
       this.tl2overParte3.reverse()
       this.tl2overParte4.reverse()
     },
     mouseoverLink3dia() {
-      this.tl3overParte1.play()
-      this.tl3overParte2.play()
-      this.tl3overParte3.play()
-      this.tl3overParte4.play()
+      this.link3diaOver = true
+      if (!this.link1dia && !this.link2dia) {
+        this.tl3overParte1.play()
+        this.tl3overParte2.play()
+        this.tl3overParte3.play()
+        this.tl3overParte4.play()
+      }
     },
     mouseleaveLink3dia() {
+      this.link3diaOver = false
+      this.link3dia = true
       this.tl3overParte1.reverse()
       this.tl3overParte2.reverse()
       this.tl3overParte3.reverse()
