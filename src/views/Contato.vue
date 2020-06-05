@@ -21,19 +21,19 @@ export default {
     this.tl = this.$gsap.timeline()
   },
   mounted() {
-    if (this.progressing) {
-      this.tl.to(
-        '.loading',
-        {
-          duration: 1,
-          opacity: 0,
-          onComplete: () => {
-            this.stopProgressingAction()
-          },
-        },
-        '+=0.5'
-      )
-    }
+    // if (this.progressing) {
+    //   this.tl.to(
+    //     '.loading',
+    //     {
+    //       duration: 1,
+    //       opacity: 0,
+    //       onComplete: () => {
+    //         this.stopProgressingAction()
+    //       },
+    //     },
+    //     '+=0.5'
+    //   )
+    // }
     this.$gsap.to(['.top1'], {
       duration: 1,
       opacity: 1,

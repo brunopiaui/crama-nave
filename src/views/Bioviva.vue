@@ -4,10 +4,10 @@
 
     <div class="loadingpv"> </div>
     <div v-if="progressing" class="loading">{{ progress }}%</div>
-    <video id="video" autoplay muted loop>
+    <!-- <video id="video" autoplay muted loop>
       <source :src="video" type="video/mp4" />
       Your browser does not support HTML5 video.
-    </video>
+    </video> -->
 
     <div class="backR">
       <div class="backRshape">
@@ -15,7 +15,7 @@
           <path
             d="M1280,1080H76c0,0-76-186-76-501S76,0,76,0h1204V1080z"
             fill="#E9E9E9"
-            opacity="0.95"
+            opacity="0.93"
           />
         </svg>
       </div>
@@ -35,22 +35,22 @@
           d="M261.608,584.819c116.376-4.956,204.566-32.2,284.644-145.068,28.944-40.812,49.777-92.325,38.161-140.712-12.531-52.3-58.33-86.738-95.576-124.173C444.805,130.613,409.233,76.8,358.856,40.4,282.44-14.8,164.612-16.885,100.726,55.68c-27.871,31.627-42.675,72.881-54.7,113.6A1217.218,1217.218,0,0,0,8.37,341.46C2.657,381.294-7.759,425.294,9.506,460.93c19.475,40.149,84.56,88.221,163.217,115.177C172.724,576.107,204.856,587.249,261.608,584.819Z"
           transform="matrix(-0.883, 0.469, -0.469, -0.883, 794.317, 517.355)"
           fill="none"
-          stroke="#fff"
+          stroke="#A3A3A3"
           stroke-width="1"
         />
       </svg>
     </div>
-    <div class="elementoInterna2 elementoInterna2_3">
-      <img src="../assets/images/elementointerna4_3.png" />
+    <div class="elementoInterna2 elementoInterna2_b">
+      <img src="../assets/images/elementointerna4_b.png" />
     </div>
     <div class="elementoInterna3">
       <img src="../assets/images/elementointerna5.svg" />
     </div>
     <div class="elementoInterna4">
-      <img src="../assets/images/elementointerna6.svg" />
+      <img src="../assets/images/elementointerna6_b.svg" />
     </div>
     <div class="elementoInterna5">
-      <img src="../assets/images/elementointerna7_3.svg" />
+      <img src="../assets/images/elementointerna7_2.svg" />
     </div>
 
     <div class="conteudo">
@@ -62,63 +62,160 @@
         </div>
         <!--blocoTitle-->
         <div class="blocoMedia">
-          <!-- <div><img src="../assets/images/icofoto.svg"/></div> -->
           <div><img src="../assets/images/icovideo.svg"/></div>
+          <div><img src="../assets/images/icofoto.svg"/></div>
           <!-- <div><img src="../assets/images/icoaudio.svg"/></div> -->
         </div>
       </div>
       <!-- sideL -->
+      <div class="testescroll" style="position:absolute; width: 55%; right:0;">
+        <div
+          class="testescroll1"
+          style="position:absolute; top:440px; left:-70px;"
+        >
+          <img src="../assets/images/elementointerna2_b.svg" />
+        </div>
+        <div
+          class="testescroll1"
+          style="position:absolute; top:500px; left:-22px;"
+        >
+          <img src="../assets/images/elementointerna3_b.svg" />
+        </div>
+      </div>
       <div class="sideR">
         <div id="scroll">
-          <div class="aspas">
-            <!-- <h4>Sua marca como parte do mundo</h4> -->
-            <p
+          <div class="videoCont">
+            <div class="videoContBlocoTexto">
+              <p>Conheça quem faz a Navia</p>
+            </div>
+            <div class="videoContBlocoImg">
+              <div class="imgVideoCont"
+                ><img src="../assets/images/thumbvideo1.jpg"
+              /></div>
+              <div class="icoVideoCont">
+                <img src="../assets/images/icovideo.svg" />
+              </div>
+            </div>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <!-- <div class="aspas">
+            <p class="bioCorP"
               >“Eu realizei durante muitos e muitos anos expedições científicas
               por todo o Brasil. Isso me deu um contato único com a natureza e a
               possibilidade de enxergar os ecossistemas, as paisagens e os
               lugares muito de perto.”</p
             >
-            <span>Gustavo Martinelli</span>
-          </div>
+            <span class="bioCorSpan">Gustavo Martinelli</span>
+          </div> -->
           <!-- aspas -->
-          <div class="blocoTexto" style="color:#333333;">
-            <p style="color:#333333;"
+          <div class="blocoTexto">
+            <p style="color:#122124;"
+              >Gustavo Martinelli e Eládio Miranda Lima se encontram na visão de
+              mundo e se complementa no conhecimento e prática. Na Navia, o
+              domínio técnico do biólogo se une à veia empreendedora do homem de
+              negócios. Dois olhares que juntos se multiplicam, mas que tem um
+              interesse e uma paixão única no desenvolvimento desse trabalho - a
+              conexão e o equilíbrio produtivo entre o homem, a sociedade e o
+              meio ambiente.
+            </p>
+
+            <!-- <p
+              ><span class="destContP destContPbioCor"
+                >Continuar é parte do nosso DNA.</span
+              ></p
+            >
+
+            <p style="color:#122124;"
+              >A biodiversidade agrega valor. Mudança no mundo de negócios
+              Conservação e sustentabilidades são conceitos que precisam ser
+              trabalhados sempre (não agrega o valor).
+            </p> -->
+
+            <!-- <p><span class="destContP destContPbioCor">Conexão</span></p> -->
+          </div>
+          <div class="aspas" style="margin-top:80px;">
+            <h4 style="color:#4B9167; font-size:18px;"
+              >A arte verde e a técnica viajante de Gustavo Martinelli.</h4
+            >
+            <p class="bioCorP"
+              >“Eu realizei durante muitos e muitos anos expedições científicas
+              por todo o Brasil. Isso me deu um contato único com a natureza e a
+              possibilidade de enxergar os ecossistemas, as paisagens e os
+              lugares muito de perto.”</p
+            >
+            <span class="bioCorSpan">Gustavo Martinelli</span>
+          </div>
+          <div class="blocoTexto">
+            <p style="color:#122124;"
               >A trajetória de uma vida, o conhecimento de um caminho e as
               memórias de uma terra unidos na construção do seu negócio, projeto
               ou ambiente e, principalmente, no cuidado com o mundo. O biólogo
               Gustavo Martinelli é a raiz da Navia.
             </p>
-
-            <span class="destContP"
-              >Porque a vida é a matéria-prima de nosso trabalho.</span
-            >
-
+            <br />
+            <br />
             <ul class="contSolucoes">
-              <span>Soluções na cadeia produtiva</span>
-              <li>- Inventários florísticos e florestais</li>
-              <li>- Restauração de ecossistemas</li>
-              <li>- Conservação de espécies</li>
-              <li>- Pesquisas de matérias-primas naturais para produtos</li>
+              <span>Os frutos de uma rota:</span>
+              <li style="color:#122124;"
+                >- 47 anos estudando a flora brasileira</li
+              >
+              <li style="color:#122124;"
+                >- Pesquisador no Jardim Botânico desde 1970</li
+              >
+              <li style="color:#122124;">- Mais de 380 jardins planejados</li>
+              <li style="color:#122124;">- Prêmio IAB de paisagismo</li>
+              <li style="color:#122124;">- Premio Jabuti 1º lugar 2014</li>
+              <li style="color:#122124;"
+                >- Premio Work of Excellence - IUCN - Abu Dhabi, EAU, 2018</li
+              >
+              <li style="color:#122124;"
+                >- Mais 400 expedições científicas no Brasil</li
+              >
+              <li style="color:#122124;"
+                >- Membro de expedições de Roberto Burle Marx</li
+              >
+              <li style="color:#122124;"
+                >- Mais de 22 mil espécies da flora catalogadas
+              </li>
+              <li style="color:#122124;"
+                >- Coordenador do Centro Nacional de Conservação da Flora
+                (CNCFlora)</li
+              >
             </ul>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
           </div>
-          <div class="videoCont">
-            <div><img src="../assets/images/icovideo.svg"/></div>
-          </div>
+
+          <!-- <div class="videoCont">
+            <div class="videoContBlocoTexto">
+              <p>Confira...consectetur adipiscing elit:</p>
+            </div>
+            <div class="videoContBlocoImg">
+              <div class="imgVideoCont"
+                ><img src="../assets/images/thumbvideo1.jpg"
+              /></div>
+              <div class="icoVideoCont">
+                <img src="../assets/images/icovideo.svg" />
+              </div>
+            </div>
+          </div> -->
+          <!-- videoCont -->
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
       </div>
       <!-- sideR -->
@@ -135,7 +232,6 @@ export default {
   data() {
     return {
       tl: null,
-      video: require('../assets/videos/video01.mp4'),
     }
   },
   computed: {
@@ -147,19 +243,19 @@ export default {
     this.tlPageOut = this.$gsap.timeline()
   },
   mounted() {
-    if (this.progressing) {
-      this.tl.to(
-        '.loading',
-        {
-          duration: 1,
-          opacity: 0,
-          onComplete: () => {
-            this.stopProgressingAction()
-          },
-        },
-        '+=0.5'
-      )
-    }
+    // if (this.progressing) {
+    //   this.tl.to(
+    //     '.loading',
+    //     {
+    //       duration: 1,
+    //       opacity: 0,
+    //       onComplete: () => {
+    //         this.stopProgressingAction()
+    //       },
+    //     },
+    //     '+=0.5'
+    //   )
+    // }
     this.tlPageIn
       .to(
         [
@@ -185,6 +281,87 @@ export default {
         },
         0
       )
+      .from(
+        ['.elementoInterna1'],
+        {
+          duration: 0.5,
+          x: 100,
+          y: -100,
+        },
+        '<'
+      )
+      .from(
+        '.blocoTitle h3',
+        {
+          duration: 0.5,
+          opacity: 0,
+          x: 40,
+          ease: 'power1.out',
+        },
+        '<0.5'
+      )
+      .from(
+        ['.blocoTitle h2', '.blocoTitle p', '.blocoMedia'],
+        {
+          duration: 0.5,
+          opacity: 0,
+          x: 40,
+          ease: 'power1.out',
+          stagger: 0.25,
+        },
+        '<0.3'
+      )
+      .from(
+        ['.sideR'],
+        {
+          duration: 0.5,
+          opacity: 0,
+        },
+        '<0.5'
+      )
+      .from(
+        '.elementoInterna2',
+        {
+          duration: 0.6,
+          opacity: 0,
+          x: 50,
+          y: 150,
+        },
+        '<0.5'
+      )
+      .from(
+        [
+          '.testescroll1',
+          '.elementoInterna3',
+          '.elementoInterna4',
+          '.elementoInterna5',
+        ],
+        {
+          duration: 0.5,
+          opacity: 0,
+          stagger: 0.25,
+        },
+        '<'
+      )
+      .from(
+        ['.blocoTexto p', '.aspas'],
+        {
+          duration: 1,
+          opacity: 0,
+          y: 20,
+          stagger: 0.25,
+          ease: 'back.out',
+        },
+        '< 1'
+      )
+
+    // Scroll
+    const conteudo = document.querySelector('.sideR')
+    conteudo.addEventListener('DOMMouseScroll', () => false, false)
+    conteudo.addEventListener('mousewheel', () => false, false)
+
+    document.addEventListener('DOMMouseScroll', this.moveScroll, false)
+    document.addEventListener('mousewheel', this.moveScroll, false)
   },
   methods: {
     ...mapActions([
@@ -193,6 +370,70 @@ export default {
       'setNextBackgroundAction',
       'stopProgressingAction',
     ]),
+    moveScroll(event) {
+      let delta = 0
+      if (!event) event = window.event
+      // normalize the delta
+      if (event.wheelDelta) {
+        // IE and Opera
+        delta = event.wheelDelta / 60
+      } else if (event.detail) {
+        // W3C
+        delta = -event.detail / 2
+      }
+      const conteudo = document.querySelector('.sideR')
+      let currPos = conteudo.scrollTop
+      // calculating the next position of the object
+      currPos = parseInt(currPos) - delta * 10
+      // moving the position of the object
+      conteudo.scrollTop = currPos
+
+      let h = conteudo
+      let b = document.querySelector('#scroll')
+      let st = 'scrollTop'
+      let sh = 'scrollHeight'
+
+      var percent =
+        ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100
+
+      if (percent === 0) {
+        this.$gsap.to(
+          [
+            '.testescroll',
+            '.elementoInterna1',
+            '.elementoInterna2',
+            '.elementoInterna3',
+            '.elementoInterna4',
+            '.elementoInterna5',
+          ],
+          {
+            duration: 1,
+            opacity: 1,
+            ease: 'linear',
+          }
+        )
+      } else {
+        this.$gsap.to(
+          [
+            '.testescroll',
+            '.elementoInterna1',
+            '.elementoInterna2',
+            '.elementoInterna3',
+            '.elementoInterna4',
+            '.elementoInterna5',
+          ],
+          {
+            duration: 1,
+            opacity: 0.1,
+            ease: 'linear',
+          }
+        )
+      }
+
+      if (percent !== Infinity && !isNaN(percent)) {
+        console.log(Math.trunc(percent) + '%')
+      }
+    },
   },
   beforeRouteLeave(to, from, next) {
     let nextBackground = this.backgrounds(to.meta.image)
@@ -234,16 +475,17 @@ export default {
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
+  background-image: url('../assets/images/imagebio.jpg');
   background-position: center;
   background-size: cover;
 }
 
-#video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
+// #video {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: 0;
+//   min-width: 100%;
+//   min-height: 100%;
+// }
 </style>

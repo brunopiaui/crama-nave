@@ -135,13 +135,6 @@
             <br />
             <br />
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
-          </div>
-          <div class="videoCont">
-            <div><img src="../assets/images/icovideo.svg"/></div>
           </div>
         </div>
       </div>
@@ -171,19 +164,19 @@ export default {
     this.tlPageOut = this.$gsap.timeline()
   },
   mounted() {
-    if (this.progressing) {
-      this.tl.to(
-        '.loading',
-        {
-          duration: 1,
-          opacity: 0,
-          onComplete: () => {
-            this.stopProgressingAction()
-          },
-        },
-        '+=0.5'
-      )
-    }
+    // if (this.progressing) {
+    //   this.tl.to(
+    //     '.loading',
+    //     {
+    //       duration: 1,
+    //       opacity: 0,
+    //       onComplete: () => {
+    //         this.stopProgressingAction()
+    //       },
+    //     },
+    //     '+=0.5'
+    //   )
+    // }
     this.tlPageIn
       .to(
         [

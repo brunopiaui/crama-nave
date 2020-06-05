@@ -87,10 +87,15 @@
           <div class="aspas">
             <h4>Queremos te encontrar no futuro</h4>
             <p
-              >“Como posso plantar minha indústria ou meu negócio de uma forma
-              integrada às questões ambientais e a biodiversidade?”</p
+              >“A sustentabilidade ela não é só ambiental. Ela é o equilíbrio
+              entre os interesses de um negócio, inclui outras frentes como a
+              social e, claro, a financeira que é a espinha dorsal de um
+              empreendimento, é o que garante sua continuidades. Mas quando você
+              entende que a biodiversidade também é um valor, você deixa de
+              perder e começa realmente a ganhar, passa a ver vantagem na
+              relação entre seu investimento e o meio ambiente.”</p
             >
-            <span class="conecteCor">Gustavo Martinelli</span>
+            <span class="conecteCor">Eládio Miranda Lima</span>
           </div>
           <!-- aspas -->
           <div class="blocoTexto">
@@ -109,9 +114,9 @@
               >O que caracteriza o ecossistema é a coexistência, você e seu
               empreendimento podem participar.</p
             >
-
-            <span class="destContP">Porque somos parte da natureza.</span>
-
+            <p>
+              <span class="destContP">Porque somos parte da natureza.</span>
+            </p>
             <br />
             <br />
             <br />
@@ -123,13 +128,6 @@
             <br />
             <br />
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
-          </div>
-          <div class="videoCont">
-            <div><img src="../assets/images/icovideo.svg"/></div>
           </div>
         </div>
       </div>
@@ -159,19 +157,19 @@ export default {
     this.tlPageOut = this.$gsap.timeline()
   },
   mounted() {
-    if (this.progressing) {
-      this.tl.to(
-        '.loading',
-        {
-          duration: 1,
-          opacity: 0,
-          onComplete: () => {
-            this.stopProgressingAction()
-          },
-        },
-        '+=0.5'
-      )
-    }
+    // if (this.progressing) {
+    //   this.tl.to(
+    //     '.loading',
+    //     {
+    //       duration: 1,
+    //       opacity: 0,
+    //       onComplete: () => {
+    //         this.stopProgressingAction()
+    //       },
+    //     },
+    //     '+=0.5'
+    //   )
+    // }
     this.tlPageIn
       .to(
         [

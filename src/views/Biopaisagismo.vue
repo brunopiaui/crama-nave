@@ -100,10 +100,10 @@
           </div>
           <!--blocoTitle-->
           <div class="blocoMedia">
+            <div><img src="../assets/images/icovideo.svg"/></div>
             <div style="cursor:pointer;" @click="showGal = !showGal"
               ><img src="../assets/images/icofoto.svg"
             /></div>
-            <div><img src="../assets/images/icovideo.svg"/></div>
             <!-- <div><img src="../assets/images/icoaudio.svg"/></div> -->
           </div>
         </div>
@@ -150,29 +150,34 @@
                 recursos, e faz parte da vida de quem convive e coexiste com sua
                 beleza.
               </p>
-
-              <span class="destContP"
-                >Porque o nosso jardim fortalece o mundo.
-              </span>
-
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
+              <p>
+                <span class="destContP"
+                  >Porque o nosso jardim fortalece o mundo.
+                </span>
+              </p>
             </div>
             <div class="videoCont">
-              <div><img src="../assets/images/icovideo.svg"/></div>
+              <div class="videoContBlocoTexto">
+                <p style="color:#e9e9e9">Visite nossa galeria:</p>
+              </div>
+              <div class="videoContBlocoImg" @click="showGal = !showGal">
+                <div class="imgVideoCont"
+                  ><img src="../assets/images/thumbgaleria1.png"
+                /></div>
+                <div class="icoVideoCont">
+                  <img src="../assets/images/icofoto.svg" />
+                </div>
+              </div>
+              <!-- videoCont -->
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
             </div>
           </div>
         </div>
@@ -511,19 +516,19 @@ export default {
     this.tlPageOut = this.$gsap.timeline()
   },
   mounted() {
-    if (this.progressing) {
-      this.tl.to(
-        '.loading',
-        {
-          duration: 1,
-          opacity: 0,
-          onComplete: () => {
-            this.stopProgressingAction()
-          },
-        },
-        '+=0.5'
-      )
-    }
+    // if (this.progressing) {
+    //   this.tl.to(
+    //     '.loading',
+    //     {
+    //       duration: 1,
+    //       opacity: 0,
+    //       onComplete: () => {
+    //         this.stopProgressingAction()
+    //       },
+    //     },
+    //     '+=0.5'
+    //   )
+    // }
     this.tlPageIn
       .to(
         [

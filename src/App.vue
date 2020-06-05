@@ -5,7 +5,8 @@
     :style="{ backgroundImage: `url(${nextBackground.url})` }"
   >
     <div v-if="progressing" class="loading">
-      <img src="./assets/images/logoloading.svg" />
+      <img style="width:15%;" src="./assets/images/logoloading.svg" />
+      <!-- <img style="width:15%;" src="./assets/images/Navia_01.gif" /> -->
       {{ progress }}%
     </div>
 
@@ -29,19 +30,51 @@
       <nav class="blockMenu">
         <a
           class="menu"
+          :class="{ menuBio: menuBioisActive }"
           @mouseover="mouseoverMenuDrop"
           @mouseleave="mouseleaveMenuDrop"
           >O que fazemos
-          <img class="setaDrop" src="./assets/images/seta_dropdown.svg" />
+          <!-- <img class="setaDrop" src="./assets/images/seta_dropdown.svg" /> -->
+          <svg
+            class="setaDrop"
+            :class="{ setaBio: menuBioisActive }"
+            xmlns="http://www.w3.org/2000/svg"
+            width="8"
+            height="7"
+            viewBox="0 0 8 7"
+          >
+            <path
+              id="Polygon_8"
+              data-name="Polygon 8"
+              d="M4,0,8,7H0Z"
+              transform="translate(8 7) rotate(180)"
+              fill="#fff"
+            />
+          </svg>
           <div class="menuDropDown">
             <router-link to="/consultoria">Consultoria</router-link>
             <router-link to="/modelodenegocios">Modelo de negócios</router-link>
             <router-link to="/biopaisagismo">Biopaisagismo</router-link>
           </div>
         </a>
-        <router-link class="menu" to="/bioviva">Bioviva</router-link>
-        <router-link class="menu" to="/midia">Mídia</router-link>
-        <router-link class="menu" to="/contato">Contato</router-link>
+        <router-link
+          class="menu"
+          :class="{ menuBio: menuBioisActive }"
+          to="/bioviva"
+          >Bioviva</router-link
+        >
+        <router-link
+          class="menu"
+          :class="{ menuBio: menuBioisActive }"
+          to="/midia"
+          >Mídia</router-link
+        >
+        <router-link
+          class="menu"
+          :class="{ menuBio: menuBioisActive }"
+          to="/contato"
+          >Contato</router-link
+        >
       </nav>
 
       <div class="som">
@@ -52,7 +85,10 @@
           height="37.004"
           viewBox="0 0 37.734 37.004"
           style="cursor:pointer;"
+          :class="{ svgSom: menuBioisActive, hoverSomActive: hoverSom }"
           @click="cliqueSom"
+          @mouseover="hoverSom = true"
+          @mouseleave="hoverSom = false"
         >
           <g
             id="Component_13_31"
@@ -189,6 +225,8 @@ export default {
     return {
       tl: null,
       cliqueSomAtivo: true,
+      menuBioisActive: false,
+      hoverSom: false,
     }
   },
   computed: {
@@ -208,17 +246,14 @@ export default {
   },
   mounted() {
     if (this.progressing) {
-      this.tl.to(
-        '.loading',
-        {
-          duration: 1,
-          opacity: 0,
-          onComplete: () => {
-            this.stopProgressingAction()
-          },
+      this.$gsap.to('.loading', {
+        duration: 1,
+        opacity: 0,
+        delay: 2,
+        onComplete: () => {
+          this.stopProgressingAction()
         },
-        '+=0.5'
-      )
+      })
     }
     this.tlsomOn = this.$gsap.timeline({ repeat: -1 })
     this.tlsomOn.to('.cu2 path', {
@@ -274,6 +309,10 @@ export default {
       {
         url: require('@/assets/images/image02.jpg'),
         meta: { type: 'image', name: 'image02' },
+      },
+      {
+        url: require('@/assets/images/imagebio.jpg'),
+        meta: { type: 'image', name: 'imagebio' },
       },
       {
         url: require('@/assets/images/image03.jpg'),
@@ -484,6 +523,12 @@ export default {
       // this.testeData = route
       // var resultado = this.testeData.replace('/', 'back-')
       // this.testeData = resultado
+      if (route === '/bioviva') {
+        this.menuBioisActive = true
+      } else {
+        this.menuBioisActive = false
+      }
+
       if (route !== '/') {
         this.tlMenuIn = this.$gsap.timeline()
         this.tlMenuIn
@@ -682,16 +727,19 @@ div.pccLogo {
       cursor: pointer;
       transition: color 0.5s;
     }
+    a.menuBio {
+      color: #586769;
+    }
     a.menu:hover {
       color: $base-colorV2;
     }
-    img.setaDrop {
+    .setaDrop {
       margin: 0 0 0 10px;
     }
     .menuDropDown {
       position: absolute;
       visibility: hidden;
-      padding: 0 0 0 8px;
+      padding: 0 0 0 16px;
     }
     .menuDropDown a {
       transform: translate(0px, -10px);
@@ -759,5 +807,17 @@ div.pccLogo {
       }
     }
   }
+}
+.svgSom path {
+  stroke: #586769 !important;
+}
+.setaBio path {
+  fill: #586769 !important;
+}
+.som svg {
+  transition: all 0.2s ease-in-out;
+}
+.hoverSomActive {
+  transform: scale(1.1);
 }
 </style>

@@ -35,6 +35,9 @@
         >
       </div>
       <div class="diagrama">
+        <div style="position:absolute; bottom:50px; left:50px;">
+          <img src="../assets/images/icovideo.svg" />
+        </div>
         <div class="elem1dia">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1636,26 +1639,28 @@
           @mouseover="mouseoverLink2dia"
           @mouseleave="mouseleaveLink2dia"
         >
-          <div class="link2diaSvg">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18.738"
-              height="18.385"
-              viewBox="0 0 18.738 18.385"
-            >
-              <path
-                id="Path_339"
-                data-name="Path 339"
-                class="cls-6"
-                d="M9.058,0A10,10,0,0,0,3.384,1.964,8.624,8.624,0,0,0,.33,11.129c1.091,3.928,4.8,5.455,6.11,5.892s3.928,1.091,8.074-1.746,3.928-8.292,1.091-12A7.354,7.354,0,0,0,9.058,0Z"
-                transform="translate(0.549 0.5)"
-              />
-            </svg>
-          </div>
-          <div class="link2diaBtexto">
-            <span class="link2diaPense">Conecte</span>
-            <span class="link2diaConsultoria">MODELO DE NEGÓCIOS</span>
-          </div>
+          <router-link to="/modelodenegocios">
+            <div class="link2diaSvg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18.738"
+                height="18.385"
+                viewBox="0 0 18.738 18.385"
+              >
+                <path
+                  id="Path_339"
+                  data-name="Path 339"
+                  class="cls-6"
+                  d="M9.058,0A10,10,0,0,0,3.384,1.964,8.624,8.624,0,0,0,.33,11.129c1.091,3.928,4.8,5.455,6.11,5.892s3.928,1.091,8.074-1.746,3.928-8.292,1.091-12A7.354,7.354,0,0,0,9.058,0Z"
+                  transform="translate(0.549 0.5)"
+                />
+              </svg>
+            </div>
+            <div class="link2diaBtexto">
+              <span class="link2diaPense">Conecte</span>
+              <span class="link2diaConsultoria">MODELO DE NEGÓCIOS</span>
+            </div>
+          </router-link>
         </div>
         <div class="cont2dia">
           <p
@@ -1674,26 +1679,28 @@
           @mouseover="mouseoverLink3dia"
           @mouseleave="mouseleaveLink3dia"
         >
-          <div class="link3diaSvg">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18.738"
-              height="18.385"
-              viewBox="0 0 18.738 18.385"
-            >
-              <path
-                id="Path_339"
-                data-name="Path 339"
-                class="cls-6"
-                d="M9.058,0A10,10,0,0,0,3.384,1.964,8.624,8.624,0,0,0,.33,11.129c1.091,3.928,4.8,5.455,6.11,5.892s3.928,1.091,8.074-1.746,3.928-8.292,1.091-12A7.354,7.354,0,0,0,9.058,0Z"
-                transform="translate(0.549 0.5)"
-              />
-            </svg>
-          </div>
-          <div class="link3diaBtexto">
-            <span class="link3diaPense">Cultive</span>
-            <span class="link3diaConsultoria">BIOPAISAGISMO</span>
-          </div>
+          <router-link to="/biopaisagismo">
+            <div class="link3diaSvg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18.738"
+                height="18.385"
+                viewBox="0 0 18.738 18.385"
+              >
+                <path
+                  id="Path_339"
+                  data-name="Path 339"
+                  class="cls-6"
+                  d="M9.058,0A10,10,0,0,0,3.384,1.964,8.624,8.624,0,0,0,.33,11.129c1.091,3.928,4.8,5.455,6.11,5.892s3.928,1.091,8.074-1.746,3.928-8.292,1.091-12A7.354,7.354,0,0,0,9.058,0Z"
+                  transform="translate(0.549 0.5)"
+                />
+              </svg>
+            </div>
+            <div class="link3diaBtexto">
+              <span class="link3diaPense">Cultive</span>
+              <span class="link3diaConsultoria">BIOPAISAGISMO</span>
+            </div>
+          </router-link>
         </div>
         <div class="cont3dia">
           <p
@@ -1763,8 +1770,9 @@ export default {
     //   this.tl.to(
     //     '.loading',
     //     {
-    //       duration: 2,
+    //       duration: 1,
     //       opacity: 0,
+    //       delay: 9,
     //       onComplete: () => {
     //         this.stopProgressingAction()
     //       },
