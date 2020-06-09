@@ -161,28 +161,6 @@
       </div>
     </header>
 
-    <!-- <header :class="{ displayNone: $route.path == '/' }" class="topInt">
-      <div class="logo">
-        <router-link to="/">
-          <img src="./assets/images/logo_int.svg"
-        /></router-link>
-      </div>
-      <nav>
-        <a class="menu"
-          >O que fazemos
-          <router-link to="/consultoria">1</router-link>
-          <router-link to="/modelodenegocios">2</router-link>
-          <router-link to="/biopaisagismo">3</router-link>
-        </a>
-        <router-link class="menu" to="/bioviva">Bioviva</router-link>
-        <router-link class="menu" to="/midia">Mídia</router-link>
-        <router-link class="menu" to="/contato">Contato</router-link>
-      </nav>
-
-      <div>
-        <img src="./assets/images/som.svg" />
-      </div>
-    </header> -->
     <router-view class="router" />
 
     <footer class="bottom">
@@ -198,20 +176,8 @@
           <img src="./assets/images/mail_2.svg" />
         </div>
       </div>
-      <!-- <div class="ind">indicador</div> -->
-      <!-- <div class="sound">
-        <div>
-          ♫
-        </div>
-      </div> -->
     </footer>
-    <audio
-      id="pageSound"
-      controls
-      autoplay
-      loop
-      style="position:absolute; z-index:99999999999; bottom:0; display:none;"
-    >
+    <audio id="pageSound" controls autoplay loop>
       <source src="./assets/sounds/experience.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio> </div
@@ -262,6 +228,9 @@ export default {
         },
       })
     }
+
+    setTimeout(() => this.checkSound(), 1000)
+
     this.tlsomOn = this.$gsap.timeline({ repeat: -1 })
     this.tlsomOn.to('.cu2 path', {
       opacity: 0.3,
@@ -503,6 +472,20 @@ export default {
       'setProgressAction',
     ]),
 
+    checkSound() {
+      let somcheck = document.getElementById('pageSound')
+      if (!somcheck.paused) {
+        // console.log('rolando')
+        this.$gsap.to('.cu', { x: 8.401, ease: 'expo.out', duration: 0.5 })
+        this.$gsap.to('.cu2', { opacity: 1, ease: 'expo.out', duration: 0.5 })
+      } else {
+        // console.log('pausado')
+        this.cliqueSomAtivo = false
+        this.$gsap.to('.cu', { x: 12.315, ease: 'expo.out', duration: 0.5 })
+        this.$gsap.to('.cu2', { opacity: 0, ease: 'expo.out', duration: 0.5 })
+      }
+    },
+
     mouseoverMenuDrop() {
       this.tlDropMenu.play()
     },
@@ -512,12 +495,12 @@ export default {
 
     cliqueSom: function() {
       let som = document.getElementById('pageSound')
-      if (this.cliqueSomAtivo === true) {
+      if (this.cliqueSomAtivo === true && som.play) {
         this.$gsap.to('.cu', { x: 12.315, ease: 'expo.out', duration: 0.5 })
         this.$gsap.to('.cu2', { opacity: 0, ease: 'expo.out', duration: 0.5 })
         som.pause()
         this.cliqueSomAtivo = false
-      } else {
+      } else if (this.cliqueSomAtivo === false && som.paused) {
         this.$gsap.to('.cu', { x: 8.401, ease: 'expo.out', duration: 0.5 })
         this.$gsap.to('.cu2', { opacity: 1, ease: 'expo.out', duration: 0.5 })
         som.play()
@@ -651,63 +634,6 @@ div.pccLogo {
     );
   }
 
-  // div.areaHamburguer {
-  //   position: absolute;
-  //   right: 10px;
-  //   bottom: 10px;
-  //   width: 250px;
-  //   height: 250px;
-  //   background: transparent;
-  //   border: 1px solid #fff;
-  //   outline: 1px solid transparent;
-  // }
-
-  // div.menuHamburguer {
-  //   position: absolute;
-  //   right: 10px;
-  //   bottom: 10px;
-  //   width: 55.88px;
-  //   height: 55px;
-  //   cursor: pointer;
-  //   background: rgba(255, 255, 255, 1);
-  //   border-radius: 80% 75% 80% 79% / 70% 76% 76% 81%;
-  //   outline: 1px solid transparent;
-  //   transition: all 0.5s;
-  //   animation: morph 3s linear infinite;
-  //   animation-play-state: paused;
-  //   transform-style: preserve-3d;
-  //   will-change: border-radius;
-  // }
-
-  // div.menuHamburguer:hover {
-  //   width: 60.88px;
-  //   height: 60px;
-  //   background-color: aqua !important;
-  // }
-
-  // .mover {
-  //   animation-play-state: running !important;
-  // }
-
-  // @keyframes morph {
-  //   0%,
-  //   100% {
-  //     border-radius: 80% 75% 80% 79% / 70% 76% 76% 81%;
-  //     transform: translate3d(0, 0, 0) rotateZ(0.01deg);
-  //   }
-  //   34% {
-  //     border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
-  //     transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
-  //   }
-  //   50% {
-  //     transform: translate3d(0, 0, 0) rotateZ(0.01deg);
-  //   }
-  //   67% {
-  //     border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
-  //     transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
-  //   }
-  // }
-
   header.top {
     position: fixed;
     z-index: 10;
@@ -766,11 +692,6 @@ div.pccLogo {
     }
   }
 
-  // header.paddingTop {
-  //   padding-top: 40px !important;
-  //   transition: all 0.5s ease !important;
-  // }
-
   footer.bottom {
     position: fixed;
     bottom: 0;
@@ -826,6 +747,13 @@ div.pccLogo {
 }
 .hoverSomActive {
   transform: scale(1.1);
+}
+
+#pageSound {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  display: none;
 }
 
 .loader1 {

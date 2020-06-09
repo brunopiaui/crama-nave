@@ -81,7 +81,6 @@
             class="link1dia"
             @mouseover="mouseoverLink1dia"
             @mouseleave="mouseleaveLink1dia"
-            @click="clickLink1dia"
           >
             <router-link to="/consultoria">
               <div class="link1diaBtexto">
