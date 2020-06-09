@@ -3,7 +3,7 @@
     <div class="backImg"></div>
 
     <div class="loadingpv"> </div>
-    <div v-if="progressing" class="loading">{{ progress }}%</div>
+    <!-- <div v-if="progressing" class="loading">{{ progress }}%</div> -->
     <!-- <video id="video" autoplay muted loop>
       <source :src="video" type="video/mp4" />
       Your browser does not support HTML5 video.

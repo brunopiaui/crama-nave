@@ -42,7 +42,7 @@
 
       <div class="loadingpv"> </div>
 
-      <div v-if="progressing" class="loading">{{ progress }}%</div>
+      <!-- <div v-if="progressing" class="loading">{{ progress }}%</div> -->
 
       <div class="backR">
         <div class="backRshape">

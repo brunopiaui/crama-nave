@@ -115,7 +115,8 @@ div.conteudo {
   }
   div.sideR {
     width: 55%;
-    overflow: auto !important;
+    // overflow: auto !important;
+    overflow: hidden;
     padding: 260px 0 0 0;
     -ms-overflow-style: none;
     mask-image: -webkit-gradient(

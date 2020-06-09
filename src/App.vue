@@ -7,7 +7,14 @@
     <div v-if="progressing" class="loading">
       <img style="width:15%;" src="./assets/images/logoloading.svg" />
       <!-- <img style="width:15%;" src="./assets/images/Navia_01.gif" /> -->
-      {{ progress }}%
+      <!-- {{ progress }}% -->
+      <div class="loader1">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
 
     <header class="top">
@@ -249,7 +256,7 @@ export default {
       this.$gsap.to('.loading', {
         duration: 1,
         opacity: 0,
-        delay: 2,
+        delay: 10,
         onComplete: () => {
           this.stopProgressingAction()
         },
@@ -819,5 +826,64 @@ div.pccLogo {
 }
 .hoverSomActive {
   transform: scale(1.1);
+}
+
+.loader1 {
+  display: inline-block;
+  font-size: 0px;
+  padding: 20px 0 0 0;
+}
+.loader1 span {
+  vertical-align: middle;
+  border-radius: 100%;
+
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin: 3px 2px;
+  -webkit-animation: loader1 0.8s linear infinite alternate;
+  animation: loader1 0.8s linear infinite alternate;
+}
+.loader1 span:nth-child(1) {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+  background: rgba(255, 255, 255, 0.6);
+}
+.loader1 span:nth-child(2) {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+  background: rgba(255, 255, 255, 0.8);
+}
+.loader1 span:nth-child(3) {
+  -webkit-animation-delay: -0.26666s;
+  animation-delay: -0.26666s;
+  background: rgba(255, 255, 255, 1);
+}
+.loader1 span:nth-child(4) {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+  background: rgba(255, 255, 255, 0.8);
+}
+.loader1 span:nth-child(5) {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes loader1 {
+  from {
+    transform: scale(0, 0);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes loader1 {
+  from {
+    -webkit-transform: scale(0, 0);
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+  }
 }
 </style>

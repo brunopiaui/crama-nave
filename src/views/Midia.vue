@@ -1,6 +1,6 @@
 <template>
   <div class="img teste">
-    <div v-if="progressing" class="loading">{{ progress }}%</div>
+    <!-- <div v-if="progressing" class="loading">{{ progress }}%</div> -->
 
     <div
       style="cursor:pointer; position:absolute; margin-top:100px;"
