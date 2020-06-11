@@ -88,11 +88,11 @@
         <!-- <img src="./assets/images/som.svg" /> -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="37.734"
-          height="37.004"
-          viewBox="0 0 37.734 37.004"
+          width="42.734"
+          height="42.004"
+          viewBox="-2.5 -2.5 42.734 42.004"
           style="cursor:pointer;"
-          :class="{ svgSom: menuBioisActive, hoverSomActive: hoverSom }"
+          :class="{ svgSom: menuBioisActive }"
           @click="cliqueSom"
           @mouseover="hoverSom = true"
           @mouseleave="hoverSom = false"
@@ -110,6 +110,8 @@
               fill="none"
               stroke="#fff"
               stroke-width="1"
+              class="pathSom"
+              :class="{ hoverPathSomActive: hoverSom }"
             />
             <g
               id="Group_157"
@@ -743,10 +745,15 @@ div.pccLogo {
   fill: #586769 !important;
 }
 .som svg {
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-out;
 }
-.hoverSomActive {
-  transform: scale(1.1);
+
+path.pathSom {
+  transform-origin: center;
+  transition: all 0.5s ease-out;
+}
+.hoverPathSomActive {
+  transform: scale(1.1) rotate(5deg) !important;
 }
 
 #pageSound {
