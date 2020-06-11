@@ -68,7 +68,7 @@
         </div>
       </div>
       <!-- sideL -->
-      <div class="testescroll" style="position:absolute; width: 55%; right:0;">
+      <div class="testescroll" style="position:absolute; right:0; width: 55%;">
         <div
           class="testescroll1"
           style="position:absolute; top:440px; left:-70px;"
@@ -137,7 +137,7 @@
             <!-- <p><span class="destContP destContPbioCor">Conexão</span></p> -->
           </div>
           <div class="aspas" style="margin-top:80px;">
-            <h4 style="color:#4B9167; font-size:18px;"
+            <h4 style=" font-size:18px;color:#4B9167;"
               >A arte verde e a técnica viajante de Gustavo Martinelli.</h4
             >
             <p class="bioCorP"
@@ -429,10 +429,6 @@ export default {
           }
         )
       }
-
-      if (percent !== Infinity && !isNaN(percent)) {
-        console.log(Math.trunc(percent) + '%')
-      }
     },
   },
   beforeRouteLeave(to, from, next) {
@@ -474,8 +470,8 @@ export default {
   z-index: 1;
   width: 100%;
   height: 100%;
-  background-repeat: no-repeat;
   background-image: url('../assets/images/imagebio.jpg');
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }

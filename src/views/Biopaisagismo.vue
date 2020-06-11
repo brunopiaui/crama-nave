@@ -110,7 +110,7 @@
         <!-- sideL -->
         <div
           class="testescroll"
-          style="position:absolute; width: 55%; right:0;"
+          style="position:absolute; right:0; width: 55%;"
         >
           <div
             class="testescroll1"
@@ -707,10 +707,6 @@ export default {
             ease: 'linear',
           }
         )
-      }
-
-      if (percent !== Infinity && !isNaN(percent)) {
-        console.log(Math.trunc(percent) + '%')
       }
     },
   },

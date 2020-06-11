@@ -205,10 +205,13 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['loading', 'nextBackground', 'progressing', 'progress']),
-    // inRouterHome() {
-    //   return this.$route.path !== '/'
-    // },
+    ...mapGetters([
+      'loading',
+      'backgrounds',
+      'nextBackground',
+      'progressing',
+      'progress',
+    ]),
   },
   watch: {
     '$route.path': 'checkPath',
@@ -463,6 +466,12 @@ export default {
     preload.onprogress = (event) => {
       this.setProgressAction(event.progress)
     }
+    preload.oncomplete = (items) => {
+      console.log(this.$route)
+
+      let nextBackground = this.backgrounds(this.$route.meta.image)
+      this.setNextBackgroundAction(nextBackground)
+    }
   },
   methods: {
     ...mapActions([
@@ -472,6 +481,7 @@ export default {
       'startProgressingAction',
       'stopProgressingAction',
       'setProgressAction',
+      'setNextBackgroundAction',
     ]),
 
     checkSound() {
@@ -673,16 +683,16 @@ div.pccLogo {
     }
     .menuDropDown {
       position: absolute;
-      visibility: hidden;
       padding: 0 0 0 16px;
+      visibility: hidden;
     }
     .menuDropDown a {
-      transform: translate(0px, -10px);
-      margin: 0 0 6px 0;
       display: block;
-      opacity: 0;
+      margin: 0 0 6px 0;
       font-size: 14px;
+      opacity: 0;
       transition: color 0.5s;
+      transform: translate(0, -10px);
     }
     .menuDropDown a:hover {
       color: $base-colorV3;
@@ -758,51 +768,50 @@ path.pathSom {
 
 #pageSound {
   position: absolute;
-  z-index: 1;
   bottom: 0;
+  z-index: 1;
   display: none;
 }
 
 .loader1 {
   display: inline-block;
-  font-size: 0px;
   padding: 20px 0 0 0;
+  font-size: 0;
 }
 .loader1 span {
-  vertical-align: middle;
-  border-radius: 100%;
-
   display: inline-block;
   width: 5px;
   height: 5px;
   margin: 3px 2px;
+  vertical-align: middle;
+  border-radius: 100%;
   -webkit-animation: loader1 0.8s linear infinite alternate;
   animation: loader1 0.8s linear infinite alternate;
 }
 .loader1 span:nth-child(1) {
+  background: rgba(255, 255, 255, 0.6);
   -webkit-animation-delay: -1s;
   animation-delay: -1s;
-  background: rgba(255, 255, 255, 0.6);
 }
 .loader1 span:nth-child(2) {
+  background: rgba(255, 255, 255, 0.8);
   -webkit-animation-delay: -0.8s;
   animation-delay: -0.8s;
-  background: rgba(255, 255, 255, 0.8);
 }
 .loader1 span:nth-child(3) {
+  background: rgba(255, 255, 255, 1);
   -webkit-animation-delay: -0.26666s;
   animation-delay: -0.26666s;
-  background: rgba(255, 255, 255, 1);
 }
 .loader1 span:nth-child(4) {
+  background: rgba(255, 255, 255, 0.8);
   -webkit-animation-delay: -0.8s;
   animation-delay: -0.8s;
-  background: rgba(255, 255, 255, 0.8);
 }
 .loader1 span:nth-child(5) {
+  background: rgba(255, 255, 255, 0.4);
   -webkit-animation-delay: -1s;
   animation-delay: -1s;
-  background: rgba(255, 255, 255, 0.4);
 }
 
 @keyframes loader1 {
@@ -813,6 +822,7 @@ path.pathSom {
     transform: scale(1, 1);
   }
 }
+
 @-webkit-keyframes loader1 {
   from {
     -webkit-transform: scale(0, 0);

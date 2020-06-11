@@ -69,7 +69,6 @@ export const store = new Vuex.Store({
       commit('setProgressing', false)
     },
     setProgressAction({ commit }, payload) {
-      console.log('setProgress', payload)
       commit('setProgress', payload)
     },
   },

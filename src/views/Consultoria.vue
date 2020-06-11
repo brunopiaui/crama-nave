@@ -69,7 +69,7 @@
         </div>
       </div>
       <!-- sideL -->
-      <div class="testescroll" style="position:absolute; width: 55%; right:0;">
+      <div class="testescroll" style="position:absolute; right:0; width: 55%;">
         <div
           class="testescroll1"
           style="position:absolute; top:340px; left:-70px;"
@@ -350,10 +350,6 @@ export default {
             ease: 'linear',
           }
         )
-      }
-
-      if (percent !== Infinity && !isNaN(percent)) {
-        console.log(Math.trunc(percent) + '%')
       }
     },
   },
