@@ -227,7 +227,7 @@ export default {
       this.$gsap.to('.loading', {
         duration: 1,
         opacity: 0,
-        delay: 10,
+        // delay: 10,
         onComplete: () => {
           this.stopProgressingAction()
         },

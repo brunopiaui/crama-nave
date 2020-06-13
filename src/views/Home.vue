@@ -2,8 +2,12 @@
   <div class="home">
     <div class="backImg"></div>
     <div class="img">
-      <video id="video" autoplay muted loop>
-        <source type="video/mp4" />
+      <video id="video" ref="video" autoplay muted loop>
+        <source
+          :src="require('../assets/videos/video01.mp4')"
+          :poster="require('../assets/images/image04.jpg')"
+          type="video/mp4"
+        />
         Your browser does not support HTML5 video.
       </video>
     </div>
@@ -228,22 +232,14 @@ export default {
   },
   computed: {
     ...mapGetters(['loading', 'backgrounds', 'progressing', 'progress']),
-    videoURL() {
-      const bkg = this.backgrounds('video01')
-      if (bkg) {
-        return bkg.url
-      }
-      return null
-    },
   },
   watch: {
     progress(value) {
-      if (value === 100) {
-        const video = document.querySelector('#video')
-        if (video) {
-          video.src = this.backgrounds('video01').url
-          console.log(this.backgrounds('video01').url)
-        }
+      const bkg = this.backgrounds('video01')
+      if (value === 100 && bkg && this.$refs.video) {
+        this.$refs.video.src = URL.createObjectURL(
+          this.backgrounds('video01').url
+        )
       }
     },
   },
