@@ -467,8 +467,6 @@ export default {
       this.setProgressAction(event.progress)
     }
     preload.oncomplete = (items) => {
-      console.log(this.$route)
-
       let nextBackground = this.backgrounds(this.$route.meta.image)
       this.setNextBackgroundAction(nextBackground)
     }
@@ -759,8 +757,8 @@ div.pccLogo {
 }
 
 path.pathSom {
-  transform-origin: center;
   transition: all 0.5s ease-out;
+  transform-origin: center;
 }
 .hoverPathSomActive {
   transform: scale(1.1) rotate(5deg) !important;

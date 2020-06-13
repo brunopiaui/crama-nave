@@ -3,7 +3,7 @@
     <div class="backImg"></div>
     <div class="img">
       <video id="video" autoplay muted loop>
-        <source :src="video" type="video/mp4" />
+        <source type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>
     </div>
@@ -228,6 +228,24 @@ export default {
   },
   computed: {
     ...mapGetters(['loading', 'backgrounds', 'progressing', 'progress']),
+    videoURL() {
+      const bkg = this.backgrounds('video01')
+      if (bkg) {
+        return bkg.url
+      }
+      return null
+    },
+  },
+  watch: {
+    progress(value) {
+      if (value === 100) {
+        const video = document.querySelector('#video')
+        if (video) {
+          video.src = this.backgrounds('video01').url
+          console.log(this.backgrounds('video01').url)
+        }
+      }
+    },
   },
   created() {
     this.tl = this.$gsap.timeline()
@@ -247,6 +265,11 @@ export default {
     this.tl3overParte4 = this.$gsap.timeline({ paused: true })
   },
   mounted() {
+    // console.log(this.videoURL)
+
+    // const video = document.querySelector('#video')
+    // video.src = window.URL.createObjectURL(this.backgrounds('video01').url)
+    // video.src = this.videoURL
     // if (this.progressing) {
     //   this.tl.to(
     //     '.loading',
@@ -882,21 +905,21 @@ export default {
       }
       .elem4dia {
         position: absolute;
-        z-index: 10;
-        left: 245px;
         bottom: 115px;
+        left: 245px;
+        z-index: 10;
         // margin: 90px 0 0 100px;
       }
       .elem5dia {
         position: absolute;
-        left: 290px;
         bottom: 200px;
+        left: 290px;
         // margin: 20px 0 0 70px;
       }
       .link1dia {
         position: absolute;
-        left: -10px;
         top: 130px;
+        left: -10px;
         // margin: -110px 0 0 -230px;
         cursor: pointer;
         a {
@@ -942,8 +965,8 @@ export default {
       }
       .folhadia1 {
         position: absolute;
-        bottom: 108px;
         right: 110px;
+        bottom: 108px;
         // margin-top: 95px;
         // margin-left: 123px;
         opacity: 0;
@@ -997,16 +1020,16 @@ export default {
       }
       .folhadia2 {
         position: absolute;
+        right: 120px;
         // margin-top: 112px;
         // margin-left: 116px;
         bottom: 83px;
-        right: 120px;
         opacity: 0;
       }
       .link3dia {
         position: absolute;
-        right: -51px;
         top: 190px;
+        right: -51px;
         cursor: pointer;
         a {
           display: flex;
@@ -1050,8 +1073,8 @@ export default {
       }
       .folhadia3 {
         position: absolute;
-        bottom: 76px;
         right: 124px;
+        bottom: 76px;
         opacity: 0;
       }
       div.icoVideoDia {
