@@ -82,6 +82,7 @@
         >
           <img src="../assets/images/elementointerna3.svg" />
         </div>
+        <div id="porc" style="position:absolute; top:100px; left:22px;"></div>
       </div>
       <div class="sideR">
         <div id="scroll">
@@ -317,6 +318,12 @@ export default {
 
       var percent =
         ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100
+
+      var percentshow = percent.toFixed(0)
+
+      console.log(percentshow)
+
+      document.getElementById('porc').innerHTML = percentshow
 
       if (percent === 0) {
         this.$gsap.to(
