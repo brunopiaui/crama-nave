@@ -57,6 +57,13 @@
         <div></div>
       </div>
       <!-- backR -->
+
+      <div class="blocoPorc">
+        <div class="porcTxt"><span id="porc">0</span>%</div>
+        <div class="setaPorc"><img src="../assets/images/setaporc.svg"/></div>
+      </div>
+      <!-- blocoPorc -->
+
       <div class="elementoInterna1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -212,7 +219,7 @@ export default {
           titulo: 'Jardim 1',
           arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
-            'O projeto foi elaborado a partir de um antigo jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com as característica ecológicas locais que são de baixa luminosidade e declive acentuado. Integrou duas residências com características distintas: uma casa antiga e uma nova com uma arquitetura arrojada suspensa entre rochas. Todas as árvores existentes foram preservadas.',
+            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas existentes com as característica ecológicas locais.',
         },
         {
           midia: this.backgrounds('j102'),
@@ -220,7 +227,7 @@ export default {
           titulo: 'Jardim 1',
           arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
-            'O projeto foi elaborado a partir de um antigo jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com as característica ecológicas locais que são de baixa luminosidade e declive acentuado. Integrou duas residências com características distintas: uma casa antiga e uma nova com uma arquitetura arrojada suspensa entre rochas. Todas as árvores existentes foram preservadas.',
+            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas existentes com as característica ecológicas locais.',
         },
         {
           midia: this.backgrounds('j103'),
@@ -228,7 +235,7 @@ export default {
           titulo: 'Jardim 1',
           arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
-            'O projeto foi elaborado a partir de um antigo jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com as característica ecológicas locais que são de baixa luminosidade e declive acentuado. Integrou duas residências com características distintas: uma casa antiga e uma nova com uma arquitetura arrojada suspensa entre rochas. Todas as árvores existentes foram preservadas.',
+            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas existentes com as característica ecológicas locais.',
         },
         {
           midia: this.backgrounds('j104'),
@@ -236,7 +243,7 @@ export default {
           titulo: 'Jardim 1',
           arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
-            'O projeto foi elaborado a partir de um antigo jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com as característica ecológicas locais que são de baixa luminosidade e declive acentuado. Integrou duas residências com características distintas: uma casa antiga e uma nova com uma arquitetura arrojada suspensa entre rochas. Todas as árvores existentes foram preservadas.',
+            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas existentes com as característica ecológicas locais.',
         },
         {
           midia: this.backgrounds('j105'),
@@ -244,7 +251,7 @@ export default {
           titulo: 'Jardim 1',
           arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
-            'O projeto foi elaborado a partir de um antigo jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com as característica ecológicas locais que são de baixa luminosidade e declive acentuado. Integrou duas residências com características distintas: uma casa antiga e uma nova com uma arquitetura arrojada suspensa entre rochas. Todas as árvores existentes foram preservadas.',
+            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas existentes com as característica ecológicas locais.',
         },
         {
           midia: this.backgrounds('j106'),
@@ -252,7 +259,7 @@ export default {
           titulo: 'Jardim 1',
           arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
-            'O projeto foi elaborado a partir de um antigo jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com as característica ecológicas locais que são de baixa luminosidade e declive acentuado. Integrou duas residências com características distintas: uma casa antiga e uma nova com uma arquitetura arrojada suspensa entre rochas. Todas as árvores existentes foram preservadas.',
+            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas existentes com as característica ecológicas locais.',
         },
         {
           midia: this.backgrounds('j107'),
@@ -260,7 +267,7 @@ export default {
           titulo: 'Jardim 1',
           arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
-            'O projeto foi elaborado a partir de um antigo jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com as característica ecológicas locais que são de baixa luminosidade e declive acentuado. Integrou duas residências com características distintas: uma casa antiga e uma nova com uma arquitetura arrojada suspensa entre rochas. Todas as árvores existentes foram preservadas.',
+            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas existentes com as característica ecológicas locais.',
         },
         {
           midia: this.backgrounds('j201'),
@@ -332,7 +339,7 @@ export default {
           titulo: 'Jardim 3',
           arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
-            'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
+            'O projeto valorizou a área florestal do terreno, e criou um  conceito paisagístico com espécies de baixa manutenção. Utilizou as pedras locais na suavização de declives do terreno e na confecção de muros que se integraram a topografia.',
         },
         {
           midia: this.backgrounds('j302'),
@@ -340,7 +347,7 @@ export default {
           titulo: 'Jardim 3',
           arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
-            'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
+            'O projeto valorizou a área florestal do terreno, e criou um  conceito paisagístico com espécies de baixa manutenção. Utilizou as pedras locais na suavização de declives do terreno e na confecção de muros que se integraram a topografia.',
         },
         {
           midia: this.backgrounds('j303'),
@@ -348,7 +355,7 @@ export default {
           titulo: 'Jardim 3',
           arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
-            'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
+            'O projeto valorizou a área florestal do terreno, e criou um  conceito paisagístico com espécies de baixa manutenção. Utilizou as pedras locais na suavização de declives do terreno e na confecção de muros que se integraram a topografia.',
         },
         {
           midia: this.backgrounds('j304'),
@@ -356,7 +363,7 @@ export default {
           titulo: 'Jardim 3',
           arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
-            'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
+            'O projeto valorizou a área florestal do terreno, e criou um  conceito paisagístico com espécies de baixa manutenção. Utilizou as pedras locais na suavização de declives do terreno e na confecção de muros que se integraram a topografia.',
         },
         {
           midia: this.backgrounds('j305'),
@@ -364,7 +371,7 @@ export default {
           titulo: 'Jardim 3',
           arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
-            'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
+            'O projeto valorizou a área florestal do terreno, e criou um  conceito paisagístico com espécies de baixa manutenção. Utilizou as pedras locais na suavização de declives do terreno e na confecção de muros que se integraram a topografia.',
         },
         {
           midia: this.backgrounds('j306'),
@@ -372,7 +379,7 @@ export default {
           titulo: 'Jardim 3',
           arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
-            'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
+            'O projeto valorizou a área florestal do terreno, e criou um  conceito paisagístico com espécies de baixa manutenção. Utilizou as pedras locais na suavização de declives do terreno e na confecção de muros que se integraram a topografia.',
         },
         {
           midia: this.backgrounds('j307'),
@@ -380,7 +387,7 @@ export default {
           titulo: 'Jardim 3',
           arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
-            'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
+            'O projeto valorizou a área florestal do terreno, e criou um  conceito paisagístico com espécies de baixa manutenção. Utilizou as pedras locais na suavização de declives do terreno e na confecção de muros que se integraram a topografia.',
         },
         {
           midia: this.backgrounds('j308'),
@@ -388,7 +395,7 @@ export default {
           titulo: 'Jardim 3',
           arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
-            'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
+            'O projeto valorizou a área florestal do terreno, e criou um  conceito paisagístico com espécies de baixa manutenção. Utilizou as pedras locais na suavização de declives do terreno e na confecção de muros que se integraram a topografia.',
         },
         {
           midia: this.backgrounds('j309'),
@@ -396,7 +403,7 @@ export default {
           titulo: 'Jardim 3',
           arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
-            'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
+            'O projeto valorizou a área florestal do terreno, e criou um  conceito paisagístico com espécies de baixa manutenção. Utilizou as pedras locais na suavização de declives do terreno e na confecção de muros que se integraram a topografia.',
         },
         {
           midia: this.backgrounds('j310'),
@@ -404,7 +411,7 @@ export default {
           titulo: 'Jardim 3',
           arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
-            'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
+            'O projeto valorizou a área florestal do terreno, e criou um  conceito paisagístico com espécies de baixa manutenção. Utilizou as pedras locais na suavização de declives do terreno e na confecção de muros que se integraram a topografia.',
         },
         {
           midia: this.backgrounds('j311'),
@@ -412,7 +419,7 @@ export default {
           titulo: 'Jardim 3',
           arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
-            'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
+            'O projeto valorizou a área florestal do terreno, e criou um  conceito paisagístico com espécies de baixa manutenção. Utilizou as pedras locais na suavização de declives do terreno e na confecção de muros que se integraram a topografia.',
         },
         {
           midia: this.backgrounds('j312'),
@@ -420,7 +427,7 @@ export default {
           titulo: 'Jardim 3',
           arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
-            'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
+            'O projeto valorizou a área florestal do terreno, e criou um  conceito paisagístico com espécies de baixa manutenção. Utilizou as pedras locais na suavização de declives do terreno e na confecção de muros que se integraram a topografia.',
         },
         {
           midia: this.backgrounds('j401'),
@@ -534,6 +541,7 @@ export default {
         [
           '.backR',
           '.conteudo',
+          '.blocoPorc',
           '.elementoInterna1',
           '.elementoInterna2',
           '.elementoInterna3',
@@ -608,6 +616,7 @@ export default {
           '.elementoInterna3',
           '.elementoInterna4',
           '.elementoInterna5',
+          '.blocoPorc',
         ],
         {
           duration: 0.5,
@@ -675,6 +684,24 @@ export default {
       var percent =
         ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100
 
+      var percentshow = percent.toFixed(0)
+
+      document.getElementById('porc').innerHTML = percentshow
+
+      if (percent === 100) {
+        this.$gsap.to('.setaPorc', {
+          duration: 0.5,
+          opacity: 0,
+          ease: 'linear',
+        })
+      } else {
+        this.$gsap.to('.setaPorc', {
+          duration: 0.5,
+          opacity: 1,
+          ease: 'linear',
+        })
+      }
+
       if (percent === 0) {
         this.$gsap.to(
           [
@@ -691,6 +718,11 @@ export default {
             ease: 'linear',
           }
         )
+        this.$gsap.to('.porcTxt', {
+          duration: 1,
+          opacity: 0.1,
+          ease: 'linear',
+        })
       } else {
         this.$gsap.to(
           [
@@ -707,6 +739,11 @@ export default {
             ease: 'linear',
           }
         )
+        this.$gsap.to('.porcTxt', {
+          duration: 1,
+          opacity: 1,
+          ease: 'linear',
+        })
       }
     },
   },
@@ -715,7 +752,7 @@ export default {
     this.setNextBackgroundAction(nextBackground)
 
     this.tlPageOut
-      .to('.conteudo', {
+      .to(['.conteudo', '.blocoPorc'], {
         opacity: 0,
         duration: 0.3,
         ease: 'power2.out',

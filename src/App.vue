@@ -58,7 +58,7 @@
               fill="#fff"
             />
           </svg>
-          <div class="menuDropDown">
+          <div class="menuDropDown" :class="{ menuDropBio: menuBioisActive }">
             <router-link to="/consultoria">Consultoria</router-link>
             <router-link to="/modelodenegocios">Modelo de negócios</router-link>
             <router-link to="/biopaisagismo">Biopaisagismo</router-link>
@@ -676,6 +676,9 @@ div.pccLogo {
     a.menu:hover {
       color: $base-colorV2;
     }
+    a.menuBio:hover {
+      color: #a3a3a3;
+    }
     .setaDrop {
       margin: 0 0 0 10px;
     }
@@ -694,6 +697,12 @@ div.pccLogo {
     }
     .menuDropDown a:hover {
       color: $base-colorV3;
+    }
+    .menuDropBio a {
+      color: #586769 !important;
+    }
+    .menuDropBio a:hover {
+      color: #a3a3a3 !important;
     }
     div.logo {
       display: flex;

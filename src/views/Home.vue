@@ -221,6 +221,7 @@ export default {
     return {
       tl: null,
       video: require('../assets/videos/video01.mp4'),
+      hoverSom: false,
       linkDiaOn: true,
       link1dia: false,
       link2dia: false,

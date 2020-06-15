@@ -24,6 +24,7 @@
       <div class="porcTxt"><span id="porc">0</span>%</div>
       <div class="setaPorc"><img src="../assets/images/setaporc.svg"/></div>
     </div>
+    <!-- blocoPorc -->
 
     <div class="elementoInterna1">
       <svg
