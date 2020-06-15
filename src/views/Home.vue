@@ -261,6 +261,11 @@ export default {
     this.tl3overParte4 = this.$gsap.timeline({ paused: true })
   },
   mounted() {
+    const video = document.querySelector('#video')
+    video.onloadeddata = function() {
+      this.stopProgressingAction()
+    }
+
     // console.log(this.videoURL)
 
     // const video = document.querySelector('#video')
