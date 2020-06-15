@@ -93,6 +93,7 @@ div.conteudo {
       font-size: 44px;
       font-weight: 700;
       padding: 0 0 0 0;
+      margin: 0 0 0 -3px;
       color: $base-colorV2;
     }
     div.blocoTitle p {
@@ -198,6 +199,53 @@ div.backR {
   visibility: hidden;
   div.backRshape {
     width: 1280px;
+  }
+}
+
+div.blocoPorc {
+  position: absolute;
+  visibility: hidden;
+  bottom: 35px;
+  right: 61%;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  div.porcTxt {
+    font-size: 12.5px;
+    color: #cbcbcb;
+    font-weight: 500;
+    margin: 0 0 8px 0;
+    opacity: 0.1;
+  }
+  div.setaPorc {
+    animation: bounce 0.5s;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+    animation-iteration-count: infinite;
+    -webkit-animation-name: bounce;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+    -webkit-animation-iteration-count: infinite;
+  }
+  @keyframes bounce {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(0, 10px, 0);
+    }
+  }
+  @-webkit-keyframes bounce {
+    from {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      -webkit-transform: translate3d(0, 10px, 0);
+      transform: translate3d(0, 10px, 0);
+    }
   }
 }
 

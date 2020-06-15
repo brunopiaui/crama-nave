@@ -20,6 +20,11 @@
     </div>
     <!-- backR -->
 
+    <div class="blocoPorc">
+      <div class="porcTxt"><span id="porc">0</span>%</div>
+      <div class="setaPorc"><img src="../assets/images/setaporc.svg"/></div>
+    </div>
+
     <div class="elementoInterna1">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +87,6 @@
         >
           <img src="../assets/images/elementointerna3.svg" />
         </div>
-        <div id="porc" style="position:absolute; top:100px; left:22px;"></div>
       </div>
       <div class="sideR">
         <div id="scroll">
@@ -125,10 +129,6 @@
               <li>- Conservação de espécies</li>
               <li>- Pesquisas de matérias-primas naturais para produtos</li>
             </ul>
-            <br />
-            <br />
-            <br />
-            <br />
             <br />
             <br />
             <br />
@@ -183,6 +183,7 @@ export default {
         [
           '.backR',
           '.conteudo',
+          '.blocoPorc',
           '.elementoInterna1',
           '.elementoInterna2',
           '.elementoInterna3',
@@ -257,6 +258,7 @@ export default {
           '.elementoInterna3',
           '.elementoInterna4',
           '.elementoInterna5',
+          '.blocoPorc',
         ],
         {
           duration: 0.5,
@@ -321,9 +323,21 @@ export default {
 
       var percentshow = percent.toFixed(0)
 
-      console.log(percentshow)
-
       document.getElementById('porc').innerHTML = percentshow
+
+      if (percent === 100) {
+        this.$gsap.to('.setaPorc', {
+          duration: 0.5,
+          opacity: 0,
+          ease: 'linear',
+        })
+      } else {
+        this.$gsap.to('.setaPorc', {
+          duration: 0.5,
+          opacity: 1,
+          ease: 'linear',
+        })
+      }
 
       if (percent === 0) {
         this.$gsap.to(
@@ -341,6 +355,11 @@ export default {
             ease: 'linear',
           }
         )
+        this.$gsap.to('.porcTxt', {
+          duration: 1,
+          opacity: 0.1,
+          ease: 'linear',
+        })
       } else {
         this.$gsap.to(
           [
@@ -357,6 +376,11 @@ export default {
             ease: 'linear',
           }
         )
+        this.$gsap.to('.porcTxt', {
+          duration: 1,
+          opacity: 1,
+          ease: 'linear',
+        })
       }
     },
   },
@@ -365,7 +389,7 @@ export default {
     this.setNextBackgroundAction(nextBackground)
 
     this.tlPageOut
-      .to('.conteudo', {
+      .to(['.conteudo', '.blocoPorc'], {
         opacity: 0,
         duration: 0.3,
         ease: 'power2.out',

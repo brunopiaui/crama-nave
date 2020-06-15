@@ -210,7 +210,7 @@ export default {
           midia: this.backgrounds('j101'),
           id: 1,
           titulo: 'Jardim 1',
-          arquiteto: 'Arquiteto: Bernardes Arquitetura & Lobão Arquitetura',
+          arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
             'O projeto foi elaborado a partir de um antigo jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com as característica ecológicas locais que são de baixa luminosidade e declive acentuado. Integrou duas residências com características distintas: uma casa antiga e uma nova com uma arquitetura arrojada suspensa entre rochas. Todas as árvores existentes foram preservadas.',
         },
@@ -218,7 +218,7 @@ export default {
           midia: this.backgrounds('j102'),
           id: 2,
           titulo: 'Jardim 1',
-          arquiteto: 'Arquiteto: Bernardes Arquitetura & Lobão Arquitetura',
+          arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
             'O projeto foi elaborado a partir de um antigo jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com as característica ecológicas locais que são de baixa luminosidade e declive acentuado. Integrou duas residências com características distintas: uma casa antiga e uma nova com uma arquitetura arrojada suspensa entre rochas. Todas as árvores existentes foram preservadas.',
         },
@@ -226,7 +226,7 @@ export default {
           midia: this.backgrounds('j103'),
           id: 3,
           titulo: 'Jardim 1',
-          arquiteto: 'Arquiteto: Bernardes Arquitetura & Lobão Arquitetura',
+          arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
             'O projeto foi elaborado a partir de um antigo jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com as característica ecológicas locais que são de baixa luminosidade e declive acentuado. Integrou duas residências com características distintas: uma casa antiga e uma nova com uma arquitetura arrojada suspensa entre rochas. Todas as árvores existentes foram preservadas.',
         },
@@ -234,7 +234,7 @@ export default {
           midia: this.backgrounds('j104'),
           id: 4,
           titulo: 'Jardim 1',
-          arquiteto: 'Arquiteto: Bernardes Arquitetura & Lobão Arquitetura',
+          arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
             'O projeto foi elaborado a partir de um antigo jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com as característica ecológicas locais que são de baixa luminosidade e declive acentuado. Integrou duas residências com características distintas: uma casa antiga e uma nova com uma arquitetura arrojada suspensa entre rochas. Todas as árvores existentes foram preservadas.',
         },
@@ -242,7 +242,7 @@ export default {
           midia: this.backgrounds('j105'),
           id: 5,
           titulo: 'Jardim 1',
-          arquiteto: 'Arquiteto: Bernardes Arquitetura & Lobão Arquitetura',
+          arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
             'O projeto foi elaborado a partir de um antigo jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com as característica ecológicas locais que são de baixa luminosidade e declive acentuado. Integrou duas residências com características distintas: uma casa antiga e uma nova com uma arquitetura arrojada suspensa entre rochas. Todas as árvores existentes foram preservadas.',
         },
@@ -250,7 +250,7 @@ export default {
           midia: this.backgrounds('j106'),
           id: 6,
           titulo: 'Jardim 1',
-          arquiteto: 'Arquiteto: Bernardes Arquitetura & Lobão Arquitetura',
+          arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
             'O projeto foi elaborado a partir de um antigo jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com as característica ecológicas locais que são de baixa luminosidade e declive acentuado. Integrou duas residências com características distintas: uma casa antiga e uma nova com uma arquitetura arrojada suspensa entre rochas. Todas as árvores existentes foram preservadas.',
         },
@@ -258,7 +258,7 @@ export default {
           midia: this.backgrounds('j107'),
           id: 7,
           titulo: 'Jardim 1',
-          arquiteto: 'Arquiteto: Bernardes Arquitetura & Lobão Arquitetura',
+          arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
             'O projeto foi elaborado a partir de um antigo jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com as característica ecológicas locais que são de baixa luminosidade e declive acentuado. Integrou duas residências com características distintas: uma casa antiga e uma nova com uma arquitetura arrojada suspensa entre rochas. Todas as árvores existentes foram preservadas.',
         },
@@ -266,7 +266,7 @@ export default {
           midia: this.backgrounds('j201'),
           id: 8,
           titulo: 'Jardim 2',
-          arquiteto: 'Arquiteto: Lobão Arquitetura',
+          arquiteto: 'Arquitetura: Lobão Arquitetura',
           descricao:
             'O paisagismo se integrou as áreas de uso e lazer do terreno. O projeto agregou ao cenário espécies ornamentais, mas preservou e valorizou as espécies existentes, incluindo os pomares frutíferos da Mata Atlântica.',
         },
@@ -274,7 +274,7 @@ export default {
           midia: this.backgrounds('j202'),
           id: 9,
           titulo: 'Jardim 2',
-          arquiteto: 'Arquiteto: Lobão Arquitetura',
+          arquiteto: 'Arquitetura: Lobão Arquitetura',
           descricao:
             'O paisagismo se integrou as áreas de uso e lazer do terreno. O projeto agregou ao cenário espécies ornamentais, mas preservou e valorizou as espécies existentes, incluindo os pomares frutíferos da Mata Atlântica.',
         },
@@ -282,7 +282,7 @@ export default {
           midia: this.backgrounds('j203'),
           id: 10,
           titulo: 'Jardim 2',
-          arquiteto: 'Arquiteto: Lobão Arquitetura',
+          arquiteto: 'Arquitetura: Lobão Arquitetura',
           descricao:
             'O paisagismo se integrou as áreas de uso e lazer do terreno. O projeto agregou ao cenário espécies ornamentais, mas preservou e valorizou as espécies existentes, incluindo os pomares frutíferos da Mata Atlântica.',
         },
@@ -290,7 +290,7 @@ export default {
           midia: this.backgrounds('j204'),
           id: 11,
           titulo: 'Jardim 2',
-          arquiteto: 'Arquiteto: Lobão Arquitetura',
+          arquiteto: 'Arquitetura: Lobão Arquitetura',
           descricao:
             'O paisagismo se integrou as áreas de uso e lazer do terreno. O projeto agregou ao cenário espécies ornamentais, mas preservou e valorizou as espécies existentes, incluindo os pomares frutíferos da Mata Atlântica.',
         },
@@ -298,7 +298,7 @@ export default {
           midia: this.backgrounds('j205'),
           id: 12,
           titulo: 'Jardim 2',
-          arquiteto: 'Arquiteto: Lobão Arquitetura',
+          arquiteto: 'Arquitetura: Lobão Arquitetura',
           descricao:
             'O paisagismo se integrou as áreas de uso e lazer do terreno. O projeto agregou ao cenário espécies ornamentais, mas preservou e valorizou as espécies existentes, incluindo os pomares frutíferos da Mata Atlântica.',
         },
@@ -306,7 +306,7 @@ export default {
           midia: this.backgrounds('j206'),
           id: 13,
           titulo: 'Jardim 2',
-          arquiteto: 'Arquiteto: Lobão Arquitetura',
+          arquiteto: 'Arquitetura: Lobão Arquitetura',
           descricao:
             'O paisagismo se integrou as áreas de uso e lazer do terreno. O projeto agregou ao cenário espécies ornamentais, mas preservou e valorizou as espécies existentes, incluindo os pomares frutíferos da Mata Atlântica.',
         },
@@ -314,7 +314,7 @@ export default {
           midia: this.backgrounds('j207'),
           id: 14,
           titulo: 'Jardim 2',
-          arquiteto: 'Arquiteto: Lobão Arquitetura',
+          arquiteto: 'Arquitetura: Lobão Arquitetura',
           descricao:
             'O paisagismo se integrou as áreas de uso e lazer do terreno. O projeto agregou ao cenário espécies ornamentais, mas preservou e valorizou as espécies existentes, incluindo os pomares frutíferos da Mata Atlântica.',
         },
@@ -322,7 +322,7 @@ export default {
           midia: this.backgrounds('j208'),
           id: 15,
           titulo: 'Jardim 2',
-          arquiteto: 'Arquiteto: Lobão Arquitetura',
+          arquiteto: 'Arquitetura: Lobão Arquitetura',
           descricao:
             'O paisagismo se integrou as áreas de uso e lazer do terreno. O projeto agregou ao cenário espécies ornamentais, mas preservou e valorizou as espécies existentes, incluindo os pomares frutíferos da Mata Atlântica.',
         },
@@ -330,7 +330,7 @@ export default {
           midia: this.backgrounds('j301'),
           id: 16,
           titulo: 'Jardim 3',
-          arquiteto: 'Arquiteto: Ao Cubo Arquitetura',
+          arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
             'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
         },
@@ -338,7 +338,7 @@ export default {
           midia: this.backgrounds('j302'),
           id: 17,
           titulo: 'Jardim 3',
-          arquiteto: 'Arquiteto: Ao Cubo Arquitetura',
+          arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
             'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
         },
@@ -346,7 +346,7 @@ export default {
           midia: this.backgrounds('j303'),
           id: 18,
           titulo: 'Jardim 3',
-          arquiteto: 'Arquiteto: Ao Cubo Arquitetura',
+          arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
             'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
         },
@@ -354,7 +354,7 @@ export default {
           midia: this.backgrounds('j304'),
           id: 19,
           titulo: 'Jardim 3',
-          arquiteto: 'Arquiteto: Ao Cubo Arquitetura',
+          arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
             'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
         },
@@ -362,7 +362,7 @@ export default {
           midia: this.backgrounds('j305'),
           id: 20,
           titulo: 'Jardim 3',
-          arquiteto: 'Arquiteto: Ao Cubo Arquitetura',
+          arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
             'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
         },
@@ -370,7 +370,7 @@ export default {
           midia: this.backgrounds('j306'),
           id: 21,
           titulo: 'Jardim 3',
-          arquiteto: 'Arquiteto: Ao Cubo Arquitetura',
+          arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
             'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
         },
@@ -378,7 +378,7 @@ export default {
           midia: this.backgrounds('j307'),
           id: 22,
           titulo: 'Jardim 3',
-          arquiteto: 'Arquiteto: Ao Cubo Arquitetura',
+          arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
             'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
         },
@@ -386,7 +386,7 @@ export default {
           midia: this.backgrounds('j308'),
           id: 23,
           titulo: 'Jardim 3',
-          arquiteto: 'Arquiteto: Ao Cubo Arquitetura',
+          arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
             'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
         },
@@ -394,7 +394,7 @@ export default {
           midia: this.backgrounds('j309'),
           id: 24,
           titulo: 'Jardim 3',
-          arquiteto: 'Arquiteto: Ao Cubo Arquitetura',
+          arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
             'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
         },
@@ -402,7 +402,7 @@ export default {
           midia: this.backgrounds('j310'),
           id: 25,
           titulo: 'Jardim 3',
-          arquiteto: 'Arquiteto: Ao Cubo Arquitetura',
+          arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
             'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
         },
@@ -410,7 +410,7 @@ export default {
           midia: this.backgrounds('j311'),
           id: 26,
           titulo: 'Jardim 3',
-          arquiteto: 'Arquiteto: Ao Cubo Arquitetura',
+          arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
             'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
         },
@@ -418,7 +418,7 @@ export default {
           midia: this.backgrounds('j312'),
           id: 27,
           titulo: 'Jardim 3',
-          arquiteto: 'Arquiteto: Ao Cubo Arquitetura',
+          arquiteto: 'Arquitetura: Ao Cubo Arquitetura',
           descricao:
             'O projeto valorizou toda a área florestal existente no terreno, e criou um  conceito paisagístico com espécies de baixa manutenção e adequado às condições ecológicas do ambiente. Foram utilizadas as pedras locais na confecção de muros que se integraram a topografia e na suavização de declives do terreno. Foram usadas plantas baixas para valorizar a arquitetura, ampliar a visão panorâmica e criar a sensação de que a construção "flutua".',
         },
@@ -426,7 +426,7 @@ export default {
           midia: this.backgrounds('j401'),
           id: 28,
           titulo: 'Jardim 4',
-          arquiteto: 'Arquiteto: Francisco Hue Arquitetura',
+          arquiteto: 'Arquitetura: Francisco Hue Arquitetura',
           descricao:
             'O paisagismo evidenciou o sofisticado projeto arquitetônico, integrando seus elementos com o jardim, sem interferir no seu design.',
         },
@@ -434,7 +434,7 @@ export default {
           midia: this.backgrounds('j402'),
           id: 29,
           titulo: 'Jardim 4',
-          arquiteto: 'Arquiteto: Francisco Hue Arquitetura',
+          arquiteto: 'Arquitetura: Francisco Hue Arquitetura',
           descricao:
             'O paisagismo evidenciou o sofisticado projeto arquitetônico, integrando seus elementos com o jardim, sem interferir no seu design.',
         },
@@ -442,7 +442,7 @@ export default {
           midia: this.backgrounds('j403'),
           id: 30,
           titulo: 'Jardim 4',
-          arquiteto: 'Arquiteto: Francisco Hue Arquitetura',
+          arquiteto: 'Arquitetura: Francisco Hue Arquitetura',
           descricao:
             'O paisagismo evidenciou o sofisticado projeto arquitetônico, integrando seus elementos com o jardim, sem interferir no seu design.',
         },
@@ -450,7 +450,7 @@ export default {
           midia: this.backgrounds('j404'),
           id: 31,
           titulo: 'Jardim 4',
-          arquiteto: 'Arquiteto: Francisco Hue Arquitetura',
+          arquiteto: 'Arquitetura: Francisco Hue Arquitetura',
           descricao:
             'O paisagismo evidenciou o sofisticado projeto arquitetônico, integrando seus elementos com o jardim, sem interferir no seu design.',
         },
@@ -458,7 +458,7 @@ export default {
           midia: this.backgrounds('j405'),
           id: 32,
           titulo: 'Jardim 4',
-          arquiteto: 'Arquiteto: Francisco Hue Arquitetura',
+          arquiteto: 'Arquitetura: Francisco Hue Arquitetura',
           descricao:
             'O paisagismo evidenciou o sofisticado projeto arquitetônico, integrando seus elementos com o jardim, sem interferir no seu design.',
         },
@@ -466,7 +466,7 @@ export default {
           midia: this.backgrounds('j406'),
           id: 33,
           titulo: 'Jardim 4',
-          arquiteto: 'Arquiteto: Francisco Hue Arquitetura',
+          arquiteto: 'Arquitetura: Francisco Hue Arquitetura',
           descricao:
             'O paisagismo evidenciou o sofisticado projeto arquitetônico, integrando seus elementos com o jardim, sem interferir no seu design.',
         },
@@ -474,7 +474,7 @@ export default {
           midia: this.backgrounds('j407'),
           id: 34,
           titulo: 'Jardim 4',
-          arquiteto: 'Arquiteto: Francisco Hue Arquitetura',
+          arquiteto: 'Arquitetura: Francisco Hue Arquitetura',
           descricao:
             'O paisagismo evidenciou o sofisticado projeto arquitetônico, integrando seus elementos com o jardim, sem interferir no seu design.',
         },
@@ -482,7 +482,7 @@ export default {
           midia: this.backgrounds('j408'),
           id: 35,
           titulo: 'Jardim 4',
-          arquiteto: 'Arquiteto: Francisco Hue Arquitetura',
+          arquiteto: 'Arquitetura: Francisco Hue Arquitetura',
           descricao:
             'O paisagismo evidenciou o sofisticado projeto arquitetônico, integrando seus elementos com o jardim, sem interferir no seu design.',
         },

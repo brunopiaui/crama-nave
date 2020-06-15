@@ -681,7 +681,7 @@ div.pccLogo {
     }
     .menuDropDown {
       position: absolute;
-      padding: 0 0 0 16px;
+      padding: 0 0 0 17px;
       visibility: hidden;
     }
     .menuDropDown a {
