@@ -509,3 +509,73 @@ div.videoCont {
     cursor: pointer;
   }
 }
+
+div.menuMobile {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  opacity: 0;
+  left: 500px;
+  transition: all ease-out 0.5s;
+  div.boxMenuMobile {
+    width: 93%;
+    height: 95%;
+    background-color: rgba(243, 243, 243, 0.93);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    img.svgButton {
+      cursor: pointer;
+    }
+  }
+}
+
+div.menuMobOpen {
+  opacity: 1;
+  z-index: 999999;
+  left: 0px;
+}
+
+div.buttonMenuMobile {
+  display: none;
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 1023px) {
+  div.diagrama {
+    display: none !important;
+  }
+  nav.blockMenu {
+    display: none !important;
+  }
+  header.top {
+    width: 90% !important;
+    padding: 40px 5% 0 5% !important;
+  }
+  footer.bottom {
+    width: 90% !important;
+    padding: 0 5% 20px 5% !important;
+  }
+  div.menuMobile {
+    // display: flex !important;
+  }
+  div.som {
+    display: none !important;
+  }
+  div.buttonMenuMobile {
+    display: flex !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .home .contHome .pcc span {
+    font-size: 22vw !important;
+    line-height: 21vw !important;
+  }
+}

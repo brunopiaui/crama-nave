@@ -16,6 +16,21 @@
         <span></span>
       </div>
     </div>
+    <!-- loading -->
+
+    <div class="menuMobile" :class="{ menuMobOpen: menuMobisActive }">
+      <div class="boxMenuMobile">
+        <div class="topMenuMobile">
+          <img
+            class="svgButton"
+            src="./assets/images/buttonclosemenumob.svg"
+            @click="cliqueCloseMenuMob"
+          />
+        </div>
+        <div class="bottomMenuMobile">rewrewrewrwerewrew</div>
+      </div>
+    </div>
+    <!-- menuMobile -->
 
     <header class="top">
       <div class="logo">
@@ -29,9 +44,19 @@
           </router-link>
         </div>
         <div class="pccLogo">
-          <span class="pccLogoPense">Pense</span>
-          <span class="pccLogoConecte">Conecte</span>
-          <span class="pccLogoCultive">Cultive</span>
+          <span class="pccLogoPense" :class="{ pensecheck: penseisActive }"
+            >Pense</span
+          >
+          <span
+            class="pccLogoConecte"
+            :class="{ conectecheck: conecteisActive }"
+            >Conecte</span
+          >
+          <span
+            class="pccLogoCultive"
+            :class="{ cultivecheck: cultiveisActive }"
+            >Cultive</span
+          >
         </div> </div
       ><!-- logo -->
       <nav class="blockMenu">
@@ -161,6 +186,13 @@
           </g>
         </svg>
       </div>
+      <!-- som -->
+      <div class="buttonMenuMobile">
+        <img
+          src="./assets/images/buttonmenumob.svg"
+          @click="cliqueOpenMenuMob"
+        />
+      </div>
     </header>
 
     <router-view class="router" />
@@ -202,6 +234,10 @@ export default {
       cliqueSomAtivo: true,
       menuBioisActive: false,
       hoverSom: false,
+      penseisActive: false,
+      conecteisActive: false,
+      cultiveisActive: false,
+      menuMobisActive: false,
     }
   },
   computed: {
@@ -518,11 +554,34 @@ export default {
       }
     },
 
+    cliqueOpenMenuMob: function() {
+      this.menuMobisActive = true
+    },
+    cliqueCloseMenuMob: function() {
+      this.menuMobisActive = false
+    },
+
     checkPath: function() {
       let route = this.$route.path
       // this.testeData = route
       // var resultado = this.testeData.replace('/', 'back-')
       // this.testeData = resultado
+      if (route === '/consultoria') {
+        this.penseisActive = true
+      } else {
+        this.penseisActive = false
+      }
+      if (route === '/modelodenegocios') {
+        this.conecteisActive = true
+      } else {
+        this.conecteisActive = false
+      }
+      if (route === '/biopaisagismo') {
+        this.cultiveisActive = true
+      } else {
+        this.cultiveisActive = false
+      }
+
       if (route === '/bioviva') {
         this.menuBioisActive = true
       } else {
@@ -837,5 +896,15 @@ path.pathSom {
   to {
     -webkit-transform: scale(1, 1);
   }
+}
+
+.pensecheck {
+  color: #73b98f !important;
+}
+.conectecheck {
+  color: #f2b67d !important;
+}
+.cultivecheck {
+  color: #dc8371 !important;
 }
 </style>
