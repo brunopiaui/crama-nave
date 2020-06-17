@@ -199,7 +199,7 @@ export default {
         {
           duration: 0.8,
           x: 2000,
-          ease: 'power1.out',
+          ease: 'power3.out',
         },
         0
       )

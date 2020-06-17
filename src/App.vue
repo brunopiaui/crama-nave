@@ -26,9 +26,81 @@
             src="./assets/images/buttonclosemenumob.svg"
             @click="cliqueCloseMenuMob"
           />
+          <div class="listMenuMob">
+            <nav>
+              <ul>
+                <li class="liDrop">
+                  <span @click=";[(toggle = !toggle)], moveSetaMob()"
+                    >O que fazemos</span
+                  >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="8"
+                    height="7"
+                    viewBox="0 0 8 7"
+                    :class="{ setaUp: setaMouseUp }"
+                    @click=";[(toggle = !toggle)], moveSetaMob()"
+                  >
+                    <path
+                      d="M4,0,8,7H0Z"
+                      transform="translate(8 7) rotate(180)"
+                      fill="#586769"
+                    />
+                  </svg>
+                </li>
+                <li>
+                  <transition name="slide-fade">
+                    <div v-show="toggle" class="menuDropMob">
+                      <ul>
+                        <li>
+                          <router-link to="/consultoria"
+                            ><span @click="cliqueCloseMenuMob"
+                              >Consultoria</span
+                            ></router-link
+                          >
+                        </li>
+                        <li>
+                          <router-link to="/modelodenegocios"
+                            ><span @click="cliqueCloseMenuMob"
+                              >Modelo de negócios</span
+                            ></router-link
+                          >
+                        </li>
+                        <li>
+                          <router-link to="/biopaisagismo"
+                            ><span @click="cliqueCloseMenuMob"
+                              >Biopaisagismo</span
+                            ></router-link
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </transition>
+                </li>
+                <li>
+                  <router-link to="/bioviva"
+                    ><span @click="cliqueCloseMenuMob"
+                      >Bioviva</span
+                    ></router-link
+                  >
+                </li>
+                <li @click="cliqueCloseMenuMob">
+                  <router-link to="/midia">Midia</router-link>
+                </li>
+                <li @click="cliqueCloseMenuMob">
+                  <router-link to="/contato">Contato</router-link>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
-        <div class="bottomMenuMobile">rewrewrewrwerewrew</div>
+
+        <div class="bottomMenuMobile">
+          <img src="./assets/images/fb_3.svg" />
+          <img src="./assets/images/insta_3.svg" />
+        </div>
       </div>
+      <!-- boxMenuMobile -->
     </div>
     <!-- menuMobile -->
 
@@ -238,6 +310,8 @@ export default {
       conecteisActive: false,
       cultiveisActive: false,
       menuMobisActive: false,
+      toggle: false,
+      setaMouseUp: false,
     }
   },
   computed: {
@@ -530,6 +604,11 @@ export default {
         this.$gsap.to('.cu', { x: 12.315, ease: 'expo.out', duration: 0.5 })
         this.$gsap.to('.cu2', { opacity: 0, ease: 'expo.out', duration: 0.5 })
       }
+    },
+
+    moveSetaMob() {
+      this.setaMouseUp = !this.setaMouseUp
+      console.log(this.setaMouseUp)
     },
 
     mouseoverMenuDrop() {

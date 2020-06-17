@@ -526,12 +526,54 @@ div.menuMobile {
   div.boxMenuMobile {
     width: 93%;
     height: 95%;
-    background-color: rgba(243, 243, 243, 0.93);
+    background-color: rgba(243, 243, 243, 0.96);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    img.svgButton {
-      cursor: pointer;
+    div.topMenuMobile {
+      width: 100%;
+      img.svgButton {
+        top: 40px;
+        right: 8%;
+        position: absolute;
+        cursor: pointer;
+        display: block;
+      }
+    }
+    div.listMenuMob {
+      margin: 120px 0 0 8%;
+      nav ul li {
+        font-size: 6vw;
+        font-weight: 300;
+        color: #445356;
+        margin: 0 0 15px 0;
+        a {
+          color: #445356;
+        }
+      }
+      nav ul li.liDrop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        svg {
+          margin: 5px 0 0 10px;
+          transition: all ease-out 0.5s;
+        }
+        svg.setaUp {
+          transform-origin: center;
+          transform: rotate(180deg);
+        }
+      }
+    }
+    div.bottomMenuMobile {
+      margin: 0 0 25px 0;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      img {
+        margin: 0 15px 0 15px;
+      }
     }
   }
 }
@@ -547,6 +589,27 @@ div.buttonMenuMobile {
   align-self: flex-start;
 }
 
+div.menuDropMob {
+  margin: -10px 0 0 7.5%;
+  display: flex;
+  flex-direction: column;
+  a {
+    font-size: 4.5vw;
+    margin: 0 0 5px 0;
+  }
+  ul li {
+    margin: 0 0 0 0 !important;
+  }
+}
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(-20px);
+  opacity: 0;
+}
 @media screen and (max-width: 1023px) {
   div.diagrama {
     display: none !important;
