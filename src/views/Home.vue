@@ -16,6 +16,9 @@
     <!-- <div v-if="progressing" class="loading">{{ progress }}%</div> -->
 
     <div class="contHome">
+      <div class="buttonVideoMob">
+        <img src="../assets/images/icovideo.svg" />
+      </div>
       <div class="pcc">
         <span
           class="hoverPcc hoverPcc1"
@@ -36,6 +39,7 @@
           >Cultive</span
         >
       </div>
+      <!-- pcc -->
       <div class="diagrama">
         <div class="boxDia">
           <div class="elem1dia">
@@ -208,8 +212,11 @@
         </div>
         <!-- elem1dia -->
       </div>
-    </div> </div
-  ><!-- home -->
+      <!-- diagrama -->
+    </div>
+    <!-- contHome -->
+  </div>
+  <!-- home -->
 </template>
 
 <script>

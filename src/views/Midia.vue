@@ -1,48 +1,6 @@
 <template>
   <div class="img teste">
     <!-- <div v-if="progressing" class="loading">{{ progress }}%</div> -->
-
-    <div
-      style="cursor:pointer; position:absolute; margin-top:100px;"
-      @click="showGal = !showGal"
-      >open galeria</div
-    >
-
-    <transition name="fadeGal">
-      <div v-if="showGal" class="galeria">
-        <div class="backGal"></div>
-        <transition-group name="fade" tag="div" class="fotosGaleria">
-          <div v-for="i in [currentIndex]" :key="i">
-            <img class="img-slide" :src="currentImg" />
-          </div>
-        </transition-group>
-        <div class="backBottom"></div>
-        <div class="topGaleria">
-          <div class="fecharGal" @click="showGal = false">
-            <img src="../assets/images/fechar.svg" />
-          </div>
-        </div>
-        <div class="bottomGaleria">
-          <div class="contFotoGaleria">
-            <span>{{ tituloJardim }}</span>
-            <p>{{ currentDesc }}</p>
-          </div>
-          <div class="navGaleria">
-            <div
-              ><a class="prev" @click="prev"
-                ><img src="../assets/images/setaleft.svg"/></a
-            ></div>
-            <div class="indNavGal"
-              ><span>{{ currentID }}</span> / {{ slides.length }}</div
-            >
-            <div
-              ><a class="next" @click="next"
-                ><img src="../assets/images/setaright.svg"/></a
-            ></div>
-          </div>
-        </div>
-      </div>
-    </transition>
   </div>
 </template>
 
@@ -60,76 +18,6 @@ export default {
   },
   computed: {
     ...mapGetters(['loading', 'backgrounds', 'progressing', 'progress']),
-    slides() {
-      return [
-        {
-          midia: this.backgrounds('j101'),
-          id: 1,
-          titulo: 'Jardim 01',
-          descricao:
-            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo. 1',
-        },
-        {
-          midia: this.backgrounds('j102'),
-          id: 2,
-          titulo: 'Jardim 01',
-          descricao:
-            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor. 2',
-        },
-        {
-          midia: this.backgrounds('j103'),
-          id: 3,
-          titulo: 'Jardim 01',
-          descricao:
-            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy. Sed diam voluptua. At vero eos et accusam et justo duo. 3',
-        },
-        {
-          midia: this.backgrounds('j104'),
-          id: 4,
-          titulo: 'Jardim 01',
-          descricao:
-            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy. Sed diam voluptua. At vero eos et accusam et justo duo. 3',
-        },
-        {
-          midia: this.backgrounds('j105'),
-          id: 5,
-          titulo: 'Jardim 01',
-          descricao:
-            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy. Sed diam voluptua. At vero eos et accusam et justo duo. 3',
-        },
-        {
-          midia: this.backgrounds('j106'),
-          id: 6,
-          titulo: 'Jardim 01',
-          descricao:
-            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy. Sed diam voluptua. At vero eos et accusam et justo duo. 3',
-        },
-        {
-          midia: this.backgrounds('j107'),
-          id: 7,
-          titulo: 'Jardim 01',
-          descricao:
-            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy. Sed diam voluptua. At vero eos et accusam et justo duo. 3',
-        },
-      ]
-    },
-
-    currentImg() {
-      const data = this.slides[Math.abs(this.currentIndex) % this.slides.length]
-      return data && data.midia ? data.midia.url : null
-    },
-    currentID() {
-      const data = this.slides[Math.abs(this.currentIndex) % this.slides.length]
-      return data.id
-    },
-    currentDesc() {
-      const data = this.slides[Math.abs(this.currentIndex) % this.slides.length]
-      return data.descricao
-    },
-    tituloJardim() {
-      const data = this.slides[Math.abs(this.currentIndex) % this.slides.length]
-      return data.titulo
-    },
   },
   created() {
     this.tl = this.$gsap.timeline()
@@ -160,12 +48,6 @@ export default {
       'setNextBackgroundAction',
       'stopProgressingAction',
     ]),
-    next() {
-      this.currentIndex += 1
-    },
-    prev() {
-      this.currentIndex -= 1
-    },
   },
   beforeRouteLeave(to, from, next) {
     let nextBackground = this.backgrounds(to.meta.image)

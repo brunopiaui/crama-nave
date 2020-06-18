@@ -19,6 +19,9 @@
     <!-- loading -->
 
     <div class="menuMobile" :class="{ menuMobOpen: menuMobisActive }">
+      <div class="folhaMenuMob">
+        <img src="./assets/images/elementointerna4_2.png" />
+      </div>
       <div class="boxMenuMobile">
         <div class="topMenuMobile">
           <img
@@ -269,7 +272,7 @@
 
     <router-view class="router" />
 
-    <footer class="bottom">
+    <footer class="bottom" :class="{ bottomMob: bottomMobIsActive }">
       <div class="share">
         <div><span>Contato.</span></div>
         <div class="fb">
@@ -312,6 +315,7 @@ export default {
       menuMobisActive: false,
       toggle: false,
       setaMouseUp: false,
+      bottomMobIsActive: false,
     }
   },
   computed: {
@@ -608,7 +612,6 @@ export default {
 
     moveSetaMob() {
       this.setaMouseUp = !this.setaMouseUp
-      console.log(this.setaMouseUp)
     },
 
     mouseoverMenuDrop() {
@@ -635,9 +638,22 @@ export default {
 
     cliqueOpenMenuMob: function() {
       this.menuMobisActive = true
+      this.$gsap.from('.folhaMenuMob', {
+        x: 300,
+        y: 800,
+        ease: 'expo.out',
+        duration: 1.5,
+      })
     },
     cliqueCloseMenuMob: function() {
       this.menuMobisActive = false
+      if (this.toggle === true) {
+        this.toggle = false
+        this.setaMouseUp = false
+      } else {
+        this.toggle = false
+        this.setaMouseUp = false
+      }
     },
 
     checkPath: function() {
@@ -668,6 +684,7 @@ export default {
       }
 
       if (route !== '/') {
+        this.bottomMobIsActive = true
         this.tlMenuIn = this.$gsap.timeline()
         this.tlMenuIn
           .to(['header.top'], {
@@ -694,6 +711,7 @@ export default {
         // this.menuHorizontal = false,
         // this.menuVertical = true
       } else {
+        this.bottomMobIsActive = false
         this.tlMenuHome = this.$gsap.timeline()
         this.tlMenuHome
           .to(['.pccLogo'], {

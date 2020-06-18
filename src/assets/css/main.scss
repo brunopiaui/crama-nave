@@ -610,9 +610,29 @@ div.menuDropMob {
   transform: translateY(-20px);
   opacity: 0;
 }
+div.buttonVideoMob {
+  position: absolute;
+  bottom: 20%;
+  right: 5%;
+  display: none;
+}
+div.folhaMenuMob {
+  position: absolute;
+  z-index: 999;
+  bottom: -70px;
+  right: -160px;
+}
+
 @media screen and (max-width: 1023px) {
+  div.buttonVideoMob {
+    display: block !important;
+  }
   div.diagrama {
     display: none !important;
+    visibility: hidden;
+  }
+  div.pcc {
+    width: 100% !important;
   }
   nav.blockMenu {
     display: none !important;
@@ -633,6 +653,63 @@ div.menuDropMob {
   }
   div.buttonMenuMobile {
     display: flex !important;
+  }
+  div.elementoInterna1,
+  div.elementoInterna2,
+  div.elementoInterna3,
+  div.elementoInterna4,
+  div.elementoInterna5 {
+    display: none !important;
+  }
+  div.conteudo {
+    width: 90% !important;
+    padding: 0 5% 0 5% !important;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  div.conteudo {
+    flex-direction: column !important;
+    overflow: auto !important;
+    height: 100% !important;
+  }
+  div.testescroll,
+  div.blocoPorc,
+  div.backR {
+    display: none !important;
+  }
+  div.conteudo div.sideL {
+    width: 100% !important;
+    padding: 140px 0 0 0 !important;
+    div.blocoTitle h2 {
+      font-size: 30px !important;
+    }
+    div.blocoMedia {
+      margin: 20px 0 0 0 !important;
+    }
+  }
+  div.conteudo div.sideR {
+    width: 100% !important;
+    padding: 40px 0 0 0 !important;
+    overflow: visible !important;
+    div.aspas {
+      padding: 0 !important;
+    }
+    div.blocoTexto p {
+      margin: 40px 0 0 0 !important;
+    }
+    div.blocoTexto span.destContP {
+      margin: 40px 0 40px 0 !important;
+    }
+    div.aspas h4 {
+      font-size: 18px !important;
+    }
+  }
+  div.videoContBlocoImg {
+    width: 100% !important;
+  }
+  footer.bottomMob {
+    display: none !important;
   }
 }
 
