@@ -19,6 +19,7 @@
       <div></div>
     </div>
     <!-- backR -->
+    <!-- <div class="backRmob"></div> -->
 
     <div class="blocoPorc">
       <div class="porcTxt"><span id="porc">0</span>%</div>
@@ -58,6 +59,7 @@
     </div>
 
     <div class="conteudo">
+      <div class="backContMob"></div>
       <div class="sideL">
         <div class="blocoTitle">
           <h3>Pense no amanhã</h3>
