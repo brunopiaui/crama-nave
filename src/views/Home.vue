@@ -270,7 +270,7 @@ export default {
   },
   mounted() {
     const video = document.querySelector('#video')
-    video.onloadeddata = function() {
+    video.onloadeddata = () => {
       this.stopProgressingAction()
     }
 

@@ -343,7 +343,9 @@ export default {
         opacity: 0,
         // delay: 10,
         onComplete: () => {
-          this.stopProgressingAction()
+          if (this.$route.name !== 'home') {
+            this.stopProgressingAction()
+          }
         },
       })
     }
