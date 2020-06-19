@@ -57,9 +57,10 @@
     <div class="elementoInterna5">
       <img src="../assets/images/elementointerna7.svg" />
     </div>
-
+    <div class="backContMob">
+      <div class="intBackContMob"></div>
+    </div>
     <div class="conteudo">
-      <div class="backContMob"></div>
       <div class="sideL">
         <div class="blocoTitle">
           <h3>Pense no amanhã</h3>
@@ -315,6 +316,17 @@ export default {
       currPos = parseInt(currPos) - delta * 10
       // moving the position of the object
       conteudo.scrollTop = currPos
+
+      const posicao = document.querySelector('.conteudo')
+      console.log(posicao.scrollTop)
+
+      if (posicao.scrollTop > 0) {
+        this.$gsap.to('.intBackContMob', {
+          duration: 0.5,
+          y: -240,
+          ease: 'linear',
+        })
+      }
 
       let h = conteudo
       let b = document.querySelector('#scroll')

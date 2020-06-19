@@ -631,14 +631,17 @@ div.folhaMenuMob {
   right: -160px;
 }
 div.backContMob {
-  position: absolute;
-  background: rgba(68, 83, 86, 0.96);
   display: none;
   height: 100%;
-  flex-grow: 5;
   width: 100%;
   position: absolute;
-  margin: 250px 0 0 -5%;
+  z-index: 999;
+  div.intBackContMob {
+    background: rgba(68, 83, 86, 0.96);
+    margin: 320px 0 0 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @media screen and (max-width: 1023px) {
@@ -692,9 +695,9 @@ div.backContMob {
     height: 100% !important;
     position: absolute !important;
     margin: 80px 0 0 0 !important;
-    div.backContMob {
-      display: block !important;
-    }
+  }
+  div.backContMob {
+    display: block !important;
   }
   div.testescroll,
   div.blocoPorc,
