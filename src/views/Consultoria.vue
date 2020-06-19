@@ -317,16 +317,20 @@ export default {
       // moving the position of the object
       conteudo.scrollTop = currPos
 
-      const posicao = document.querySelector('.conteudo')
-      console.log(posicao.scrollTop)
+      // // const posicao = document.querySelector('.conteudo')
+      // // console.log(posicao.onscroll)
 
-      if (posicao.scrollTop > 0) {
-        this.$gsap.to('.intBackContMob', {
-          duration: 0.5,
-          y: -240,
-          ease: 'linear',
-        })
-      }
+      // document.addEventListener('scroll', function() {
+      //   alert('Scrolled')
+      // })
+
+      // if (posicao.scrollTop > 0) {
+      //   this.$gsap.to('.intBackContMob', {
+      //     duration: 0.5,
+      //     y: -240,
+      //     ease: 'linear',
+      //   })
+      // }
 
       let h = conteudo
       let b = document.querySelector('#scroll')
