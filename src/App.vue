@@ -4,18 +4,20 @@
     :class="[nextBackground.type === 'image' ? 'image' : 'video']"
     :style="{ backgroundImage: `url(${nextBackground.url})` }"
   >
-    <div v-if="progressing" class="loading">
-      <img style="width:15%;" src="./assets/images/logoloading.svg" />
-      <!-- <img style="width:15%;" src="./assets/images/Navia_01.gif" /> -->
-      <!-- {{ progress }}% -->
-      <div class="loader1">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+    <transition name="fade">
+      <div v-if="progressing" class="loading">
+        <img style="width:15%;" src="./assets/images/logoloading.svg" />
+        <!-- <img style="width:15%;" src="./assets/images/Navia_01.gif" /> -->
+        <!-- {{ progress }}% -->
+        <div class="loader1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-    </div>
+    </transition>
     <!-- loading -->
 
     <div class="menuMobile" :class="{ menuMobOpen: menuMobisActive }">
@@ -330,6 +332,8 @@ export default {
   watch: {
     '$route.path': 'checkPath',
     progressing(value) {
+      console.log(value)
+
       if (!value) {
         this.$gsap.to('.loading', {
           duration: 1,
@@ -346,6 +350,13 @@ export default {
     this.startProgressingAction()
   },
   mounted() {
+    if (!this.progressing) {
+      this.$gsap.to('.loading', {
+        duration: 1,
+        opacity: 0,
+        // delay: 10,
+      })
+    }
     setTimeout(() => this.checkSound(), 1000)
 
     this.tlsomOn = this.$gsap.timeline({ repeat: -1 })
@@ -750,6 +761,11 @@ $base-color: #fff;
 $base-colorV1: #f3f3f3;
 $base-colorV2: #e9e9e9;
 $base-colorV3: #cbcbcb;
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 
 div.logo img.imgLogo {
   width: 147.11px;

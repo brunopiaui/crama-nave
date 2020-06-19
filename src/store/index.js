@@ -5,10 +5,10 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
-    loading: false,
+    loading: true,
     backgrounds: [],
     nextBackground: '',
-    progressing: false,
+    progressing: true,
     progress: 0,
   },
 
