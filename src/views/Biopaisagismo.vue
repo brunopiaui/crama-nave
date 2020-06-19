@@ -523,19 +523,16 @@ export default {
     this.tlPageOut = this.$gsap.timeline()
   },
   mounted() {
-    // if (this.progressing) {
-    //   this.tl.to(
-    //     '.loading',
-    //     {
-    //       duration: 1,
-    //       opacity: 0,
-    //       onComplete: () => {
-    //         this.stopProgressingAction()
-    //       },
-    //     },
-    //     '+=0.5'
-    //   )
-    // }
+    window.addEventListener('keyup', (event) => {
+      const key = event.key // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
+      if (key === 'ArrowLeft') {
+        this.prev()
+      } else if (key === 'ArrowRight') {
+        this.next()
+      } else if (key === 'Escape') {
+        this.showGal = false
+      }
+    })
     this.tlPageIn
       .to(
         [
@@ -653,10 +650,14 @@ export default {
       'stopProgressingAction',
     ]),
     next() {
-      this.currentIndex += 1
+      if (this.currentIndex < this.slides.length - 1) {
+        this.currentIndex += 1
+      }
     },
     prev() {
-      this.currentIndex -= 1
+      if (this.currentIndex > 0) {
+        this.currentIndex -= 1
+      }
     },
     moveScroll(event) {
       let delta = 0
