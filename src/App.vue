@@ -329,6 +329,15 @@ export default {
   },
   watch: {
     '$route.path': 'checkPath',
+    progressing(value) {
+      if (!value) {
+        this.$gsap.to('.loading', {
+          duration: 1,
+          opacity: 0,
+          // delay: 10,
+        })
+      }
+    },
   },
   created() {
     this.checkPath()
@@ -337,19 +346,6 @@ export default {
     this.startProgressingAction()
   },
   mounted() {
-    if (this.progressing) {
-      this.$gsap.to('.loading', {
-        duration: 1,
-        opacity: 0,
-        // delay: 10,
-        onComplete: () => {
-          if (this.$route.name !== 'home') {
-            this.stopProgressingAction()
-          }
-        },
-      })
-    }
-
     setTimeout(() => this.checkSound(), 1000)
 
     this.tlsomOn = this.$gsap.timeline({ repeat: -1 })
@@ -585,6 +581,9 @@ export default {
     preload.oncomplete = (items) => {
       let nextBackground = this.backgrounds(this.$route.meta.image)
       this.setNextBackgroundAction(nextBackground)
+      if (this.$route.name !== 'home') {
+        this.stopProgressingAction()
+      }
     }
   },
   methods: {
