@@ -273,9 +273,7 @@ export default {
         duration: 1,
         opacity: 0,
         onComplete: () => {
-          if (this.$route.name !== 'home') {
-            this.stopProgressingAction()
-          }
+          this.stopProgressingAction()
         },
       })
       loading.play()
