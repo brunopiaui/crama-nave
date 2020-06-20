@@ -1,7 +1,12 @@
 <template>
   <div class="geral">
     <transition name="fadeGal">
-      <div v-if="showGal" class="galeria">
+      <div
+        v-if="showGal"
+        v-touch:swipe.left="prev"
+        v-touch:swipe.right="next"
+        class="galeria"
+      >
         <div class="backGal"></div>
         <transition-group name="fade" tag="div" class="fotosGaleria">
           <div v-for="i in [currentIndex]" :key="i">
