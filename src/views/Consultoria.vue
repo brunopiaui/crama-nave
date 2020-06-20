@@ -158,6 +158,7 @@ export default {
   data() {
     return {
       tl: null,
+      umavez: true,
     }
   },
   computed: {
@@ -169,6 +170,18 @@ export default {
     this.tlPageOut = this.$gsap.timeline()
   },
   mounted() {
+    const divconteudo = document.querySelector('.conteudo')
+    const umavez = this.umavez
+    document.addEventListener(
+      'touchmove',
+      function() {
+        if (divconteudo.scrollTop > 0 && umavez === true) {
+          console.log('acao')
+        }
+      },
+      true
+    )
+
     // if (this.progressing) {
     //   this.tl.to(
     //     '.loading',
@@ -316,21 +329,6 @@ export default {
       currPos = parseInt(currPos) - delta * 10
       // moving the position of the object
       conteudo.scrollTop = currPos
-
-      // // const posicao = document.querySelector('.conteudo')
-      // // console.log(posicao.onscroll)
-
-      // document.addEventListener('scroll', function() {
-      //   alert('Scrolled')
-      // })
-
-      // if (posicao.scrollTop > 0) {
-      //   this.$gsap.to('.intBackContMob', {
-      //     duration: 0.5,
-      //     y: -240,
-      //     ease: 'linear',
-      //   })
-      // }
 
       let h = conteudo
       let b = document.querySelector('#scroll')
