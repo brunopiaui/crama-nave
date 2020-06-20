@@ -12,9 +12,6 @@
       </video>
     </div>
     <div class="loadingpv"> </div>
-
-    <!-- <div v-if="progressing" class="loading">{{ progress }}%</div> -->
-
     <div class="contHome">
       <div class="buttonVideoMob">
         <img src="../assets/images/icovideo.svg" />
@@ -271,32 +268,18 @@ export default {
   mounted() {
     const video = document.querySelector('#video')
     video.onloadeddata = () => {
-      this.stopProgressingAction()
+      const loading = this.$gsap.timeline({ paused: true })
+      loading.to('.loading', {
+        duration: 1,
+        opacity: 0,
+        onComplete: () => {
+          if (this.$route.name !== 'home') {
+            this.stopProgressingAction()
+          }
+        },
+      })
+      loading.play()
     }
-
-    // console.log(this.videoURL)
-
-    // const video = document.querySelector('#video')
-    // video.src = window.URL.createObjectURL(this.backgrounds('video01').url)
-    // video.src = this.videoURL
-    // if (this.progressing) {
-    //   this.tl.to(
-    //     '.loading',
-    //     {
-    //       duration: 1,
-    //       opacity: 0,
-    //       delay: 9,
-    //       onComplete: () => {
-    //         this.stopProgressingAction()
-    //       },
-    //     },
-    //     '+=0.5'
-    //   )
-    // }
-    // this.$gsap.to(['.top1'], {
-    //   duration: 1,
-    //   opacity: 1,
-    // })
 
     this.tlfloat = this.$gsap.timeline({ repeat: -1 })
     this.tlfloat.to(['.diagrama'], {
