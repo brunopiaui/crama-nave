@@ -117,7 +117,7 @@ div.conteudo {
   div.sideR {
     width: 55%;
     // overflow: auto !important;
-    overflow: hidden;
+    overflow: scroll;
     padding: 260px 0 0 0;
     -ms-overflow-style: none;
     mask-image: -webkit-gradient(
@@ -534,7 +534,7 @@ div.menuMobile {
   div.boxMenuMobile {
     width: 93%;
     height: 95%;
-    background-color: rgba(243, 243, 243, 0.96);
+    background-color: rgba(243, 243, 243, 0.98);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -546,6 +546,11 @@ div.menuMobile {
         position: absolute;
         cursor: pointer;
         display: block;
+      }
+      img.logoMenu {
+        position: absolute;
+        top: 45px;
+        left: 8%;
       }
     }
     div.listMenuMob {
@@ -637,10 +642,20 @@ div.backContMob {
   position: absolute;
   z-index: 999;
   div.intBackContMob {
-    background: rgba(68, 83, 86, 0.96);
-    margin: 320px 0 0 0;
+    background: rgba(68, 83, 86, 0.9);
+    border-radius: 92% 16% 10% 10% / 10% 0% 0% 0%;
+    margin: 310px 0 0 0;
     width: 100%;
     height: 100%;
+    visibility: hidden;
+  }
+  div.backClaro {
+    background: rgba(233, 233, 233, 0.9) !important;
+    border-radius: 92% 16% 10% 10% / 10% 0% 0% 0%;
+    margin: 255px 0 0 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
   }
 }
 
@@ -694,7 +709,8 @@ div.backContMob {
     overflow: auto !important;
     height: 100% !important;
     position: absolute !important;
-    margin: 80px 0 0 0 !important;
+    margin: 75px 0 0 0 !important;
+    border-radius: 92% 16% 10% 10% / 10% 0% 0% 0%;
   }
   div.backContMob {
     display: block !important;
@@ -706,7 +722,7 @@ div.backContMob {
   }
   div.conteudo div.sideL {
     width: 100% !important;
-    padding: 60px 0 0 0 !important;
+    padding: 55px 0 0 0 !important;
     div.blocoTitle h2 {
       font-size: 30px !important;
     }
@@ -716,7 +732,7 @@ div.backContMob {
   }
   div.conteudo div.sideR {
     width: 100% !important;
-    padding: 40px 0 0 0 !important;
+    padding: 70px 0 0 0 !important;
     overflow: visible !important;
     div.aspas {
       padding: 0 0 0 30px !important;
@@ -752,5 +768,30 @@ div.backContMob {
   .home .contHome .pcc span {
     font-size: 22vw !important;
     line-height: 21vw !important;
+  }
+  div.galeria div.bottomGaleria {
+    bottom: 30px !important;
+    width: 90% !important;
+    flex-direction: column !important;
+  }
+  div.galeria div.topGaleria {
+    top: 30px !important;
+    width: 90% !important;
+  }
+  div.galeria div.bottomGaleria div.navGaleria div.indNavGal {
+    margin: -4px 20px 0 20px !important;
+  }
+  div.galeria div.bottomGaleria div.contFotoGaleria p {
+    display: none !important;
+  }
+  div.galeria div.bottomGaleria div.contFotoGaleria {
+    width: 100% !important;
+  }
+  div.galeria div.bottomGaleria div.contFotoGaleria span.jardimArq {
+    font-size: 12px !important;
+    margin-bottom: 20px !important;
+  }
+  div.backBottom {
+    height: 200px !important;
   }
 }

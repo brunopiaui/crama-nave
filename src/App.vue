@@ -93,6 +93,7 @@
       </div>
       <div class="boxMenuMobile">
         <div class="topMenuMobile">
+          <img class="logoMenu" src="./assets/images/logomenu.svg" />
           <img
             class="svgButton"
             src="./assets/images/buttonclosemenumob.svg"

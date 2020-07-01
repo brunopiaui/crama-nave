@@ -279,16 +279,16 @@ export default {
       loading.play()
     }
 
-    this.tlfloat = this.$gsap.timeline({ repeat: -1 })
-    this.tlfloat.to(['.diagrama'], {
-      y: '-=10',
-      duration: 1,
-      ease: 'Sine.easeInOut',
-    })
-    this.tlfloat.to(['.diagrama'], {
-      y: '+=10',
-      duration: 1,
-      ease: 'Sine.easeInOut',
+    const app = document.querySelector('#app')
+    const bg = document.querySelector('.boxDia')
+    const windowWidth = window.innerWidth / 10
+    const windowHeight = window.innerHeight / 30
+
+    app.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX / windowWidth
+      const mouseY = e.clientY / windowHeight
+      const move = this.$gsap
+      move.to(bg, { x: mouseX, y: mouseY })
     })
 
     this.tlPageIn
@@ -877,6 +877,7 @@ export default {
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        // transition: transform 0.1s;
       }
       .elem2dia {
         position: absolute;

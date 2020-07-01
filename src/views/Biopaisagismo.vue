@@ -1,5 +1,9 @@
 <template>
-  <div class="geral">
+  <div
+    v-touch:swipe.top="moveBackMob"
+    v-touch:swipe.bottom="moveBackMobBottom"
+    class="geral"
+  >
     <transition name="fadeGal">
       <div
         v-if="showGal"
@@ -98,6 +102,10 @@
       </div>
       <div class="elementoInterna5">
         <img src="../assets/images/elementointerna7_3.svg" />
+      </div>
+
+      <div class="backContMob">
+        <div class="intBackContMob"></div>
       </div>
 
       <div class="conteudo">
@@ -542,6 +550,7 @@ export default {
       .to(
         [
           '.backR',
+          '.intBackContMob',
           '.conteudo',
           '.blocoPorc',
           '.elementoInterna1',
@@ -554,6 +563,15 @@ export default {
           duration: 0.1,
           visibility: 'visible',
         }
+      )
+      .from(
+        '.intBackContMob',
+        {
+          duration: 0.8,
+          y: 2000,
+          ease: 'power3.out',
+        },
+        0
       )
       .from(
         '.backR',
@@ -654,6 +672,33 @@ export default {
       'setNextBackgroundAction',
       'stopProgressingAction',
     ]),
+    moveBackMob() {
+      this.$gsap.to('.intBackContMob', {
+        duration: 1.2,
+        y: -235,
+        ease: 'power3.out',
+      })
+    },
+    moveBackMobBottom() {
+      const conteudoScroll = document.querySelector('.conteudo')
+      const gsap = this.$gsap.timeline()
+      // if (conteudoScroll.scrollTop === 0) {
+      //   this.$gsap.to('.intBackContMob', {
+      //     duration: 1.2,
+      //     y: 0,
+      //     ease: 'power3.out',
+      //   })
+      // }
+      setTimeout(function() {
+        if (conteudoScroll.scrollTop === 0) {
+          gsap.to('.intBackContMob', {
+            duration: 1.2,
+            y: 0,
+            ease: 'power3.out',
+          })
+        }
+      }, 500)
+    },
     next() {
       if (this.currentIndex < this.slides.length - 1) {
         this.currentIndex += 1
@@ -758,7 +803,7 @@ export default {
     this.setNextBackgroundAction(nextBackground)
 
     this.tlPageOut
-      .to(['.conteudo', '.blocoPorc'], {
+      .to(['.conteudo', '.blocoPorc', '.intBackContMob'], {
         opacity: 0,
         duration: 0.3,
         ease: 'power2.out',
