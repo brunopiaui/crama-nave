@@ -101,41 +101,58 @@
           <div class="aspas">
             <h4>Sua marca como parte do mundo</h4>
             <p
-              >“Na consultoria você tem um aprofundamento da biodiversidade.
-              Você mostra que é possível ter um empreendimento usando esse
-              conceito em benefício do seu negócio, em seu benefício e do
-              entorno.”</p
+              ><span
+                >“Na consultoria você descobre a biodiversidade como uma
+                aliada.</span
+              >
+              É possível ter um empreendimento usando a sustentabilidade como
+              seu benefício, do seu negócio e do meio social. Agregamos práticas
+              para o equilíbrio entre a natureza e o seu plano, trazendo
+              vantagens e conquistas comuns diante da atividade.”</p
             >
-            <span>Gustavo Martinelli</span>
+            <span class="assAspas">Gustavo Martinelli</span>
           </div>
           <!-- aspas -->
           <div class="blocoTexto">
             <p
-              >Podemos construir o seu projeto ambiental unindo sustentabilidade
-              e responsabilidade social integrado aos objetivos de sua empresa,
-              e colaborando no gerenciamento da preservação do meio em que atua.
-              Acreditamos que o planejamento e a administração dos recursos
-              naturais são ganhos em um empreendimento.
+              ><span
+                >Fazemos da sustentabilidade um das competências de sua
+                empresa.</span
+              >
+              Construímos o seu projeto ambiental colaborando no gerenciamento
+              da preservação do meio em que atua. Acreditamos que o planejamento
+              e a administração dos recursos naturais são ganhos seguros,
+              inclusive nos rendimentos de seu empreendimento.
             </p>
 
             <p
               >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-              licenciamentos, auditorias - as fases do processo de consultoria
-              se adaptam a sua necessidade, mas seja ela qual for, oferecemos
-              nossa criatividade, técnica e experiência para fornecer para você
-              serviços confiáveis e eficientes.
+              auditorias - as fases do processo de consultoria se adaptam a sua
+              necessidade, mas
+              <span
+                >seja qual for a sua ideia, oferecemos nossa criatividade,
+                técnica e experiência para realizá-lo</span
+              >
+              da maneira mais eficiente.
             </p>
 
             <span class="destContP"
-              >Porque a vida é a matéria-prima de nosso trabalho.</span
-            >
+              >A vida é a matéria-prima <br />
+              de nosso trabalho
+            </span>
 
             <ul class="contSolucoes">
               <span>Soluções na cadeia produtiva</span>
-              <li>- Inventários florísticos e florestais</li>
-              <li>- Restauração de ecossistemas</li>
-              <li>- Conservação de espécies</li>
-              <li>- Pesquisas de matérias-primas naturais para produtos</li>
+              <li style="margin-left:5px;"
+                >&#8226; Inventários florísticos e florestais</li
+              >
+              <li style="margin-left:5px;"
+                >&#8226; Restauração de ecossistemas</li
+              >
+              <li style="margin-left:5px;">&#8226; Conservação de espécies</li>
+              <li style="margin-left:5px;"
+                >&#8226; Pesquisas de matérias-primas naturais para produtos</li
+              >
             </ul>
             <br />
             <br />

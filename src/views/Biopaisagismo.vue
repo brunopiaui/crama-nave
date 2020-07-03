@@ -150,29 +150,49 @@
             <div class="aspas">
               <h4>Você em harmonia com a vida</h4>
               <p
-                >“O Biopaisagismo é um conceito que une as questões biológicas e
-                estéticas ao paisagismo. Na medida em que você consegue
-                aproximar esses dois contextos – um jardim integrado a um
-                conceito biológico, dentro de um ecossistema, você consegue uma
-                conexão, que considero uma das mais importantes para a
-                sociedade.”</p
+                >“<span
+                  >O Biopaisagismo une as questões biológicas à estética do
+                  paisagismo.</span
+                >
+                Na medida em que você consegue aproximar esses dois contextos –
+                um jardim integrado a um ecossistema, você consegue uma conexão,
+                que considero uma das mais importantes para a sociedade.”</p
               >
-              <span class="bioCor">Gustavo Martinelli</span>
+              <span class="assAspas bioCor">Gustavo Martinelli</span>
             </div>
             <!-- aspas -->
             <div class="blocoTexto">
               <p
                 >A diversidade de nossos biomas nos garante inúmeras composições
-                estéticas e orgânicas, ainda assim, no Brasil, mais de 90% das
+                estéticas e orgânicas. Ainda assim, no Brasil, mais de 90% das
                 plantas utilizadas nas ornamentações não são da nossa flora. O
-                Biopaisagismo traz um novo olhar sobre o jardim. Um jardim que
-                cresce na integração, funcionalidade e potencialização de seus
-                recursos, e faz parte da vida de quem convive e coexiste com sua
-                beleza.
+                Biopaisagismo é um novo conceito que amplia o olhar sobre o seu
+                jardim.
+                <span
+                  >O Biopaisagismo reconecta as pessoas com a biodiversidade,
+                  promove sustentabilidade e alia a beleza da natureza à
+                  arquitetura.</span
+                >
+                Com base no conhecimento científico sobre a ecologia, Navia cria
+                soluções funcionais, valorizando o meio e integrando o ambiente.
               </p>
+              <p
+                >Quando projetamos um jardim, escolhendo espécies adequadas à
+                área, valorizamos plantas compatíveis com a região, investimos
+                no desenvolvimento de um ecossistema sustentável que atrai a
+                fauna conveniente e, consequentemente, promove um maior controle
+                de pragas, gerando baixo custo de manutenção.</p
+              >
+              <p
+                ><span
+                  >É a integração e a potencialização dos recursos naturais
+                  disponíveis</span
+                >
+                no encanto do seu projeto.</p
+              >
               <p>
                 <span class="destContP"
-                  >Porque o nosso jardim fortalece o mundo.
+                  >O nosso jardim fortalece o mundo.
                 </span>
               </p>
             </div>

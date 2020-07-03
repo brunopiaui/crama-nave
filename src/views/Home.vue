@@ -154,7 +154,7 @@
           <div class="cont2dia">
             <p
               >Sustentabilidade como valor econômico de sua empresa. Ganhos e
-              resultados incorporados à existência do meio ambiente.
+              resultados incorporados ao meio ambiente.
             </p>
           </div>
           <div class="folhadia2">

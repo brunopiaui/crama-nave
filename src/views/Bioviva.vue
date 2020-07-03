@@ -128,7 +128,7 @@
       </div>
       <div class="sideR">
         <div id="scroll">
-          <div class="videoCont">
+          <!-- <div class="videoCont">
             <div class="videoContBlocoTexto">
               <p>Conheça quem faz a Navia</p>
             </div>
@@ -144,26 +144,20 @@
           <br />
           <br />
           <br />
-          <br />
-          <!-- <div class="aspas">
-            <p class="bioCorP"
-              >“Eu realizei durante muitos e muitos anos expedições científicas
-              por todo o Brasil. Isso me deu um contato único com a natureza e a
-              possibilidade de enxergar os ecossistemas, as paisagens e os
-              lugares muito de perto.”</p
-            >
-            <span class="bioCorSpan">Gustavo Martinelli</span>
-          </div> -->
-          <!-- aspas -->
+          <br /> -->
           <div class="blocoTexto">
+            <p style="color:#122124;"><span>Conheça quem faz a Navia</span></p>
             <p style="color:#122124;"
-              >Gustavo Martinelli e Eládio Miranda Lima se encontram na visão de
-              mundo e se complementa no conhecimento e prática. Na Navia, o
-              domínio técnico do biólogo se une à veia empreendedora do homem de
-              negócios. Dois olhares que juntos se multiplicam, mas que tem um
-              interesse e uma paixão única no desenvolvimento desse trabalho - a
-              conexão e o equilíbrio produtivo entre o homem, a sociedade e o
-              meio ambiente.
+              ><span>Gustavo Martinelli</span> e
+              <span>Eládio Miranda Lima</span> se encontram na visão de mundo e
+              se complementa no conhecimento e prática.
+              <span
+                >Na Navia, o domínio técnico do biólogo se une à veia
+                empreendedora do homem de negócios.</span
+              >
+              Dois olhares que juntos se multiplicam, mas que tem um interesse e
+              uma paixão única no desenvolvimento desse trabalho - a conexão e o
+              equilíbrio produtivo entre o homem, a sociedade e o meio ambiente.
             </p>
 
             <!-- <p
@@ -190,42 +184,78 @@
               possibilidade de enxergar os ecossistemas, as paisagens e os
               lugares muito de perto.”</p
             >
-            <span class="bioCorSpan">Gustavo Martinelli</span>
+            <span class="assAspas bioCorSpan">Gustavo Martinelli</span>
           </div>
           <div class="blocoTexto">
             <p style="color:#122124;"
               >A trajetória de uma vida, o conhecimento de um caminho e as
               memórias de uma terra unidos na construção do seu negócio, projeto
               ou ambiente e, principalmente, no cuidado com o mundo. O biólogo
-              Gustavo Martinelli é a raiz da Navia.
+              <span>Gustavo Martinelli é a raiz da Navia</span>, um botânico
+              reconhecido internacionalmente por sua contribuição na conservação
+              do ecossistema, e um dos maiores especialistas em bromélias do
+              mundo.
             </p>
-            <br />
+            <p style="color:#122124;"
+              >Na ciência e na técnica - Com PhD em Ecologia pela University of
+              St.Andrews, no Reino Unido, e 46 anos de carreira, foi pesquisador
+              titular do Jardim Botânico do Rio de Janeiro e coordenador do
+              Centro Nacional de Conservação da Flora, catalogando e conservando
+              a biodiversidade nativa por meio de expedições por todo o
+              território nacional. Na busca constante pela conservação da flora,
+              o cientista participa de conselhos de organizações nacionais e
+              internacionais, como SOS Mata Atlântica e Chair do Brazilian Plant
+              Red List Authority da IUCN, e é membro do International Advisory
+              Committee do Botanic Gardens Conservation International.
+              Martinelli também é professor de pós-graduação na Escola Nacional
+              de Botânica Tropical-ENBT/JBRJ e professor credenciado da Open
+              University, na Inglaterra.
+            </p>
+            <p style="color:#122124;"
+              >No Biopaisagismo - Martinelli atua como paisagista desde 1980, e
+              já assinou inúmeros jardins nas capitais e interior do Brasil,
+              muitos deles em parcerias com arquitetos e escritórios de
+              arquitetura. Seu trabalho como paisagista se destaca pelas belas
+              paisagens que realçam a biodiversidade brasileira e ajudam na
+              regeneração dos ecossistemas, e por um design que integra os
+              elementos arquitetônicos às preferências dos clientes.
+            </p>
             <br />
             <ul class="contSolucoes">
               <span>Os frutos de uma rota:</span>
-              <li style="color:#122124;"
-                >- 47 anos estudando a flora brasileira</li
+              <li style="color:#122124; margin-left:5px;"
+                >&#8226; 47 anos estudando a flora brasileira</li
               >
-              <li style="color:#122124;"
-                >- Pesquisador no Jardim Botânico desde 1970</li
+              <li style="color:#122124; margin-left:5px;"
+                >&#8226; Mais de 380 jardins planejados</li
               >
-              <li style="color:#122124;">- Mais de 380 jardins planejados</li>
-              <li style="color:#122124;">- Prêmio IAB de paisagismo</li>
-              <li style="color:#122124;">- Premio Jabuti 1º lugar 2014</li>
-              <li style="color:#122124;"
-                >- Premio Work of Excellence - IUCN - Abu Dhabi, EAU, 2018</li
+              <li style="color:#122124; margin-left:5px;"
+                >&#8226; Prêmio Rodrigo de Mello Franco de melhor projeto
+                paisagístico de 1991, pelo projeto da Fazenda Monte Cristo, em
+                parceria com o arquiteto Alfredo Britto</li
               >
-              <li style="color:#122124;"
-                >- Mais 400 expedições científicas no Brasil</li
+              <li style="color:#122124; margin-left:5px;"
+                >&#8226; Prêmio IAB de paisagismo</li
               >
-              <li style="color:#122124;"
-                >- Membro de expedições de Roberto Burle Marx</li
+              <li style="color:#122124; margin-left:5px;"
+                >&#8226; Premio Jabuti 1º lugar 2014</li
               >
-              <li style="color:#122124;"
-                >- Mais de 22 mil espécies da flora catalogadas
+              <li style="color:#122124; margin-left:5px;"
+                >&#8226; Premio Work of Excellence - IUCN - Abu Dhabi, EAU,
+                2018</li
+              >
+              <li style="color:#122124; margin-left:5px;"
+                >&#8226; Mais 400 expedições científicas no Brasil</li
+              >
+              <li style="color:#122124; margin-left:5px;"
+                >&#8226; Membro de expedições de Roberto Burle Marx,
+                contribuindo com a identificação de plantas</li
+              >
+              <li style="color:#122124; margin-left:5px;"
+                >&#8226; Mais de 22 mil espécies da flora catalogadas
               </li>
-              <li style="color:#122124;"
-                >- Coordenador do Centro Nacional de Conservação da Flora
+              <li style="color:#122124; margin-left:5px;"
+                >&#8226; Coordenador do Centro Nacional de Conservação da Flora
                 (CNCFlora)</li
               >
             </ul>

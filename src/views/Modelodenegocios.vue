@@ -102,35 +102,52 @@
           <div class="aspas">
             <h4>Queremos te encontrar no futuro</h4>
             <p
-              >“A sustentabilidade ela não é só ambiental. Ela é o equilíbrio
-              entre os interesses de um negócio, inclui outras frentes como a
-              social e, claro, a financeira que é a espinha dorsal de um
-              empreendimento, é o que garante sua continuidades. Mas quando você
-              entende que a biodiversidade também é um valor, você deixa de
-              perder e começa realmente a ganhar, passa a ver vantagem na
-              relação entre seu investimento e o meio ambiente.”</p
+              >“<span
+                >A sustentabilidade não é só ambiental - é o equilíbrio entre os
+                interesses de um negócio.</span
+              >
+              Ela inclui a frente social e, claro, a financeira que é a espinha
+              dorsal de um empreendimento, o que garante sua continuidade. Mas
+              quando você entende que a
+              <span>biodiversidade também é um valor</span>, você deixa de
+              perder e começa, realmente, a ganhar. Passa a ver vantagens reais
+              na relação entre seu investimento e o meio ambiente.”</p
             >
-            <span class="conecteCor">Eládio Miranda Lima</span>
+            <span class="assAspas conecteCor">Eládio Miranda Lima</span>
           </div>
           <!-- aspas -->
           <div class="blocoTexto">
             <p
-              >A Navia responde. Somos o elo entre a natureza e sua ideia de
-              negócio. Inegavelmente os recursos existem, e também existem
-              soluções inteligentes para o seu uso. Essas práticas impactam
-              positivamente em ganhos reais para seu empresa.
+              ><span
+                >Somos a ligação entre a biodiversidade e seu negócio.</span
+              >
+              Damos o apoio necessário à estruturação das suas ideias para o
+              alcance de resultados que façam o seu empreendimento
+              <span>sustentável e lucrativo.</span>
             </p>
             <p
-              >A sustentabilidade é estratégica.<br />
-              A sustentabilidade é inovação.<br />
+              >Inegavelmente os recursos existem, e também existem soluções
+              inteligentes para o seu uso. Essas práticas impactam positivamente
+              em ganhos reais para sua empresa e o mundo.
+            </p>
+            <p style="margin-left:10px; margin-top:40px; margin-bottom:40px;"
+              ><span
+                >A sustentabilidade é um benefício financeiramente
+                vantajoso.</span
+              ><br />
+              A sustentabilidade é estratégica. <br />
+              A sustentabilidade é inovação. <br />
               A sustentabilidade é valor econômico.
             </p>
             <p
               >O que caracteriza o ecossistema é a coexistência, você e seu
-              empreendimento podem participar.</p
+              empreendimento podem participar dessa cadeia.</p
             >
             <p>
-              <span class="destContP">Porque somos parte da natureza.</span>
+              <span class="destContP"
+                >Porque somos<br />
+                parte da natureza.</span
+              >
             </p>
             <br />
             <br />
