@@ -13,6 +13,70 @@
     </div>
     <div class="loadingpv"> </div>
     <div class="contHome">
+      <!-- <div v-if="true" class="aNavia">
+        <div
+          class="testeforma"
+          style="position:absolute; width:1488px; height:1371px; right:-50px; top:-235px;"
+        >
+          <svg
+            x="0px"
+            y="0px"
+            viewBox="0 0 1488 1371"
+            enable-background="new 0 0 1488 1371"
+            xml:space="preserve"
+          >
+            <path
+              id="Path_437"
+              opacity="0.958"
+              fill="#122124"
+              enable-background="new"
+              d="M1342.2,1115.8
+                C1591,760,1535.1,273.9,1071.4,202.6s-923.8-382-988.3-58.1c-185.7,808.9-41.6,1016.4,245,1146.3S1134.3,1412.6,1342.2,1115.8z"
+            />
+          </svg>
+        </div>
+        <div class="blocoaNavia">
+          <div
+            style="margin:300px 0 0 500px; position:absolute; z-index:999999999;"
+            @click="fecharaNavia"
+            >FECHAR</div
+          >
+          <div class="contaNavia">
+            <span class="titleContaNavia"
+              >Se o ambiente favorece,<br />
+              a evolução é consequência
+            </span>
+            <p
+              >O nosso propósito é unir as pessoas à natureza.<br />
+              <span
+                >Navia é o eloentre os seus planos e a conservação da
+                vida.</span
+              ></p
+            >
+            <p
+              >Desenvolvemos projetos
+              <span>conectados a valorização da biodiversidade brasileira</span>
+              – um jardim, um produto, novas soluções, um conceito de negócio ou
+              ações ambientais. Valorizamos a proteção e cuidado com o
+              ecossistema, ainda assim nos mantemos em total sintonia com as
+              estratégias que atendem as expectativas de uma sociedade moderna e
+              um mercado.</p
+            >
+            <p
+              >Trazemos a experiência e o conhecimento técnico da botânica, mas
+              vamos além. Entendemos que somos parte do meio ambiente e, também,
+              aprendemos com ele.
+              <span>Acreditamos em um crescimento conjunto.</span></p
+            >
+            <p
+              >Mais do que uma transformação, confiamos no resgate de um vínculo
+              que é inerente a humanidade.<br />
+              Mais do que um desafio, <span>esse é nosso compromisso.</span></p
+            >
+          </div>
+        </div>
+      </div> -->
+      <!-- aNavia -->
       <div class="buttonVideoMob">
         <img src="../assets/images/icovideo.svg" />
       </div>
@@ -128,7 +192,7 @@
             @mouseover="mouseoverLink2dia"
             @mouseleave="mouseleaveLink2dia"
           >
-            <router-link to="/modelodenegocios">
+            <router-link to="/novosnegocios">
               <div class="link2diaSvg">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -147,13 +211,13 @@
               </div>
               <div class="link2diaBtexto">
                 <span class="link2diaPense">Conecte</span>
-                <span class="link2diaConsultoria">MODELO DE NEGÓCIOS</span>
+                <span class="link2diaConsultoria">NOVOS NEGÓCIOS</span>
               </div>
             </router-link>
           </div>
           <div class="cont2dia">
             <p
-              >Sustentabilidade como valor econômico de sua empresa. Ganhos e
+              >Sustentabilidade como valor econômico de seu projeto. Ganhos e
               resultados incorporados ao meio ambiente.
             </p>
           </div>
@@ -204,7 +268,34 @@
             <img src="../assets/images/elementodia3.svg" />
           </div>
           <div class="icoVideoDia">
-            <img src="../assets/images/icovideo.svg" />
+            <!-- <img src="../assets/images/icovideo.svg" /> -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48.182"
+              height="49.957"
+              viewBox="-2 -2 49.182 50.957"
+              style="cursor:pointer;"
+              @mouseover="hoverSom = true"
+              @mouseleave="hoverSom = false"
+            >
+              <g>
+                <path
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1"
+                  class="pathHover"
+                  :class="{ hoverPathHoverActive: hoverSom }"
+                  d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
+                />
+                <path
+                  d="M17.918,10.8V7.066A1.069,1.069,0,0,0,16.853,6H4.066A1.069,1.069,0,0,0,3,7.066V17.722a1.069,1.069,0,0,0,1.066,1.066H16.853a1.069,1.069,0,0,0,1.066-1.066v-3.73l4.262,4.262V6.533Z"
+                  transform="translate(11 11)"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1"
+                />
+              </g>
+            </svg>
           </div>
         </div>
         <!-- elem1dia -->
@@ -264,6 +355,8 @@ export default {
     this.tl3overParte2 = this.$gsap.timeline({ paused: true })
     this.tl3overParte3 = this.$gsap.timeline({ paused: true })
     this.tl3overParte4 = this.$gsap.timeline({ paused: true })
+    // this.tlclickOpenaNavia = this.$gsap.timeline({ paused: true })
+    // this.tlclickCloseaNavia = this.$gsap.timeline({ paused: true })
   },
   mounted() {
     const video = document.querySelector('#video')
@@ -303,6 +396,19 @@ export default {
         { opacity: 1, duration: 1.5, ease: 'power2.out' },
         0
       )
+
+    // this.tlclickCloseaNavia.fromTo(
+    //   '.testeforma',
+    //   { opacity: 1, x: 0, y: 0, scale: 1 },
+    //   {
+    //     opacity: 0,
+    //     x: -100,
+    //     y: 100,
+    //     scale: 0.1,
+    //     duration: 1.5,
+    //     ease: 'power2.out',
+    //   }
+    // )
 
     this.tl1overParte1
       .to(
@@ -662,6 +768,11 @@ export default {
       'stopProgressingAction',
     ]),
 
+    fecharaNavia: function() {
+      console.log('asa')
+      this.tlclickCloseaNavia.play()
+    },
+
     mouseoverPcc1() {},
     mouseleavePcc1() {},
     mouseoverPcc2() {},
@@ -745,7 +856,7 @@ export default {
     this.tl1overParte4.reverse()
 
     this.tlPageOut
-      .to('.pcc', {
+      .to(['.pcc', '.contaNavia'], {
         opacity: 0,
         duration: 0.6,
         ease: 'power3.in',
@@ -853,11 +964,53 @@ export default {
       height: 100%;
       mix-blend-mode: overlay;
       opacity: 0;
+      z-index: 888;
       span {
         display: block;
         font-size: 115px;
         font-weight: 700;
         line-height: 110px;
+      }
+    }
+    .aNavia {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 887;
+      border: solid 10px #ff0000;
+      // background-color: #122124;
+      // border-radius: 0% 20% 0% 0% / 0% 32% 0% 0%;
+      top: 0;
+      left: 0;
+      .blocoaNavia {
+        position: relative;
+        max-width: 1180px;
+        margin: 0 auto;
+        height: 100%;
+        .contaNavia {
+          width: 50%;
+          position: absolute;
+          right: 0;
+          padding: 30vh 0 0 0;
+          span.titleContaNavia {
+            margin: 0 0 35px 0;
+            display: block;
+            font-size: 24px;
+            line-height: 32px;
+            color: #73b98f;
+          }
+          p {
+            font-size: 15px;
+            font-weight: 300;
+            color: #cbcbcb;
+            line-height: 22px;
+            margin: 0 0 25px 0;
+            span {
+              font-weight: 400;
+              color: #e9e9e9;
+            }
+          }
+        }
       }
     }
     .diagrama {

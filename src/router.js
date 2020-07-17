@@ -27,12 +27,12 @@ export default new Router({
       meta: { index: 1, image: 'image01' },
     },
     {
-      path: '/modelodenegocios',
-      name: 'modelodenegocios',
+      path: '/novosnegocios',
+      name: 'novosnegocios',
       component: () =>
         import(
           /* webpackChunkName: "Image02" */
-          '@/views/Modelodenegocios.vue'
+          '@/views/novosnegocios.vue'
         ),
       meta: { index: 2, image: 'image02' },
     },

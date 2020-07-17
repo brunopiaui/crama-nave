@@ -133,9 +133,9 @@
                           >
                         </li>
                         <li>
-                          <router-link to="/modelodenegocios"
+                          <router-link to="/novosnegocios"
                             ><span @click="cliqueCloseMenuMob"
-                              >Modelo de negócios</span
+                              >Novos negócios</span
                             ></router-link
                           >
                         </li>
@@ -230,7 +230,7 @@
           </svg>
           <div class="menuDropDown" :class="{ menuDropBio: menuBioisActive }">
             <router-link to="/consultoria">Consultoria</router-link>
-            <router-link to="/modelodenegocios">Modelo de negócios</router-link>
+            <router-link to="/novosnegocios">Novos negócios</router-link>
             <router-link to="/biopaisagismo">Biopaisagismo</router-link>
           </div>
         </a>
@@ -267,11 +267,7 @@
           @mouseover="hoverSom = true"
           @mouseleave="hoverSom = false"
         >
-          <g
-            id="Component_13_31"
-            data-name="Component 13 – 31"
-            transform="translate(0.592 0.5)"
-          >
+          <g transform="translate(0.592 0.5)">
             <path
               id="Path_310"
               data-name="Path 310"
@@ -1009,7 +1005,7 @@ div.pccLogo {
 }
 
 path.pathSom {
-  transition: all 0.5s ease-out;
+  transition: all 0.3s ease-out;
   transform-origin: center;
 }
 .hoverPathSomActive {

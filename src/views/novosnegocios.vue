@@ -69,7 +69,10 @@
       <div class="sideL">
         <div class="blocoTitle">
           <h3>Conecte-se hoje</h3>
-          <h2>MODELO DE NEGÓCIO</h2>
+          <h2
+            >NOVOS <br />
+            NEGÓCIOS</h2
+          >
           <p
             >Nenhuma ideia é pequena, nenhum sonho é improvável. Sabemos onde
             uma semente pode chegar.</p
@@ -78,7 +81,35 @@
         <!--blocoTitle-->
         <div class="blocoMedia">
           <!-- <div><img src="../assets/images/icofoto.svg"/></div> -->
-          <div><img src="../assets/images/icovideo.svg"/></div>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48.182"
+              height="49.957"
+              viewBox="-2 -2 49.182 50.957"
+              style="cursor:pointer;"
+              @mouseover="hoverSom = true"
+              @mouseleave="hoverSom = false"
+            >
+              <g>
+                <path
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1"
+                  class="pathHover"
+                  :class="{ hoverPathHoverActive: hoverSom }"
+                  d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
+                />
+                <path
+                  d="M17.918,10.8V7.066A1.069,1.069,0,0,0,16.853,6H4.066A1.069,1.069,0,0,0,3,7.066V17.722a1.069,1.069,0,0,0,1.066,1.066H16.853a1.069,1.069,0,0,0,1.066-1.066v-3.73l4.262,4.262V6.533Z"
+                  transform="translate(11 11)"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1"
+                />
+              </g>
+            </svg>
+          </div>
           <!-- <div><img src="../assets/images/icoaudio.svg"/></div> -->
         </div>
       </div>
@@ -119,11 +150,11 @@
           <div class="blocoTexto">
             <p
               ><span
-                >Somos a ligação entre a biodiversidade e seu negócio.</span
+                >Somos a ligação entre a biodiversidade e seu projeto.</span
               >
               Damos o apoio necessário à estruturação das suas ideias para o
-              alcance de resultados que façam o seu empreendimento
-              <span>sustentável e lucrativo.</span>
+              alcance de resultados que façam a sua iniciativa sustentável e
+              lucrativa.
             </p>
             <p
               >Inegavelmente os recursos existem, e também existem soluções
@@ -167,10 +198,11 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
-  name: 'Modelodenegocios',
+  name: 'Novosnegocios',
   data() {
     return {
       tl: null,
+      hoverSom: false,
     }
   },
   computed: {

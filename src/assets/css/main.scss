@@ -143,6 +143,7 @@ div.conteudo {
         color: $base-colorV3;
         span {
           font-weight: 500;
+          color:#F3F3F3;
         }
       }
       p.bioCorP {
@@ -169,7 +170,8 @@ div.conteudo {
     }
     div.blocoTexto p span {
       font-weight: 500;
-      font-size: 16px;
+      // font-size: 16px;
+      color:#F3F3F3;
     }
     div.blocoTexto span.destContP {
       font-size: 22px;
@@ -666,6 +668,14 @@ div.backContMob {
     height: 100%;
     visibility: hidden;
   }
+}
+
+path.pathHover {
+  transition: all 0.3s ease-out;
+  transform-origin: center;
+}
+.hoverPathHoverActive {
+  transform: scale(1.1) rotate(5deg) !important;
 }
 
 @media screen and (max-width: 1023px) {
