@@ -70,6 +70,19 @@ div.backConteudo {
   background-color: bisque;
 }
 
+div.areaHoverBt {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 80px;
+  svg {
+    cursor: pointer;
+  }
+}
+
 div.conteudo {
   max-width: 1180px;
   margin: 0 auto;
@@ -670,11 +683,11 @@ div.backContMob {
   }
 }
 
-path.pathHover {
+path.pathBt {
   transition: all 0.3s ease-out;
   transform-origin: center;
 }
-.hoverPathHoverActive {
+.hoverPathBtActive {
   transform: scale(1.1) rotate(5deg) !important;
 }
 

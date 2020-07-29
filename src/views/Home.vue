@@ -2,7 +2,15 @@
   <div class="home">
     <div class="backImg"></div>
     <div class="img">
-      <video id="video" ref="video" autoplay muted loop>
+      <video
+        id="video"
+        ref="video"
+        defaultMuted
+        autoplay
+        muted
+        loop
+        playsinline
+      >
         <source
           :src="require('../assets/videos/video01.mp4')"
           :poster="require('../assets/images/image04.jpg')"
@@ -13,11 +21,8 @@
     </div>
     <div class="loadingpv"> </div>
     <div class="contHome">
-      <!-- <div v-if="true" class="aNavia">
-        <div
-          class="testeforma"
-          style="position:absolute; width:1488px; height:1371px; right:-50px; top:-235px;"
-        >
+      <div class="aNavia" :class="{ aNaviaState: aNaviaIsActive }">
+        <div class="formaFundoaNavia">
           <svg
             x="0px"
             y="0px"
@@ -26,7 +31,6 @@
             xml:space="preserve"
           >
             <path
-              id="Path_437"
               opacity="0.958"
               fill="#122124"
               enable-background="new"
@@ -35,12 +39,33 @@
             />
           </svg>
         </div>
-        <div class="blocoaNavia">
+        <div class="btCloseaNavia">
           <div
-            style="margin:300px 0 0 500px; position:absolute; z-index:999999999;"
-            @click="fecharaNavia"
-            >FECHAR</div
+            class="areaHoverBt"
+            @mouseover="btsHome.btCloseNavia = true"
+            @mouseleave="btsHome.btCloseNavia = false"
           >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="42"
+              height="42"
+              @click="cliqueCloseaNavia"
+            >
+              <g transform="translate(2 2)" fill="none" stroke="#fff">
+                <path
+                  d="M19.358.5S12.579.5 7.607 4.567-.979 15.414 1.28 23.548s9.942 11.3 12.654 12.2 8.135 2.26 16.721-3.615 8.14-17.171 2.26-24.854C29.101 2.29 25.233.5 19.358.5z"
+                  class="pathBt"
+                  :class="{ hoverPathBtActive: btsHome.btCloseNavia }"
+                />
+                <path
+                  stroke-linecap="round"
+                  d="M13.91 24.204l9.972-11.884M13.91 12.294l9.972 11.884"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="blocoaNavia">
           <div class="contaNavia">
             <span class="titleContaNavia"
               >Se o ambiente favorece,<br />
@@ -75,7 +100,7 @@
             >
           </div>
         </div>
-      </div> -->
+      </div>
       <!-- aNavia -->
       <div class="buttonVideoMob">
         <img src="../assets/images/icovideo.svg" />
@@ -108,11 +133,8 @@
               xmlns="http://www.w3.org/2000/svg"
               width="524.979"
               height="522.38"
-              viewBox="0 0 524.979 522.38"
             >
               <path
-                id="Path_302"
-                data-name="Path 302"
                 class="cls-1"
                 d="M199.582,0s-72.1,0-124.971,43.259S-16.714,158.617,7.319,245.135,113.063,365.3,141.9,374.912s86.518,24.033,177.843-38.453S406.264,153.81,343.778,72.1C303.211,19.034,262.067,0,199.582,0Z"
                 transform="matrix(0.883, -0.469, 0.469, 0.883, 0.481, 183.347)"
@@ -124,12 +146,9 @@
               xmlns="http://www.w3.org/2000/svg"
               width="313.7"
               height="312.529"
-              viewBox="0 0 313.7 312.529"
             >
               <path
-                id="Path_304"
-                data-name="Path 304"
-                class="cls-2 testeee"
+                class="cls-2"
                 d="M116.785,0S74.6,0,43.659,25.313-9.78,92.815,4.283,143.441s61.876,70.314,78.752,75.939,50.626,14.063,104.065-22.5S237.726,90,201.162,42.188C177.424,11.138,153.349,0,116.785,0Z"
                 transform="matrix(0.848, -0.53, 0.53, 0.848, 0.732, 121.52)"
               />
@@ -161,11 +180,8 @@
                   xmlns="http://www.w3.org/2000/svg"
                   width="18.738"
                   height="18.385"
-                  viewBox="0 0 18.738 18.385"
                 >
                   <path
-                    id="Path_339"
-                    data-name="Path 339"
                     class="cls-6"
                     d="M9.058,0A10,10,0,0,0,3.384,1.964,8.624,8.624,0,0,0,.33,11.129c1.091,3.928,4.8,5.455,6.11,5.892s3.928,1.091,8.074-1.746,3.928-8.292,1.091-12A7.354,7.354,0,0,0,9.058,0Z"
                     transform="translate(0.549 0.5)"
@@ -198,11 +214,8 @@
                   xmlns="http://www.w3.org/2000/svg"
                   width="18.738"
                   height="18.385"
-                  viewBox="0 0 18.738 18.385"
                 >
                   <path
-                    id="Path_339"
-                    data-name="Path 339"
                     class="cls-6"
                     d="M9.058,0A10,10,0,0,0,3.384,1.964,8.624,8.624,0,0,0,.33,11.129c1.091,3.928,4.8,5.455,6.11,5.892s3.928,1.091,8.074-1.746,3.928-8.292,1.091-12A7.354,7.354,0,0,0,9.058,0Z"
                     transform="translate(0.549 0.5)"
@@ -238,11 +251,8 @@
                   xmlns="http://www.w3.org/2000/svg"
                   width="18.738"
                   height="18.385"
-                  viewBox="0 0 18.738 18.385"
                 >
                   <path
-                    id="Path_339"
-                    data-name="Path 339"
                     class="cls-6"
                     d="M9.058,0A10,10,0,0,0,3.384,1.964,8.624,8.624,0,0,0,.33,11.129c1.091,3.928,4.8,5.455,6.11,5.892s3.928,1.091,8.074-1.746,3.928-8.292,1.091-12A7.354,7.354,0,0,0,9.058,0Z"
                     transform="translate(0.549 0.5)"
@@ -268,35 +278,67 @@
             <img src="../assets/images/elementodia3.svg" />
           </div>
           <div class="icoVideoDia">
-            <!-- <img src="../assets/images/icovideo.svg" /> -->
+            <div
+              class="areaHoverBt"
+              @mouseover="btsHome.btVideo = true"
+              @mouseleave="btsHome.btVideo = false"
+            >
+              <!-- <img src="../assets/images/icovideo.svg" /> -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="48.182"
+                height="49.957"
+              >
+                <g
+                  transform="translate(1.2 2)"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1"
+                >
+                  <path
+                    class="pathBt"
+                    :class="{ hoverPathBtActive: btsHome.btVideo }"
+                    d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
+                  />
+                  <path
+                    d="M17.918,10.8V7.066A1.069,1.069,0,0,0,16.853,6H4.066A1.069,1.069,0,0,0,3,7.066V17.722a1.069,1.069,0,0,0,1.066,1.066H16.853a1.069,1.069,0,0,0,1.066-1.066v-3.73l4.262,4.262V6.533Z"
+                    transform="translate(11 11)"
+                  />
+                </g>
+              </svg>
+            </div> </div
+          ><!-- icoVideoDia -->
+          <div
+            class="botaoOpenaNavia"
+            @click="cliqueOpenaNavia"
+            @mouseover="hoverNaviaFn(), (btsHome.btOpenNavia = true)"
+            @mouseleave="leaveNaviaFn(), (btsHome.btOpenNavia = false)"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48.182"
               height="49.957"
               viewBox="-2 -2 49.182 50.957"
-              style="cursor:pointer;"
-              @mouseover="hoverSom = true"
-              @mouseleave="hoverSom = false"
             >
-              <g>
+              <g fill="none" stroke="#fff" stroke-width="1">
                 <path
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="1"
-                  class="pathHover"
-                  :class="{ hoverPathHoverActive: hoverSom }"
+                  class="pathBt"
+                  :class="{ hoverPathBtActive: btsHome.btOpenNavia }"
                   d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
                 />
                 <path
-                  d="M17.918,10.8V7.066A1.069,1.069,0,0,0,16.853,6H4.066A1.069,1.069,0,0,0,3,7.066V17.722a1.069,1.069,0,0,0,1.066,1.066H16.853a1.069,1.069,0,0,0,1.066-1.066v-3.73l4.262,4.262V6.533Z"
-                  transform="translate(11 11)"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="1"
+                  stroke-linecap="round"
+                  transform="translate(13.5 13.5)"
+                  d="M1.1,17.8c0,0,0.6-19.9,17.1-17.2 C18.3,0.7,18.2,17.5,1.1,17.8z"
+                />
+                <path
+                  transform="translate(13.5 13.5)"
+                  d="M1.5,17.4c0,0,4.7-8,9.4-10.7"
                 />
               </g>
             </svg>
-          </div>
+            <span>Desbrave</span> </div
+          ><!-- botaoOpenaNavia -->
         </div>
         <!-- elem1dia -->
       </div>
@@ -316,14 +358,21 @@ export default {
     return {
       tl: null,
       video: require('../assets/videos/video01.mp4'),
-      hoverSom: false,
+      btsHome: {
+        btCloseNavia: false,
+        btOpenNavia: false,
+        btVideo: false,
+      },
       linkDiaOn: true,
       link1dia: false,
       link2dia: false,
       link3dia: false,
+      linkNavia: false,
       link1diaOver: false,
       link2diaOver: false,
       link3diaOver: false,
+      hoverNaviaFnOver: false,
+      aNaviaIsActive: false,
     }
   },
   computed: {
@@ -355,8 +404,7 @@ export default {
     this.tl3overParte2 = this.$gsap.timeline({ paused: true })
     this.tl3overParte3 = this.$gsap.timeline({ paused: true })
     this.tl3overParte4 = this.$gsap.timeline({ paused: true })
-    // this.tlclickOpenaNavia = this.$gsap.timeline({ paused: true })
-    // this.tlclickCloseaNavia = this.$gsap.timeline({ paused: true })
+    this.tlhoverNavia = this.$gsap.timeline({ paused: true })
   },
   mounted() {
     const video = document.querySelector('#video')
@@ -397,19 +445,6 @@ export default {
         0
       )
 
-    // this.tlclickCloseaNavia.fromTo(
-    //   '.testeforma',
-    //   { opacity: 1, x: 0, y: 0, scale: 1 },
-    //   {
-    //     opacity: 0,
-    //     x: -100,
-    //     y: 100,
-    //     scale: 0.1,
-    //     duration: 1.5,
-    //     ease: 'power2.out',
-    //   }
-    // )
-
     this.tl1overParte1
       .to(
         [
@@ -428,12 +463,12 @@ export default {
         }
       )
       .to(
-        ['.hoverPcc2', '.hoverPcc3'],
+        ['.hoverPcc2', '.hoverPcc3', '.botaoOpenaNavia'],
         {
           filter: 'blur(5px)',
           autoRound: false,
           duration: 0.3,
-          opacity: 0.5,
+          opacity: 0.3,
           ease: 'power1.inOut',
         },
         '<'
@@ -485,6 +520,9 @@ export default {
           }
           if (this.link3diaOver) {
             this.mouseoverLink3dia()
+          }
+          if (this.hoverNaviaFnOver) {
+            this.hoverNaviaFn()
           }
         },
       })
@@ -544,12 +582,12 @@ export default {
         }
       )
       .to(
-        ['.hoverPcc1', '.hoverPcc3'],
+        ['.hoverPcc1', '.hoverPcc3', '.botaoOpenaNavia'],
         {
           filter: 'blur(5px)',
           autoRound: false,
           duration: 0.3,
-          opacity: 0.5,
+          opacity: 0.3,
           ease: 'power1.inOut',
         },
         '<'
@@ -603,6 +641,9 @@ export default {
           }
           if (this.link3diaOver) {
             this.mouseoverLink3dia()
+          }
+          if (this.hoverNaviaFnOver) {
+            this.hoverNaviaFn()
           }
         },
       })
@@ -661,12 +702,12 @@ export default {
         }
       )
       .to(
-        ['.hoverPcc2', '.hoverPcc1'],
+        ['.hoverPcc2', '.hoverPcc1', '.botaoOpenaNavia'],
         {
           filter: 'blur(5px)',
           autoRound: false,
           duration: 0.3,
-          opacity: 0.5,
+          opacity: 0.3,
           ease: 'power1.inOut',
         },
         '<'
@@ -719,6 +760,9 @@ export default {
           if (this.link2diaOver) {
             this.mouseoverLink2dia()
           }
+          if (this.hoverNaviaFnOver) {
+            this.hoverNaviaFn()
+          }
         },
       })
       .to(
@@ -758,6 +802,26 @@ export default {
         },
         '<0.1'
       )
+
+    this.tlhoverNavia.to('.elem2dia', {
+      duration: 0.5,
+      scale: 1.3,
+      opacity: 0.1,
+      x: 20,
+      ease: 'power1.inOut',
+      onReverseComplete: () => {
+        this.linkNavia = false
+        if (this.link1diaOver) {
+          this.mouseoverLink1dia()
+        }
+        if (this.link2diaOver) {
+          this.mouseoverLink2dia()
+        }
+        if (this.link3diaOver) {
+          this.mouseoverLink3dia()
+        }
+      },
+    })
   },
 
   methods: {
@@ -768,9 +832,23 @@ export default {
       'stopProgressingAction',
     ]),
 
-    fecharaNavia: function() {
-      console.log('asa')
-      this.tlclickCloseaNavia.play()
+    cliqueOpenaNavia: function() {
+      this.aNaviaIsActive = true
+      this.$gsap.to('.aNavia', {
+        opacity: 1,
+        ease: 'linear',
+        duration: 0.3,
+      })
+    },
+    cliqueCloseaNavia: function() {
+      this.$gsap.to('.aNavia', {
+        opacity: 0,
+        ease: 'linear',
+        duration: 0.3,
+        onComplete: () => {
+          this.aNaviaIsActive = false
+        },
+      })
     },
 
     mouseoverPcc1() {},
@@ -780,10 +858,26 @@ export default {
     mouseoverPcc3() {},
     mouseleavePcc3() {},
 
+    hoverNaviaFn: function() {
+      this.hoverNaviaFnOver = true
+      if (this.linkDiaOn) {
+        if (!this.link2dia && !this.link3dia && !this.link1dia) {
+          this.tlhoverNavia.play()
+        }
+      }
+    },
+    leaveNaviaFn: function() {
+      this.hoverNaviaFnOver = false
+      if (this.linkDiaOn) {
+        this.linkNavia = true
+        this.tlhoverNavia.reverse()
+      }
+    },
+
     mouseoverLink1dia() {
       this.link1diaOver = true
       if (this.linkDiaOn) {
-        if (!this.link2dia && !this.link3dia) {
+        if (!this.link2dia && !this.link3dia && !this.linkNavia) {
           this.tl1overParte1.play()
           this.tl1overParte2.play()
           this.tl1overParte3.play()
@@ -805,7 +899,7 @@ export default {
     mouseoverLink2dia() {
       this.link2diaOver = true
       if (this.linkDiaOn) {
-        if (!this.link1dia && !this.link3dia) {
+        if (!this.link1dia && !this.link3dia && !this.linkNavia) {
           this.tl2overParte1.play()
           this.tl2overParte2.play()
           this.tl2overParte3.play()
@@ -826,7 +920,7 @@ export default {
     mouseoverLink3dia() {
       this.link3diaOver = true
       if (this.linkDiaOn) {
-        if (!this.link1dia && !this.link2dia) {
+        if (!this.link1dia && !this.link2dia && !this.linkNavia) {
           this.tl3overParte1.play()
           this.tl3overParte2.play()
           this.tl3overParte3.play()
@@ -914,27 +1008,6 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100%;
-  // background-image: url('../assets/images/image00.jpg');
-  // background-repeat: no-repeat;
-  // background-position: center;
-  // background-size: cover;
-  // .shape {
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   width: 256px;
-  //   height: 256px;
-  //   background: #fff;
-  //   border: 2px solid #333;
-  //   border-radius: 51% 49% 24% 76% / 19% 27% 73% 81%;
-  //   opacity: 0;
-  //   animation: logo 20s linear alternate both infinite;
-  //   .text {
-  //     font-family: 'Ubuntu', sans-serif;
-  //     font-size: 40px;
-  //     color: #fff;
-  //     letter-spacing: 0.1em;
-  //   }
 
   .backImg {
     position: absolute;
@@ -972,16 +1045,33 @@ export default {
         line-height: 110px;
       }
     }
+
+    .aNaviaState {
+      display: block !important;
+    }
+
     .aNavia {
       position: absolute;
+      display: none;
       width: 100%;
       height: 100%;
       z-index: 887;
-      border: solid 10px #ff0000;
-      // background-color: #122124;
-      // border-radius: 0% 20% 0% 0% / 0% 32% 0% 0%;
       top: 0;
       left: 0;
+      opacity: 0;
+      .formaFundoaNavia {
+        position: absolute;
+        width: 1488px;
+        height: 1371px;
+        right: -50px;
+        top: -235px;
+      }
+      .btCloseaNavia {
+        top: 100px;
+        right: 80px;
+        position: absolute;
+        z-index: 99999999999;
+      }
       .blocoaNavia {
         position: relative;
         max-width: 1180px;
@@ -1015,8 +1105,6 @@ export default {
     }
     .diagrama {
       position: relative;
-      // border: 2px solid #ff0000;
-      // z-index: 99999999;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -1030,7 +1118,6 @@ export default {
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        // transition: transform 0.1s;
       }
       .elem2dia {
         position: absolute;
@@ -1039,7 +1126,6 @@ export default {
       .elem3dia {
         position: absolute;
         left: 105px;
-        // margin: 0 0 0 -90px;
         span {
           display: block;
           font-size: 37px;
@@ -1052,19 +1138,16 @@ export default {
         bottom: 115px;
         left: 245px;
         z-index: 10;
-        // margin: 90px 0 0 100px;
       }
       .elem5dia {
         position: absolute;
         bottom: 200px;
         left: 290px;
-        // margin: 20px 0 0 70px;
       }
       .link1dia {
         position: absolute;
         top: 130px;
         left: -10px;
-        // margin: -110px 0 0 -230px;
         cursor: pointer;
         a {
           display: flex;
@@ -1104,22 +1187,18 @@ export default {
         position: absolute;
         bottom: 140px;
         left: 250px;
-        // margin: 90px 0 0 20px;
         opacity: 0;
       }
       .folhadia1 {
         position: absolute;
         right: 110px;
         bottom: 108px;
-        // margin-top: 95px;
-        // margin-left: 123px;
         opacity: 0;
       }
       .link2dia {
         position: absolute;
         bottom: 35px;
         left: 235px;
-        // margin: 210px 0 0 70px;
         cursor: pointer;
         a {
           display: flex;
@@ -1157,7 +1236,6 @@ export default {
       }
       .elemInt2dia {
         position: absolute;
-        // margin: 90px 0 0 20px;
         bottom: 140px;
         left: 250px;
         opacity: 0;
@@ -1165,8 +1243,6 @@ export default {
       .folhadia2 {
         position: absolute;
         right: 120px;
-        // margin-top: 112px;
-        // margin-left: 116px;
         bottom: 83px;
         opacity: 0;
       }
@@ -1223,28 +1299,24 @@ export default {
       }
       div.icoVideoDia {
         position: absolute;
-        bottom: 50px;
-        left: 50px;
+        bottom: 28px;
+        left: 25px;
+      }
+      div.botaoOpenaNavia {
+        position: absolute;
+        top: 180px;
+        left: 220px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+        span {
+          font-size: 14px;
+          font-weight: 500;
+          margin: 0 0 0 10px;
+        }
       }
     }
   }
 }
-
-// @keyframes logo {
-//   20% {
-//     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-//   }
-//   40% {
-//     border-radius: 87% 13% 65% 35% / 51% 55% 45% 49%;
-//   }
-//   60% {
-//     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-//   }
-//   80% {
-//     border-radius: 74% 26% 24% 76% / 42% 52% 48% 58%;
-//   }
-//   100% {
-//     border-radius: 44% 56% 11% 89% / 57% 81% 19% 43%;
-//   }
-// }
 </style>
