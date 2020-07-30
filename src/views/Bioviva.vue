@@ -19,7 +19,7 @@
           <path
             d="M1280,1080H76c0,0-76-186-76-501S76,0,76,0h1204V1080z"
             fill="#E9E9E9"
-            opacity="0.93"
+            opacity="0.95"
           />
         </svg>
       </div>
@@ -33,28 +33,21 @@
       >
       <div class="setaPorc">
         <!-- <img src="../assets/images/setaporc.svg"/> -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="25.318"
-          height="11.381"
-          viewBox="0 0 25.318 11.381"
-        >
-          <g transform="translate(459.409 -1353.444) rotate(90)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25.318" height="11.381">
+          <g
+            transform="translate(459.409 -1353.444) rotate(90)"
+            fill="none"
+            stroke="#586769"
+            stroke-linecap="round"
+            stroke-width="1"
+          >
             <line
               x2="15.514"
               transform="translate(1354.148 458.704) rotate(-50)"
-              fill="none"
-              stroke="#586769"
-              stroke-linecap="round"
-              stroke-width="1"
             />
             <line
               x2="15.514"
               transform="translate(1354.148 434.794) rotate(50)"
-              fill="none"
-              stroke="#586769"
-              stroke-linecap="round"
-              stroke-width="1"
             />
           </g>
         </svg>
@@ -63,15 +56,8 @@
     <!-- blocoPorc -->
 
     <div class="elementoInterna1">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="794.996"
-        height="793.949"
-        viewBox="0 0 794.996 793.949"
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" width="794.996" height="793.949">
         <path
-          id="Path_358"
-          data-name="Path 358"
           d="M261.608,584.819c116.376-4.956,204.566-32.2,284.644-145.068,28.944-40.812,49.777-92.325,38.161-140.712-12.531-52.3-58.33-86.738-95.576-124.173C444.805,130.613,409.233,76.8,358.856,40.4,282.44-14.8,164.612-16.885,100.726,55.68c-27.871,31.627-42.675,72.881-54.7,113.6A1217.218,1217.218,0,0,0,8.37,341.46C2.657,381.294-7.759,425.294,9.506,460.93c19.475,40.149,84.56,88.221,163.217,115.177C172.724,576.107,204.856,587.249,261.608,584.819Z"
           transform="matrix(-0.883, 0.469, -0.469, -0.883, 794.317, 517.355)"
           fill="none"
@@ -106,23 +92,69 @@
         </div>
         <!--blocoTitle-->
         <div class="blocoMedia">
-          <div><img src="../assets/images/icovideo.svg"/></div>
-          <div><img src="../assets/images/icofoto.svg"/></div>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48.182"
+              height="49.957"
+              style="cursor:pointer;"
+              @mouseover="btsInt.btVideo = true"
+              @mouseleave="btsInt.btVideo = false"
+            >
+              <g
+                transform="translate(1.2 2)"
+                fill="none"
+                stroke="#fff"
+                stroke-width="1"
+              >
+                <path
+                  class="pathBt"
+                  :class="{ hoverPathBtActive: btsInt.btVideo }"
+                  d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
+                />
+                <path
+                  d="M17.918,10.8V7.066A1.069,1.069,0,0,0,16.853,6H4.066A1.069,1.069,0,0,0,3,7.066V17.722a1.069,1.069,0,0,0,1.066,1.066H16.853a1.069,1.069,0,0,0,1.066-1.066v-3.73l4.262,4.262V6.533Z"
+                  transform="translate(11 11)"
+                />
+              </g>
+            </svg>
+          </div>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48.182"
+              height="49.957"
+              style="cursor:pointer;"
+              @mouseover="btsInt.btGaleria = true"
+              @mouseleave="btsInt.btGaleria = false"
+            >
+              <g
+                transform="translate(1.2 2)"
+                fill="none"
+                stroke="#fff"
+                stroke-width="1"
+              >
+                <path
+                  class="pathBt"
+                  :class="{ hoverPathBtActive: btsInt.btGaleria }"
+                  d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
+                />
+                <path
+                  d="M8.6,2,6.874,3.886H3.886A1.891,1.891,0,0,0,2,5.771V17.085a1.891,1.891,0,0,0,1.886,1.886H18.971a1.891,1.891,0,0,0,1.886-1.886V5.771a1.891,1.891,0,0,0-1.886-1.886H15.982L14.257,2Zm2.828,14.142a4.714,4.714,0,1,1,4.714-4.714A4.716,4.716,0,0,1,11.428,16.142Z"
+                  transform="translate(12 12)"
+                />
+              </g>
+            </svg>
+          </div>
           <!-- <div><img src="../assets/images/icoaudio.svg"/></div> -->
         </div>
       </div>
       <!-- sideL -->
-      <div class="testescroll" style="position:absolute; right:0; width: 55%;">
-        <div
-          class="testescroll1"
-          style="position:absolute; top:440px; left:-70px;"
-        >
+      <div class="elScrollInt">
+        <div style="top:500px;" class="elScrollInt1">
           <img src="../assets/images/elementointerna2_b.svg" />
         </div>
-        <div
-          class="testescroll1"
-          style="position:absolute; top:500px; left:-22px;"
-        >
+        <div style="top:480px;" class="elScrollInt2">
           <img src="../assets/images/elementointerna3_b.svg" />
         </div>
       </div>
@@ -146,12 +178,13 @@
           <br />
           <br /> -->
           <div class="blocoTexto">
-            <p style="color:#122124;"><span>Conheça quem faz a Navia</span></p>
+            <p><span style="color:#122124;">Conheça quem faz a Navia</span></p>
             <p style="color:#122124;"
-              ><span>Gustavo Martinelli</span> e
-              <span>Eládio Miranda Lima</span> se encontram na visão de mundo e
-              se complementa no conhecimento e prática.
-              <span
+              ><span style="color:#122124;">Gustavo Martinelli</span> e
+              <span style="color:#122124;">Eládio Miranda Lima</span> se
+              encontram na visão de mundo e se complementa no conhecimento e
+              prática.
+              <span style="color:#122124;"
                 >Na Navia, o domínio técnico do biólogo se une à veia
                 empreendedora do homem de negócios.</span
               >
@@ -191,10 +224,11 @@
               >A trajetória de uma vida, o conhecimento de um caminho e as
               memórias de uma terra unidos na construção do seu negócio, projeto
               ou ambiente e, principalmente, no cuidado com o mundo. O biólogo
-              <span>Gustavo Martinelli é a raiz da Navia</span>, um botânico
-              reconhecido internacionalmente por sua contribuição na conservação
-              do ecossistema, e um dos maiores especialistas em bromélias do
-              mundo.
+              <span style="color:#122124;"
+                >Gustavo Martinelli é a raiz da Navia</span
+              >, um botânico reconhecido internacionalmente por sua contribuição
+              na conservação do ecossistema, e um dos maiores especialistas em
+              bromélias do mundo.
             </p>
             <p style="color:#122124;"
               >Na ciência e na técnica - Com PhD em Ecologia pela University of
@@ -300,6 +334,10 @@ export default {
   data() {
     return {
       tl: null,
+      btsInt: {
+        btVideo: false,
+        btGaleria: false,
+      },
     }
   },
   computed: {
@@ -411,7 +449,7 @@ export default {
       )
       .from(
         [
-          '.testescroll1',
+          'elScrollInt div',
           '.elementoInterna3',
           '.elementoInterna4',
           '.elementoInterna5',
@@ -525,7 +563,7 @@ export default {
       if (percent === 0) {
         this.$gsap.to(
           [
-            '.testescroll',
+            '.elScrollInt',
             '.elementoInterna1',
             '.elementoInterna2',
             '.elementoInterna3',
@@ -546,7 +584,7 @@ export default {
       } else {
         this.$gsap.to(
           [
-            '.testescroll',
+            '.elScrollInt',
             '.elementoInterna1',
             '.elementoInterna2',
             '.elementoInterna3',

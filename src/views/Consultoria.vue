@@ -32,15 +32,8 @@
     <!-- blocoPorc -->
 
     <div class="elementoInterna1">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="794.996"
-        height="793.949"
-        viewBox="0 0 794.996 793.949"
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" width="794.996" height="793.949">
         <path
-          id="Path_358"
-          data-name="Path 358"
           d="M261.608,584.819c116.376-4.956,204.566-32.2,284.644-145.068,28.944-40.812,49.777-92.325,38.161-140.712-12.531-52.3-58.33-86.738-95.576-124.173C444.805,130.613,409.233,76.8,358.856,40.4,282.44-14.8,164.612-16.885,100.726,55.68c-27.871,31.627-42.675,72.881-54.7,113.6A1217.218,1217.218,0,0,0,8.37,341.46C2.657,381.294-7.759,425.294,9.506,460.93c19.475,40.149,84.56,88.221,163.217,115.177C172.724,576.107,204.856,587.249,261.608,584.819Z"
           transform="matrix(-0.883, 0.469, -0.469, -0.883, 794.317, 517.355)"
           fill="none"
@@ -82,26 +75,24 @@
               xmlns="http://www.w3.org/2000/svg"
               width="48.182"
               height="49.957"
-              viewBox="-2 -2 49.182 50.957"
               style="cursor:pointer;"
-              @mouseover="hoverSom = true"
-              @mouseleave="hoverSom = false"
+              @mouseover="btsInt.btVideo = true"
+              @mouseleave="btsInt.btVideo = false"
             >
-              <g>
+              <g
+                transform="translate(1.2 2)"
+                fill="none"
+                stroke="#fff"
+                stroke-width="1"
+              >
                 <path
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="1"
-                  class="pathHover"
-                  :class="{ hoverPathHoverActive: hoverSom }"
+                  class="pathBt"
+                  :class="{ hoverPathBtActive: btsInt.btVideo }"
                   d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
                 />
                 <path
                   d="M17.918,10.8V7.066A1.069,1.069,0,0,0,16.853,6H4.066A1.069,1.069,0,0,0,3,7.066V17.722a1.069,1.069,0,0,0,1.066,1.066H16.853a1.069,1.069,0,0,0,1.066-1.066v-3.73l4.262,4.262V6.533Z"
                   transform="translate(11 11)"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="1"
                 />
               </g>
             </svg>
@@ -110,17 +101,11 @@
         </div>
       </div>
       <!-- sideL -->
-      <div class="testescroll" style="position:absolute; right:0; width: 55%;">
-        <div
-          class="testescroll1"
-          style="position:absolute; top:340px; left:-70px;"
-        >
+      <div class="elScrollInt">
+        <div class="elScrollInt1">
           <img src="../assets/images/elementointerna2.svg" />
         </div>
-        <div
-          class="testescroll1"
-          style="position:absolute; top:320px; left:-22px;"
-        >
+        <div class="elScrollInt2">
           <img src="../assets/images/elementointerna3.svg" />
         </div>
       </div>
@@ -207,7 +192,9 @@ export default {
   data() {
     return {
       tl: null,
-      hoverSom: false,
+      btsInt: {
+        btVideo: false,
+      },
     }
   },
   computed: {
@@ -219,19 +206,6 @@ export default {
     this.tlPageOut = this.$gsap.timeline()
   },
   mounted() {
-    // if (this.progressing) {
-    //   this.tl.to(
-    //     '.loading',
-    //     {
-    //       duration: 1,
-    //       opacity: 0,
-    //       onComplete: () => {
-    //         this.stopProgressingAction()
-    //       },
-    //     },
-    //     '+=0.5'
-    //   )
-    // }
     this.tlPageIn
       .to(
         [
@@ -318,7 +292,7 @@ export default {
       )
       .from(
         [
-          '.testescroll1',
+          '.elScrollInt div',
           '.elementoInterna3',
           '.elementoInterna4',
           '.elementoInterna5',
@@ -439,7 +413,7 @@ export default {
       if (percent === 0) {
         this.$gsap.to(
           [
-            '.testescroll',
+            '.elScrollInt',
             '.elementoInterna1',
             '.elementoInterna2',
             '.elementoInterna3',
@@ -460,7 +434,7 @@ export default {
       } else {
         this.$gsap.to(
           [
-            '.testescroll',
+            '.elScrollInt',
             '.elementoInterna1',
             '.elementoInterna2',
             '.elementoInterna3',
@@ -515,17 +489,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .img {
-//   position: fixed;
-//   z-index: 1;
-//   display: block;
-//   width: 100%;
-//   height: 100%;
-//   background-image: url('../assets/images/image01.jpg');
-//   background-repeat: no-repeat;
-//   background-position: center;
-//   background-size: cover;
-// }
 .backImg {
   position: absolute;
   z-index: 1;

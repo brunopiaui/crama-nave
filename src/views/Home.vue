@@ -22,6 +22,7 @@
     <div class="loadingpv"> </div>
     <div class="contHome">
       <div class="aNavia" :class="{ aNaviaState: aNaviaIsActive }">
+        <div class="formaFundoaNaviaMob"></div>
         <div class="formaFundoaNavia">
           <svg
             x="0px"
@@ -39,6 +40,7 @@
             />
           </svg>
         </div>
+        <!-- formaFundoaNavia -->
         <div class="btCloseaNavia">
           <div
             class="areaHoverBt"
@@ -63,8 +65,8 @@
                 />
               </g>
             </svg>
-          </div>
-        </div>
+          </div> </div
+        ><!-- btCloseaNavia -->
         <div class="blocoaNavia">
           <div class="contaNavia">
             <span class="titleContaNavia"
@@ -105,7 +107,7 @@
       <div class="buttonVideoMob">
         <img src="../assets/images/icovideo.svg" />
       </div>
-      <div class="pcc">
+      <div :class="{ pccaNavia: aNaviaIsActive }" class="pcc">
         <span
           class="hoverPcc hoverPcc1"
           @mouseover="mouseoverPcc1"
@@ -833,15 +835,49 @@ export default {
     ]),
 
     cliqueOpenaNavia: function() {
-      this.aNaviaIsActive = true
-      this.$gsap.to('.aNavia', {
-        opacity: 1,
-        ease: 'linear',
-        duration: 0.3,
-      })
+      this.$gsap
+        .timeline()
+        .to('.loadingpv', {
+          width: '100%',
+          duration: 0.8,
+          ease: 'power2.in',
+        })
+        .to('.loadingpv', {
+          width: '0',
+          duration: 0,
+          onComplete: () => {
+            this.aNaviaIsActive = true
+          },
+        })
+        .to('.aNavia', {
+          opacity: 1,
+          ease: 'linear',
+          duration: 0.3,
+        })
+        .from(
+          '.formaFundoaNavia',
+          {
+            scale: 0.8,
+            ease: 'Power2.out',
+            duration: 0.5,
+          },
+          '<'
+        )
+        .from('.contaNavia', {
+          opacity: 0,
+          y: 40,
+          ease: 'Power1.out',
+          duration: 0.5,
+        })
+        .from('.btCloseaNavia', {
+          opacity: 0,
+          y: -40,
+          ease: 'Power1.out',
+          duration: 0.4,
+        })
     },
     cliqueCloseaNavia: function() {
-      this.$gsap.to('.aNavia', {
+      this.$gsap.timeline().to('.aNavia', {
         opacity: 0,
         ease: 'linear',
         duration: 0.3,
@@ -1027,6 +1063,7 @@ export default {
     justify-content: space-between;
     width: 85%;
     height: 100%;
+    max-width: 1300px;
     // margin: 10px 0 0 0;
     .pcc {
       display: flex;
@@ -1044,6 +1081,10 @@ export default {
         font-weight: 700;
         line-height: 110px;
       }
+    }
+    .pccaNavia {
+      mix-blend-mode: normal !important;
+      color: #cbcbcb !important;
     }
 
     .aNaviaState {
@@ -1065,23 +1106,38 @@ export default {
         height: 1371px;
         right: -50px;
         top: -235px;
+        transform: scale(1);
+      }
+      .formaFundoaNaviaMob {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: none;
+        background-color: rgba(18, 33, 36, 0.958);
+        border-radius: 92% 16% 10% 10% / 10% 0% 0% 0%;
+        margin: 110px 0 0 0;
       }
       .btCloseaNavia {
-        top: 100px;
-        right: 80px;
         position: absolute;
         z-index: 99999999999;
+        right: 5%;
+        top: 95px;
+      }
+      div.blocoaNavia::-webkit-scrollbar {
+        display: none;
       }
       .blocoaNavia {
         position: relative;
-        max-width: 1180px;
-        margin: 0 auto;
+        max-width: 1300px;
+        width: 85%;
+        margin: 150px auto 0 auto;
         height: 100%;
+        overflow-y: auto;
         .contaNavia {
           width: 50%;
           position: absolute;
           right: 0;
-          padding: 30vh 0 0 0;
+          padding: 60px 0 160px 0;
           span.titleContaNavia {
             margin: 0 0 35px 0;
             display: block;

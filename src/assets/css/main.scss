@@ -125,6 +125,22 @@ div.conteudo {
     }
   }
 
+  div.elScrollInt{
+    position:absolute;
+    right:0;
+    width: 55%;
+    div.elScrollInt1{
+      position:absolute;
+      top:340px;
+      left:-70px;
+    }
+    div.elScrollInt2{
+      position:absolute;
+      top:320px;
+      left:-22px;
+    }
+  }
+
   div.sideR::-webkit-scrollbar {
     display: none;
   }
@@ -132,7 +148,8 @@ div.conteudo {
     width: 55%;
     // overflow: auto !important;
     overflow: scroll;
-    padding: 260px 0 0 0;
+    padding: 160px 0 0 0;
+    margin:100px 0 0 0;
     -ms-overflow-style: none;
     mask-image: -webkit-gradient(
       linear,
@@ -399,7 +416,6 @@ div.galeria {
     div.fecharGal {
       position: absolute;
       right: 0;
-      cursor: pointer;
     }
   }
   div.bottomGaleria {
@@ -483,6 +499,7 @@ div.galeria {
   text-decoration: none;
   cursor: pointer;
   user-select: none;
+  display:block;
 }
 
 div.backBottom {
@@ -695,6 +712,20 @@ path.pathBt {
   div.buttonVideoMob {
     display: block !important;
   }
+  div.pccaNavia{
+    display: none !important;
+  }
+  div.contaNavia{
+    width:100% !important;
+    // padding:180px 0 0 0 !important;
+  }
+  div.btCloseaNavia{
+
+    div.areaHoverBt{
+      width:40px !important;
+      height: 40px !important;
+    }
+  }
   div.diagrama {
     display: none !important;
     visibility: hidden;
@@ -736,6 +767,28 @@ path.pathBt {
 }
 
 @media screen and (max-width: 800px) {
+  div.blocoaNavia{
+    border-radius: 92% 16% 10% 10% / 10% 0% 0% 0%;
+    width:100% !important;
+    margin: 110px auto 0 auto !important;
+  }
+  div.contaNavia{
+    width:80% !important;
+    padding:80px 10% 180px 10% !important;
+
+  }
+  div.btCloseaNavia{
+
+  }
+  div.formaFundoaNavia{
+    display:none !important;
+  }
+  div.formaFundoaNaviaMob{
+    display:block !important;
+  }
+  span.titleContaNavia {
+    font-size:22px !important;
+  }
   div.conteudo {
     flex-direction: column !important;
     overflow: auto !important;
@@ -765,6 +818,7 @@ path.pathBt {
   div.conteudo div.sideR {
     width: 100% !important;
     padding: 70px 0 0 0 !important;
+    margin:0 !important;
     overflow: visible !important;
     div.aspas {
       padding: 0 0 0 30px !important;
@@ -824,6 +878,6 @@ path.pathBt {
     margin-bottom: 20px !important;
   }
   div.backBottom {
-    height: 200px !important;
+    // height: 200px !important;
   }
 }

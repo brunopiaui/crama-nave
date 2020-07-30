@@ -19,8 +19,31 @@
         </transition-group>
         <div class="backBottom"></div>
         <div class="topGaleria">
-          <div class="fecharGal" @click="showGal = false">
-            <img src="../assets/images/fechar.svg" />
+          <div class="fecharGal">
+            <div
+              class="areaHoverBt"
+              @mouseover="btsInt.btCloseGaleria = true"
+              @mouseleave="btsInt.btCloseGaleria = false"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="42"
+                height="42"
+                @click="showGal = false"
+              >
+                <g transform="translate(2 2)" fill="none" stroke="#fff">
+                  <path
+                    d="M19.358.5S12.579.5 7.607 4.567-.979 15.414 1.28 23.548s9.942 11.3 12.654 12.2 8.135 2.26 16.721-3.615 8.14-17.171 2.26-24.854C29.101 2.29 25.233.5 19.358.5z"
+                    class="pathBt"
+                    :class="{ hoverPathBtActive: btsInt.btCloseGaleria }"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    d="M13.91 24.204l9.972-11.884M13.91 12.294l9.972 11.884"
+                  />
+                </g>
+              </svg>
+            </div>
           </div>
         </div>
         <div class="bottomGaleria">
@@ -78,11 +101,8 @@
           xmlns="http://www.w3.org/2000/svg"
           width="794.996"
           height="793.949"
-          viewBox="0 0 794.996 793.949"
         >
           <path
-            id="Path_358"
-            data-name="Path 358"
             d="M261.608,584.819c116.376-4.956,204.566-32.2,284.644-145.068,28.944-40.812,49.777-92.325,38.161-140.712-12.531-52.3-58.33-86.738-95.576-124.173C444.805,130.613,409.233,76.8,358.856,40.4,282.44-14.8,164.612-16.885,100.726,55.68c-27.871,31.627-42.675,72.881-54.7,113.6A1217.218,1217.218,0,0,0,8.37,341.46C2.657,381.294-7.759,425.294,9.506,460.93c19.475,40.149,84.56,88.221,163.217,115.177C172.724,576.107,204.856,587.249,261.608,584.819Z"
             transform="matrix(-0.883, 0.469, -0.469, -0.883, 794.317, 517.355)"
             fill="none"
@@ -125,51 +145,64 @@
                 xmlns="http://www.w3.org/2000/svg"
                 width="48.182"
                 height="49.957"
-                viewBox="-2 -2 49.182 50.957"
                 style="cursor:pointer;"
-                @mouseover="hoverSom = true"
-                @mouseleave="hoverSom = false"
+                @mouseover="btsInt.btVideo = true"
+                @mouseleave="btsInt.btVideo = false"
               >
-                <g>
+                <g
+                  transform="translate(1.2 2)"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1"
+                >
                   <path
-                    fill="none"
-                    stroke="#fff"
-                    stroke-width="1"
-                    class="pathHover"
-                    :class="{ hoverPathHoverActive: hoverSom }"
+                    class="pathBt"
+                    :class="{ hoverPathBtActive: btsInt.btVideo }"
                     d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
                   />
                   <path
                     d="M17.918,10.8V7.066A1.069,1.069,0,0,0,16.853,6H4.066A1.069,1.069,0,0,0,3,7.066V17.722a1.069,1.069,0,0,0,1.066,1.066H16.853a1.069,1.069,0,0,0,1.066-1.066v-3.73l4.262,4.262V6.533Z"
                     transform="translate(11 11)"
-                    fill="none"
-                    stroke="#fff"
-                    stroke-width="1"
                   />
                 </g>
               </svg>
             </div>
-            <div style="cursor:pointer;" @click="showGal = !showGal"
-              ><img src="../assets/images/icofoto.svg"
-            /></div>
-            <!-- <div><img src="../assets/images/icoaudio.svg"/></div> -->
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="48.182"
+                height="49.957"
+                style="cursor:pointer;"
+                @click="showGal = !showGal"
+                @mouseover="btsInt.btGaleria = true"
+                @mouseleave="btsInt.btGaleria = false"
+              >
+                <g
+                  transform="translate(1.2 2)"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1"
+                >
+                  <path
+                    class="pathBt"
+                    :class="{ hoverPathBtActive: btsInt.btGaleria }"
+                    d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
+                  />
+                  <path
+                    d="M8.6,2,6.874,3.886H3.886A1.891,1.891,0,0,0,2,5.771V17.085a1.891,1.891,0,0,0,1.886,1.886H18.971a1.891,1.891,0,0,0,1.886-1.886V5.771a1.891,1.891,0,0,0-1.886-1.886H15.982L14.257,2Zm2.828,14.142a4.714,4.714,0,1,1,4.714-4.714A4.716,4.716,0,0,1,11.428,16.142Z"
+                    transform="translate(12 12)"
+                  />
+                </g>
+              </svg>
+            </div>
           </div>
         </div>
         <!-- sideL -->
-        <div
-          class="testescroll"
-          style="position:absolute; right:0; width: 55%;"
-        >
-          <div
-            class="testescroll1"
-            style="position:absolute; top:300px; left:-50px;"
-          >
+        <div class="elScrollInt">
+          <div class="elScrollInt1">
             <img src="../assets/images/elementointerna2.svg" />
           </div>
-          <div
-            class="testescroll1"
-            style="position:absolute; top:280px; left:-75px;"
-          >
+          <div class="elScrollInt2">
             <img src="../assets/images/elementointerna3_3.svg" />
           </div>
         </div>
@@ -228,12 +261,39 @@
               <div class="videoContBlocoTexto">
                 <p style="color:#e9e9e9">Visite nossa galeria:</p>
               </div>
-              <div class="videoContBlocoImg" @click="showGal = !showGal">
+              <div
+                class="videoContBlocoImg"
+                @click="showGal = !showGal"
+                @mouseover="btsInt.btGaleria2 = true"
+                @mouseleave="btsInt.btGaleria2 = false"
+              >
                 <div class="imgVideoCont"
                   ><img src="../assets/images/thumbgaleria1.png"
                 /></div>
                 <div class="icoVideoCont">
-                  <img src="../assets/images/icofoto.svg" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48.182"
+                    height="49.957"
+                    style="cursor:pointer;"
+                  >
+                    <g
+                      transform="translate(1.2 2)"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="1"
+                    >
+                      <path
+                        class="pathBt"
+                        :class="{ hoverPathBtActive: btsInt.btGaleria2 }"
+                        d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
+                      />
+                      <path
+                        d="M8.6,2,6.874,3.886H3.886A1.891,1.891,0,0,0,2,5.771V17.085a1.891,1.891,0,0,0,1.886,1.886H18.971a1.891,1.891,0,0,0,1.886-1.886V5.771a1.891,1.891,0,0,0-1.886-1.886H15.982L14.257,2Zm2.828,14.142a4.714,4.714,0,1,1,4.714-4.714A4.716,4.716,0,0,1,11.428,16.142Z"
+                        transform="translate(12 12)"
+                      />
+                    </g>
+                  </svg>
                 </div>
               </div>
               <!-- videoCont -->
@@ -268,7 +328,12 @@ export default {
       tl: null,
       showGal: false,
       currentIndex: 0,
-      hoverSom: false,
+      btsInt: {
+        btVideo: false,
+        btGaleria: false,
+        btGaleria2: false,
+        btCloseGaleria: false,
+      },
     }
   },
   computed: {
@@ -681,7 +746,7 @@ export default {
       )
       .from(
         [
-          '.testescroll1',
+          '.elScrollInt div',
           '.elementoInterna3',
           '.elementoInterna4',
           '.elementoInterna5',
@@ -805,7 +870,7 @@ export default {
       if (percent === 0) {
         this.$gsap.to(
           [
-            '.testescroll',
+            '.elScrollInt',
             '.elementoInterna1',
             '.elementoInterna2',
             '.elementoInterna3',
@@ -826,7 +891,7 @@ export default {
       } else {
         this.$gsap.to(
           [
-            '.testescroll',
+            '.elScrollInt',
             '.elementoInterna1',
             '.elementoInterna2',
             '.elementoInterna3',
@@ -881,14 +946,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .img {
-//   display: block;
-//   height: 100%;
-//   background-image: url('../assets/images/image03.jpg');
-//   background-repeat: no-repeat;
-//   background-position: center;
-//   background-size: cover;
-// }
 .backImg {
   position: absolute;
   z-index: 1;
@@ -898,5 +955,19 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+div.fecharGal {
+  width: 42px;
+  height: 42px;
+  div.areaHoverBt {
+    position: absolute;
+    top: -30px;
+    left: -26px;
+  }
+}
+
+div.navGaleria div a img:active {
+  transform: scale(1.1);
 }
 </style>
