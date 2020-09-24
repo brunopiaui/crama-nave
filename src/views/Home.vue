@@ -2,15 +2,7 @@
   <div class="home">
     <div class="backImg"></div>
     <div class="img">
-      <video
-        id="video"
-        ref="video"
-        defaultMuted
-        autoplay
-        muted
-        loop
-        playsinline
-      >
+      <video id="video" ref="video" defaultMuted autoplay muted loop playsinline>
         <source
           :src="require('../assets/videos/video01.mp4')"
           :poster="require('../assets/images/image04.jpg')"
@@ -79,29 +71,24 @@
             </span>
             <p
               >O nosso propósito é unir as pessoas à natureza.<br />
-              <span
-                >Navia é o eloentre os seus planos e a conservação da
-                vida.</span
-              ></p
+              <span>Navia é o elo entre os seus planos e a conservação da vida.</span></p
             >
             <p
               >Desenvolvemos projetos
               <span>conectados a valorização da biodiversidade brasileira</span>
-              – um jardim, um produto, novas soluções, um conceito de negócio ou
-              ações ambientais. Valorizamos a proteção e cuidado com o
-              ecossistema, ainda assim nos mantemos em total sintonia com as
-              estratégias que atendem as expectativas de uma sociedade moderna e
-              um mercado.</p
+              – um jardim, um produto, novas soluções, um conceito de negócio ou ações ambientais.
+              Valorizamos a proteção e cuidado com o ecossistema, ainda assim nos mantemos em total
+              sintonia com as estratégias que atendem as expectativas de uma sociedade moderna e um
+              mercado.</p
             >
             <p
-              >Trazemos a experiência e o conhecimento técnico da botânica, mas
-              vamos além. Entendemos que somos parte do meio ambiente e, também,
-              aprendemos com ele.
+              >Trazemos a experiência e o conhecimento técnico da botânica, mas vamos além.
+              Entendemos que somos parte do meio ambiente e, também, aprendemos com ele.
               <span>Acreditamos em um crescimento conjunto.</span></p
             >
             <p
-              >Mais do que uma transformação, confiamos no resgate de um vínculo
-              que é inerente a humanidade.<br />
+              >Mais do que uma transformação, confiamos no resgate de um vínculo que é inerente a
+              humanidade.<br />
               Mais do que um desafio, <span>esse é nosso compromisso.</span></p
             >
           </div>
@@ -109,9 +96,9 @@
       </div>
       <!-- aNavia -->
 
-      <div class="buttonVideoMob">
+      <!-- <div class="buttonVideoMob">
         <img src="../assets/images/icovideo.svg" />
-      </div>
+      </div> -->
 
       <div :class="{ pccaNavia: aNaviaIsActive }" class="pcc">
         <span class="hoverPcc hoverPcc1">Pense</span>
@@ -123,11 +110,7 @@
       <div class="diagrama">
         <div class="boxDia">
           <div class="elem1dia">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="524.979"
-              height="522.38"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="524.979" height="522.38">
               <path
                 class="cls-1"
                 d="M199.582,0s-72.1,0-124.971,43.259S-16.714,158.617,7.319,245.135,113.063,365.3,141.9,374.912s86.518,24.033,177.843-38.453S406.264,153.81,343.778,72.1C303.211,19.034,262.067,0,199.582,0Z"
@@ -136,11 +119,7 @@
             </svg>
           </div>
           <div class="elem2dia">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="313.7"
-              height="312.529"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="313.7" height="312.529">
               <path
                 class="cls-2"
                 d="M116.785,0S74.6,0,43.659,25.313-9.78,92.815,4.283,143.441s61.876,70.314,78.752,75.939,50.626,14.063,104.065-22.5S237.726,90,201.162,42.188C177.424,11.138,153.349,0,116.785,0Z"
@@ -159,22 +138,14 @@
           <div class="elem5dia">
             <img src="../assets/images/elem5dia.svg" />
           </div>
-          <div
-            class="link1dia"
-            @mouseover="mouseoverLink1dia"
-            @mouseleave="mouseleaveLink1dia"
-          >
+          <div class="link1dia" @mouseover="mouseoverLink1dia" @mouseleave="mouseleaveLink1dia">
             <router-link to="/consultoria">
               <div class="link1diaBtexto">
                 <span class="link1diaPense">Pense</span>
                 <span class="link1diaConsultoria">CONSULTORIA</span>
               </div>
               <div class="link1diaSvg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18.738"
-                  height="18.385"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18.738" height="18.385">
                   <path
                     class="cls-6"
                     d="M9.058,0A10,10,0,0,0,3.384,1.964,8.624,8.624,0,0,0,.33,11.129c1.091,3.928,4.8,5.455,6.11,5.892s3.928,1.091,8.074-1.746,3.928-8.292,1.091-12A7.354,7.354,0,0,0,9.058,0Z"
@@ -187,8 +158,8 @@
           <!-- link1dia -->
           <div class="cont1dia">
             <p
-              >Soluções integradas à biodiversidade. O conhecimento e a
-              experiência a favor dos seus investimentos e do ecossistema.
+              >Soluções integradas à biodiversidade. O conhecimento e a experiência a favor dos seus
+              investimentos e do ecossistema.
             </p>
           </div>
           <div class="folhadia1">
@@ -197,18 +168,10 @@
           <div class="elemInt1dia">
             <img src="../assets/images/elementodia1.svg" />
           </div>
-          <div
-            class="link2dia"
-            @mouseover="mouseoverLink2dia"
-            @mouseleave="mouseleaveLink2dia"
-          >
+          <div class="link2dia" @mouseover="mouseoverLink2dia" @mouseleave="mouseleaveLink2dia">
             <router-link to="/novosnegocios">
               <div class="link2diaSvg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18.738"
-                  height="18.385"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18.738" height="18.385">
                   <path
                     class="cls-6"
                     d="M9.058,0A10,10,0,0,0,3.384,1.964,8.624,8.624,0,0,0,.33,11.129c1.091,3.928,4.8,5.455,6.11,5.892s3.928,1.091,8.074-1.746,3.928-8.292,1.091-12A7.354,7.354,0,0,0,9.058,0Z"
@@ -224,8 +187,8 @@
           </div>
           <div class="cont2dia">
             <p
-              >Sustentabilidade como valor econômico de seu projeto. Ganhos e
-              resultados incorporados ao meio ambiente.
+              >Sustentabilidade como valor econômico de seu projeto. Ganhos e resultados
+              incorporados ao meio ambiente.
             </p>
           </div>
           <div class="folhadia2">
@@ -234,18 +197,10 @@
           <div class="elemInt2dia">
             <img src="../assets/images/elementodia2.svg" />
           </div>
-          <div
-            class="link3dia"
-            @mouseover="mouseoverLink3dia"
-            @mouseleave="mouseleaveLink3dia"
-          >
+          <div class="link3dia" @mouseover="mouseoverLink3dia" @mouseleave="mouseleaveLink3dia">
             <router-link to="/biopaisagismo">
               <div class="link3diaSvg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18.738"
-                  height="18.385"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18.738" height="18.385">
                   <path
                     class="cls-6"
                     d="M9.058,0A10,10,0,0,0,3.384,1.964,8.624,8.624,0,0,0,.33,11.129c1.091,3.928,4.8,5.455,6.11,5.892s3.928,1.091,8.074-1.746,3.928-8.292,1.091-12A7.354,7.354,0,0,0,9.058,0Z"
@@ -261,8 +216,8 @@
           </div>
           <div class="cont3dia">
             <p
-              >A estética do paisagismo relacionada às questões biológicas. Seu
-              jardim vivo com a beleza, o volume e o ritmo da natureza.
+              >A estética do paisagismo relacionada às questões biológicas. Seu jardim vivo com a
+              beleza, o volume e o ritmo da natureza.
             </p>
           </div>
           <div class="folhadia3">
@@ -271,13 +226,12 @@
           <div class="elemInt3dia">
             <img src="../assets/images/elementodia3.svg" />
           </div>
-          <div class="icoVideoDia">
+          <!-- <div class="icoVideoDia">
             <div
               class="areaHoverBt"
               @mouseover="btsHome.btVideo = true"
               @mouseleave="btsHome.btVideo = false"
             >
-              <!-- <img src="../assets/images/icovideo.svg" /> -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="48.182"
@@ -301,7 +255,8 @@
                 </g>
               </svg>
             </div> </div
-          ><!-- icoVideoDia -->
+          > -->
+          <!-- icoVideoDia -->
           <div
             class="botaoOpenaNavia"
             :disabled="isDisabled"
@@ -326,10 +281,7 @@
                   transform="translate(13.5 13.5)"
                   d="M1.1,17.8c0,0,0.6-19.9,17.1-17.2 C18.3,0.7,18.2,17.5,1.1,17.8z"
                 />
-                <path
-                  transform="translate(13.5 13.5)"
-                  d="M1.5,17.4c0,0,4.7-8,9.4-10.7"
-                />
+                <path transform="translate(13.5 13.5)" d="M1.5,17.4c0,0,4.7-8,9.4-10.7" />
               </g>
             </svg>
             <span>Desbrave</span> </div
@@ -379,9 +331,7 @@ export default {
     progress(value) {
       const bkg = this.backgrounds('video01')
       if (value === 100 && bkg && this.$refs.video) {
-        this.$refs.video.src = URL.createObjectURL(
-          this.backgrounds('video01').url
-        )
+        this.$refs.video.src = URL.createObjectURL(this.backgrounds('video01').url)
       }
     },
   },
@@ -417,11 +367,7 @@ export default {
       loading.play()
     }
 
-    document.removeEventListener(
-      'DOMMouseScroll',
-      MyFunctions.moveScroll,
-      false
-    )
+    document.removeEventListener('DOMMouseScroll', MyFunctions.moveScroll, false)
     document.removeEventListener('mousewheel', MyFunctions.moveScroll, false)
     document.removeEventListener('keydown', MyFunctions.KeyScroll, false)
 
@@ -443,17 +389,8 @@ export default {
 
     // animacoes de entrada da página
     this.tlPageIn
-      .fromTo(
-        '.pcc',
-        { opacity: 0 },
-        { opacity: 1, duration: 1.5, ease: 'power2.out' }
-      )
-      .fromTo(
-        '.diagrama',
-        { opacity: 0 },
-        { opacity: 1, duration: 1.5, ease: 'power2.out' },
-        0
-      )
+      .fromTo('.pcc', { opacity: 0 }, { opacity: 1, duration: 1.5, ease: 'power2.out' })
+      .fromTo('.diagrama', { opacity: 0 }, { opacity: 1, duration: 1.5, ease: 'power2.out' }, 0)
     // end
 
     // animacoes de hover diagrama

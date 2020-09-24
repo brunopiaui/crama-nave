@@ -1,9 +1,5 @@
 <template>
-  <div
-    v-touch:swipe.top="moveBackMob"
-    v-touch:swipe.bottom="moveBackMobBottom"
-    class="geralInt"
-  >
+  <div v-touch:swipe.top="moveBackMob" v-touch:swipe.bottom="moveBackMobBottom" class="geralInt">
     <div class="backImg"></div>
 
     <div class="loadingpv"> </div>
@@ -68,14 +64,13 @@
             NEGÓCIOS</h2
           >
           <p
-            >Nenhuma ideia é pequena, nenhum sonho é improvável. Sabemos onde
-            uma semente pode chegar.</p
+            >Nenhuma ideia é pequena, nenhum sonho é improvável. Sabemos onde uma semente pode
+            chegar.</p
           >
         </div>
         <!--blocoTitle-->
         <div class="blocoMedia">
-          <!-- <div><img src="../assets/images/icofoto.svg"/></div> -->
-          <div>
+          <!-- <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48.182"
@@ -101,8 +96,7 @@
                 />
               </g>
             </svg>
-          </div>
-          <!-- <div><img src="../assets/images/icoaudio.svg"/></div> -->
+          </div> -->
         </div>
         <!-- blocoMedia -->
       </div>
@@ -120,47 +114,38 @@
         <div id="scroll">
           <div class="aspas">
             <h4>Queremos te encontrar no futuro</h4>
-            <p
-              >“<span
-                >A sustentabilidade não é só ambiental - é o equilíbrio entre os
-                interesses de um negócio.</span
+            <p>
+              “<span
+                >A sustentabilidade não é só ambiental - é o equilíbrio entre os interesses de um
+                negócio.</span
               >
-              Ela inclui a frente social e, claro, a financeira que é a espinha
-              dorsal de um empreendimento, o que garante sua continuidade. Mas
-              quando você entende que a
-              <span>biodiversidade também é um valor</span>, você deixa de
-              perder e começa, realmente, a ganhar. Passa a ver vantagens reais
-              na relação entre seu investimento e o meio ambiente.”</p
-            >
-            <span class="assAspas conecteCor">Eládio Miranda Lima</span>
+              Ela inclui também a frente social e a financeira. Quando você entende que a
+              <span>biodiversidade é um valor</span>, você deixa de perder e começa a ganhar. Passa
+              a ver vantagens reais na relação equilibrada entre seu investimento e a natureza.”
+            </p>
+            <span class="assAspas conecteCor">Eladio Miranda Lima</span>
           </div>
           <!-- aspas -->
           <div class="blocoTexto">
             <p>
-              <span>Somos a ligação entre a meio ambiente e seu projeto.</span>
-              Trabalhamos para alcançar os resultados que façam
-              <span
-                >a sua iniciativa crescer de forma sustentável e
-                lucrativa.</span
-              >
+              <span>Estamos aqui para inovar</span> - atentos a viabilidade das melhores práticas
+              ambientais. Trabalhamos para alcançar resultados que façam
+              <span>uma iniciativa crescer de forma lucrativa, valorizando a biodiversidade.</span>
             </p>
             <p>
-              <span>Estamos aqui para inovar com você.</span> Instituir a
-              biodiversidade como estratégia e propósito de valor para seu
-              negócio. Fazer da
-              <span>
-                sustentabilidade um benefício financeiramente vantajoso.
-              </span>
+              Atuamos no auxílio ao desenvolvimento de empreendimentos de terceiros, na
+              identificação de novas frentes de negócio e na produção de atividades e planos
+              propostos pela própria Navia.
+              <span>Somos a ligação entre o meio ambiente e novos projetos.</span>
             </p>
             <p>
-              Os recursos existem, e também existem soluções inteligentes para o
-              seu uso. Essas práticas impactam positivamente em conquistas reais
-              para sua empresa e para o mundo.
+              Os recursos existem, e também existem soluções inteligentes para o seu uso - é nisso
+              que acreditamos. Essas práticas impactam positivamente em conquistas reais de uma
+              empresa e do mundo que esperamos.
             </p>
             <p>
-              Vamos juntos construir um caminho que investe no amanhã - o seu
-              empreendimento estará lá com você. O que caracteriza o ecossistema
-              é a coexistência, sua ideia participa dessa cadeia.
+              Vamos juntos construir um caminho que investe no amanhã - queremos te encontrar lá. O
+              que caracteriza o ecossistema é a coexistência, uma boa ideia participa dessa cadeia.
             </p>
             <p>
               <span class="destContP"
@@ -168,10 +153,6 @@
                 parte da natureza.</span
               >
             </p>
-            <br />
-            <br />
-            <br />
-            <br />
           </div>
           <!-- blocoTexto -->
         </div>

@@ -1,9 +1,5 @@
 <template>
-  <div
-    v-touch:swipe.top="moveBackMob"
-    v-touch:swipe.bottom="moveBackMobBottom"
-    class="geralInt"
-  >
+  <div v-touch:swipe.top="moveBackMob" v-touch:swipe.bottom="moveBackMobBottom" class="geralInt">
     <div class="backImg"></div>
 
     <div class="loadingpv"> </div>
@@ -64,14 +60,11 @@
         <div class="blocoTitle">
           <h3>Pense no amanhã</h3>
           <h2>CONSULTORIA</h2>
-          <p
-            >Investir no meio que você produz é garantir continuidade de novas
-            conquistas.</p
-          >
+          <p>Investir no meio que você produz é garantir continuidade de novas conquistas.</p>
         </div>
         <!--blocoTitle-->
         <div class="blocoMedia">
-          <div>
+          <!-- <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48.182"
@@ -97,7 +90,7 @@
                 />
               </g>
             </svg>
-          </div>
+          </div> -->
         </div>
         <!-- blocoMedia -->
       </div>
@@ -116,37 +109,28 @@
           <div class="aspas">
             <h4>Sua marca como parte do mundo</h4>
             <p
-              ><span
-                >“Na consultoria você descobre a biodiversidade como uma
-                aliada.</span
-              >
-              É possível ter um empreendimento usando a sustentabilidade como
-              seu benefício, do seu negócio e do meio social. Agregamos práticas
-              para o equilíbrio entre a natureza e o seu plano, trazendo
-              vantagens e conquistas comuns diante da atividade.”</p
+              ><span>“Na consultoria você descobre a biodiversidade como uma aliada.</span> É
+              possível ter um empreendimento usando a sustentabilidade como seu benefício, do seu
+              negócio e do meio social. Agregamos práticas para o equilíbrio entre a natureza e o
+              seu plano, trazendo vantagens e conquistas comuns diante da atividade.”</p
             >
             <span class="assAspas">Gustavo Martinelli</span>
           </div>
           <!-- aspas -->
           <div class="blocoTexto">
             <p
-              ><span
-                >Fazemos da sustentabilidade um das competências de sua
-                empresa.</span
-              >
-              Construímos o seu projeto ambiental colaborando no gerenciamento
-              da preservação do meio em que atua. Acreditamos que o planejamento
-              e a administração dos recursos naturais são ganhos seguros,
-              inclusive nos rendimentos de seu empreendimento.
+              ><span>Fazemos da sustentabilidade um das competências de sua empresa.</span>
+              Construímos o seu projeto ambiental colaborando no gerenciamento da preservação do
+              meio em que atua. Acreditamos que o planejamento e a administração dos recursos
+              naturais são ganhos seguros, inclusive nos rendimentos de seu empreendimento.
             </p>
 
             <p
-              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-              auditorias - as fases do processo de consultoria se adaptam a sua
-              necessidade, mas
+              >Pesquisas, diagnósticos, operações, planos de ação, instalações, auditorias - as
+              fases do processo de consultoria se adaptam a sua necessidade, mas
               <span
-                >seja qual for a sua ideia, oferecemos nossa criatividade,
-                técnica e experiência para realizá-lo</span
+                >seja qual for a sua ideia, oferecemos nossa criatividade, técnica e experiência
+                para realizá-lo</span
               >
               da maneira mais eficiente.
             </p>
@@ -156,26 +140,14 @@
               de nosso trabalho
             </span>
 
+            <span class="title-list-final">Soluções na cadeia produtiva</span>
+
             <ul class="contSolucoes">
-              <span>Soluções na cadeia produtiva</span>
-              <li style="margin-left:5px;"
-                >&#8226; Inventários florísticos e florestais</li
-              >
-              <li style="margin-left:5px;"
-                >&#8226; Restauração de ecossistemas</li
-              >
-              <li style="margin-left:5px;">&#8226; Conservação de espécies</li>
-              <li style="margin-left:5px;"
-                >&#8226; Pesquisas de matérias-primas naturais para produtos</li
-              >
+              <li style="margin-left:5px;">Inventários florísticos e florestais</li>
+              <li style="margin-left:5px;">Restauração de ecossistemas</li>
+              <li style="margin-left:5px;">Conservação de espécies</li>
+              <li style="margin-left:5px;">Pesquisas de matérias-primas naturais para produtos</li>
             </ul>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
           </div>
           <!-- blocoTexto -->
         </div>

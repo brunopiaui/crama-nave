@@ -1,9 +1,5 @@
 <template>
-  <div
-    v-touch:swipe.top="moveBackMob"
-    v-touch:swipe.bottom="moveBackMobBottom"
-    class="geralInt"
-  >
+  <div v-touch:swipe.top="moveBackMob" v-touch:swipe.bottom="moveBackMobBottom" class="geralInt">
     <div class="backImg"></div>
 
     <div class="loadingpv"> </div>
@@ -24,9 +20,7 @@
     <!-- backR -->
 
     <div class="blocoPorc">
-      <div class="porcTxt" style="color:#445356;"
-        ><span id="porc">0</span>%</div
-      >
+      <div class="porcTxt" style="color:#445356;"><span id="porc">0</span>%</div>
       <div class="setaPorc">
         <!-- <img src="../assets/images/setaporc.svg"/> -->
         <svg xmlns="http://www.w3.org/2000/svg" width="25.318" height="11.381">
@@ -37,14 +31,8 @@
             stroke-linecap="round"
             stroke-width="1"
           >
-            <line
-              x2="15.514"
-              transform="translate(1354.148 458.704) rotate(-50)"
-            />
-            <line
-              x2="15.514"
-              transform="translate(1354.148 434.794) rotate(50)"
-            />
+            <line x2="15.514" transform="translate(1354.148 458.704) rotate(-50)" />
+            <line x2="15.514" transform="translate(1354.148 434.794) rotate(50)" />
           </g>
         </svg>
       </div>
@@ -89,7 +77,7 @@
         </div>
         <!--blocoTitle-->
         <div class="blocoMedia">
-          <div>
+          <!-- <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48.182"
@@ -115,8 +103,8 @@
                 />
               </g>
             </svg>
-          </div>
-          <div>
+          </div> -->
+          <!-- <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48.182"
@@ -134,32 +122,6 @@
                 <path
                   class="pathBt"
                   :class="{ hoverPathBtActive: btsInt.btGaleria }"
-                  d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
-                />
-                <path
-                  d="M8.6,2,6.874,3.886H3.886A1.891,1.891,0,0,0,2,5.771V17.085a1.891,1.891,0,0,0,1.886,1.886H18.971a1.891,1.891,0,0,0,1.886-1.886V5.771a1.891,1.891,0,0,0-1.886-1.886H15.982L14.257,2Zm2.828,14.142a4.714,4.714,0,1,1,4.714-4.714A4.716,4.716,0,0,1,11.428,16.142Z"
-                  transform="translate(12 12)"
-                />
-              </g>
-            </svg>
-          </div>
-          <!-- alternativa efeito hover botoes -->
-          <!-- <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="48.182"
-              height="49.957"
-              style="cursor:pointer;"
-              class="hoverEffect"
-            >
-              <g
-                transform="translate(1.2 2)"
-                fill="none"
-                stroke="#fff"
-                stroke-width="1"
-              >
-                <path
-                  class="pathBt"
                   d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
                 />
                 <path
@@ -186,33 +148,19 @@
         <div id="scroll">
           <div class="blocoTexto">
             <p><span style="color:#122124;">Conheça quem faz a Navia</span></p>
-            <p style="color:#122124;"
-              ><span style="color:#122124;">Gustavo Martinelli</span> e
-              <span style="color:#122124;">Eládio Miranda Lima</span> se
-              encontram na visão de mundo e se complementa no conhecimento e
-              prática.
+            <p style="color:#122124;">
+              <span style="color:#122124;">Gustavo Martinelli</span> e
+              <span style="color:#122124;">Eládio Miranda Lima</span> se encontram na visão de mundo
+              e se complementam no conhecimento e prática. Na Navia,
               <span style="color:#122124;"
-                >Na Navia, o domínio técnico do biólogo se une à veia
-                empreendedora do homem de negócios.</span
+                >o domínio técnico do biólogo se une à veia empreendedora do homem de negócios</span
+              >. Dois olhares que juntos se multiplicam, mas que tem um interesse e uma paixão única
+              no desenvolvimento desse trabalho -
+              <span style="color:#122124;"
+                >a conexão e o equilíbrio produtivo entre o homem, a sociedade e o meio
+                ambiente.</span
               >
-              Dois olhares que juntos se multiplicam, mas que tem um interesse e
-              uma paixão única no desenvolvimento desse trabalho - a conexão e o
-              equilíbrio produtivo entre o homem, a sociedade e o meio ambiente.
             </p>
-
-            <!-- <p
-              ><span class="destContP destContPbioCor"
-                >Continuar é parte do nosso DNA.</span
-              ></p
-            >
-
-            <p style="color:#122124;"
-              >A biodiversidade agrega valor. Mudança no mundo de negócios
-              Conservação e sustentabilidades são conceitos que precisam ser
-              trabalhados sempre (não agrega o valor).
-            </p> -->
-
-            <!-- <p><span class="destContP destContPbioCor">Conexão</span></p> -->
           </div>
           <!-- blocoTexto -->
           <div class="aspas" style="margin-top:80px;">
@@ -220,97 +168,70 @@
               >A arte verde e a técnica viajante de Gustavo Martinelli.</h4
             >
             <p class="bioCorP"
-              >“Eu realizei durante muitos e muitos anos expedições científicas
-              por todo o Brasil. Isso me deu um contato único com a natureza e a
-              possibilidade de enxergar os ecossistemas, as paisagens e os
-              lugares muito de perto.”</p
+              >“Eu realizei durante muitos e muitos anos expedições científicas por todo o Brasil.
+              Isso me deu um contato único com a natureza e a possibilidade de enxergar os
+              ecossistemas, as paisagens e os lugares muito de perto.”</p
             >
             <span class="assAspas bioCorSpan">Gustavo Martinelli</span>
           </div>
           <!-- aspas -->
           <div class="blocoTexto">
             <p style="color:#122124;"
-              >A trajetória de uma vida, o conhecimento de um caminho e as
-              memórias de uma terra unidos na construção do seu negócio, projeto
-              ou ambiente e, principalmente, no cuidado com o mundo. O biólogo
-              <span style="color:#122124;"
-                >Gustavo Martinelli é a raiz da Navia</span
-              >, um botânico reconhecido internacionalmente por sua contribuição
-              na conservação do ecossistema, e um dos maiores especialistas em
-              bromélias do mundo.
+              >A trajetória de uma vida, o conhecimento de um caminho e as memórias de uma terra
+              unidos na construção do seu negócio, projeto ou ambiente e, principalmente, no cuidado
+              com o mundo. O biólogo
+              <span style="color:#122124;">Gustavo Martinelli é a raiz da Navia</span>, um botânico
+              reconhecido internacionalmente por sua contribuição na conservação do ecossistema, e
+              um dos maiores especialistas em bromélias do mundo.
             </p>
             <p style="color:#122124;"
-              >Na ciência e na técnica - Com PhD em Ecologia pela University of
-              St.Andrews, no Reino Unido, e 46 anos de carreira, foi pesquisador
-              titular do Jardim Botânico do Rio de Janeiro e coordenador do
-              Centro Nacional de Conservação da Flora, catalogando e conservando
-              a biodiversidade nativa por meio de expedições por todo o
-              território nacional. Na busca constante pela conservação da flora,
-              o cientista participa de conselhos de organizações nacionais e
-              internacionais, como SOS Mata Atlântica e Chair do Brazilian Plant
-              Red List Authority da IUCN, e é membro do International Advisory
-              Committee do Botanic Gardens Conservation International.
-              Martinelli também é professor de pós-graduação na Escola Nacional
-              de Botânica Tropical-ENBT/JBRJ e professor credenciado da Open
-              University, na Inglaterra.
+              >Na ciência e na técnica - Com PhD em Ecologia pela University of St.Andrews, no Reino
+              Unido, e 46 anos de carreira, foi pesquisador titular do Jardim Botânico do Rio de
+              Janeiro e coordenador do Centro Nacional de Conservação da Flora, catalogando e
+              conservando a biodiversidade nativa por meio de expedições por todo o território
+              nacional. Na busca constante pela conservação da flora, o cientista participa de
+              conselhos de organizações nacionais e internacionais, como SOS Mata Atlântica e Chair
+              do Brazilian Plant Red List Authority da IUCN, e é membro do International Advisory
+              Committee do Botanic Gardens Conservation International. Martinelli também é professor
+              de pós-graduação na Escola Nacional de Botânica Tropical-ENBT/JBRJ e professor
+              credenciado da Open University, na Inglaterra.
             </p>
             <p style="color:#122124;"
-              >No Biopaisagismo - Martinelli atua como paisagista desde 1980, e
-              já assinou inúmeros jardins nas capitais e interior do Brasil,
-              muitos deles em parcerias com arquitetos e escritórios de
-              arquitetura. Seu trabalho como paisagista se destaca pelas belas
-              paisagens que realçam a biodiversidade brasileira e ajudam na
-              regeneração dos ecossistemas, e por um design que integra os
-              elementos arquitetônicos às preferências dos clientes.
+              >No Biopaisagismo - Martinelli atua como paisagista desde 1980, e já assinou inúmeros
+              jardins nas capitais e interior do Brasil, muitos deles em parcerias com arquitetos e
+              escritórios de arquitetura. Seu trabalho como paisagista se destaca pelas belas
+              paisagens que realçam a biodiversidade brasileira e ajudam na regeneração dos
+              ecossistemas, e por um design que integra os elementos arquitetônicos às preferências
+              dos clientes.
             </p>
             <br />
+            <span class="title-list-final">Os frutos de uma rota:</span>
             <ul class="contSolucoes">
-              <span>Os frutos de uma rota:</span>
+              <li style="color:#122124; margin-left:5px;">47 anos estudando a flora brasileira</li>
+              <li style="color:#122124; margin-left:5px;">Mais de 380 jardins planejados</li>
               <li style="color:#122124; margin-left:5px;"
-                >&#8226; 47 anos estudando a flora brasileira</li
+                >Prêmio Rodrigo de Mello Franco de melhor projeto paisagístico de 1991, pelo projeto
+                da Fazenda Monte Cristo, em parceria com o arquiteto Alfredo Britto</li
+              >
+              <li style="color:#122124; margin-left:5px;">Prêmio IAB de paisagismo</li>
+              <li style="color:#122124; margin-left:5px;">Premio Jabuti 1º lugar 2014</li>
+              <li style="color:#122124; margin-left:5px;"
+                >Premio Work of Excellence - IUCN - Abu Dhabi, EAU, 2018</li
               >
               <li style="color:#122124; margin-left:5px;"
-                >&#8226; Mais de 380 jardins planejados</li
+                >Mais 400 expedições científicas no Brasil</li
               >
               <li style="color:#122124; margin-left:5px;"
-                >&#8226; Prêmio Rodrigo de Mello Franco de melhor projeto
-                paisagístico de 1991, pelo projeto da Fazenda Monte Cristo, em
-                parceria com o arquiteto Alfredo Britto</li
+                >Membro de expedições de Roberto Burle Marx, contribuindo com a identificação de
+                plantas</li
               >
               <li style="color:#122124; margin-left:5px;"
-                >&#8226; Prêmio IAB de paisagismo</li
-              >
-              <li style="color:#122124; margin-left:5px;"
-                >&#8226; Premio Jabuti 1º lugar 2014</li
-              >
-              <li style="color:#122124; margin-left:5px;"
-                >&#8226; Premio Work of Excellence - IUCN - Abu Dhabi, EAU,
-                2018</li
-              >
-              <li style="color:#122124; margin-left:5px;"
-                >&#8226; Mais 400 expedições científicas no Brasil</li
-              >
-              <li style="color:#122124; margin-left:5px;"
-                >&#8226; Membro de expedições de Roberto Burle Marx,
-                contribuindo com a identificação de plantas</li
-              >
-              <li style="color:#122124; margin-left:5px;"
-                >&#8226; Mais de 22 mil espécies da flora catalogadas
+                >Mais de 22 mil espécies da flora catalogadas
               </li>
               <li style="color:#122124; margin-left:5px;"
-                >&#8226; Coordenador do Centro Nacional de Conservação da Flora
-                (CNCFlora)</li
+                >Coordenador do Centro Nacional de Conservação da Flora (CNCFlora)</li
               >
             </ul>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
           </div>
           <!-- blocoTexto -->
         </div>

@@ -74,7 +74,7 @@ export default new Router({
           /* webpackChunkName: "Image04" */
           '@/views/Contato.vue'
         ),
-      meta: { index: 6, image: 'image01' },
+      meta: { index: 6, image: 'image00' },
     },
   ],
 })

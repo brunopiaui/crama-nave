@@ -1,16 +1,7 @@
 <template>
-  <div
-    v-touch:swipe.top="moveBackMob"
-    v-touch:swipe.bottom="moveBackMobBottom"
-    class="geral"
-  >
+  <div v-touch:swipe.top="moveBackMob" v-touch:swipe.bottom="moveBackMobBottom" class="geral">
     <transition name="fadeGal">
-      <div
-        v-if="showGal"
-        v-touch:swipe.left="prev"
-        v-touch:swipe.right="next"
-        class="galeria"
-      >
+      <div v-if="showGal" v-touch:swipe.left="prev" v-touch:swipe.right="next" class="galeria">
         <div
           v-if="progressingGallery"
           style="width:100%; height:100%; background-color:#000000; position:absolute; z-index:98; display:flex; flex-direction:row; justify-content:center; align-itens:center; transition: all 0.5s;"
@@ -60,15 +51,13 @@
           </div>
           <div class="navGaleria">
             <div
-              ><a class="prev" @click="prev"
-                ><img src="../assets/images/setaleft.svg"/></a
+              ><a class="prev" @click="prev"><img src="../assets/images/setaleft.svg"/></a
             ></div>
             <div class="indNavGal"
               ><span>{{ currentID }}</span> / {{ slides.length }}</div
             >
             <div
-              ><a class="next" @click="next"
-                ><img src="../assets/images/setaright.svg"/></a
+              ><a class="next" @click="next"><img src="../assets/images/setaright.svg"/></a
             ></div>
           </div>
         </div>
@@ -104,11 +93,7 @@
       <!-- blocoPorc -->
 
       <div class="elementoInterna1">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="794.996"
-          height="793.949"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="794.996" height="793.949">
           <path
             d="M261.608,584.819c116.376-4.956,204.566-32.2,284.644-145.068,28.944-40.812,49.777-92.325,38.161-140.712-12.531-52.3-58.33-86.738-95.576-124.173C444.805,130.613,409.233,76.8,358.856,40.4,282.44-14.8,164.612-16.885,100.726,55.68c-27.871,31.627-42.675,72.881-54.7,113.6A1217.218,1217.218,0,0,0,8.37,341.46C2.657,381.294-7.759,425.294,9.506,460.93c19.475,40.149,84.56,88.221,163.217,115.177C172.724,576.107,204.856,587.249,261.608,584.819Z"
             transform="matrix(-0.883, 0.469, -0.469, -0.883, 794.317, 517.355)"
@@ -141,14 +126,11 @@
           <div class="blocoTitle">
             <h3>Cultive o princípio</h3>
             <h2>BIOPAISAGISMO</h2>
-            <p
-              >Um jardim é muito mais que a exibição de plantas e flores - nele,
-              a vida cresce.</p
-            >
+            <p>Um jardim é muito mais que a exibição de plantas e flores - nele, a vida cresce.</p>
           </div>
           <!--blocoTitle-->
           <div class="blocoMedia">
-            <div>
+            <!-- <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="48.182"
@@ -174,7 +156,7 @@
                   />
                 </g>
               </svg>
-            </div>
+            </div> -->
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -185,12 +167,7 @@
                 @mouseover="btsInt.btGaleria = true"
                 @mouseleave="btsInt.btGaleria = false"
               >
-                <g
-                  transform="translate(1.2 2)"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="1"
-                >
+                <g transform="translate(1.2 2)" fill="none" stroke="#fff" stroke-width="1">
                   <path
                     class="pathBt"
                     :class="{ hoverPathBtActive: btsInt.btGaleria }"
@@ -221,50 +198,39 @@
             <div class="aspas">
               <h4>Você em harmonia com a vida</h4>
               <p
-                >“<span
-                  >O Biopaisagismo une as questões biológicas à estética do
-                  paisagismo.</span
-                >
-                Na medida em que você consegue aproximar esses dois contextos –
-                um jardim integrado a um ecossistema, você consegue uma conexão,
-                que considero uma das mais importantes para a sociedade.”</p
+                >“<span>O Biopaisagismo une as questões biológicas à estética do paisagismo.</span>
+                Na medida em que você consegue aproximar esses dois contextos – um jardim integrado
+                a um ecossistema, você consegue uma conexão, que considero uma das mais importantes
+                para a sociedade.”</p
               >
               <span class="assAspas bioCor">Gustavo Martinelli</span>
             </div>
             <!-- aspas -->
             <div class="blocoTexto">
               <p
-                >A diversidade de nossos biomas nos garante inúmeras composições
-                estéticas e orgânicas. Ainda assim, no Brasil, mais de 90% das
-                plantas utilizadas nas ornamentações não são da nossa flora. O
-                Biopaisagismo é um novo conceito que amplia o olhar sobre o seu
-                jardim.
+                >A diversidade de nossos biomas nos garante inúmeras composições estéticas e
+                orgânicas. Ainda assim, no Brasil, mais de 90% das plantas utilizadas nas
+                ornamentações não são da nossa flora. O Biopaisagismo é um novo conceito que amplia
+                o olhar sobre o seu jardim.
                 <span
-                  >O Biopaisagismo reconecta as pessoas com a biodiversidade,
-                  promove sustentabilidade e alia a beleza da natureza à
-                  arquitetura.</span
+                  >O Biopaisagismo reconecta as pessoas com a biodiversidade, promove
+                  sustentabilidade e alia a beleza da natureza à arquitetura.</span
                 >
-                Com base no conhecimento científico sobre a ecologia, Navia cria
-                soluções funcionais, valorizando o meio e integrando o ambiente.
+                Com base no conhecimento científico sobre a ecologia, Navia cria soluções
+                funcionais, valorizando o meio e integrando o ambiente.
               </p>
               <p
-                >Quando projetamos um jardim, escolhendo espécies adequadas à
-                área, valorizamos plantas compatíveis com a região, investimos
-                no desenvolvimento de um ecossistema sustentável que atrai a
-                fauna conveniente e, consequentemente, promove um maior controle
-                de pragas, gerando baixo custo de manutenção.</p
+                >Quando projetamos um jardim, escolhendo espécies adequadas à área, valorizamos
+                plantas compatíveis com a região, investimos no desenvolvimento de um ecossistema
+                sustentável que atrai a fauna conveniente e, consequentemente, promove um maior
+                controle de pragas, gerando baixo custo de manutenção.</p
               >
               <p
-                ><span
-                  >É a integração e a potencialização dos recursos naturais
-                  disponíveis</span
-                >
+                ><span>É a integração e a potencialização dos recursos naturais disponíveis</span>
                 no encanto do seu projeto.</p
               >
               <p>
-                <span class="destContP"
-                  >O nosso jardim fortalece o mundo.
-                </span>
+                <span class="destContP">O nosso jardim fortalece o mundo. </span>
               </p>
             </div>
             <!-- blocoTexto -->
@@ -278,9 +244,7 @@
                 @mouseover="btsInt.btGaleria2 = true"
                 @mouseleave="btsInt.btGaleria2 = false"
               >
-                <div class="imgVideoCont"
-                  ><img src="../assets/images/thumbgaleria1.png"
-                /></div>
+                <div class="imgVideoCont"><img src="../assets/images/thumbgaleria1.png"/></div>
                 <div class="icoVideoCont">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -288,12 +252,7 @@
                     height="49.957"
                     style="cursor:pointer;"
                   >
-                    <g
-                      transform="translate(1.2 2)"
-                      fill="none"
-                      stroke="#fff"
-                      stroke-width="1"
-                    >
+                    <g transform="translate(1.2 2)" fill="none" stroke="#fff" stroke-width="1">
                       <path
                         class="pathBt"
                         :class="{ hoverPathBtActive: btsInt.btGaleria2 }"
@@ -308,15 +267,6 @@
                 </div>
               </div>
               <!-- videoCont -->
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
             </div>
             <!-- videoCont / imagem galeria -->
           </div>
