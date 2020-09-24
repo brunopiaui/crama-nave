@@ -23,7 +23,6 @@
       <div></div>
     </div>
     <!-- backR -->
-    <!-- <div class="backRmob"></div> -->
 
     <div class="blocoPorc">
       <div class="porcTxt"><span id="porc">0</span>%</div>
@@ -54,9 +53,12 @@
     <div class="elementoInterna5">
       <img src="../assets/images/elementointerna7.svg" />
     </div>
+
     <div class="backContMob">
       <div class="intBackContMob"></div>
     </div>
+    <!-- backContMob -->
+
     <div class="conteudo">
       <div class="sideL">
         <div class="blocoTitle">
@@ -69,7 +71,6 @@
         </div>
         <!--blocoTitle-->
         <div class="blocoMedia">
-          <!-- <div><img src="../assets/images/icofoto.svg"/></div> -->
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -97,8 +98,8 @@
               </g>
             </svg>
           </div>
-          <!-- <div><img src="../assets/images/icoaudio.svg"/></div> -->
         </div>
+        <!-- blocoMedia -->
       </div>
       <!-- sideL -->
       <div class="elScrollInt">
@@ -109,6 +110,7 @@
           <img src="../assets/images/elementointerna3.svg" />
         </div>
       </div>
+      <!-- elScrollInt -->
       <div class="sideR">
         <div id="scroll">
           <div class="aspas">
@@ -175,7 +177,9 @@
             <br />
             <br />
           </div>
+          <!-- blocoTexto -->
         </div>
+        <!-- scroll -->
       </div>
       <!-- sideR -->
     </div>
@@ -186,6 +190,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import { MyFunctions } from '../assets/js/functions.js'
 
 export default {
   name: 'Consultoria',
@@ -206,6 +211,7 @@ export default {
     this.tlPageOut = this.$gsap.timeline()
   },
   mounted() {
+    //animacao entrada página interna
     this.tlPageIn
       .to(
         [
@@ -317,19 +323,20 @@ export default {
         '< 1'
       )
 
-    // Scroll
+    //end
+
+    //scroll em qualquer lugar da página
     const conteudo = document.querySelector('.sideR')
     conteudo.addEventListener('DOMMouseScroll', () => false, false)
     conteudo.addEventListener('mousewheel', () => false, false)
-    conteudo.addEventListener('onwheel', () => false, false)
-    conteudo.addEventListener('onmousewheel', () => false, false)
-    conteudo.addEventListener('wheel', () => false, false)
+    document.addEventListener('DOMMouseScroll', MyFunctions.moveScroll, false)
+    document.addEventListener('mousewheel', MyFunctions.moveScroll, false)
 
-    document.addEventListener('DOMMouseScroll', this.moveScroll, false)
-    document.addEventListener('mousewheel', this.moveScroll, false)
-    document.addEventListener('onwheel', this.moveScroll, false)
-    document.addEventListener('onmousewheel', this.moveScroll, false)
-    document.addEventListener('wheel', this.moveScroll, false)
+    conteudo.addEventListener('keydown', () => false, false)
+    document.addEventListener('keydown', MyFunctions.KeyScroll, false)
+
+    conteudo.addEventListener('scroll', MyFunctions.porcScroll)
+    //end
   },
 
   methods: {
@@ -339,6 +346,7 @@ export default {
       'setNextBackgroundAction',
       'stopProgressingAction',
     ]),
+
     moveBackMob() {
       this.$gsap.to('.intBackContMob', {
         duration: 1.2,
@@ -366,99 +374,12 @@ export default {
         }
       }, 500)
     },
-    moveScroll(event) {
-      let delta = 0
-      if (!event) event = window.event
-      // normalize the delta
-      if (event.wheelDelta) {
-        // IE and Opera
-        delta = event.wheelDelta / 60
-      } else if (event.detail) {
-        // W3C
-        delta = -event.detail / 2
-      }
-      const conteudo = document.querySelector('.sideR')
-      let currPos = conteudo.scrollTop
-      // calculating the next position of the object
-      currPos = parseInt(currPos) - delta * 10
-      // moving the position of the object
-      conteudo.scrollTop = currPos
-
-      let h = conteudo
-      let b = document.querySelector('#scroll')
-      let st = 'scrollTop'
-      let sh = 'scrollHeight'
-
-      var percent =
-        ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100
-
-      var percentshow = percent.toFixed(0)
-
-      document.getElementById('porc').innerHTML = percentshow
-
-      if (percent === 100) {
-        this.$gsap.to('.setaPorc', {
-          duration: 0.5,
-          opacity: 0,
-          ease: 'linear',
-        })
-      } else {
-        this.$gsap.to('.setaPorc', {
-          duration: 0.5,
-          opacity: 1,
-          ease: 'linear',
-        })
-      }
-
-      if (percent === 0) {
-        this.$gsap.to(
-          [
-            '.elScrollInt',
-            '.elementoInterna1',
-            '.elementoInterna2',
-            '.elementoInterna3',
-            '.elementoInterna4',
-            '.elementoInterna5',
-          ],
-          {
-            duration: 1,
-            opacity: 1,
-            ease: 'linear',
-          }
-        )
-        this.$gsap.to('.porcTxt', {
-          duration: 1,
-          opacity: 0.1,
-          ease: 'linear',
-        })
-      } else {
-        this.$gsap.to(
-          [
-            '.elScrollInt',
-            '.elementoInterna1',
-            '.elementoInterna2',
-            '.elementoInterna3',
-            '.elementoInterna4',
-            '.elementoInterna5',
-          ],
-          {
-            duration: 1,
-            opacity: 0.1,
-            ease: 'linear',
-          }
-        )
-        this.$gsap.to('.porcTxt', {
-          duration: 1,
-          opacity: 1,
-          ease: 'linear',
-        })
-      }
-    },
   },
   beforeRouteLeave(to, from, next) {
     let nextBackground = this.backgrounds(to.meta.image)
     this.setNextBackgroundAction(nextBackground)
 
+    //animacao saída página interna
     this.tlPageOut
       .to(['.conteudo', '.blocoPorc', '.intBackContMob'], {
         opacity: 0,
@@ -484,6 +405,8 @@ export default {
           next()
         },
       })
+
+    //end
   },
 }
 </script>

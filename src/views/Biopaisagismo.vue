@@ -11,6 +11,12 @@
         v-touch:swipe.right="next"
         class="galeria"
       >
+        <div
+          v-if="progressingGallery"
+          style="width:100%; height:100%; background-color:#000000; position:absolute; z-index:98; display:flex; flex-direction:row; justify-content:center; align-itens:center; transition: all 0.5s;"
+        >
+          <span>CARREGANDO {{ progressGallery }} %</span>
+        </div>
         <div class="backGal"></div>
         <transition-group name="fade" tag="div" class="fotosGaleria">
           <div v-for="i in [currentIndex]" :key="i">
@@ -18,7 +24,7 @@
           </div>
         </transition-group>
         <div class="backBottom"></div>
-        <div class="topGaleria">
+        <div class="topGaleria" style="z-index:99;">
           <div class="fecharGal">
             <div
               class="areaHoverBt"
@@ -67,6 +73,7 @@
           </div>
         </div>
       </div>
+      <!-- galeria -->
     </transition>
 
     <div class="geralInt">
@@ -127,6 +134,7 @@
       <div class="backContMob">
         <div class="intBackContMob"></div>
       </div>
+      <!-- backContMob -->
 
       <div class="conteudo">
         <div class="sideL">
@@ -196,6 +204,7 @@
               </svg>
             </div>
           </div>
+          <!-- blocoMedia -->
         </div>
         <!-- sideL -->
         <div class="elScrollInt">
@@ -206,6 +215,7 @@
             <img src="../assets/images/elementointerna3_3.svg" />
           </div>
         </div>
+        <!-- elScrollInt -->
         <div class="sideR">
           <div id="scroll">
             <div class="aspas">
@@ -257,6 +267,7 @@
                 </span>
               </p>
             </div>
+            <!-- blocoTexto -->
             <div class="videoCont">
               <div class="videoContBlocoTexto">
                 <p style="color:#e9e9e9">Visite nossa galeria:</p>
@@ -307,6 +318,7 @@
               <br />
               <br />
             </div>
+            <!-- videoCont / imagem galeria -->
           </div>
         </div>
         <!-- sideR -->
@@ -320,6 +332,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import { MyFunctions } from '../assets/js/functions.js'
 
 export default {
   name: 'Biopaisagismo',
@@ -337,7 +350,16 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['loading', 'backgrounds', 'progressing', 'progress']),
+    ...mapGetters([
+      'loading',
+      'backgrounds',
+      'progressing',
+      'progressingGallery',
+      'progress',
+      'progressGallery',
+    ]),
+
+    // slides, fotos e informaçoes galeria
     slides() {
       return [
         {
@@ -643,6 +665,12 @@ export default {
       const data = this.slides[Math.abs(this.currentIndex) % this.slides.length]
       return data.titulo
     },
+    // end
+  },
+  watch: {
+    progressingGallery(value) {
+      console.log(value)
+    },
   },
   created() {
     this.tl = this.$gsap.timeline()
@@ -650,6 +678,7 @@ export default {
     this.tlPageOut = this.$gsap.timeline()
   },
   mounted() {
+    // navegaçao teclado galeria
     window.addEventListener('keyup', (event) => {
       const key = event.key // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
       if (key === 'ArrowLeft') {
@@ -660,6 +689,9 @@ export default {
         this.showGal = false
       }
     })
+    // end
+
+    // animacao entrada página interna
     this.tlPageIn
       .to(
         [
@@ -771,14 +803,22 @@ export default {
         '< 1'
       )
 
-    // Scroll
+    // end
+
+    // scroll em qualquer lugar da página
     const conteudo = document.querySelector('.sideR')
     conteudo.addEventListener('DOMMouseScroll', () => false, false)
     conteudo.addEventListener('mousewheel', () => false, false)
+    document.addEventListener('DOMMouseScroll', MyFunctions.moveScroll, false)
+    document.addEventListener('mousewheel', MyFunctions.moveScroll, false)
 
-    document.addEventListener('DOMMouseScroll', this.moveScroll, false)
-    document.addEventListener('mousewheel', this.moveScroll, false)
+    conteudo.addEventListener('keydown', () => false, false)
+    document.addEventListener('keydown', MyFunctions.KeyScroll, false)
+
+    conteudo.addEventListener('scroll', MyFunctions.porcScroll)
+    // end
   },
+
   methods: {
     ...mapActions([
       'startLoadingAction',
@@ -813,6 +853,8 @@ export default {
         }
       }, 500)
     },
+
+    // navegaçao next e prev galeria
     next() {
       if (this.currentIndex < this.slides.length - 1) {
         this.currentIndex += 1
@@ -823,99 +865,12 @@ export default {
         this.currentIndex -= 1
       }
     },
-    moveScroll(event) {
-      let delta = 0
-      if (!event) event = window.event
-      // normalize the delta
-      if (event.wheelDelta) {
-        // IE and Opera
-        delta = event.wheelDelta / 60
-      } else if (event.detail) {
-        // W3C
-        delta = -event.detail / 2
-      }
-      const conteudo = document.querySelector('.sideR')
-      let currPos = conteudo.scrollTop
-      // calculating the next position of the object
-      currPos = parseInt(currPos) - delta * 10
-      // moving the position of the object
-      conteudo.scrollTop = currPos
-
-      let h = conteudo
-      let b = document.querySelector('#scroll')
-      let st = 'scrollTop'
-      let sh = 'scrollHeight'
-
-      var percent =
-        ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100
-
-      var percentshow = percent.toFixed(0)
-
-      document.getElementById('porc').innerHTML = percentshow
-
-      if (percent === 100) {
-        this.$gsap.to('.setaPorc', {
-          duration: 0.5,
-          opacity: 0,
-          ease: 'linear',
-        })
-      } else {
-        this.$gsap.to('.setaPorc', {
-          duration: 0.5,
-          opacity: 1,
-          ease: 'linear',
-        })
-      }
-
-      if (percent === 0) {
-        this.$gsap.to(
-          [
-            '.elScrollInt',
-            '.elementoInterna1',
-            '.elementoInterna2',
-            '.elementoInterna3',
-            '.elementoInterna4',
-            '.elementoInterna5',
-          ],
-          {
-            duration: 1,
-            opacity: 1,
-            ease: 'linear',
-          }
-        )
-        this.$gsap.to('.porcTxt', {
-          duration: 1,
-          opacity: 0.1,
-          ease: 'linear',
-        })
-      } else {
-        this.$gsap.to(
-          [
-            '.elScrollInt',
-            '.elementoInterna1',
-            '.elementoInterna2',
-            '.elementoInterna3',
-            '.elementoInterna4',
-            '.elementoInterna5',
-          ],
-          {
-            duration: 1,
-            opacity: 0.1,
-            ease: 'linear',
-          }
-        )
-        this.$gsap.to('.porcTxt', {
-          duration: 1,
-          opacity: 1,
-          ease: 'linear',
-        })
-      }
-    },
+    // end
   },
   beforeRouteLeave(to, from, next) {
     let nextBackground = this.backgrounds(to.meta.image)
     this.setNextBackgroundAction(nextBackground)
-
+    // animacao saída página interna
     this.tlPageOut
       .to(['.conteudo', '.blocoPorc', '.intBackContMob'], {
         opacity: 0,
@@ -941,6 +896,7 @@ export default {
           next()
         },
       })
+    // end
   },
 }
 </script>

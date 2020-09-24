@@ -8,10 +8,6 @@
 
     <div class="loadingpv"> </div>
     <!-- <div v-if="progressing" class="loading">{{ progress }}%</div> -->
-    <!-- <video id="video" autoplay muted loop>
-      <source :src="video" type="video/mp4" />
-      Your browser does not support HTML5 video.
-    </video> -->
 
     <div class="backR">
       <div class="backRshape">
@@ -82,6 +78,7 @@
     <div class="backContMob">
       <div class="backClaro"></div>
     </div>
+    <!-- backContMob -->
 
     <div class="conteudo">
       <div class="sideL">
@@ -146,8 +143,34 @@
               </g>
             </svg>
           </div>
-          <!-- <div><img src="../assets/images/icoaudio.svg"/></div> -->
+          <!-- alternativa efeito hover botoes -->
+          <!-- <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48.182"
+              height="49.957"
+              style="cursor:pointer;"
+              class="hoverEffect"
+            >
+              <g
+                transform="translate(1.2 2)"
+                fill="none"
+                stroke="#fff"
+                stroke-width="1"
+              >
+                <path
+                  class="pathBt"
+                  d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
+                />
+                <path
+                  d="M8.6,2,6.874,3.886H3.886A1.891,1.891,0,0,0,2,5.771V17.085a1.891,1.891,0,0,0,1.886,1.886H18.971a1.891,1.891,0,0,0,1.886-1.886V5.771a1.891,1.891,0,0,0-1.886-1.886H15.982L14.257,2Zm2.828,14.142a4.714,4.714,0,1,1,4.714-4.714A4.716,4.716,0,0,1,11.428,16.142Z"
+                  transform="translate(12 12)"
+                />
+              </g>
+            </svg>
+          </div> -->
         </div>
+        <!-- blocoMedia -->
       </div>
       <!-- sideL -->
       <div class="elScrollInt">
@@ -158,25 +181,9 @@
           <img src="../assets/images/elementointerna3_b.svg" />
         </div>
       </div>
+      <!-- elScrollInt -->
       <div class="sideR">
         <div id="scroll">
-          <!-- <div class="videoCont">
-            <div class="videoContBlocoTexto">
-              <p>Conheça quem faz a Navia</p>
-            </div>
-            <div class="videoContBlocoImg">
-              <div class="imgVideoCont"
-                ><img src="../assets/images/thumbvideo1.jpg"
-              /></div>
-              <div class="icoVideoCont">
-                <img src="../assets/images/icovideo.svg" />
-              </div>
-            </div>
-          </div>
-          <br />
-          <br />
-          <br />
-          <br /> -->
           <div class="blocoTexto">
             <p><span style="color:#122124;">Conheça quem faz a Navia</span></p>
             <p style="color:#122124;"
@@ -207,6 +214,7 @@
 
             <!-- <p><span class="destContP destContPbioCor">Conexão</span></p> -->
           </div>
+          <!-- blocoTexto -->
           <div class="aspas" style="margin-top:80px;">
             <h4 style=" font-size:18px;color:#4B9167;"
               >A arte verde e a técnica viajante de Gustavo Martinelli.</h4
@@ -219,6 +227,7 @@
             >
             <span class="assAspas bioCorSpan">Gustavo Martinelli</span>
           </div>
+          <!-- aspas -->
           <div class="blocoTexto">
             <p style="color:#122124;"
               >A trajetória de uma vida, o conhecimento de um caminho e as
@@ -293,41 +302,30 @@
                 (CNCFlora)</li
               >
             </ul>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
           </div>
-
-          <!-- <div class="videoCont">
-            <div class="videoContBlocoTexto">
-              <p>Confira...consectetur adipiscing elit:</p>
-            </div>
-            <div class="videoContBlocoImg">
-              <div class="imgVideoCont"
-                ><img src="../assets/images/thumbvideo1.jpg"
-              /></div>
-              <div class="icoVideoCont">
-                <img src="../assets/images/icovideo.svg" />
-              </div>
-            </div>
-          </div> -->
-          <!-- videoCont -->
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+          <!-- blocoTexto -->
         </div>
+        <!-- scroll -->
       </div>
       <!-- sideR -->
     </div>
     <!-- conteudo -->
   </div>
+  <!-- geralInt -->
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import { MyFunctions } from '../assets/js/functions.js'
 
 export default {
   name: 'Bioviva',
@@ -349,19 +347,7 @@ export default {
     this.tlPageOut = this.$gsap.timeline()
   },
   mounted() {
-    // if (this.progressing) {
-    //   this.tl.to(
-    //     '.loading',
-    //     {
-    //       duration: 1,
-    //       opacity: 0,
-    //       onComplete: () => {
-    //         this.stopProgressingAction()
-    //       },
-    //     },
-    //     '+=0.5'
-    //   )
-    // }
+    // animacao entrada página interna
     this.tlPageIn
       .to(
         [
@@ -474,14 +460,22 @@ export default {
         '< 1'
       )
 
-    // Scroll
+    // end
+
+    // scroll em qualquer lugar da página
     const conteudo = document.querySelector('.sideR')
     conteudo.addEventListener('DOMMouseScroll', () => false, false)
     conteudo.addEventListener('mousewheel', () => false, false)
+    document.addEventListener('DOMMouseScroll', MyFunctions.moveScroll, false)
+    document.addEventListener('mousewheel', MyFunctions.moveScroll, false)
 
-    document.addEventListener('DOMMouseScroll', this.moveScroll, false)
-    document.addEventListener('mousewheel', this.moveScroll, false)
+    conteudo.addEventListener('keydown', () => false, false)
+    document.addEventListener('keydown', MyFunctions.KeyScroll, false)
+
+    conteudo.addEventListener('scroll', MyFunctions.porcScroll)
+    // end
   },
+
   methods: {
     ...mapActions([
       'startLoadingAction',
@@ -489,6 +483,7 @@ export default {
       'setNextBackgroundAction',
       'stopProgressingAction',
     ]),
+
     moveBackMob() {
       this.$gsap.to('.backClaro', {
         duration: 1.2,
@@ -516,99 +511,12 @@ export default {
         }
       }, 500)
     },
-    moveScroll(event) {
-      let delta = 0
-      if (!event) event = window.event
-      // normalize the delta
-      if (event.wheelDelta) {
-        // IE and Opera
-        delta = event.wheelDelta / 60
-      } else if (event.detail) {
-        // W3C
-        delta = -event.detail / 2
-      }
-      const conteudo = document.querySelector('.sideR')
-      let currPos = conteudo.scrollTop
-      // calculating the next position of the object
-      currPos = parseInt(currPos) - delta * 10
-      // moving the position of the object
-      conteudo.scrollTop = currPos
-
-      let h = conteudo
-      let b = document.querySelector('#scroll')
-      let st = 'scrollTop'
-      let sh = 'scrollHeight'
-
-      var percent =
-        ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100
-
-      var percentshow = percent.toFixed(0)
-
-      document.getElementById('porc').innerHTML = percentshow
-
-      if (percent === 100) {
-        this.$gsap.to('.setaPorc', {
-          duration: 0.5,
-          opacity: 0,
-          ease: 'linear',
-        })
-      } else {
-        this.$gsap.to('.setaPorc', {
-          duration: 0.5,
-          opacity: 1,
-          ease: 'linear',
-        })
-      }
-
-      if (percent === 0) {
-        this.$gsap.to(
-          [
-            '.elScrollInt',
-            '.elementoInterna1',
-            '.elementoInterna2',
-            '.elementoInterna3',
-            '.elementoInterna4',
-            '.elementoInterna5',
-          ],
-          {
-            duration: 1,
-            opacity: 1,
-            ease: 'linear',
-          }
-        )
-        this.$gsap.to('.porcTxt', {
-          duration: 1,
-          opacity: 0.1,
-          ease: 'linear',
-        })
-      } else {
-        this.$gsap.to(
-          [
-            '.elScrollInt',
-            '.elementoInterna1',
-            '.elementoInterna2',
-            '.elementoInterna3',
-            '.elementoInterna4',
-            '.elementoInterna5',
-          ],
-          {
-            duration: 1,
-            opacity: 0.1,
-            ease: 'linear',
-          }
-        )
-        this.$gsap.to('.porcTxt', {
-          duration: 1,
-          opacity: 1,
-          ease: 'linear',
-        })
-      }
-    },
   },
   beforeRouteLeave(to, from, next) {
     let nextBackground = this.backgrounds(to.meta.image)
     this.setNextBackgroundAction(nextBackground)
 
+    // animacao saída página interna
     this.tlPageOut
       .to(['.conteudo', '.blocoPorc', '.backClaro'], {
         opacity: 0,
@@ -634,6 +542,7 @@ export default {
           next()
         },
       })
+    // end
   },
 }
 </script>

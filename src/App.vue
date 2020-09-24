@@ -49,14 +49,17 @@
           />
         </g>
       </svg>
-      <div class="loader1">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <p>{{ progress }} %</p>
     </div>
+    <!-- loading -->
+
+    <!-- <div
+      v-if="!progressing && progressingGallery"
+      style="width:100%; height:100%; background-color:#000000; position:absolute; z-index:98; display:flex; flex-direction:row; justify-content:center; align-itens:center; transition: all 0.5s;"
+    >
+      <span>CARREGANDO {{ progressGallery }} %</span>
+    </div> -->
+
     <div class="menuMobile" :class="{ menuMobOpen: menuMobisActive }">
       <div class="folhaMenuMob">
         <img src="./assets/images/elementointerna4_2.png" />
@@ -279,6 +282,7 @@
         />
       </div>
     </header>
+    <!-- top -->
 
     <router-view class="router" />
 
@@ -296,11 +300,15 @@
         </div>
       </div>
     </footer>
+    <!-- bottom -->
+
     <audio id="pageSound" controls autoplay loop>
       <source src="./assets/sounds/experience.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
-    </audio> </div
-  ><!-- app -->
+    </audio>
+    <!-- pagesound -->
+  </div>
+  <!-- app -->
 </template>
 
 
@@ -309,7 +317,8 @@
 import { mapGetters, mapActions } from 'vuex'
 import Preload from 'preload-it-extended-5'
 
-const preload = Preload()
+const preloadInit = Preload()
+const preloadGallery = Preload()
 
 export default {
   name: 'App',
@@ -331,14 +340,21 @@ export default {
   computed: {
     ...mapGetters([
       'loading',
+      'loadingGallery',
       'backgrounds',
       'nextBackground',
       'progressing',
       'progress',
+      'progressGallery',
     ]),
   },
   watch: {
     '$route.path': 'checkPath',
+    // progress(value) {
+    //   if (value === 100) {
+
+    //   }
+    // },
   },
   created() {
     this.checkPath()
@@ -356,6 +372,7 @@ export default {
     }
     setTimeout(() => this.checkSound(), 1000)
 
+    // animacao ícone de som
     this.tlsomOn = this.$gsap.timeline({ repeat: -1 })
     this.tlsomOn.to('.so2 path', {
       opacity: 0.3,
@@ -369,7 +386,9 @@ export default {
       duration: 0.4,
       stagger: 0.4,
     })
+    // end
 
+    // animacao dropdown oquefazemos
     this.tlDropMenu
       .to('.setaDrop', {
         rotation: 180,
@@ -396,9 +415,13 @@ export default {
         },
         '<'
       )
+
+    // end
   },
   beforeMount() {
-    preload.fetch([
+    // preloadInit das images no carregamento do site
+    //  ------>  OBS: RETIRAR AS IMAGENS DA GALERIA DE FOTOS DESTE CARREGAMENTO  <------
+    preloadInit.fetch([
       {
         url: require('@/assets/images/image00.jpg'),
         meta: { type: 'image', name: 'image00' },
@@ -427,168 +450,183 @@ export default {
         url: require('@/assets/images/image04.jpg'),
         meta: { type: 'video', name: 'image04' },
       },
-      {
-        url: require('@/assets/images/galeria/jardim01/01_01.jpg'),
-        meta: { type: 'image', name: 'j101' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim01/01_02.jpg'),
-        meta: { type: 'image', name: 'j102' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim01/01_03.jpg'),
-        meta: { type: 'image', name: 'j103' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim01/01_04_NAO.jpg'),
-        meta: { type: 'image', name: 'j104' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim01/01_05.jpg'),
-        meta: { type: 'image', name: 'j105' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim01/01_07.jpg'),
-        meta: { type: 'image', name: 'j106' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim01/01_10_NAO.jpg'),
-        meta: { type: 'image', name: 'j107' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim01/01_12_NAO.jpg'),
-        meta: { type: 'image', name: 'j108' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim01/01_13.jpg'),
-        meta: { type: 'image', name: 'j109' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim02/02_01.jpg'),
-        meta: { type: 'image', name: 'j201' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim02/02_02.jpg'),
-        meta: { type: 'image', name: 'j202' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim02/02_04.jpg'),
-        meta: { type: 'image', name: 'j203' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim02/02_05.jpg'),
-        meta: { type: 'image', name: 'j204' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim02/02_06.jpg'),
-        meta: { type: 'image', name: 'j205' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim02/02_07.jpg'),
-        meta: { type: 'image', name: 'j206' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim02/02_09.jpg'),
-        meta: { type: 'image', name: 'j207' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim02/02_14.jpg'),
-        meta: { type: 'image', name: 'j208' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim03/03_01.jpg'),
-        meta: { type: 'image', name: 'j301' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim03/03_02.jpg'),
-        meta: { type: 'image', name: 'j302' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim03/03_03.jpg'),
-        meta: { type: 'image', name: 'j303' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim03/03_09.jpg'),
-        meta: { type: 'image', name: 'j304' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim03/03_10.jpg'),
-        meta: { type: 'image', name: 'j305' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim03/03_17.jpg'),
-        meta: { type: 'image', name: 'j306' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim03/DJJ_0203.jpg'),
-        meta: { type: 'image', name: 'j307' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim03/DJJ_0206.jpg'),
-        meta: { type: 'image', name: 'j308' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim03/DJJ_0226.jpg'),
-        meta: { type: 'image', name: 'j309' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim03/DJJ_0232.jpg'),
-        meta: { type: 'image', name: 'j310' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim03/DJJ_0233.jpg'),
-        meta: { type: 'image', name: 'j311' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim03/DJJ_0239.jpg'),
-        meta: { type: 'image', name: 'j312' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim04/04_01.jpg'),
-        meta: { type: 'image', name: 'j401' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim04/04_06.jpg'),
-        meta: { type: 'image', name: 'j402' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim04/04_10.jpg'),
-        meta: { type: 'image', name: 'j403' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim04/04_13.jpg'),
-        meta: { type: 'image', name: 'j404' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim04/DJJ_0293.jpg'),
-        meta: { type: 'image', name: 'j405' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim04/DJJ_0309.jpg'),
-        meta: { type: 'image', name: 'j406' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim04/DJJ_0331.jpg'),
-        meta: { type: 'image', name: 'j407' },
-      },
-      {
-        url: require('@/assets/images/galeria/jardim04/DJJ_0366.jpg'),
-        meta: { type: 'image', name: 'j408' },
-      },
     ])
-    preload.onfetched = (item) => {
+    preloadInit.onfetched = (item) => {
       this.addToBackgroundsAction({
         name: item.meta.name,
         type: item.meta.type,
         url: item.blobUrl,
       })
     }
-    preload.onprogress = (event) => {
+    preloadInit.onprogress = (event) => {
       this.setProgressAction(event.progress)
     }
-    preload.oncomplete = (items) => {
+    preloadInit.oncomplete = (items) => {
       let nextBackground = this.backgrounds(this.$route.meta.image)
       this.setNextBackgroundAction(nextBackground)
+      preloadGallery.fetch([
+        {
+          url: require('@/assets/images/galeria/jardim01/01_01.jpg'),
+          meta: { type: 'image', name: 'j101' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim01/01_02.jpg'),
+          meta: { type: 'image', name: 'j102' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim01/01_03.jpg'),
+          meta: { type: 'image', name: 'j103' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim01/01_04_NAO.jpg'),
+          meta: { type: 'image', name: 'j104' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim01/01_05.jpg'),
+          meta: { type: 'image', name: 'j105' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim01/01_07.jpg'),
+          meta: { type: 'image', name: 'j106' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim01/01_10_NAO.jpg'),
+          meta: { type: 'image', name: 'j107' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim01/01_12_NAO.jpg'),
+          meta: { type: 'image', name: 'j108' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim01/01_13.jpg'),
+          meta: { type: 'image', name: 'j109' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim02/02_01.jpg'),
+          meta: { type: 'image', name: 'j201' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim02/02_02.jpg'),
+          meta: { type: 'image', name: 'j202' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim02/02_04.jpg'),
+          meta: { type: 'image', name: 'j203' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim02/02_05.jpg'),
+          meta: { type: 'image', name: 'j204' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim02/02_06.jpg'),
+          meta: { type: 'image', name: 'j205' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim02/02_07.jpg'),
+          meta: { type: 'image', name: 'j206' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim02/02_09.jpg'),
+          meta: { type: 'image', name: 'j207' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim02/02_14.jpg'),
+          meta: { type: 'image', name: 'j208' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim03/03_01.jpg'),
+          meta: { type: 'image', name: 'j301' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim03/03_02.jpg'),
+          meta: { type: 'image', name: 'j302' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim03/03_03.jpg'),
+          meta: { type: 'image', name: 'j303' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim03/03_09.jpg'),
+          meta: { type: 'image', name: 'j304' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim03/03_10.jpg'),
+          meta: { type: 'image', name: 'j305' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim03/03_17.jpg'),
+          meta: { type: 'image', name: 'j306' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim03/DJJ_0203.jpg'),
+          meta: { type: 'image', name: 'j307' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim03/DJJ_0206.jpg'),
+          meta: { type: 'image', name: 'j308' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim03/DJJ_0226.jpg'),
+          meta: { type: 'image', name: 'j309' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim03/DJJ_0232.jpg'),
+          meta: { type: 'image', name: 'j310' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim03/DJJ_0233.jpg'),
+          meta: { type: 'image', name: 'j311' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim03/DJJ_0239.jpg'),
+          meta: { type: 'image', name: 'j312' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim04/04_01.jpg'),
+          meta: { type: 'image', name: 'j401' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim04/04_06.jpg'),
+          meta: { type: 'image', name: 'j402' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim04/04_10.jpg'),
+          meta: { type: 'image', name: 'j403' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim04/04_13.jpg'),
+          meta: { type: 'image', name: 'j404' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim04/DJJ_0293.jpg'),
+          meta: { type: 'image', name: 'j405' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim04/DJJ_0309.jpg'),
+          meta: { type: 'image', name: 'j406' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim04/DJJ_0331.jpg'),
+          meta: { type: 'image', name: 'j407' },
+        },
+        {
+          url: require('@/assets/images/galeria/jardim04/DJJ_0366.jpg'),
+          meta: { type: 'image', name: 'j408' },
+        },
+      ])
+      preloadGallery.onfetched = (item) => {
+        this.addToBackgroundsAction({
+          name: item.meta.name,
+          type: item.meta.type,
+          url: item.blobUrl,
+        })
+      }
+      preloadGallery.oncomplete = (items) => {
+        this.stopProgressingGalleryAction()
+      }
+      preloadGallery.onprogress = (event) => {
+        this.setProgressGalleryAction(event.progress)
+      }
       if (this.$route.name !== 'home') {
         if (this.progressing) {
           const loading = this.$gsap.timeline({ paused: true })
@@ -613,7 +651,9 @@ export default {
       'addToBackgroundsAction',
       'startProgressingAction',
       'stopProgressingAction',
+      'stopProgressingGalleryAction',
       'setProgressAction',
+      'setProgressGalleryAction',
       'setNextBackgroundAction',
     ]),
 
@@ -942,65 +982,6 @@ div.som {
   bottom: 0;
   z-index: 1;
   display: none;
-}
-
-.loader1 {
-  display: inline-block;
-  padding: 20px 0 0 0;
-  font-size: 0;
-}
-.loader1 span {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  margin: 3px 2px;
-  vertical-align: middle;
-  border-radius: 100%;
-  -webkit-animation: loader1 0.8s linear infinite alternate;
-  animation: loader1 0.8s linear infinite alternate;
-}
-.loader1 span:nth-child(1) {
-  background: rgba(255, 255, 255, 0.6);
-  -webkit-animation-delay: -1s;
-  animation-delay: -1s;
-}
-.loader1 span:nth-child(2) {
-  background: rgba(255, 255, 255, 0.8);
-  -webkit-animation-delay: -0.8s;
-  animation-delay: -0.8s;
-}
-.loader1 span:nth-child(3) {
-  background: rgba(255, 255, 255, 1);
-  -webkit-animation-delay: -0.26666s;
-  animation-delay: -0.26666s;
-}
-.loader1 span:nth-child(4) {
-  background: rgba(255, 255, 255, 0.8);
-  -webkit-animation-delay: -0.8s;
-  animation-delay: -0.8s;
-}
-.loader1 span:nth-child(5) {
-  background: rgba(255, 255, 255, 0.4);
-  -webkit-animation-delay: -1s;
-  animation-delay: -1s;
-}
-
-@keyframes loader1 {
-  from {
-    transform: scale(0, 0);
-  }
-  to {
-    transform: scale(1, 1);
-  }
-}
-
-@-webkit-keyframes loader1 {
-  from {
-    -webkit-transform: scale(0, 0);
-  }
-  to {
-    -webkit-transform: scale(1, 1);
-  }
 }
 
 .pensecheck {

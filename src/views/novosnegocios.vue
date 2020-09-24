@@ -57,6 +57,7 @@
     <div class="backContMob">
       <div class="intBackContMob"></div>
     </div>
+    <!-- backContMob -->
 
     <div class="conteudo">
       <div class="sideL">
@@ -103,6 +104,7 @@
           </div>
           <!-- <div><img src="../assets/images/icoaudio.svg"/></div> -->
         </div>
+        <!-- blocoMedia -->
       </div>
       <!-- sideL -->
       <div class="elScrollInt">
@@ -113,6 +115,7 @@
           <img src="../assets/images/elementointerna3_2.svg" />
         </div>
       </div>
+      <!-- elScrollInt -->
       <div class="sideR">
         <div id="scroll">
           <div class="aspas">
@@ -133,32 +136,32 @@
           </div>
           <!-- aspas -->
           <div class="blocoTexto">
-            <p
-              ><span
-                >Somos a ligação entre a biodiversidade e seu projeto.</span
+            <p>
+              <span>Somos a ligação entre a meio ambiente e seu projeto.</span>
+              Trabalhamos para alcançar os resultados que façam
+              <span
+                >a sua iniciativa crescer de forma sustentável e
+                lucrativa.</span
               >
-              Damos o apoio necessário à estruturação das suas ideias para o
-              alcance de resultados que façam a sua iniciativa sustentável e
-              lucrativa.
             </p>
-            <p
-              >Inegavelmente os recursos existem, e também existem soluções
-              inteligentes para o seu uso. Essas práticas impactam positivamente
-              em ganhos reais para sua empresa e o mundo.
+            <p>
+              <span>Estamos aqui para inovar com você.</span> Instituir a
+              biodiversidade como estratégia e propósito de valor para seu
+              negócio. Fazer da
+              <span>
+                sustentabilidade um benefício financeiramente vantajoso.
+              </span>
             </p>
-            <p style="margin-left:10px; margin-top:40px; margin-bottom:40px;"
-              ><span
-                >A sustentabilidade é um benefício financeiramente
-                vantajoso.</span
-              ><br />
-              A sustentabilidade é estratégica. <br />
-              A sustentabilidade é inovação. <br />
-              A sustentabilidade é valor econômico.
+            <p>
+              Os recursos existem, e também existem soluções inteligentes para o
+              seu uso. Essas práticas impactam positivamente em conquistas reais
+              para sua empresa e para o mundo.
             </p>
-            <p
-              >O que caracteriza o ecossistema é a coexistência, você e seu
-              empreendimento podem participar dessa cadeia.</p
-            >
+            <p>
+              Vamos juntos construir um caminho que investe no amanhã - o seu
+              empreendimento estará lá com você. O que caracteriza o ecossistema
+              é a coexistência, sua ideia participa dessa cadeia.
+            </p>
             <p>
               <span class="destContP"
                 >Porque somos<br />
@@ -170,7 +173,9 @@
             <br />
             <br />
           </div>
+          <!-- blocoTexto -->
         </div>
+        <!-- scroll -->
       </div>
       <!-- sideR -->
     </div>
@@ -181,6 +186,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import { MyFunctions } from '../assets/js/functions.js'
 
 export default {
   name: 'Novosnegocios',
@@ -201,6 +207,7 @@ export default {
     this.tlPageOut = this.$gsap.timeline()
   },
   mounted() {
+    //animacao entrada página interna
     this.tlPageIn
       .to(
         [
@@ -312,14 +319,22 @@ export default {
         '< 1'
       )
 
+    //end
+
     // Scroll
     const conteudo = document.querySelector('.sideR')
     conteudo.addEventListener('DOMMouseScroll', () => false, false)
     conteudo.addEventListener('mousewheel', () => false, false)
+    document.addEventListener('DOMMouseScroll', MyFunctions.moveScroll, false)
+    document.addEventListener('mousewheel', MyFunctions.moveScroll, false)
 
-    document.addEventListener('DOMMouseScroll', this.moveScroll, false)
-    document.addEventListener('mousewheel', this.moveScroll, false)
+    conteudo.addEventListener('keydown', () => false, false)
+    document.addEventListener('keydown', MyFunctions.KeyScroll, false)
+
+    conteudo.addEventListener('scroll', MyFunctions.porcScroll)
+    //end
   },
+
   methods: {
     ...mapActions([
       'startLoadingAction',
@@ -327,6 +342,7 @@ export default {
       'setNextBackgroundAction',
       'stopProgressingAction',
     ]),
+
     moveBackMob() {
       this.$gsap.to('.intBackContMob', {
         duration: 1.2,
@@ -354,99 +370,12 @@ export default {
         }
       }, 500)
     },
-    moveScroll(event) {
-      let delta = 0
-      if (!event) event = window.event
-      // normalize the delta
-      if (event.wheelDelta) {
-        // IE and Opera
-        delta = event.wheelDelta / 60
-      } else if (event.detail) {
-        // W3C
-        delta = -event.detail / 2
-      }
-      const conteudo = document.querySelector('.sideR')
-      let currPos = conteudo.scrollTop
-      // calculating the next position of the object
-      currPos = parseInt(currPos) - delta * 10
-      // moving the position of the object
-      conteudo.scrollTop = currPos
-
-      let h = conteudo
-      let b = document.querySelector('#scroll')
-      let st = 'scrollTop'
-      let sh = 'scrollHeight'
-
-      var percent =
-        ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100
-
-      var percentshow = percent.toFixed(0)
-
-      document.getElementById('porc').innerHTML = percentshow
-
-      if (percent === 100) {
-        this.$gsap.to('.setaPorc', {
-          duration: 0.5,
-          opacity: 0,
-          ease: 'linear',
-        })
-      } else {
-        this.$gsap.to('.setaPorc', {
-          duration: 0.5,
-          opacity: 1,
-          ease: 'linear',
-        })
-      }
-
-      if (percent === 0) {
-        this.$gsap.to(
-          [
-            '.elScrollInt',
-            '.elementoInterna1',
-            '.elementoInterna2',
-            '.elementoInterna3',
-            '.elementoInterna4',
-            '.elementoInterna5',
-          ],
-          {
-            duration: 1,
-            opacity: 1,
-            ease: 'linear',
-          }
-        )
-        this.$gsap.to('.porcTxt', {
-          duration: 1,
-          opacity: 0.1,
-          ease: 'linear',
-        })
-      } else {
-        this.$gsap.to(
-          [
-            '.elScrollInt',
-            '.elementoInterna1',
-            '.elementoInterna2',
-            '.elementoInterna3',
-            '.elementoInterna4',
-            '.elementoInterna5',
-          ],
-          {
-            duration: 1,
-            opacity: 0.1,
-            ease: 'linear',
-          }
-        )
-        this.$gsap.to('.porcTxt', {
-          duration: 1,
-          opacity: 1,
-          ease: 'linear',
-        })
-      }
-    },
   },
   beforeRouteLeave(to, from, next) {
     let nextBackground = this.backgrounds(to.meta.image)
     this.setNextBackgroundAction(nextBackground)
 
+    //animacao saída página interna
     this.tlPageOut
       .to(['.conteudo', '.blocoPorc', '.intBackContMob'], {
         opacity: 0,
@@ -472,6 +401,8 @@ export default {
           next()
         },
       })
+
+    //end
   },
 }
 </script>

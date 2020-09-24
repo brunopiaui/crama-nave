@@ -6,10 +6,13 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
   state: {
     loading: true,
+    loadingGallery: true,
     backgrounds: [],
     nextBackground: '',
     progressing: true,
+    progressingGallery: true,
     progress: 0,
+    progressGallery: 0,
   },
 
   getters: {
@@ -25,14 +28,23 @@ export const store = new Vuex.Store({
     progressing: (state) => {
       return state.progressing
     },
+    progressingGallery: (state) => {
+      return state.progressingGallery
+    },
     progress: (state) => {
       return state.progress
+    },
+    progressGallery: (state) => {
+      return state.progressGallery
     },
   },
 
   mutations: {
     setLoading(state, payload) {
       state.loading = payload
+    },
+    setLoadingGallery(state, payload) {
+      state.loadingGallery = payload
     },
     addToBackgrounds(state, payload) {
       state.backgrounds = payload
@@ -43,8 +55,14 @@ export const store = new Vuex.Store({
     setProgressing(state, payload) {
       state.progressing = payload
     },
+    setProgressingGallery(state, payload) {
+      state.progressingGallery = payload
+    },
     setProgress(state, payload) {
       state.progress = payload
+    },
+    setProgressGallery(state, payload) {
+      state.progressGallery = payload
     },
   },
 
@@ -54,6 +72,12 @@ export const store = new Vuex.Store({
     },
     stopLoadingAction({ commit }) {
       commit('setLoading', false)
+    },
+    startLoadingGalleryAction({ commit }) {
+      commit('setLoadingGallery', true)
+    },
+    stopLoadingGalleryAction({ commit }) {
+      commit('setLoadingGallery', false)
     },
     addToBackgroundsAction({ commit, state }, payload) {
       const backgrounds = [...state.backgrounds, payload]
@@ -68,8 +92,17 @@ export const store = new Vuex.Store({
     stopProgressingAction({ commit }) {
       commit('setProgressing', false)
     },
+    startProgressingGalleryAction({ commit }) {
+      commit('setProgressingGallery', true)
+    },
+    stopProgressingGalleryAction({ commit }) {
+      commit('setProgressingGallery', false)
+    },
     setProgressAction({ commit }, payload) {
       commit('setProgress', payload)
+    },
+    setProgressGalleryAction({ commit }, payload) {
+      commit('setProgressGallery', payload)
     },
   },
 })

@@ -23,6 +23,9 @@
     <div class="contHome">
       <div class="aNavia" :class="{ aNaviaState: aNaviaIsActive }">
         <div class="formaFundoaNaviaMob"></div>
+
+        <!-- <div class="formaFundoaNavia2"></div> -->
+
         <div class="formaFundoaNavia">
           <svg
             x="0px"
@@ -41,6 +44,7 @@
           </svg>
         </div>
         <!-- formaFundoaNavia -->
+
         <div class="btCloseaNavia">
           <div
             class="areaHoverBt"
@@ -104,30 +108,18 @@
         </div>
       </div>
       <!-- aNavia -->
+
       <div class="buttonVideoMob">
         <img src="../assets/images/icovideo.svg" />
       </div>
+
       <div :class="{ pccaNavia: aNaviaIsActive }" class="pcc">
-        <span
-          class="hoverPcc hoverPcc1"
-          @mouseover="mouseoverPcc1"
-          @mouseleave="mouseleavePcc1"
-          >Pense</span
-        >
-        <span
-          class="hoverPcc hoverPcc2"
-          @mouseover="mouseoverPcc2"
-          @mouseleave="mouseleavePcc2"
-          >Conecte</span
-        >
-        <span
-          class="hoverPcc hoverPcc3"
-          @mouseover="mouseoverPcc3"
-          @mouseleave="mouseleavePcc3"
-          >Cultive</span
-        >
+        <span class="hoverPcc hoverPcc1">Pense</span>
+        <span class="hoverPcc hoverPcc2">Conecte</span>
+        <span class="hoverPcc hoverPcc3">Cultive</span>
       </div>
       <!-- pcc -->
+
       <div class="diagrama">
         <div class="boxDia">
           <div class="elem1dia">
@@ -312,6 +304,7 @@
           ><!-- icoVideoDia -->
           <div
             class="botaoOpenaNavia"
+            :disabled="isDisabled"
             @click="cliqueOpenaNavia"
             @mouseover="hoverNaviaFn(), (btsHome.btOpenNavia = true)"
             @mouseleave="leaveNaviaFn(), (btsHome.btOpenNavia = false)"
@@ -353,6 +346,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import { MyFunctions } from '../assets/js/functions.js'
 
 export default {
   name: 'Home',
@@ -375,6 +369,7 @@ export default {
       link3diaOver: false,
       hoverNaviaFnOver: false,
       aNaviaIsActive: false,
+      isDisabled: false,
     }
   },
   computed: {
@@ -422,6 +417,17 @@ export default {
       loading.play()
     }
 
+    document.removeEventListener(
+      'DOMMouseScroll',
+      MyFunctions.moveScroll,
+      false
+    )
+    document.removeEventListener('mousewheel', MyFunctions.moveScroll, false)
+    document.removeEventListener('keydown', MyFunctions.KeyScroll, false)
+
+    // end
+
+    // funçao diagrama segue o movimento do mouse
     const app = document.querySelector('#app')
     const bg = document.querySelector('.boxDia')
     const windowWidth = window.innerWidth / 10
@@ -433,12 +439,14 @@ export default {
       const move = this.$gsap
       move.to(bg, { x: mouseX, y: mouseY })
     })
+    // end
 
+    // animacoes de entrada da página
     this.tlPageIn
       .fromTo(
         '.pcc',
         { opacity: 0 },
-        { opacity: 1, duration: 0.5, ease: 'power2.out' }
+        { opacity: 1, duration: 1.5, ease: 'power2.out' }
       )
       .fromTo(
         '.diagrama',
@@ -446,7 +454,9 @@ export default {
         { opacity: 1, duration: 1.5, ease: 'power2.out' },
         0
       )
+    // end
 
+    // animacoes de hover diagrama
     this.tl1overParte1
       .to(
         [
@@ -824,6 +834,7 @@ export default {
         }
       },
     })
+    // end
   },
 
   methods: {
@@ -834,7 +845,25 @@ export default {
       'stopProgressingAction',
     ]),
 
+    // funçoes clique e hover aNavia
     cliqueOpenaNavia: function() {
+      if (this.isDisabled) return
+      this.isDisabled = true
+
+      if (window.innerWidth >= 1400) {
+        this.$gsap.timeline().from('.formaFundoaNavia', {
+          scale: 1.2,
+          ease: 'Power2.out',
+          duration: 0.5,
+        })
+      } else {
+        this.$gsap.timeline().from('.formaFundoaNavia', {
+          scale: 1,
+          ease: 'Power2.out',
+          duration: 0.5,
+        })
+      }
+
       this.$gsap
         .timeline()
         .to('.loadingpv', {
@@ -847,6 +876,7 @@ export default {
           duration: 0,
           onComplete: () => {
             this.aNaviaIsActive = true
+            this.isDisabled = false
           },
         })
         .to('.aNavia', {
@@ -887,13 +917,6 @@ export default {
       })
     },
 
-    mouseoverPcc1() {},
-    mouseleavePcc1() {},
-    mouseoverPcc2() {},
-    mouseleavePcc2() {},
-    mouseoverPcc3() {},
-    mouseleavePcc3() {},
-
     hoverNaviaFn: function() {
       this.hoverNaviaFnOver = true
       if (this.linkDiaOn) {
@@ -909,7 +932,9 @@ export default {
         this.tlhoverNavia.reverse()
       }
     },
+    // end
 
+    // funçoes hover links diagrama
     mouseoverLink1dia() {
       this.link1diaOver = true
       if (this.linkDiaOn) {
@@ -974,6 +999,7 @@ export default {
         this.tl3overParte4.reverse()
       }
     },
+    // end
   },
 
   beforeRouteLeave(to, from, next) {
@@ -985,6 +1011,7 @@ export default {
     this.tl1overParte3.reverse()
     this.tl1overParte4.reverse()
 
+    // animacoes de saída da página
     this.tlPageOut
       .to(['.pcc', '.contaNavia'], {
         opacity: 0,
@@ -1020,6 +1047,7 @@ export default {
         },
       })
   },
+  // end
 }
 </script>
 
@@ -1107,7 +1135,17 @@ export default {
         right: -50px;
         top: -235px;
         transform: scale(1);
+        // transform-origin: right top;
       }
+      // .formaFundoaNavia2 {
+      //   position: absolute;
+      //   // background-color: rgba(18, 33, 36, 0.958);
+      //   background-color: rgba(72, 33, 36, 0.5);
+      //   width: 105%;
+      //   height: 105%;
+      //   z-index: 999999999;
+      //   border-radius: 0% 25% 0% 0% / 0% 70% 0% 0%;
+      // }
       .formaFundoaNaviaMob {
         position: absolute;
         width: 100%;
@@ -1373,6 +1411,11 @@ export default {
         }
       }
     }
+  }
+}
+@media screen and (min-width: 1400px) {
+  .formaFundoaNavia {
+    transform-origin: top right;
   }
 }
 </style>
