@@ -60,7 +60,7 @@
         <div class="blocoTitle">
           <!-- <h3>Pense no amanhã</h3> -->
           <h2>CONTATO</h2>
-          <p>Investir no meio que você produz é garantir continuidade de novas conquistas.</p>
+          <p>A biodiversidade te chama.</p>
         </div>
         <!--blocoTitle-->
         <div class="blocoMedia">
@@ -100,8 +100,8 @@
         <div id="scroll">
           <div class="blocoTexto">
             <p>
-              <span class="tit-bloco-contato">Fale com a gente</span>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo.
+              <span class="tit-bloco-contato">Fale conosco</span>
+              A gente te coloca em contato com a natureza.
             </p>
             <p>
               <span class="dest-bloco-contato">Email</span>
@@ -154,7 +154,7 @@ export default {
     this.tlPageOut = this.$gsap.timeline()
   },
   mounted() {
-    //animacao entrada página interna
+    // animacao entrada página interna
     this.tlPageIn
       .to(
         [
@@ -266,9 +266,9 @@ export default {
         '< 1'
       )
 
-    //end
+    // end
 
-    //scroll em qualquer lugar da página
+    // scroll em qualquer lugar da página
     const conteudo = document.querySelector('.sideR')
     conteudo.addEventListener('DOMMouseScroll', () => false, false)
     conteudo.addEventListener('mousewheel', () => false, false)
@@ -279,7 +279,7 @@ export default {
     document.addEventListener('keydown', MyFunctions.KeyScroll, false)
 
     conteudo.addEventListener('scroll', MyFunctions.porcScroll)
-    //end
+    // end
   },
 
   methods: {
@@ -322,7 +322,7 @@ export default {
     let nextBackground = this.backgrounds(to.meta.image)
     this.setNextBackgroundAction(nextBackground)
 
-    //animacao saída página interna
+    // animacao saída página interna
     this.tlPageOut
       .to(['.conteudo', '.blocoPorc', '.intBackContMob'], {
         opacity: 0,
@@ -349,7 +349,7 @@ export default {
         },
       })
 
-    //end
+    // end
   },
 }
 </script>

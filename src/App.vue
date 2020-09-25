@@ -235,7 +235,7 @@
     <!-- bottom -->
 
     <audio id="pageSound" controls autoplay loop>
-      <source src="./assets/sounds/experience.mp3" type="audio/mpeg" />
+      <source src="./assets/sounds/naviasound.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
     <!-- pagesound -->
@@ -282,11 +282,6 @@ export default {
   },
   watch: {
     '$route.path': 'checkPath',
-    // progress(value) {
-    //   if (value === 100) {
-
-    //   }
-    // },
   },
   created() {
     this.checkPath()
@@ -347,7 +342,6 @@ export default {
         },
         '<'
       )
-
     // end
   },
   beforeMount() {
@@ -588,7 +582,6 @@ export default {
       'setProgressGalleryAction',
       'setNextBackgroundAction',
     ]),
-
     checkSound() {
       let somcheck = document.getElementById('pageSound')
       if (!somcheck.paused) {

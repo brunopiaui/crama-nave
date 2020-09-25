@@ -183,7 +183,7 @@ export default {
     this.tlPageOut = this.$gsap.timeline()
   },
   mounted() {
-    //animacao entrada página interna
+    // animacao entrada página interna
     this.tlPageIn
       .to(
         [
@@ -295,9 +295,9 @@ export default {
         '< 1'
       )
 
-    //end
+    // end
 
-    //scroll em qualquer lugar da página
+    // scroll em qualquer lugar da página
     const conteudo = document.querySelector('.sideR')
     conteudo.addEventListener('DOMMouseScroll', () => false, false)
     conteudo.addEventListener('mousewheel', () => false, false)
@@ -308,7 +308,7 @@ export default {
     document.addEventListener('keydown', MyFunctions.KeyScroll, false)
 
     conteudo.addEventListener('scroll', MyFunctions.porcScroll)
-    //end
+    // end
   },
 
   methods: {
@@ -351,7 +351,7 @@ export default {
     let nextBackground = this.backgrounds(to.meta.image)
     this.setNextBackgroundAction(nextBackground)
 
-    //animacao saída página interna
+    // animacao saída página interna
     this.tlPageOut
       .to(['.conteudo', '.blocoPorc', '.intBackContMob'], {
         opacity: 0,
@@ -378,7 +378,7 @@ export default {
         },
       })
 
-    //end
+    // end
   },
 }
 </script>
