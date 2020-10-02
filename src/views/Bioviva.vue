@@ -187,13 +187,14 @@
             <p style="color:#122124;"
               >Na ciência e na técnica - Com PhD em Ecologia pela University of St.Andrews, no Reino
               Unido, e 46 anos de carreira, foi pesquisador titular do Jardim Botânico do Rio de
-              Janeiro e coordenador do Centro Nacional de Conservação da Flora, catalogando e
-              conservando a biodiversidade nativa por meio de expedições por todo o território
-              nacional. Na busca constante pela conservação da flora, o cientista participa de
-              conselhos de organizações nacionais e internacionais, como SOS Mata Atlântica e Chair
-              do Brazilian Plant Red List Authority da IUCN, e é membro do International Advisory
-              Committee do Botanic Gardens Conservation International. Martinelli também é professor
-              de pós-graduação na Escola Nacional de Botânica Tropical-ENBT/JBRJ e professor
+              Janeiro e coordenador do Centro Nacional de Conservação da Flora e representante do
+              Brazil Plant Red List Authority da IUCN, catalogando e conservando a biodiversidade
+              nativa por meio de avaliações de risco e expedições por todo o território nacional. Na
+              busca constante pela conservação da flora, o cientista participa de conselhos de
+              organizações nacionais e internacionais, como SOS Mata Atlântica e Chair do Brazilian
+              Plant Red List Authority da IUCN, e é membro do International Advisory Committee do
+              Botanic Gardens Conservation International. Martinelli também é professor de
+              pós-graduação na Escola Nacional de Botânica Tropical-ENBT/JBRJ e professor
               credenciado da Open University, na Inglaterra.
             </p>
             <p style="color:#122124;"
@@ -210,10 +211,10 @@
               <li style="color:#122124; margin-left:5px;">47 anos estudando a flora brasileira</li>
               <li style="color:#122124; margin-left:5px;">Mais de 380 jardins planejados</li>
               <li style="color:#122124; margin-left:5px;"
-                >Prêmio Rodrigo de Mello Franco de melhor projeto paisagístico de 1991, pelo projeto
-                da Fazenda Monte Cristo, em parceria com o arquiteto Alfredo Britto</li
+                >Prêmio Rodrigo de Mello Franco de Andrade – IAB de melhor projeto paisagístico de
+                1991, pelo projeto da Fazenda Monte Cristo, em parceria com o arquiteto Alfredo
+                Britto</li
               >
-              <li style="color:#122124; margin-left:5px;">Prêmio IAB de paisagismo</li>
               <li style="color:#122124; margin-left:5px;">Premio Jabuti 1º lugar 2014</li>
               <li style="color:#122124; margin-left:5px;"
                 >Premio Work of Excellence - IUCN - Abu Dhabi, EAU, 2018</li
@@ -230,6 +231,10 @@
               </li>
               <li style="color:#122124; margin-left:5px;"
                 >Coordenador do Centro Nacional de Conservação da Flora (CNCFlora)</li
+              >
+              <li style="color:#122124; margin-left:5px;"
+                >Membro da comissão técnica de elaboração da candidatura do Sítio Roberto Burle Marx
+                ao título de Patrimônio Natural e Cultural da Humanidade da UNESCO</li
               >
             </ul>
           </div>

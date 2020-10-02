@@ -126,8 +126,8 @@
             </p>
 
             <p
-              >Pesquisas, diagnósticos, operações, planos de ação, instalações, auditorias - as
-              fases do processo de consultoria se adaptam a sua necessidade, mas
+              >Pesquisas, diagnósticos, operações, planos de sustentabilidade, instalações,
+              auditorias - as fases do processo de consultoria se adaptam a sua necessidade, mas
               <span
                 >seja qual for a sua ideia, oferecemos nossa criatividade, técnica e experiência
                 para realizá-lo</span
@@ -136,17 +136,20 @@
             </p>
 
             <span class="destContP"
-              >A vida é a matéria-prima <br />
+              >A biodiversidade é a matéria-prima <br />
               de nosso trabalho
             </span>
 
             <span class="title-list-final">Soluções na cadeia produtiva</span>
 
             <ul class="contSolucoes">
-              <li style="margin-left:5px;">Inventários florísticos e florestais</li>
-              <li style="margin-left:5px;">Restauração de ecossistemas</li>
+              <li style="margin-left:5px;">Inventários da flora</li>
+              <li style="margin-left:5px;">Restauração ecológica</li>
               <li style="margin-left:5px;">Conservação de espécies</li>
               <li style="margin-left:5px;">Pesquisas de matérias-primas naturais para produtos</li>
+              <li style="margin-left:5px;">Planejamento ambiental</li>
+              <li style="margin-left:5px;">Criação de áreas de conservação e reservas privadas</li>
+              <li style="margin-left:5px;">Planos de sustentabilidade</li>
             </ul>
           </div>
           <!-- blocoTexto -->

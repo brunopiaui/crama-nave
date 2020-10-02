@@ -318,7 +318,7 @@ export default {
           titulo: 'Jardim 1',
           arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
-            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas existentes com as característica ecológicas locais.',
+            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com novas espécies adequadas ao ecossistema local.',
         },
         {
           midia: this.backgrounds('j102'),
@@ -326,7 +326,7 @@ export default {
           titulo: 'Jardim 1',
           arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
-            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas existentes com as característica ecológicas locais.',
+            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com novas espécies adequadas ao ecossistema local.',
         },
         {
           midia: this.backgrounds('j103'),
@@ -334,7 +334,7 @@ export default {
           titulo: 'Jardim 1',
           arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
-            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas existentes com as característica ecológicas locais.',
+            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com novas espécies adequadas ao ecossistema local.',
         },
         {
           midia: this.backgrounds('j104'),
@@ -342,7 +342,7 @@ export default {
           titulo: 'Jardim 1',
           arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
-            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas existentes com as característica ecológicas locais.',
+            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com novas espécies adequadas ao ecossistema local.',
         },
         {
           midia: this.backgrounds('j105'),
@@ -350,7 +350,7 @@ export default {
           titulo: 'Jardim 1',
           arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
-            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas existentes com as característica ecológicas locais.',
+            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com novas espécies adequadas ao ecossistema local.',
         },
         {
           midia: this.backgrounds('j106'),
@@ -358,7 +358,7 @@ export default {
           titulo: 'Jardim 1',
           arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
-            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas existentes com as característica ecológicas locais.',
+            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com novas espécies adequadas ao ecossistema local.',
         },
         {
           midia: this.backgrounds('j107'),
@@ -366,7 +366,7 @@ export default {
           titulo: 'Jardim 1',
           arquiteto: 'Arquitetura: Bernardes Arquitetura & Lobão Arquitetura',
           descricao:
-            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas existentes com as característica ecológicas locais.',
+            'O projeto foi elaborado a partir de um jardim feito pela mãe do proprietário e com grande valor emocional. Conciliou as plantas já existentes com novas espécies adequadas ao ecossistema local.',
         },
         {
           midia: this.backgrounds('j201'),

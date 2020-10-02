@@ -133,9 +133,8 @@
               <span>uma iniciativa crescer de forma lucrativa, valorizando a biodiversidade.</span>
             </p>
             <p>
-              Atuamos no auxílio ao desenvolvimento de empreendimentos de terceiros, na
-              identificação de novas frentes de negócio e na produção de atividades e planos
-              propostos pela própria Navia.
+              Atuamos no auxílio ao desenvolvimento de empreendimentos, na identificação de novas
+              frentes de negócio e na produção de atividades e planos propostos pela própria Navia.
               <span>Somos a ligação entre o meio ambiente e novos projetos.</span>
             </p>
             <p>
