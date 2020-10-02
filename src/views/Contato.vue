@@ -109,9 +109,9 @@
             </p>
             <p>
               <span class="dest-bloco-contato">Telefones</span>
-              +55 (21) 99151-5119
+              +55 (21) 98151-4185
               <br />
-              +55 (21) 99151-5119
+              +55 (21) 99602-4190
             </p>
             <p>
               <span class="dest-bloco-contato">Endereços</span>
