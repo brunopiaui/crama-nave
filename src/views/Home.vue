@@ -63,34 +63,43 @@
             </svg>
           </div> </div
         ><!-- btCloseaNavia -->
+
+        <div class="blocoPorc blocoPorcHome">
+          <div class="porcTxt"><span id="porc">0</span>%</div>
+          <div class="setaPorc"><img src="../assets/images/setaporc.svg"/></div>
+        </div>
+        <!-- blocoPorc -->
+
         <div class="blocoaNavia">
-          <div class="contaNavia">
-            <span class="titleContaNavia"
-              >Se o ambiente favorece,<br />
-              a evolução é consequência
-            </span>
-            <p
-              >O nosso propósito é unir as pessoas à natureza.<br />
-              <span>Navia é o elo entre os seus planos e a conservação da vida.</span></p
-            >
-            <p
-              >Desenvolvemos projetos
-              <span>conectados a valorização da biodiversidade brasileira</span>
-              – um jardim, um produto, novas soluções, um conceito de negócio ou ações ambientais.
-              Valorizamos a proteção e cuidado com o ecossistema, ainda assim nos mantemos em total
-              sintonia com as estratégias que atendem as expectativas de uma sociedade moderna e um
-              mercado.</p
-            >
-            <p
-              >Trazemos a experiência e o conhecimento técnico da botânica, mas vamos além.
-              Entendemos que somos parte do meio ambiente e, também, aprendemos com ele.
-              <span>Acreditamos em um crescimento conjunto.</span></p
-            >
-            <p
-              >Mais do que uma transformação, confiamos no resgate de um vínculo que é inerente a
-              humanidade.<br />
-              Mais do que um desafio, <span>esse é nosso compromisso.</span></p
-            >
+          <div id="scroll">
+            <div class="contaNavia">
+              <span class="titleContaNavia"
+                >Se o ambiente favorece,<br />
+                a evolução é consequência
+              </span>
+              <p
+                >O nosso propósito é unir as pessoas à natureza.<br />
+                <span>Navia é o elo entre os seus planos e a conservação da vida.</span></p
+              >
+              <p
+                >Desenvolvemos projetos
+                <span>conectados a valorização da biodiversidade brasileira</span>
+                – um jardim, um produto, novas soluções, um conceito de negócio ou ações ambientais.
+                Valorizamos a proteção e cuidado com o ecossistema, ainda assim nos mantemos em
+                total sintonia com as estratégias que atendem as expectativas de uma sociedade
+                moderna e um mercado.</p
+              >
+              <p
+                >Trazemos a experiência e o conhecimento técnico da botânica, mas vamos além.
+                Entendemos que somos parte do meio ambiente e, também, aprendemos com ele.
+                <span>Acreditamos em um crescimento conjunto.</span></p
+              >
+              <p
+                >Mais do que uma transformação, confiamos no resgate de um vínculo que é inerente a
+                humanidade.<br />
+                Mais do que um desafio, <span>esse é nosso compromisso.</span></p
+              >
+            </div>
           </div>
         </div>
       </div>
@@ -370,6 +379,14 @@ export default {
     document.removeEventListener('DOMMouseScroll', MyFunctions.moveScroll, false)
     document.removeEventListener('mousewheel', MyFunctions.moveScroll, false)
     document.removeEventListener('keydown', MyFunctions.KeyScroll, false)
+    // scroll em qualquer lugar da página
+    const conteudoaNavia = document.querySelector('.blocoaNavia')
+    // conteudoaNavia.addEventListener('DOMMouseScroll', () => false, false)
+    // conteudoaNavia.addEventListener('mousewheel', () => false, false)
+    document.addEventListener('DOMMouseScroll', MyFunctions.moveScrollHome, false)
+    document.addEventListener('mousewheel', MyFunctions.moveScrollHome, false)
+
+    conteudoaNavia.addEventListener('scroll', MyFunctions.porcScrollHome)
 
     // end
 
@@ -391,6 +408,7 @@ export default {
     this.tlPageIn
       .fromTo('.pcc', { opacity: 0 }, { opacity: 1, duration: 1.5, ease: 'power2.out' })
       .fromTo('.diagrama', { opacity: 0 }, { opacity: 1, duration: 1.5, ease: 'power2.out' }, 0)
+      .to('.blocoPorc', { visibility: 'visible', duration: 0.1 }, 0)
     // end
 
     // animacoes de hover diagrama
@@ -784,6 +802,18 @@ export default {
 
     // funçoes clique e hover aNavia
     cliqueOpenaNavia: function() {
+      setTimeout(function() {
+        const contNavia = document.querySelector('.contaNavia')
+        let contNaviaHeight = contNavia.offsetHeight
+        let browserHeight = window.innerHeight
+        const blocoPorc = document.querySelector('.blocoPorc')
+        if (contNaviaHeight > browserHeight) {
+          blocoPorc.style.visibility = 'visible'
+        } else {
+          blocoPorc.style.visibility = 'hidden'
+        }
+      }, 1000)
+
       if (this.isDisabled) return
       this.isDisabled = true
 
@@ -1019,6 +1049,9 @@ export default {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+  }
+  .blocoPorcHome {
+    right: 55% !important;
   }
 
   .contHome {

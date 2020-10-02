@@ -1,9 +1,5 @@
 <template>
-  <div
-    v-touch:swipe.top="moveBackMob"
-    v-touch:swipe.bottom="moveBackMobBottom"
-    class="geralInt"
-  >
+  <div v-touch:swipe.top="moveBackMob" v-touch:swipe.bottom="moveBackMobBottom" class="geralInt">
     <div class="backImg"></div>
 
     <div class="loadingpv"> </div>
@@ -64,10 +60,7 @@
         <div class="blocoTitle">
           <!-- <h3>Pense no amanhã</h3> -->
           <h2>MÍDIA</h2>
-          <p
-            >Investir no meio que você produz é garantir continuidade de novas
-            conquistas.</p
-          >
+          <p>Investir no meio que você produz é garantir continuidade de novas conquistas.</p>
         </div>
         <!--blocoTitle-->
         <div class="blocoMedia">
@@ -80,12 +73,7 @@
               @mouseover="btsInt.btVideo = true"
               @mouseleave="btsInt.btVideo = false"
             >
-              <g
-                transform="translate(1.2 2)"
-                fill="none"
-                stroke="#fff"
-                stroke-width="1"
-              >
+              <g transform="translate(1.2 2)" fill="none" stroke="#fff" stroke-width="1">
                 <path
                   class="pathBt"
                   :class="{ hoverPathBtActive: btsInt.btVideo }"
@@ -115,23 +103,18 @@
         <div id="scroll">
           <div class="blocoTexto">
             <p
-              ><span
-                >Fazemos da sustentabilidade um das competências de sua
-                empresa.</span
-              >
-              Construímos o seu projeto ambiental colaborando no gerenciamento
-              da preservação do meio em que atua. Acreditamos que o planejamento
-              e a administração dos recursos naturais são ganhos seguros,
-              inclusive nos rendimentos de seu empreendimento.
+              ><span>Fazemos da sustentabilidade um das competências de sua empresa.</span>
+              Construímos o seu projeto ambiental colaborando no gerenciamento da preservação do
+              meio em que atua. Acreditamos que o planejamento e a administração dos recursos
+              naturais são ganhos seguros, inclusive nos rendimentos de seu empreendimento.
             </p>
 
             <p
-              >Pesquisas, diagnósticos, operações, planos de ação, instalações,
-              auditorias - as fases do processo de consultoria se adaptam a sua
-              necessidade, mas
+              >Pesquisas, diagnósticos, operações, planos de ação, instalações, auditorias - as
+              fases do processo de consultoria se adaptam a sua necessidade, mas
               <span
-                >seja qual for a sua ideia, oferecemos nossa criatividade,
-                técnica e experiência para realizá-lo</span
+                >seja qual for a sua ideia, oferecemos nossa criatividade, técnica e experiência
+                para realizá-lo</span
               >
               da maneira mais eficiente.
             </p>
@@ -293,8 +276,8 @@ export default {
 
     // scroll em qualquer lugar da página
     const conteudo = document.querySelector('.sideR')
-    conteudo.addEventListener('DOMMouseScroll', () => false, false)
-    conteudo.addEventListener('mousewheel', () => false, false)
+    // conteudo.addEventListener('DOMMouseScroll', () => false, false)
+    // conteudo.addEventListener('mousewheel', () => false, false)
     document.addEventListener('DOMMouseScroll', MyFunctions.moveScroll, false)
     document.addEventListener('mousewheel', MyFunctions.moveScroll, false)
 

@@ -169,6 +169,15 @@
       </nav>
 
       <div class="som">
+        <svg
+          class="nosound"
+          :class="{ nosoundon: cliqueSomAtivo }"
+          xmlns="http://www.w3.org/2000/svg"
+          width="18.707"
+          height="18.707"
+        >
+          <path fill="none" stroke="#fff" d="M.354.354l18 18" />
+        </svg>
         <div class="areaHoverBt" @mouseover="hoverBt = true" @mouseleave="hoverBt = false">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -927,5 +936,13 @@ div.som {
 }
 .cultivecheck {
   color: #dc8371 !important;
+}
+.nosound {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+}
+.nosoundon {
+  display: none;
 }
 </style>

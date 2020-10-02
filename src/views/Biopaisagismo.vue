@@ -211,23 +211,18 @@
                 >A diversidade de nossos biomas nos garante inúmeras composições estéticas e
                 orgânicas. Ainda assim, no Brasil, mais de 90% das plantas utilizadas nas
                 ornamentações não são da nossa flora. O Biopaisagismo é um novo conceito que amplia
-                o olhar sobre o seu jardim.
-                <span
-                  >O Biopaisagismo reconecta as pessoas com a biodiversidade, promove
-                  sustentabilidade e alia a beleza da natureza à arquitetura.</span
-                >
+                o olhar sobre o seu jardim. <span>O Biopaisagismo reconecta as pessoas com a
+                biodiversidade, promove sustentabilidade e alia a beleza da natureza à arquitetura.</span>
                 Com base no conhecimento científico sobre a ecologia, Navia cria soluções
                 funcionais, valorizando o meio e integrando o ambiente.
+                <p>
+                  Quando projetamos um jardim, escolhemos espécies adequadas à área, valorizamos
+                  plantas compatíveis com a região, investimos no desenvolvimento de um ecossistema
+                  sustentável que atrai a fauna conveniente e, consequentemente, promove um maior
+                  controle de pragas, gerando baixo custo de manutenção.
               </p>
               <p
-                >Quando projetamos um jardim, escolhendo espécies adequadas à área, valorizamos
-                plantas compatíveis com a região, investimos no desenvolvimento de um ecossistema
-                sustentável que atrai a fauna conveniente e, consequentemente, promove um maior
-                controle de pragas, gerando baixo custo de manutenção.</p
-              >
-              <p
-                ><span>É a integração e a potencialização dos recursos naturais disponíveis</span>
-                no encanto do seu projeto.</p
+                >Quando executamos reformas destes espaços ou a restauração de áreas degradadas, esta mesma prática de reconhecimento e associação ao meio permanecem. O Biopaisagimo é a integração e a potencialização dos recursos naturais disponíveis no encanto do seu projeto, seja ele qual for.</p
               >
               <p>
                 <span class="destContP">O nosso jardim fortalece o mundo. </span>
@@ -755,10 +750,14 @@ export default {
 
     // end
 
+    // desabilitando evento scroll desbrave home
+    document.removeEventListener('DOMMouseScroll', MyFunctions.moveScrollHome, false)
+    document.removeEventListener('mousewheel', MyFunctions.moveScrollHome, false)
+
     // scroll em qualquer lugar da página
     const conteudo = document.querySelector('.sideR')
-    conteudo.addEventListener('DOMMouseScroll', () => false, false)
-    conteudo.addEventListener('mousewheel', () => false, false)
+    // conteudo.addEventListener('DOMMouseScroll', () => false, false)
+    // conteudo.addEventListener('mousewheel', () => false, false)
     document.addEventListener('DOMMouseScroll', MyFunctions.moveScroll, false)
     document.addEventListener('mousewheel', MyFunctions.moveScroll, false)
 

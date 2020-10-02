@@ -300,10 +300,14 @@ export default {
 
     // end
 
+    // desabilitando evento scroll desbrave home
+    document.removeEventListener('DOMMouseScroll', MyFunctions.moveScrollHome, false)
+    document.removeEventListener('mousewheel', MyFunctions.moveScrollHome, false)
+
     // scroll em qualquer lugar da página
     const conteudo = document.querySelector('.sideR')
-    conteudo.addEventListener('DOMMouseScroll', () => false, false)
-    conteudo.addEventListener('mousewheel', () => false, false)
+    // conteudo.addEventListener('DOMMouseScroll', () => false, false)
+    // conteudo.addEventListener('mousewheel', () => false, false)
     document.addEventListener('DOMMouseScroll', MyFunctions.moveScroll, false)
     document.addEventListener('mousewheel', MyFunctions.moveScroll, false)
 
