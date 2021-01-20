@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.11",
-    "gsap": "^3.0.2",
+    "gsap": "^3.6.0",
     "preload-it-extended-5": "^1.0.0",
     "vue": "^2.6.10",
     "vue-progressbar": "^0.7.5",
