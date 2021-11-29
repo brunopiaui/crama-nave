@@ -148,6 +148,7 @@ div.conteudo {
     width: 55%;
     // overflow: auto !important;
     overflow: scroll;
+    // scroll-behavior: smooth;
     padding: 160px 0 140px 0;
     margin: 100px 0 0 0;
     -ms-overflow-style: none;
@@ -571,7 +572,7 @@ div.videoCont {
   }
   div.videoContBlocoImg {
     position: relative;
-    width: 85%;
+    width: 100%;
   }
   div.imgVideoCont img {
     width: 100%;

@@ -22,7 +22,7 @@
 
     <div class="blocoPorc">
       <div class="porcTxt"><span id="porc">0</span>%</div>
-      <div class="setaPorc"><img src="../assets/images/setaporc.svg"/></div>
+      <div class="setaPorc"><img src="../assets/images/setaporc.svg" /></div>
     </div>
     <!-- blocoPorc -->
 
@@ -263,7 +263,7 @@ export default {
           stagger: 0.25,
           ease: 'back.out',
         },
-        '< 1'
+        '<'
       )
 
     // end
@@ -311,7 +311,7 @@ export default {
       //     ease: 'power3.out',
       //   })
       // }
-      setTimeout(function() {
+      setTimeout(function () {
         if (conteudoScroll.scrollTop === 0) {
           gsap.to('.intBackContMob', {
             duration: 1.2,

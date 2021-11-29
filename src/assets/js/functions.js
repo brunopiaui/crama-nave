@@ -177,6 +177,14 @@ export const MyFunctions = {
   },
   // fim
 
+  // funçao de pause Iframe do youtube
+  stopVideos: function() {
+    // const videoDesbrave = document.getElementsByClassName('video-youtube')
+    const videoDesbrave = document.querySelector('.video-youtube')
+    let iframeSrc = videoDesbrave.src
+    videoDesbrave.src = iframeSrc
+  },
+
   // modelo para animaçao no hover botoes
   // mouseHoverButtons: () => {
 

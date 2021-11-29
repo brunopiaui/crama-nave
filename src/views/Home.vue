@@ -66,7 +66,7 @@
 
         <div class="blocoPorc blocoPorcHome">
           <div class="porcTxt"><span id="porc">0</span>%</div>
-          <div class="setaPorc"><img src="../assets/images/setaporc.svg"/></div>
+          <div class="setaPorc"><img src="../assets/images/setaporc.svg" /></div>
         </div>
         <!-- blocoPorc -->
 
@@ -99,6 +99,19 @@
                 humanidade.<br />
                 Mais do que um desafio, <span>esse é nosso compromisso.</span></p
               >
+              <div class="videoWrapper">
+                <iframe
+                  class="video-youtube"
+                  width="560"
+                  height="349"
+                  src="https://www.youtube.com/embed/ZeouiyuICuU"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                >
+                </iframe>
+              </div>
             </div>
           </div>
         </div>
@@ -241,17 +254,8 @@
               @mouseover="btsHome.btVideo = true"
               @mouseleave="btsHome.btVideo = false"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="48.182"
-                height="49.957"
-              >
-                <g
-                  transform="translate(1.2 2)"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="1"
-                >
+              <svg xmlns="http://www.w3.org/2000/svg" width="48.182" height="49.957">
+                <g transform="translate(1.2 2)" fill="none" stroke="#fff" stroke-width="1">
                   <path
                     class="pathBt"
                     :class="{ hoverPathBtActive: btsHome.btVideo }"
@@ -263,8 +267,8 @@
                   />
                 </g>
               </svg>
-            </div> </div
-          > -->
+            </div>
+          </div> -->
           <!-- icoVideoDia -->
           <div
             class="botaoOpenaNavia"
@@ -801,8 +805,8 @@ export default {
     ]),
 
     // funçoes clique e hover aNavia
-    cliqueOpenaNavia: function() {
-      setTimeout(function() {
+    cliqueOpenaNavia: function () {
+      setTimeout(function () {
         const contNavia = document.querySelector('.contaNavia')
         let contNaviaHeight = contNavia.offsetHeight
         let browserHeight = window.innerHeight
@@ -873,18 +877,19 @@ export default {
           duration: 0.4,
         })
     },
-    cliqueCloseaNavia: function() {
+    cliqueCloseaNavia: function () {
       this.$gsap.timeline().to('.aNavia', {
         opacity: 0,
         ease: 'linear',
         duration: 0.3,
         onComplete: () => {
           this.aNaviaIsActive = false
+          MyFunctions.stopVideos()
         },
       })
     },
 
-    hoverNaviaFn: function() {
+    hoverNaviaFn: function () {
       this.hoverNaviaFnOver = true
       if (this.linkDiaOn) {
         if (!this.link2dia && !this.link3dia && !this.link1dia) {
@@ -892,7 +897,7 @@ export default {
         }
       }
     },
-    leaveNaviaFn: function() {
+    leaveNaviaFn: function () {
       this.hoverNaviaFnOver = false
       if (this.linkDiaOn) {
         this.linkNavia = true
@@ -1383,6 +1388,7 @@ export default {
     }
   }
 }
+
 @media screen and (min-width: 1400px) {
   .formaFundoaNavia {
     transform-origin: top right;

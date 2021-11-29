@@ -30,7 +30,7 @@
         </g>
       </svg>
       <br />
-      <p style="font-size:12px;">{{ progress }} %</p>
+      <p style="font-size: 12px">{{ progress }} %</p>
     </div>
     <!-- loading -->
 
@@ -119,7 +119,7 @@
 
     <header class="top">
       <div class="logo">
-        <div style="position:relative;">
+        <div style="position: relative">
           <router-link to="/">
             <img class="imgLogo" src="./assets/images/logo_home.svg" />
             <!-- <img
@@ -171,7 +171,7 @@
       <div class="som">
         <svg
           class="nosound"
-          :class="{ nosoundon: cliqueSomAtivo }"
+          :class="{ nosoundon: cliqueSomAtivo, nosoundbio: menuBioisActive }"
           xmlns="http://www.w3.org/2000/svg"
           width="18.707"
           height="18.707"
@@ -231,13 +231,19 @@
       <div class="share">
         <!-- <div><span>Contato.</span></div> -->
         <div class="fb">
-          <img src="./assets/images/fb_2.svg" />
+          <a href="https://www.facebook.com" target="_blank">
+            <img src="./assets/images/fb_2.svg" />
+          </a>
         </div>
         <div class="inst">
-          <img src="./assets/images/insta_2.svg" />
+          <a href="https://www.instagram.com" target="_blank">
+            <img src="./assets/images/insta_2.svg" />
+          </a>
         </div>
         <div class="mail">
-          <img src="./assets/images/mail_2.svg" />
+          <router-link to="/contato">
+            <img src="./assets/images/mail_2.svg" />
+          </router-link>
         </div>
       </div>
     </footer>
@@ -614,7 +620,7 @@ export default {
       this.tlDropMenu.reverse()
     },
 
-    cliqueSom: function() {
+    cliqueSom: function () {
       let som = document.getElementById('pageSound')
       if (this.cliqueSomAtivo === true && som.play) {
         this.$gsap.to('.so', { x: 12.315, ease: 'expo.out', duration: 0.5 })
@@ -629,7 +635,7 @@ export default {
       }
     },
 
-    cliqueOpenMenuMob: function() {
+    cliqueOpenMenuMob: function () {
       this.menuMobisActive = true
       this.$gsap.from('.folhaMenuMob', {
         x: 300,
@@ -638,7 +644,7 @@ export default {
         duration: 1.5,
       })
     },
-    cliqueCloseMenuMob: function() {
+    cliqueCloseMenuMob: function () {
       this.menuMobisActive = false
       if (this.toggle === true) {
         this.toggle = false
@@ -649,7 +655,7 @@ export default {
       }
     },
 
-    checkPath: function() {
+    checkPath: function () {
       let route = this.$route.path
       if (route === '/consultoria') {
         this.penseisActive = true
@@ -903,6 +909,9 @@ div.pccLogo {
 .svgSom path {
   stroke: #586769 !important;
 }
+.nosoundbio path {
+  stroke: #586769 !important;
+}
 .setaBio path {
   fill: #586769 !important;
 }
@@ -944,5 +953,19 @@ div.som {
 }
 .nosoundon {
   display: none;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  margin: 60px 0 80px 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>

@@ -20,7 +20,7 @@
     <!-- backR -->
 
     <div class="blocoPorc">
-      <div class="porcTxt" style="color:#445356;"><span id="porc">0</span>%</div>
+      <div class="porcTxt" style="color: #445356"><span id="porc">0</span>%</div>
       <div class="setaPorc">
         <!-- <img src="../assets/images/setaporc.svg"/> -->
         <svg xmlns="http://www.w3.org/2000/svg" width="25.318" height="11.381">
@@ -77,69 +77,39 @@
         </div>
         <!--blocoTitle-->
         <div class="blocoMedia">
-          <!-- <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="48.182"
-              height="49.957"
-              style="cursor:pointer;"
-              @mouseover="btsInt.btVideo = true"
-              @mouseleave="btsInt.btVideo = false"
-            >
-              <g
-                transform="translate(1.2 2)"
-                fill="none"
-                stroke="#fff"
-                stroke-width="1"
+          <div>
+            <a @click="scrollSmooth">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="48.182"
+                height="49.957"
+                style="cursor: pointer"
+                @mouseover="btsInt.btVideo = true"
+                @mouseleave="btsInt.btVideo = false"
               >
-                <path
-                  class="pathBt"
-                  :class="{ hoverPathBtActive: btsInt.btVideo }"
-                  d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
-                />
-                <path
-                  d="M17.918,10.8V7.066A1.069,1.069,0,0,0,16.853,6H4.066A1.069,1.069,0,0,0,3,7.066V17.722a1.069,1.069,0,0,0,1.066,1.066H16.853a1.069,1.069,0,0,0,1.066-1.066v-3.73l4.262,4.262V6.533Z"
-                  transform="translate(11 11)"
-                />
-              </g>
-            </svg>
-          </div> -->
-          <!-- <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="48.182"
-              height="49.957"
-              style="cursor:pointer;"
-              @mouseover="btsInt.btGaleria = true"
-              @mouseleave="btsInt.btGaleria = false"
-            >
-              <g
-                transform="translate(1.2 2)"
-                fill="none"
-                stroke="#fff"
-                stroke-width="1"
-              >
-                <path
-                  class="pathBt"
-                  :class="{ hoverPathBtActive: btsInt.btGaleria }"
-                  d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
-                />
-                <path
-                  d="M8.6,2,6.874,3.886H3.886A1.891,1.891,0,0,0,2,5.771V17.085a1.891,1.891,0,0,0,1.886,1.886H18.971a1.891,1.891,0,0,0,1.886-1.886V5.771a1.891,1.891,0,0,0-1.886-1.886H15.982L14.257,2Zm2.828,14.142a4.714,4.714,0,1,1,4.714-4.714A4.716,4.716,0,0,1,11.428,16.142Z"
-                  transform="translate(12 12)"
-                />
-              </g>
-            </svg>
-          </div> -->
+                <g transform="translate(1.2 2)" fill="none" stroke="#fff" stroke-width="1">
+                  <path
+                    class="pathBt"
+                    :class="{ hoverPathBtActive: btsInt.btVideo }"
+                    d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
+                  />
+                  <path
+                    d="M17.918,10.8V7.066A1.069,1.069,0,0,0,16.853,6H4.066A1.069,1.069,0,0,0,3,7.066V17.722a1.069,1.069,0,0,0,1.066,1.066H16.853a1.069,1.069,0,0,0,1.066-1.066v-3.73l4.262,4.262V6.533Z"
+                    transform="translate(11 11)"
+                  />
+                </g>
+              </svg>
+            </a>
+          </div>
         </div>
         <!-- blocoMedia -->
       </div>
       <!-- sideL -->
       <div class="elScrollInt">
-        <div style="top:500px;" class="elScrollInt1">
+        <div style="top: 500px" class="elScrollInt1">
           <img src="../assets/images/elementointerna2_b.svg" />
         </div>
-        <div style="top:480px;" class="elScrollInt2">
+        <div style="top: 480px" class="elScrollInt2">
           <img src="../assets/images/elementointerna3_b.svg" />
         </div>
       </div>
@@ -147,24 +117,24 @@
       <div class="sideR">
         <div id="scroll">
           <div class="blocoTexto">
-            <p><span style="color:#122124;">Conheça quem faz a Navia</span></p>
-            <p style="color:#122124;">
-              <span style="color:#122124;">Gustavo Martinelli</span> e
-              <span style="color:#122124;">Eládio Miranda Lima</span> se encontram na visão de mundo
+            <p><span style="color: #122124">Conheça quem faz a Navia</span></p>
+            <p style="color: #122124">
+              <span style="color: #122124">Gustavo Martinelli</span> e
+              <span style="color: #122124">Eládio Miranda Lima</span> se encontram na visão de mundo
               e se complementam no conhecimento e prática. Na Navia,
-              <span style="color:#122124;"
+              <span style="color: #122124"
                 >o domínio técnico do biólogo se une à veia empreendedora do homem de negócios</span
               >. Dois olhares que juntos se multiplicam, mas que tem um interesse e uma paixão única
               no desenvolvimento desse trabalho -
-              <span style="color:#122124;"
+              <span style="color: #122124"
                 >a conexão e o equilíbrio produtivo entre o homem, a sociedade e o meio
                 ambiente.</span
               >
             </p>
           </div>
           <!-- blocoTexto -->
-          <div class="aspas" style="margin-top:80px;">
-            <h4 style=" font-size:18px;color:#4B9167;"
+          <div class="aspas" style="margin-top: 80px">
+            <h4 style="font-size: 18px; color: #4b9167"
               >A arte verde e a técnica viajante de Gustavo Martinelli.</h4
             >
             <p class="bioCorP"
@@ -176,15 +146,15 @@
           </div>
           <!-- aspas -->
           <div class="blocoTexto">
-            <p style="color:#122124;"
+            <p style="color: #122124"
               >A trajetória de uma vida, o conhecimento de um caminho e as memórias de uma terra
               unidos na construção do seu negócio, projeto ou ambiente e, principalmente, no cuidado
               com o mundo. O biólogo
-              <span style="color:#122124;">Gustavo Martinelli é a raiz da Navia</span>, um botânico
+              <span style="color: #122124">Gustavo Martinelli é a raiz da Navia</span>, um botânico
               reconhecido internacionalmente por sua contribuição na conservação do ecossistema, e
               um dos maiores especialistas em bromélias do mundo.
             </p>
-            <p style="color:#122124;"
+            <p style="color: #122124"
               >Na ciência e na técnica - Com PhD em Ecologia pela University of St.Andrews, no Reino
               Unido, e 46 anos de carreira, foi pesquisador titular do Jardim Botânico do Rio de
               Janeiro e coordenador do Centro Nacional de Conservação da Flora e representante do
@@ -197,7 +167,7 @@
               pós-graduação na Escola Nacional de Botânica Tropical-ENBT/JBRJ e professor
               credenciado da Open University, na Inglaterra.
             </p>
-            <p style="color:#122124;"
+            <p style="color: #122124"
               >No Biopaisagismo - Martinelli atua como paisagista desde 1980, e já assinou inúmeros
               jardins nas capitais e interior do Brasil, muitos deles em parcerias com arquitetos e
               escritórios de arquitetura. Seu trabalho como paisagista se destaca pelas belas
@@ -208,35 +178,46 @@
             <br />
             <span class="title-list-final">Os frutos de uma rota:</span>
             <ul class="contSolucoes">
-              <li style="color:#122124; margin-left:5px;">47 anos estudando a flora brasileira</li>
-              <li style="color:#122124; margin-left:5px;">Mais de 380 jardins planejados</li>
-              <li style="color:#122124; margin-left:5px;"
+              <li style="color: #122124; margin-left: 5px">47 anos estudando a flora brasileira</li>
+              <li style="color: #122124; margin-left: 5px">Mais de 380 jardins planejados</li>
+              <li style="color: #122124; margin-left: 5px"
                 >Prêmio Rodrigo de Mello Franco de Andrade – IAB de melhor projeto paisagístico de
                 1991, pelo projeto da Fazenda Monte Cristo, em parceria com o arquiteto Alfredo
                 Britto</li
               >
-              <li style="color:#122124; margin-left:5px;">Premio Jabuti 1º lugar 2014</li>
-              <li style="color:#122124; margin-left:5px;"
+              <li style="color: #122124; margin-left: 5px">Premio Jabuti 1º lugar 2014</li>
+              <li style="color: #122124; margin-left: 5px"
                 >Premio Work of Excellence - IUCN - Abu Dhabi, EAU, 2018</li
               >
-              <li style="color:#122124; margin-left:5px;"
+              <li style="color: #122124; margin-left: 5px"
                 >Mais 400 expedições científicas no Brasil</li
               >
-              <li style="color:#122124; margin-left:5px;"
+              <li style="color: #122124; margin-left: 5px"
                 >Membro de expedições de Roberto Burle Marx, contribuindo com a identificação de
                 plantas</li
               >
-              <li style="color:#122124; margin-left:5px;"
+              <li style="color: #122124; margin-left: 5px"
                 >Mais de 22 mil espécies da flora catalogadas
               </li>
-              <li style="color:#122124; margin-left:5px;"
+              <li style="color: #122124; margin-left: 5px"
                 >Coordenador do Centro Nacional de Conservação da Flora (CNCFlora)</li
               >
-              <li style="color:#122124; margin-left:5px;"
+              <li style="color: #122124; margin-left: 5px"
                 >Membro da comissão técnica de elaboração da candidatura do Sítio Roberto Burle Marx
                 ao título de Patrimônio Natural e Cultural da Humanidade da UNESCO</li
               >
             </ul>
+            <div id="video-int" class="videoWrapper">
+              <iframe
+                width="560"
+                height="349"
+                src="https://www.youtube.com/embed/iunxJeDZjGQ"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
           <!-- blocoTexto -->
         </div>
@@ -375,7 +356,7 @@ export default {
         '<'
       )
       .from(
-        ['.blocoTexto p', '.aspas'],
+        ['.blocoTexto p'],
         {
           duration: 1,
           opacity: 0,
@@ -383,7 +364,7 @@ export default {
           stagger: 0.25,
           ease: 'back.out',
         },
-        '< 1'
+        '<'
       )
 
     // end
@@ -414,6 +395,12 @@ export default {
       'stopProgressingAction',
     ]),
 
+    scrollSmooth() {
+      document.querySelector('#video-int').scrollIntoView({
+        behavior: 'smooth',
+      })
+    },
+
     moveBackMob() {
       this.$gsap.to('.backClaro', {
         duration: 1.2,
@@ -431,7 +418,7 @@ export default {
       //     ease: 'power3.out',
       //   })
       // }
-      setTimeout(function() {
+      setTimeout(function () {
         if (conteudoScroll.scrollTop === 0) {
           gsap.to('.backClaro', {
             duration: 1.2,

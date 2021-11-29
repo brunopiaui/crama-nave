@@ -4,7 +4,18 @@
       <div v-if="showGal" v-touch:swipe.left="prev" v-touch:swipe.right="next" class="galeria">
         <div
           v-if="progressingGallery"
-          style="width:100%; height:100%; background-color:#000000; position:absolute; z-index:98; display:flex; flex-direction:row; justify-content:center; align-itens:center; transition: all 0.5s;"
+          style="
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            position: absolute;
+            z-index: 98;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-itens: center;
+            transition: all 0.5s;
+          "
         >
           <span>CARREGANDO {{ progressGallery }} %</span>
         </div>
@@ -15,7 +26,7 @@
           </div>
         </transition-group>
         <div class="backBottom"></div>
-        <div class="topGaleria" style="z-index:99;">
+        <div class="topGaleria" style="z-index: 99">
           <div class="fecharGal">
             <div
               class="areaHoverBt"
@@ -51,13 +62,13 @@
           </div>
           <div class="navGaleria">
             <div
-              ><a class="prev" @click="prev"><img src="../assets/images/setaleft.svg"/></a
+              ><a class="prev" @click="prev"><img src="../assets/images/setaleft.svg" /></a
             ></div>
             <div class="indNavGal"
               ><span>{{ currentID }}</span> / {{ slides.length }}</div
             >
             <div
-              ><a class="next" @click="next"><img src="../assets/images/setaright.svg"/></a
+              ><a class="next" @click="next"><img src="../assets/images/setaright.svg" /></a
             ></div>
           </div>
         </div>
@@ -88,7 +99,7 @@
 
       <div class="blocoPorc">
         <div class="porcTxt"><span id="porc">0</span>%</div>
-        <div class="setaPorc"><img src="../assets/images/setaporc.svg"/></div>
+        <div class="setaPorc"><img src="../assets/images/setaporc.svg" /></div>
       </div>
       <!-- blocoPorc -->
 
@@ -130,39 +141,12 @@
           </div>
           <!--blocoTitle-->
           <div class="blocoMedia">
-            <!-- <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="48.182"
-                height="49.957"
-                style="cursor:pointer;"
-                @mouseover="btsInt.btVideo = true"
-                @mouseleave="btsInt.btVideo = false"
-              >
-                <g
-                  transform="translate(1.2 2)"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="1"
-                >
-                  <path
-                    class="pathBt"
-                    :class="{ hoverPathBtActive: btsInt.btVideo }"
-                    d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
-                  />
-                  <path
-                    d="M17.918,10.8V7.066A1.069,1.069,0,0,0,16.853,6H4.066A1.069,1.069,0,0,0,3,7.066V17.722a1.069,1.069,0,0,0,1.066,1.066H16.853a1.069,1.069,0,0,0,1.066-1.066v-3.73l4.262,4.262V6.533Z"
-                    transform="translate(11 11)"
-                  />
-                </g>
-              </svg>
-            </div> -->
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="48.182"
                 height="49.957"
-                style="cursor:pointer;"
+                style="cursor: pointer"
                 @click="showGal = !showGal"
                 @mouseover="btsInt.btGaleria = true"
                 @mouseleave="btsInt.btGaleria = false"
@@ -179,6 +163,30 @@
                   />
                 </g>
               </svg>
+            </div>
+            <div>
+              <a @click="scrollSmooth">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48.182"
+                  height="49.957"
+                  style="cursor: pointer"
+                  @mouseover="btsInt.btVideo = true"
+                  @mouseleave="btsInt.btVideo = false"
+                >
+                  <g transform="translate(1.2 2)" fill="none" stroke="#fff" stroke-width="1">
+                    <path
+                      class="pathBt"
+                      :class="{ hoverPathBtActive: btsInt.btVideo }"
+                      d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
+                    />
+                    <path
+                      d="M17.918,10.8V7.066A1.069,1.069,0,0,0,16.853,6H4.066A1.069,1.069,0,0,0,3,7.066V17.722a1.069,1.069,0,0,0,1.066,1.066H16.853a1.069,1.069,0,0,0,1.066-1.066v-3.73l4.262,4.262V6.533Z"
+                      transform="translate(11 11)"
+                    />
+                  </g>
+                </svg>
+              </a>
             </div>
           </div>
           <!-- blocoMedia -->
@@ -211,27 +219,44 @@
                 >A diversidade de nossos biomas nos garante inúmeras composições estéticas e
                 orgânicas. Ainda assim, no Brasil, mais de 90% das plantas utilizadas nas
                 ornamentações não são da nossa flora. O Biopaisagismo é um novo conceito que amplia
-                o olhar sobre o seu jardim. <span>O Biopaisagismo reconecta as pessoas com a
-                biodiversidade, promove sustentabilidade e alia a beleza da natureza à arquitetura.</span>
+                o olhar sobre o seu jardim.
+                <span
+                  >O Biopaisagismo reconecta as pessoas com a biodiversidade, promove
+                  sustentabilidade e alia a beleza da natureza à arquitetura.</span
+                >
                 Com base no conhecimento científico sobre a ecologia, Navia cria soluções
-                funcionais, valorizando o meio e integrando o ambiente.
-                <p>
-                  Quando projetamos um jardim, escolhemos espécies adequadas à área, valorizamos
-                  plantas compatíveis com a região, investimos no desenvolvimento de um ecossistema
-                  sustentável que atrai a fauna conveniente e, consequentemente, promove um maior
-                  controle de pragas, gerando baixo custo de manutenção.
+                funcionais, valorizando o meio e integrando o ambiente. </p
+              ><p>
+                Quando projetamos um jardim, escolhemos espécies adequadas à área, valorizamos
+                plantas compatíveis com a região, investimos no desenvolvimento de um ecossistema
+                sustentável que atrai a fauna conveniente e, consequentemente, promove um maior
+                controle de pragas, gerando baixo custo de manutenção.
               </p>
               <p
-                >Quando executamos reformas destes espaços ou a restauração de áreas degradadas, esta mesma prática de reconhecimento e associação ao meio permanecem. O Biopaisagimo é a integração e a potencialização dos recursos naturais disponíveis no encanto do seu projeto, seja ele qual for.</p
+                >Quando executamos reformas destes espaços ou a restauração de áreas degradadas,
+                esta mesma prática de reconhecimento e associação ao meio permanecem. O Biopaisagimo
+                é a integração e a potencialização dos recursos naturais disponíveis no encanto do
+                seu projeto, seja ele qual for.</p
               >
               <p>
                 <span class="destContP">O nosso jardim fortalece o mundo. </span>
               </p>
+              <div id="video-int" class="videoWrapper">
+                <iframe
+                  width="560"
+                  height="349"
+                  src="https://www.youtube.com/embed/Y23fPzYPMAI"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
             </div>
             <!-- blocoTexto -->
             <div class="videoCont">
               <div class="videoContBlocoTexto">
-                <p style="color:#e9e9e9">Visite nossa galeria:</p>
+                <p style="color: #e9e9e9">Visite nossa galeria:</p>
               </div>
               <div
                 class="videoContBlocoImg"
@@ -239,13 +264,13 @@
                 @mouseover="btsInt.btGaleria2 = true"
                 @mouseleave="btsInt.btGaleria2 = false"
               >
-                <div class="imgVideoCont"><img src="../assets/images/thumbgaleria1.png"/></div>
+                <div class="imgVideoCont"><img src="../assets/images/thumbgaleria1.png" /></div>
                 <div class="icoVideoCont">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="48.182"
                     height="49.957"
-                    style="cursor:pointer;"
+                    style="cursor: pointer"
                   >
                     <g transform="translate(1.2 2)" fill="none" stroke="#fff" stroke-width="1">
                       <path
@@ -614,7 +639,7 @@ export default {
   },
   watch: {
     progressingGallery(value) {
-      console.log(value)
+      // console.log(value)
     },
   },
   created() {
@@ -737,7 +762,7 @@ export default {
         '<'
       )
       .from(
-        '.blocoTexto p',
+        ['.blocoTexto p', '.destContP'],
         {
           duration: 1,
           opacity: 0,
@@ -745,7 +770,7 @@ export default {
           stagger: 0.25,
           ease: 'back.out',
         },
-        '< 1'
+        '<'
       )
 
     // end
@@ -775,6 +800,11 @@ export default {
       'setNextBackgroundAction',
       'stopProgressingAction',
     ]),
+    scrollSmooth() {
+      document.querySelector('#video-int').scrollIntoView({
+        behavior: 'smooth',
+      })
+    },
     moveBackMob() {
       this.$gsap.to('.intBackContMob', {
         duration: 1.2,
@@ -792,7 +822,7 @@ export default {
       //     ease: 'power3.out',
       //   })
       // }
-      setTimeout(function() {
+      setTimeout(function () {
         if (conteudoScroll.scrollTop === 0) {
           gsap.to('.intBackContMob', {
             duration: 1.2,
