@@ -227,10 +227,15 @@
                 Com base no conhecimento científico sobre a ecologia, Navia cria soluções
                 funcionais, valorizando o meio e integrando o ambiente. </p
               ><p>
-                Quando projetamos um jardim, escolhemos espécies adequadas à área, valorizamos
-                plantas compatíveis com a região, investimos no desenvolvimento de um ecossistema
-                sustentável que atrai a fauna conveniente e, consequentemente, promove um maior
-                controle de pragas, gerando baixo custo de manutenção.
+                O desenho dos jardins parte do olhar atento e do conhecimento científico de Gustavo
+                Martinelli. A escolha minuciosa do local adequado para cada planta, da preparação do
+                solo ao desenho de cada canteiro - todo detalhe é relevante para nós.
+              </p>
+              <p>
+                Quando projetamos um jardim, valorizamos espécies compatíveis com a região,
+                investimos no desenvolvimento de um ecossistema sustentável que atrai a fauna
+                conveniente e, consequentemente, promove um maior controle de pragas, gerando baixo
+                custo de manutenção.
               </p>
               <p
                 >Quando executamos reformas destes espaços ou a restauração de áreas degradadas,
@@ -245,7 +250,7 @@
                 <iframe
                   width="560"
                   height="349"
-                  src="https://www.youtube.com/embed/Y23fPzYPMAI"
+                  src="https://www.youtube.com/embed/5pOt02zt9QI"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
