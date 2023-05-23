@@ -22,7 +22,7 @@
 
     <div class="blocoPorc">
       <div class="porcTxt"><span id="porc">0</span>%</div>
-      <div class="setaPorc"><img src="../assets/images/setaporc.svg"/></div>
+      <div class="setaPorc"><img src="../assets/images/setaporc.svg" /></div>
     </div>
     <!-- blocoPorc -->
 
@@ -64,33 +64,30 @@
         </div>
         <!--blocoTitle-->
         <div class="blocoMedia">
-          <!-- <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="48.182"
-              height="49.957"
-              style="cursor:pointer;"
-              @mouseover="btsInt.btVideo = true"
-              @mouseleave="btsInt.btVideo = false"
-            >
-              <g
-                transform="translate(1.2 2)"
-                fill="none"
-                stroke="#fff"
-                stroke-width="1"
+          <div>
+            <a @click="scrollSmooth">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="48.182"
+                height="49.957"
+                style="cursor: pointer"
+                @mouseover="btsInt.btVideo = true"
+                @mouseleave="btsInt.btVideo = false"
               >
-                <path
-                  class="pathBt"
-                  :class="{ hoverPathBtActive: btsInt.btVideo }"
-                  d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
-                />
-                <path
-                  d="M17.918,10.8V7.066A1.069,1.069,0,0,0,16.853,6H4.066A1.069,1.069,0,0,0,3,7.066V17.722a1.069,1.069,0,0,0,1.066,1.066H16.853a1.069,1.069,0,0,0,1.066-1.066v-3.73l4.262,4.262V6.533Z"
-                  transform="translate(11 11)"
-                />
-              </g>
-            </svg>
-          </div> -->
+                <g transform="translate(1.2 2)" fill="none" stroke="#fff" stroke-width="1">
+                  <path
+                    class="pathBt"
+                    :class="{ hoverPathBtActive: btsInt.btVideo }"
+                    d="M44.5,23.9c0,0,0-8.1-4.9-14.1s-13-10.3-22.8-7.6S3.3,14.2,2.2,17.4s-2.7,9.8,4.3,20.1 s20.6,9.8,29.8,2.7C42.3,35.6,44.5,31,44.5,23.9z"
+                  />
+                  <path
+                    d="M17.918,10.8V7.066A1.069,1.069,0,0,0,16.853,6H4.066A1.069,1.069,0,0,0,3,7.066V17.722a1.069,1.069,0,0,0,1.066,1.066H16.853a1.069,1.069,0,0,0,1.066-1.066v-3.73l4.262,4.262V6.533Z"
+                    transform="translate(11 11)"
+                  />
+                </g>
+              </svg>
+            </a>
+          </div>
         </div>
         <!-- blocoMedia -->
       </div>
@@ -143,14 +140,26 @@
             <span class="title-list-final">Soluções na cadeia produtiva</span>
 
             <ul class="contSolucoes">
-              <li style="margin-left:5px;">Inventários da flora</li>
-              <li style="margin-left:5px;">Restauração ecológica</li>
-              <li style="margin-left:5px;">Conservação de espécies</li>
-              <li style="margin-left:5px;">Pesquisas de matérias-primas naturais para produtos</li>
-              <li style="margin-left:5px;">Planejamento ambiental</li>
-              <li style="margin-left:5px;">Criação de áreas de conservação e reservas privadas</li>
-              <li style="margin-left:5px;">Planos de sustentabilidade</li>
+              <li style="margin-left: 5px">Inventários da flora</li>
+              <li style="margin-left: 5px">Restauração ecológica</li>
+              <li style="margin-left: 5px">Conservação de espécies</li>
+              <li style="margin-left: 5px">Pesquisas de matérias-primas naturais para produtos</li>
+              <li style="margin-left: 5px">Planejamento ambiental</li>
+              <li style="margin-left: 5px">Criação de áreas de conservação e reservas privadas</li>
+              <li style="margin-left: 5px">Planos de sustentabilidade</li>
             </ul>
+
+            <div id="video-int" class="videoWrapper">
+              <iframe
+                width="560"
+                height="349"
+                src="https://www.youtube.com/embed/zG0jPC_7YEk"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
           <!-- blocoTexto -->
         </div>
@@ -287,7 +296,7 @@ export default {
         '<'
       )
       .from(
-        '.blocoTexto p',
+        ['.blocoTexto p', '.destContP'],
         {
           duration: 1,
           opacity: 0,
@@ -295,7 +304,8 @@ export default {
           stagger: 0.25,
           ease: 'back.out',
         },
-        '< 1'
+        '<'
+        // '< 1'
       )
 
     // end
@@ -326,6 +336,12 @@ export default {
       'stopProgressingAction',
     ]),
 
+    scrollSmooth() {
+      document.querySelector('#video-int').scrollIntoView({
+        behavior: 'smooth',
+      })
+    },
+
     moveBackMob() {
       this.$gsap.to('.intBackContMob', {
         duration: 1.2,
@@ -343,7 +359,7 @@ export default {
       //     ease: 'power3.out',
       //   })
       // }
-      setTimeout(function() {
+      setTimeout(function () {
         if (conteudoScroll.scrollTop === 0) {
           gsap.to('.intBackContMob', {
             duration: 1.2,
